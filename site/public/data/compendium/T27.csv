@@ -1,0 +1,27 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T27,2024,mig2,1,No migrante,sector_dist,3.0,Distribución por rama de actividad: Manufactura,32.27,0.358,1.109,31.569,32.971,56022,A,%
+T27,2024,mig2,1,No migrante,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.564,0.058,10.268,0.451,0.678,56022,A,%
+T27,2024,mig2,1,No migrante,sector_dist,5.0,Distribución por rama de actividad: Construcción,6.891,0.186,2.706,6.525,7.256,56022,A,%
+T27,2024,mig2,1,No migrante,sector_dist,6.0,Distribución por rama de actividad: Comercio,19.073,0.301,1.579,18.482,19.663,56022,A,%
+T27,2024,mig2,1,No migrante,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,8.817,0.214,2.425,8.398,9.237,56022,A,%
+T27,2024,mig2,1,No migrante,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",13.777,0.25,1.812,13.287,14.266,56022,A,%
+T27,2024,mig2,1,No migrante,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",18.609,0.316,1.7,17.989,19.229,56022,A,%
+T27,2024,mig2,1,No migrante,status_dist,1.0,Distribución por categoría ocupacional: Empleador,3.42,0.112,3.289,3.199,3.64,56027,A,%
+T27,2024,mig2,1,No migrante,status_dist,2.0,Distribución por categoría ocupacional: Independiente,37.615,0.315,0.837,36.998,38.232,56027,A,%
+T27,2024,mig2,1,No migrante,status_dist,3.0,Distribución por categoría ocupacional: Empleado,26.218,0.372,1.421,25.488,26.948,56027,A,%
+T27,2024,mig2,1,No migrante,status_dist,4.0,Distribución por categoría ocupacional: Obrero,23.176,0.333,1.435,22.524,23.828,56027,A,%
+T27,2024,mig2,1,No migrante,status_dist,5.0,Distribución por categoría ocupacional: Trab. familiar no remunerado,7.295,0.149,2.042,7.003,7.587,56027,A,%
+T27,2024,mig2,1,No migrante,status_dist,6.0,Distribución por categoría ocupacional: Trab. del hogar / otro,2.276,0.103,4.509,2.075,2.478,56027,A,%
+T27,2024,mig2,2,Migrante interdepartamental reciente,sector_dist,3.0,Distribución por rama de actividad: Manufactura,27.311,1.249,4.572,24.864,29.758,2310,A,%
+T27,2024,mig2,2,Migrante interdepartamental reciente,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,,,,,,2310,S,%
+T27,2024,mig2,2,Migrante interdepartamental reciente,sector_dist,5.0,Distribución por rama de actividad: Construcción,9.048,0.873,9.65,7.337,10.76,2310,A,%
+T27,2024,mig2,2,Migrante interdepartamental reciente,sector_dist,6.0,Distribución por rama de actividad: Comercio,18.442,1.317,7.143,15.861,21.024,2310,A,%
+T27,2024,mig2,2,Migrante interdepartamental reciente,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,8.257,0.851,10.311,6.588,9.925,2310,A,%
+T27,2024,mig2,2,Migrante interdepartamental reciente,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",16.552,1.155,6.979,14.288,18.816,2310,A,%
+T27,2024,mig2,2,Migrante interdepartamental reciente,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",20.039,1.306,6.519,17.478,22.599,2310,A,%
+T27,2024,mig2,2,Migrante interdepartamental reciente,status_dist,1.0,Distribución por categoría ocupacional: Empleador,2.579,0.41,15.886,1.776,3.382,2311,B,%
+T27,2024,mig2,2,Migrante interdepartamental reciente,status_dist,2.0,Distribución por categoría ocupacional: Independiente,32.163,1.363,4.238,29.492,34.834,2311,A,%
+T27,2024,mig2,2,Migrante interdepartamental reciente,status_dist,3.0,Distribución por categoría ocupacional: Empleado,26.539,1.345,5.068,23.903,29.175,2311,A,%
+T27,2024,mig2,2,Migrante interdepartamental reciente,status_dist,4.0,Distribución por categoría ocupacional: Obrero,28.513,1.311,4.597,25.943,31.082,2311,A,%
+T27,2024,mig2,2,Migrante interdepartamental reciente,status_dist,5.0,Distribución por categoría ocupacional: Trab. familiar no remunerado,6.95,0.635,9.132,5.706,8.193,2311,A,%
+T27,2024,mig2,2,Migrante interdepartamental reciente,status_dist,6.0,Distribución por categoría ocupacional: Trab. del hogar / otro,3.257,0.625,19.201,2.031,4.482,2311,B,%

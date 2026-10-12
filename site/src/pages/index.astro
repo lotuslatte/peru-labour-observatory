@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import KpiTile from '../components/ui/KpiTile.astro';
+import HowToRead from '../components/ui/HowToRead.astro';
+import GradeLegend from '../components/ui/GradeLegend.astro';
+import Waffle from '../components/charts/Waffle';
+import AtlasMap from '../components/charts/AtlasMap';
+import TrendLine from '../components/charts/TrendLine';
+import { loadHeadline, loadAtlas, loadTrends } from '../data/loaders';
+const h = loadHeadline(); const a = loadAtlas(); const tr = loadTrends();
+const k = h.kpis; const d = h.deltas;
+const f = (c: any, n = 1) => c?.v == null ? '—' : c.v.toLocaleString('es-PE', { minimumFractionDigits: n, maximumFractionDigits: n });
+const depts = a.regions.filter(r => !r.parent);
+const byInf = [...depts].sort((x, y) => (x.values.formality.v ?? 0) - (y.values.formality.v ?? 0));
+const mostInf = byInf[0], leastInf = byInf[byInf.length - 1];
+const quick = [...depts].sort((x, y) => (y.values.median_inc_real.v ?? 0) - (x.values.median_inc_real.v ?? 0));
+const inf14 = h.trend.informality[0].v, inf24 = h.trend.informality.at(-1)!.v, inc14 = h.trend.median_inc_real[0].v, inc24 = h.trend.median_inc_real.at(-1)!.v;
+---
+<Base title="Inicio" wide>
+  <section class="hero">
+    <div class="thesis">
+      <div class="eyebrow">Observatorio Laboral del Perú · ENAHO {h.year} · {h.n_persons.toLocaleString('es-PE')} entrevistas · por <a href="https://lotuslatte.github.io/" rel="author">Favio Samillan Flores</a></div>
+      <h1>El Perú casi no tiene desempleo. <em>Tiene trabajo sin protección.</em></h1>
+      <p class="lede">Sólo {f(k.ur)} % de la fuerza laboral busca empleo sin encontrarlo. Pero {f(k.informality)} % de quienes trabajan lo hacen sin contrato, seguro ni pensión ligados a su empleo, y apenas {f(k.adecuado)} % tiene un empleo adecuado en horas e ingresos. Este observatorio mide esa distancia, departamento por departamento y año por año, desde los microdatos públicos del INEI.</p>
+      <div class="toolbar"><a class="btn primary" href="/historias/panorama-2024/">Leer la historia 2024</a><a class="btn" href="/atlas/">Abrir el Atlas</a><a class="btn" href="/compendio/">42 tablas descargables</a></div>
+    </div>
+    <div class="signature"><Waffle client:load informal={k.informality.v ?? 0} /></div>
+  </section>
+
+  <HowToRead />
+
+  <section>
+    <div class="eyebrow">Cifras titulares {h.year} · con cambio frente a 2023</div>
+    <div class="grid grid-3 kpis">
+      <KpiTile label="Tasa de actividad · personas de 14+ que trabajan o buscan trabajo" cell={k.lfpr} code="pea / pet" delta={d.lfpr.d1} spark={h.trend.lfpr} />
+      <KpiTile label="Tasa de desempleo · buscan y no encuentran" cell={k.ur} code="ocu500 = 2" delta={d.ur.d1} higherBetter={false} spark={h.trend.ur} />
+      <KpiTile label="Empleo informal · ocupados sin protección laboral" cell={k.informality} code="ocupinf" delta={d.informality.d1} higherBetter={false} kind="informal" spark={h.trend.informality} note="2024 estimado con la regla del Observatorio (INEI no publica ocupinf)" />
+      <KpiTile label="Empleo adecuado · sin subempleo por horas ni ingresos" cell={k.adecuado} code="adecuado" delta={d.adecuado.d1} spark={h.trend.adecuado} />
+      <KpiTile label="Brecha de participación · hombres − mujeres" cell={k.gap_lfpr} unit=" pp" code="gap_lfpr" delta={d.gap_lfpr.d1} higherBetter={false} kind="informal" spark={h.trend.gap_lfpr} />
+      <KpiTile label="Ingreso laboral mediano · soles de 2024, al mes" cell={k.median_inc_real} unit="" decimals={0} code="S/ 2024" delta={d.median_inc_real.d1} spark={h.trend.median_inc_real} />
+    </div>
+    <GradeLegend />
+  </section>
+
+  <section class="card" style="margin-top:20px">
+    <div class="eyebrow">Atlas de capacidades · seis dimensiones</div>
+    <h2>Dónde el trabajo protege y dónde expone</h2>
+    <p class="takeaway">La formalidad va de <b>{f(100 - (mostInf.values.formality.v ?? 0))} % de informalidad en {mostInf.name}</b> a {f(100 - (leastInf.values.formality.v ?? 0))} % en {leastInf.name}: la geografía pesa más que cualquier otra variable. Elige una dimensión, pasa el cursor por el mapa y abre el perfil de un departamento.</p>
+    <AtlasMap client:visible regions={a.regions} dims={a.dims} year={a.year} initial="formality" />
+  </section>
+
+  <section class="grid grid-2" style="margin-top:20px">
+    <div class="card">
+      <h2>Una década, casi el mismo lugar</h2>
+      <p class="takeaway">Entre 2014 y 2024 la informalidad pasó de <b>{f(inf14)} %</b> a <b>{f(inf24)} %</b> y el ingreso mediano real de S/ {f(inc14, 0)} a S/ {f(inc24, 0)}: la pandemia (2020) borró la mejora lenta de los años previos y la recuperación devolvió al país al punto de partida.</p>
+      <TrendLine client:visible years={h.years} unit="%" title="Informalidad, empleo adecuado y desempleo, 2014–2024 (%)" series={[{ label: 'Informalidad', cells: h.trend.informality }, { label: 'Empleo adecuado', cells: h.trend.adecuado }, { label: 'Desempleo', cells: h.trend.ur }]} notes={{ '2020': 'Pandemia: levantamiento parcialmente telefónico', '2024': 'Informalidad por regla del Observatorio' }} yZero smooth={[tr.smooth.national.informality, tr.smooth.national.adecuado, tr.smooth.national.ur]} />
+    </div>
+    <div class="card">
+      <h2>Explorador rápido</h2>
+      <p class="small muted">Departamentos ordenados por ingreso laboral mediano real. Clic para abrir el perfil completo.</p>
+      <div class="scroll-x" style="max-height:440px;overflow:auto"><table class="data"><thead><tr><th>Departamento</th><th>Actividad</th><th>Desempleo</th><th>Informal</th><th>Ingreso mediano</th></tr></thead><tbody>
+        {quick.map(r => <tr><td><a href={`/atlas/${r.id}/`}>{r.name}</a></td><td>{f(r.values.lfpr)} %</td><td>{f(r.values.ur)} % <span class={`badge compact ${r.values.ur.g}`} /></td><td><span style={`color:var(--informal);font-weight:600`}>{f(100 - (r.values.formality.v ?? 0))} %</span></td><td>S/ {r.values.median_inc_real.v?.toLocaleString('es-PE')}</td></tr>)}
+      </tbody></table></div>
+    </div>
+  </section>
+
+  <section class="grid grid-3" style="margin-top:20px">
+    <a class="card link" href="/historias/panorama-2024/"><div class="eyebrow">Historia</div><h3>El empleo no es seguridad</h3><p class="small">Ocho capítulos con desplazamiento: titulares, género, la paradoja educativa, jóvenes, lengua y etnicidad, regiones, calidad del empleo y una década de cambio.</p></a>
+    <a class="card link" href="/acerca/metodologia/"><div class="eyebrow">Metodología</div><h3>Cómo se construye cada cifra</h3><p class="small">Definiciones INEI/OIT, regla de informalidad validada (98,4 %), errores estándar de diseño y sellos de confiabilidad.</p></a>
+    <a class="card link" href="/acerca/escuela-de-encuestas/"><div class="eyebrow">Escuela de encuestas</div><h3>Aprende a usar la ENAHO</h3><p class="small">Diseño muestral, factores, varianza, la escalera de conceptos y plantillas en Python, R y Stata.</p></a>
+  </section>
+  <style>
+    .hero { display: grid; grid-template-columns: minmax(300px, 1.25fr) minmax(280px, .8fr); gap: 40px; align-items: center; padding: 44px 0 10px; }
+    .signature { justify-self: center; }
+    .card.link { text-decoration: none; color: inherit; transition: border-color .15s; } .card.link:hover { border-color: var(--informal); }
+    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; gap: 24px; } .signature { justify-self: start; } }
+  </style>
+</Base>

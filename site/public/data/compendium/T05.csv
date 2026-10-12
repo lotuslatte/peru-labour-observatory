@@ -1,0 +1,37 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T05,2024,age4,1,14–24,epr,,Ratio empleo-población,43.336,0.537,1.239,42.284,44.389,19576,A,%
+T05,2024,age4,1,14–24,lfpr,,"Tasa de actividad (PEA/PET, 14+)",48.894,0.557,1.139,47.803,49.985,19576,A,%
+T05,2024,age4,1,14–24,ur,,Tasa de desempleo,11.367,0.539,4.745,10.31,12.424,9183,A,%
+T05,2024,age4,2,25–44,epr,,Ratio empleo-población,80.717,0.343,0.425,80.044,81.389,27300,A,%
+T05,2024,age4,2,25–44,lfpr,,"Tasa de actividad (PEA/PET, 14+)",84.099,0.321,0.382,83.47,84.729,27300,A,%
+T05,2024,age4,2,25–44,ur,,Tasa de desempleo,4.023,0.193,4.802,3.644,4.401,23046,A,%
+T05,2024,age4,3,45–64,epr,,Ratio empleo-población,80.004,0.38,0.475,79.259,80.749,24929,A,%
+T05,2024,age4,3,45–64,lfpr,,"Tasa de actividad (PEA/PET, 14+)",81.987,0.374,0.457,81.253,82.721,24929,A,%
+T05,2024,age4,3,45–64,ur,,Tasa de desempleo,2.419,0.173,7.139,2.08,2.757,21049,A,%
+T05,2024,age4,4,65 y más,epr,,Ratio empleo-población,45.072,0.685,1.52,43.729,46.414,13732,A,%
+T05,2024,age4,4,65 y más,lfpr,,"Tasa de actividad (PEA/PET, 14+)",46.711,0.693,1.483,45.353,48.069,13732,A,%
+T05,2024,age4,4,65 y más,ur,,Tasa de desempleo,3.509,0.393,11.199,2.739,4.28,7227,A,%
+T05,2024,sex_age4,1|1,Hombres × 14–24,epr,,Ratio empleo-población,48.572,0.759,1.562,47.085,50.059,10061,A,%
+T05,2024,sex_age4,1|1,Hombres × 14–24,lfpr,,"Tasa de actividad (PEA/PET, 14+)",53.839,0.746,1.386,52.377,55.301,10061,A,%
+T05,2024,sex_age4,1|1,Hombres × 14–24,ur,,Tasa de desempleo,9.783,0.719,7.352,8.373,11.193,5204,A,%
+T05,2024,sex_age4,1|2,Hombres × 25–44,epr,,Ratio empleo-población,90.552,0.386,0.426,89.796,91.308,12781,A,%
+T05,2024,sex_age4,1|2,Hombres × 25–44,lfpr,,"Tasa de actividad (PEA/PET, 14+)",93.511,0.322,0.344,92.88,94.142,12781,A,%
+T05,2024,sex_age4,1|2,Hombres × 25–44,ur,,Tasa de desempleo,3.164,0.238,7.516,2.698,3.631,12034,A,%
+T05,2024,sex_age4,1|3,Hombres × 45–64,epr,,Ratio empleo-población,90.496,0.406,0.449,89.7,91.291,11689,A,%
+T05,2024,sex_age4,1|3,Hombres × 45–64,lfpr,,"Tasa de actividad (PEA/PET, 14+)",92.103,0.383,0.416,91.352,92.853,11689,A,%
+T05,2024,sex_age4,1|3,Hombres × 45–64,ur,,Tasa de desempleo,1.745,0.183,10.478,1.387,2.103,10924,A,%
+T05,2024,sex_age4,1|4,Hombres × 65 y más,epr,,Ratio empleo-población,56.869,0.921,1.619,55.064,58.673,6462,A,%
+T05,2024,sex_age4,1|4,Hombres × 65 y más,lfpr,,"Tasa de actividad (PEA/PET, 14+)",58.95,0.91,1.543,57.166,60.733,6462,A,%
+T05,2024,sex_age4,1|4,Hombres × 65 y más,ur,,Tasa de desempleo,3.53,0.514,14.563,2.522,4.538,4086,A,%
+T05,2024,sex_age4,2|1,Mujeres × 14–24,epr,,Ratio empleo-población,37.919,0.696,1.835,36.555,39.283,9515,A,%
+T05,2024,sex_age4,2|1,Mujeres × 14–24,lfpr,,"Tasa de actividad (PEA/PET, 14+)",43.778,0.745,1.701,42.318,45.238,9515,A,%
+T05,2024,sex_age4,2|1,Mujeres × 14–24,ur,,Tasa de desempleo,13.382,0.78,5.828,11.854,14.911,3979,A,%
+T05,2024,sex_age4,2|2,Mujeres × 25–44,epr,,Ratio empleo-población,70.584,0.574,0.813,69.46,71.709,14519,A,%
+T05,2024,sex_age4,2|2,Mujeres × 25–44,lfpr,,"Tasa de actividad (PEA/PET, 14+)",74.404,0.553,0.744,73.32,75.488,14519,A,%
+T05,2024,sex_age4,2|2,Mujeres × 25–44,ur,,Tasa de desempleo,5.133,0.337,6.565,4.473,5.794,11012,A,%
+T05,2024,sex_age4,2|3,Mujeres × 45–64,epr,,Ratio empleo-población,69.709,0.623,0.894,68.488,70.93,13240,A,%
+T05,2024,sex_age4,2|3,Mujeres × 45–64,lfpr,,"Tasa de actividad (PEA/PET, 14+)",72.061,0.611,0.848,70.863,73.259,13240,A,%
+T05,2024,sex_age4,2|3,Mujeres × 45–64,ur,,Tasa de desempleo,3.264,0.313,9.576,2.651,3.877,10125,A,%
+T05,2024,sex_age4,2|4,Mujeres × 65 y más,epr,,Ratio empleo-población,35.156,0.857,2.439,33.475,36.837,7270,A,%
+T05,2024,sex_age4,2|4,Mujeres × 65 y más,lfpr,,"Tasa de actividad (PEA/PET, 14+)",36.424,0.882,2.422,34.695,38.153,7270,A,%
+T05,2024,sex_age4,2|4,Mujeres × 65 y más,ur,,Tasa de desempleo,3.481,0.63,18.095,2.246,4.716,3141,B,%

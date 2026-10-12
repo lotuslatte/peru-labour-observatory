@@ -1,0 +1,17 @@
+# Cifras oficiales INEI para validación (ENAHO 2024 anual salvo indicación).
+# Fuentes: INEI, "Perú: Comportamiento de los indicadores de mercado laboral a nivel nacional" 2024;
+# nota de prensa INEI / EFE (mar-2025): tasa de desempleo 2024 = 5,6 % (mujeres 6,6 %, hombres 4,7 %, 14–24 años 11,5 %).
+# Empleo informal: 71,2 % (EPEN abr-2023–mar-2024; rural 94,1 %, urbano 65,6 %; mujeres 73,6 %, hombres 69,2 %; 14–24 85,0 %).
+# Tolerancia por defecto ±0.5 pp para tasas; ±3 % para ingresos.
+year: 2024
+tolerance_pp: 0.5
+targets:
+  - {indicator: ur, domain: national, value: 5.6, source: "INEI 2024, nota de prensa mar-2025"}
+  - {indicator: ur, domain: sex, key: "2", value: 6.6, source: "INEI 2024"}
+  - {indicator: ur, domain: sex, key: "1", value: 4.7, source: "INEI 2024"}
+  - {indicator: ur, domain: age4, key: "14-24", value: 11.5, source: "INEI 2024"}
+  - {indicator: informality, domain: national, value: 71.2, source: "INEI EPEN abr23-mar24 (referencial, no ENAHO anual)", tolerance_pp: 2.0}
+  - {indicator: informality, domain: area, key: rural, value: 94.1, source: "INEI EPEN abr23-mar24", tolerance_pp: 2.0}
+  - {indicator: informality, domain: area, key: urbano, value: 65.6, source: "INEI EPEN abr23-mar24", tolerance_pp: 2.0}
+  - {indicator: informality, domain: sex, key: "2", value: 73.6, source: "INEI EPEN abr23-mar24", tolerance_pp: 2.0}
+  - {indicator: informality, domain: sex, key: "1", value: 69.2, source: "INEI EPEN abr23-mar24", tolerance_pp: 2.0}

@@ -1,0 +1,22 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T21,2024,lengua3,1,Lengua indígena u originaria,adecuado,,Empleo adecuado (aprox.),52.183,0.681,1.304,50.849,53.517,14130,A,%
+T21,2024,lengua3,1,Lengua indígena u originaria,epr,,Ratio empleo-población,75.507,0.498,0.66,74.531,76.484,18161,A,%
+T21,2024,lengua3,1,Lengua indígena u originaria,informality,,Tasa de empleo informal,87.904,0.53,0.603,86.866,88.943,14130,A,%
+T21,2024,lengua3,1,Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.071,0.508,0.651,77.075,79.067,18161,A,%
+T21,2024,lengua3,1,Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),939.25,19.655,2.093,901.25,978.294,11591,A,S/
+T21,2024,lengua3,1,Lengua indígena u originaria,neet,,Jóvenes 15–29 que ni estudian ni trabajan,17.779,1.027,5.774,15.767,19.791,2638,A,%
+T21,2024,lengua3,1,Lengua indígena u originaria,ur,,Tasa de desempleo,3.283,0.262,7.968,2.771,3.796,14411,A,%
+T21,2024,lengua3,2,Castellano,adecuado,,Empleo adecuado (aprox.),63.787,0.377,0.591,63.048,64.526,44043,A,%
+T21,2024,lengua3,2,Castellano,epr,,Ratio empleo-población,66.251,0.257,0.387,65.748,66.754,66999,A,%
+T21,2024,lengua3,2,Castellano,informality,,Tasa de empleo informal,69.633,0.427,0.613,68.796,70.47,44043,A,%
+T21,2024,lengua3,2,Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.795,0.251,0.359,69.304,70.286,66999,A,%
+T21,2024,lengua3,2,Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1298.417,4.634,0.357,1293.083,1311.25,40198,A,S/
+T21,2024,lengua3,2,Castellano,neet,,Jóvenes 15–29 que ni estudian ni trabajan,21.663,0.459,2.117,20.764,22.562,21086,A,%
+T21,2024,lengua3,2,Castellano,ur,,Tasa de desempleo,5.077,0.164,3.232,4.756,5.399,45915,A,%
+T21,2024,lengua3,3,Otra / no habla,adecuado,,Empleo adecuado (aprox.),66.477,4.96,7.461,56.755,76.198,154,A,%
+T21,2024,lengua3,3,Otra / no habla,epr,,Ratio empleo-población,46.296,3.986,8.611,38.483,54.109,316,A,%
+T21,2024,lengua3,3,Otra / no habla,informality,,Tasa de empleo informal,75.802,4.645,6.128,66.698,84.906,154,A,%
+T21,2024,lengua3,3,Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",48.185,4.022,8.346,40.303,56.068,316,A,%
+T21,2024,lengua3,3,Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1450.25,222.818,15.364,893.153,1766.583,113,B,S/
+T21,2024,lengua3,3,Otra / no habla,neet,,Jóvenes 15–29 que ni estudian ni trabajan,58.733,6.65,11.323,45.699,71.767,110,A,%
+T21,2024,lengua3,3,Otra / no habla,ur,,Tasa de desempleo,,,,,,160,S,%

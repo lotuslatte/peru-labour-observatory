@@ -1,0 +1,15 @@
+# Dimensiones del Atlas de Capacidades (6 primarias para radar/mapa; secundarias sólo en matriz)
+primary:
+  - {id: lfpr,            label_es: "Participación laboral",  label_en: "Labour force participation", unit: "%",   higher_better: true}
+  - {id: ur,              label_es: "Desempleo",              label_en: "Unemployment rate",           unit: "%",   higher_better: false}
+  - {id: formality,       label_es: "Formalidad del empleo",  label_en: "Formal employment share",     unit: "%",   higher_better: true}
+  - {id: adecuado,        label_es: "Empleo adecuado",        label_en: "Adequate employment",         unit: "%",   higher_better: true}
+  - {id: median_inc_real, label_es: "Ingreso laboral mediano (S/ 2024)", label_en: "Median labour income (2024 soles)", unit: "S/", higher_better: true}
+  - {id: gap_lfpr,        label_es: "Brecha de participación (H−M, pp)", label_en: "Participation gap (M−W, pp)", unit: "pp", higher_better: false}
+secondary:
+  - {id: neet,          label_es: "Jóvenes que ni estudian ni trabajan (15–29)", label_en: "NEET 15–29", unit: "%", higher_better: false}
+  - {id: seguro,        label_es: "Ocupados con seguro de salud", label_en: "Employed with health insurance", unit: "%", higher_better: true}
+  - {id: pension,       label_es: "Ocupados afiliados a pensión", label_en: "Employed with pension affiliation", unit: "%", higher_better: true}
+  - {id: hours_le48,    label_es: "Ocupados con ≤48 h semanales", label_en: "Employed ≤48 h/week", unit: "%", higher_better: true}
+  - {id: contract_any,  label_es: "Asalariados con contrato", label_en: "Wage workers with contract", unit: "%", higher_better: true}
+  - {id: subemp_hours,  label_es: "Subempleo por horas", label_en: "Time-related underemployment", unit: "%", higher_better: false}

@@ -1,0 +1,62 @@
+# Catálogo de indicadores. type: prop (num/den), mean, median, quantile, dist (distribución de categorías), diff, ratio_median
+# den = variable-máscara (1 = en el denominador). num = variable 0/1 dentro del denominador.
+indicators:
+  lfpr:            {type: prop, num: pea, den: pet, label_es: "Tasa de actividad (PEA/PET, 14+)", label_en: "Labour force participation rate (14+)", unit: "%"}
+  epr:             {type: prop, num: ocupado, den: pet, label_es: "Ratio empleo-población", label_en: "Employment-to-population ratio", unit: "%"}
+  ur:              {type: prop, num: desocupado, den: pea, label_es: "Tasa de desempleo", label_en: "Unemployment rate", unit: "%"}
+  ur_youth:        {type: prop, num: desocupado, den: pea, filter: youth, label_es: "Tasa de desempleo juvenil (15–29)", label_en: "Youth unemployment rate (15–29)", unit: "%"}
+  informality:     {type: prop, num: informal, den: ocupado, label_es: "Tasa de empleo informal", label_en: "Informal employment rate", unit: "%"}
+  formality:       {type: prop, num: formal, den: ocupado, label_es: "Tasa de empleo formal", label_en: "Formal employment rate", unit: "%"}
+  informal_in_sector: {type: prop, num: informal_in_sector, den: ocupado, label_es: "Empleo en el sector informal", label_en: "Employment in the informal sector", unit: "%"}
+  subemp_hours:    {type: prop, num: subemp_hours, den: ocupado, label_es: "Subempleo por horas", label_en: "Time-related underemployment", unit: "%"}
+  subemp_income:   {type: prop, num: subemp_income, den: ocupado, label_es: "Subempleo por ingresos (aprox. RMV)", label_en: "Income-related underemployment (approx.)", unit: "%"}
+  adecuado:        {type: prop, num: adecuado, den: ocupado, label_es: "Empleo adecuado (aprox.)", label_en: "Adequate employment (approx.)", unit: "%"}
+  neet:            {type: prop, num: neet, den: youth, label_es: "Jóvenes 15–29 que ni estudian ni trabajan", label_en: "NEET rate (15–29)", unit: "%"}
+  median_inc_real: {type: median, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral mensual mediano (S/ 2024)", label_en: "Median monthly labour income (2024 S/)", unit: "S/"}
+  mean_inc_real:   {type: mean, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral mensual promedio (S/ 2024)", label_en: "Mean monthly labour income (2024 S/)", unit: "S/"}
+  inc_p10:         {type: quantile, q: 0.10, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral p10 (S/ 2024)", label_en: "Labour income p10", unit: "S/"}
+  inc_p25:         {type: quantile, q: 0.25, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral p25 (S/ 2024)", label_en: "Labour income p25", unit: "S/"}
+  inc_p75:         {type: quantile, q: 0.75, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral p75 (S/ 2024)", label_en: "Labour income p75", unit: "S/"}
+  inc_p90:         {type: quantile, q: 0.90, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral p90 (S/ 2024)", label_en: "Labour income p90", unit: "S/"}
+  hours_mean:      {type: mean, var: hours, den: ocupado, label_es: "Horas semanales promedio", label_en: "Mean weekly hours", unit: "h"}
+  hours_lt35:      {type: prop, num: hours_lt35, den: ocupado, label_es: "Ocupados con menos de 35 h", label_en: "Employed <35 h/week", unit: "%"}
+  hours_le48:      {type: prop, num: hours_le48, den: ocupado, label_es: "Ocupados con 48 h o menos", label_en: "Employed ≤48 h/week", unit: "%"}
+  hours_ge60:      {type: prop, num: hours_ge60, den: ocupado, label_es: "Ocupados con 60 h o más", label_en: "Employed ≥60 h/week", unit: "%"}
+  contract_any:    {type: prop, num: contract_any, den: wage_worker, label_es: "Asalariados con contrato", label_en: "Wage workers with a contract", unit: "%"}
+  contract_indef:  {type: prop, num: contract_indef, den: wage_worker, label_es: "Asalariados con contrato indefinido", label_en: "Wage workers with open-ended contract", unit: "%"}
+  pension:         {type: prop, num: pension, den: ocupado, label_es: "Ocupados afiliados a un sistema de pensiones", label_en: "Employed with pension affiliation", unit: "%"}
+  seguro:          {type: prop, num: seguro, den: ocupado, label_es: "Ocupados con seguro de salud", label_en: "Employed with health insurance", unit: "%"}
+  essalud:         {type: prop, num: essalud, den: ocupado, label_es: "Ocupados afiliados a EsSalud", label_en: "Employed affiliated to EsSalud", unit: "%"}
+  firm_small:      {type: prop, num: firm_small, den: ocupado, label_es: "Ocupados en unidades de hasta 20 trabajadores", label_en: "Employed in firms ≤20 workers", unit: "%"}
+  self_emp:        {type: prop, num: self_emp, den: ocupado, label_es: "Trabajadores independientes", label_en: "Own-account workers", unit: "%"}
+  tfnr:            {type: prop, num: tfnr, den: ocupado, label_es: "Trabajadores familiares no remunerados", label_en: "Unpaid family workers", unit: "%"}
+  secondary_job:   {type: prop, num: secondary_job, den: ocupado, label_es: "Ocupados con ocupación secundaria", label_en: "Employed with a secondary job", unit: "%"}
+  status_dist:     {type: dist, var: status6, den: ocupado, label_es: "Distribución por categoría ocupacional", label_en: "Employment status distribution", unit: "%",
+                    labels_es: {1: "Empleador", 2: "Independiente", 3: "Empleado", 4: "Obrero", 5: "Trab. familiar no remunerado", 6: "Trab. del hogar / otro"}}
+  sector_dist:     {type: dist, var: sector9, den: ocupado, label_es: "Distribución por rama de actividad", label_en: "Industry distribution", unit: "%",
+                    labels_es: {1: "Agropecuario y pesca", 2: "Minería", 3: "Manufactura", 4: "Electricidad y agua", 5: "Construcción", 6: "Comercio", 7: "Transporte y comunicaciones", 8: "Alojamiento, restaurantes y otros servicios", 9: "Servicios profesionales, públicos y sociales"}}
+  educ_dist:       {type: dist, var: educ4, den: ocupado, label_es: "Ocupados por nivel educativo", label_en: "Employed by education level", unit: "%",
+                    labels_es: {1: "Hasta primaria", 2: "Secundaria", 3: "Superior no universitaria", 4: "Universitaria y posgrado"}}
+  gap_lfpr:        {type: diff, base: lfpr, group: sex, a: 1, b: 2, label_es: "Brecha de participación hombres−mujeres (pp)", label_en: "Participation gap men−women (pp)", unit: "pp"}
+  gap_ur:          {type: diff, base: ur, group: sex, a: 2, b: 1, label_es: "Brecha de desempleo mujeres−hombres (pp)", label_en: "Unemployment gap women−men (pp)", unit: "pp"}
+  gap_inc:         {type: ratio_median, base: median_inc_real, group: sex, a: 2, b: 1, label_es: "Ingreso mediano mujeres / hombres", label_en: "Median income women / men", unit: "ratio"}
+
+domains:
+  national:  {vars: [], label_es: "Nacional"}
+  sex:       {vars: [sex], label_es: "Sexo", labels_es: {1: "Hombres", 2: "Mujeres"}}
+  age4:      {vars: [age4], label_es: "Grupo de edad", labels_es: {1: "14–24", 2: "25–44", 3: "45–64", 4: "65 y más"}}
+  educ4:     {vars: [educ4], label_es: "Nivel educativo", recode: educ4}
+  area:      {vars: [area], label_es: "Área", recode: area}
+  region_nat: {vars: [region_nat], label_es: "Región natural", recode: region_nat}
+  lengua3:   {vars: [lengua3], label_es: "Lengua materna", recode: lengua3}
+  etnia6:    {vars: [etnia6], label_es: "Autoidentificación étnica", recode: etnia6}
+  mig2:      {vars: [mig2], label_es: "Condición migratoria (5 años)", labels_es: {1: "No migrante", 2: "Migrante interdepartamental reciente"}}
+  dept:      {vars: [dept], label_es: "Departamento"}
+  lima:      {vars: [lima], label_es: "Lima Metropolitana / Lima Región", labels_es: {"15M": "Lima Metropolitana (incl. Callao)", "15R": "Lima Región"}}
+  dept_sex:  {vars: [dept, sex], label_es: "Departamento × sexo"}
+  sex_age4:  {vars: [sex, age4], label_es: "Sexo × edad"}
+  sex_educ4: {vars: [sex, educ4], label_es: "Sexo × educación"}
+  sex_area:  {vars: [sex, area], label_es: "Sexo × área"}
+  dept_age4: {vars: [dept, age4], label_es: "Departamento × edad"}
+  dept_lengua3: {vars: [dept, lengua3], label_es: "Departamento × lengua materna"}
+  dept_area: {vars: [dept, area], label_es: "Departamento × área"}

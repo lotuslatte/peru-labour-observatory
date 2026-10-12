@@ -1,0 +1,34 @@
+---
+import Base from '../../../layouts/Base.astro';
+import KpiTile from '../../../components/ui/KpiTile.astro';
+import PrintBar from '../../../components/ui/PrintBar.astro';
+import Sparkline from '../../../components/charts/Sparkline';
+import { loadAtlas, loadProfile, loadHeadline, loadModels } from '../../../data/loaders';
+export async function getStaticPaths() { return loadAtlas().regions.map(r => ({ params: { id: r.id } })); }
+const { id } = Astro.params; const p: any = loadProfile(id!); const a = loadAtlas(); const h = loadHeadline(); const M = loadModels();
+const dims = a.dims.filter(d => d.primary);
+const f = (c: any, n = 1) => c?.v == null ? '—' : c.v.toLocaleString('es-PE', { minimumFractionDigits: n, maximumFractionDigits: n });
+const nat = (k: string) => h.kpis[k];
+const sub = (mid: string) => { const bs = M.models[mid]?.by_subsample?.region_nat; const key = { Costa: '1', Sierra: '2', Selva: '3', 'Lima Metropolitana': '4' }[p.region_nat as string]; return bs && key ? bs[key] : null; };
+const inf_reg = sub('inf_sex'), inc_reg = sub('inc_sex');
+const top = p.status_dist?.slice().sort((x: any, y: any) => (y.v ?? 0) - (x.v ?? 0)).slice(0, 3) ?? [];
+---
+<Base title={`${p.name} · resumen de política`} image={`/share/${p.id}.png`}>
+  <PrintBar />
+  <article class="brief">
+    <header><div class="eyebrow">Resumen de una página · Observatorio Laboral del Perú · ENAHO {p.year}</div><h1>{p.name}</h1><p class="lede">{p.summary?.[0]}</p></header>
+    <section class="grid grid-3">{dims.map(d => <KpiTile label={d.label_es} cell={p.dims[d.id]} unit={d.unit === '%' ? '%' : d.unit === 'pp' ? ' pp' : ''} decimals={d.unit === 'S/' ? 0 : 1} note={`Nacional: ${f(nat(d.id === 'formality' ? 'informality' : d.id), d.unit === 'S/' ? 0 : 1)}${d.id === 'formality' ? ' informal' : ''} · puesto ${p.rank?.[d.id] ?? '—'}/25`} spark={p.trend[d.id === 'formality' ? 'informality' : d.id]} kind={['ur', 'gap_lfpr'].includes(d.id) ? 'informal' : 'formal'} />)}</section>
+    <section class="grid grid-2" style="margin-top:14px">
+      <div class="card"><h3>Qué dicen los datos</h3><ol style="padding-left:18px;margin:0">{p.summary?.slice(1).map((t: string) => <li>{t}</li>)}</ol></div>
+      <div class="card"><h3>Para la decisión</h3><ul style="padding-left:18px;margin:0">
+        <li>Categorías dominantes: {top.map((t: any) => `${t.label} (${f(t)} %)`).join(', ')}.</li>
+        <li>Empleo adecuado {f(p.dims.adecuado)} % (nacional {f(nat('adecuado'))} %): {(p.dims.adecuado.v ?? 0) < (nat('adecuado').v ?? 0) ? 'la calidad del empleo está por debajo del promedio; prioridad en formalización y productividad.' : 'calidad del empleo por encima del promedio; prioridad en sostener la formalidad.'}</li>
+        {inf_reg && <li>En la región {p.region_nat}, la brecha de informalidad mujer−hombre ajustada por controles es {f(inf_reg.adj_gap)} pp (cruda {f(inf_reg.raw_gap)}).</li>}
+        {inc_reg && <li>Brecha de ingreso mujer−hombre ajustada en {p.region_nat}: {f(inc_reg.adj_gap)} % (cruda {f(inc_reg.raw_gap)} %).</li>}
+        <li>Jóvenes 15–29 que ni estudian ni trabajan: {f(p.quality?.ur_youth)} % de desempleo juvenil; NiNi nacional {f(nat('neet'))} %.</li>
+      </ul></div>
+    </section>
+    <section class="card" style="margin-top:14px"><h3>Serie 2014–2024</h3><div class="grid grid-3">{['lfpr', 'informality', 'median_inc_real'].map(k => <div><div class="eyebrow">{({ lfpr: 'Actividad', informality: 'Informalidad', median_inc_real: 'Ingreso mediano (S/ 2024)' } as any)[k]}</div><Sparkline cells={p.trend[k]} w={220} h={48} color={k === 'informality' ? 'var(--informal)' : 'var(--formal)'} /><div class="small mono">{f(p.trend[k][0], k === 'median_inc_real' ? 0 : 1)} → {f(p.trend[k].at(-1), k === 'median_inc_real' ? 0 : 1)}</div></div>)}</div></section>
+    <footer class="small muted" style="margin-top:12px">Fuente: INEI – ENAHO {p.year}. Estimaciones del Observatorio Laboral del Perú (Favio Samillan Flores) con errores estándar de diseño; sellos: Sólido / Cautela / Suprimido. Datos: observatorio → /datos/. Perfil completo: /atlas/{p.id}/. CC BY 4.0.</footer>
+  </article>
+</Base>

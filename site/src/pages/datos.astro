@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadCompendiumIndex, loadHeadline } from '../data/loaders';
+const idx = loadCompendiumIndex(); const h = loadHeadline();
+const files = [['headline.json', 'Indicadores titulares 2024 y series nacionales'], ['atlas_regions.json', 'Atlas: 25 departamentos + Lima Metropolitana / Lima Región × 12 dimensiones'], ['trends.json', 'Series 2014–2024 por sexo, área, región natural, lengua, edad, educación, etnicidad y departamento'], ['departamentos.topo.json', 'Límites departamentales (TopoJSON, INEI)'], ['compendium_index.json', 'Índice del compendio'], ['meta.json', 'Metadatos: definiciones, regla de informalidad, IPC, umbrales']];
+---
+<Base title="Datos">
+  <div class="eyebrow" style="margin-top:28px">Descargas · CC BY 4.0</div>
+  <h1>Datos abiertos del Observatorio</h1>
+  <p class="lede">Todo lo que muestra el sitio está precalculado en archivos JSON y CSV reproducibles desde los microdatos públicos de INEI. Cita: Observatorio Laboral del Perú (2026), a partir de INEI – ENAHO 2014–2024.</p>
+  <div class="card"><h2>Contratos JSON</h2><table class="data"><tbody>{files.map(([f, d]) => <tr><td><a href={`/data/${f}`} download class="mono">{f}</a></td><td style="text-align:left">{d}</td></tr>)}</tbody></table></div>
+  <div class="card" style="margin-top:16px"><h2>Perfiles departamentales</h2><p class="small">27 archivos <code>profiles/&lt;id&gt;.json</code> (25 departamentos, 15M, 15R).</p><div class="grid grid-4">{['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','15M','15R'].map(id => <a class="btn mono" href={`/data/profiles/${id}.json`} download>{id}.json</a>)}</div></div>
+  <div class="card" style="margin-top:16px"><h2>Compendio (CSV tidy)</h2><p class="small">Columnas: table_id, year, domain, row_key, row_label, indicator, category, col_label, estimate, se, rse, ci_lo, ci_hi, n, grade, unit.</p><ul class="small">{idx.tables.map((t: any) => <li><a href={`/data/${t.file}`} download class="mono">{t.id}</a> {t.title}</li>)}</ul></div>
+  <div class="card" style="margin-top:16px"><h2>Formato de celda</h2><pre class="mono small">{`{"v": 4.7, "se": 0.14, "rse": 2.9, "g": "A", "n": 61429, "lo": 4.5, "hi": 5.0}   // g: A publicable, B revisar, S suprimido (v = null)`}</pre></div>
+</Base>

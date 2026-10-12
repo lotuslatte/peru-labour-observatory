@@ -1,0 +1,37 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T11,2024,educ4,1,Hasta primaria,inc_p90,,Ingreso laboral p90 (S/ 2024),1934.417,30.443,1.574,1867.167,1986.5,14054,A,S/
+T11,2024,educ4,1,Hasta primaria,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),944.507,14.894,1.577,915.316,973.698,14054,A,S/
+T11,2024,educ4,1,Hasta primaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),719.0,12.435,1.729,694.174,742.917,14054,A,S/
+T11,2024,educ4,2,Secundaria,inc_p90,,Ingreso laboral p90 (S/ 2024),2540.667,24.937,0.982,2492.583,2590.333,20829,A,S/
+T11,2024,educ4,2,Secundaria,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1355.871,12.129,0.895,1332.099,1379.643,20829,A,S/
+T11,2024,educ4,2,Secundaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1171.796,13.223,1.128,1144.083,1195.917,20829,A,S/
+T11,2024,educ4,3,Superior no universitaria,inc_p90,,Ingreso laboral p90 (S/ 2024),3488.5,47.173,1.352,3375.917,3560.833,7975,A,S/
+T11,2024,educ4,3,Superior no universitaria,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1859.491,28.304,1.522,1804.016,1914.966,7975,A,S/
+T11,2024,educ4,3,Superior no universitaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1498.75,16.539,1.104,1464.167,1529.0,7975,A,S/
+T11,2024,educ4,4,Universitaria y posgrado,inc_p90,,Ingreso laboral p90 (S/ 2024),5632.917,130.126,2.31,5415.167,5925.25,9044,A,S/
+T11,2024,educ4,4,Universitaria y posgrado,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),2824.671,54.315,1.923,2718.216,2931.127,9044,A,S/
+T11,2024,educ4,4,Universitaria y posgrado,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),2060.75,47.989,2.329,1999.417,2187.531,9044,A,S/
+T11,2024,sex_educ4,1|1,Hombres × Hasta primaria,inc_p90,,Ingreso laboral p90 (S/ 2024),2105.5,31.102,1.477,2041.333,2163.25,7427,A,S/
+T11,2024,sex_educ4,1|1,Hombres × Hasta primaria,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1130.796,23.895,2.113,1083.963,1177.629,7427,A,S/
+T11,2024,sex_educ4,1|1,Hombres × Hasta primaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),908.613,18.176,2.0,876.667,947.917,7427,A,S/
+T11,2024,sex_educ4,1|2,Hombres × Secundaria,inc_p90,,Ingreso laboral p90 (S/ 2024),2812.167,45.26,1.609,2725.75,2903.167,12990,A,S/
+T11,2024,sex_educ4,1|2,Hombres × Secundaria,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1549.096,16.55,1.068,1516.659,1581.533,12990,A,S/
+T11,2024,sex_educ4,1|2,Hombres × Secundaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1312.167,11.055,0.842,1298.167,1341.5,12990,A,S/
+T11,2024,sex_educ4,1|3,Hombres × Superior no universitaria,inc_p90,,Ingreso laboral p90 (S/ 2024),3789.667,84.759,2.237,3601.833,3934.083,4201,A,S/
+T11,2024,sex_educ4,1|3,Hombres × Superior no universitaria,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),2125.558,43.927,2.067,2039.462,2211.654,4201,A,S/
+T11,2024,sex_educ4,1|3,Hombres × Superior no universitaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1744.667,28.806,1.651,1685.083,1798.0,4201,A,S/
+T11,2024,sex_educ4,1|4,Hombres × Universitaria y posgrado,inc_p90,,Ingreso laboral p90 (S/ 2024),6130.167,131.061,2.138,5917.917,6431.667,4790,A,S/
+T11,2024,sex_educ4,1|4,Hombres × Universitaria y posgrado,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),3103.67,68.935,2.221,2968.559,3238.781,4790,A,S/
+T11,2024,sex_educ4,1|4,Hombres × Universitaria y posgrado,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),2286.333,73.556,3.217,2130.167,2418.5,4790,A,S/
+T11,2024,sex_educ4,2|1,Mujeres × Hasta primaria,inc_p90,,Ingreso laboral p90 (S/ 2024),1582.0,39.499,2.497,1521.0,1675.833,6627,A,S/
+T11,2024,sex_educ4,2|1,Mujeres × Hasta primaria,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),725.814,13.953,1.922,698.468,753.161,6627,A,S/
+T11,2024,sex_educ4,2|1,Mujeres × Hasta primaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),512.713,11.416,2.227,486.417,531.167,6627,A,S/
+T11,2024,sex_educ4,2|2,Mujeres × Secundaria,inc_p90,,Ingreso laboral p90 (S/ 2024),1938.833,30.443,1.57,1881.083,2000.417,7839,A,S/
+T11,2024,sex_educ4,2|2,Mujeres × Secundaria,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1022.794,14.891,1.456,993.608,1051.98,7839,A,S/
+T11,2024,sex_educ4,2|2,Mujeres × Secundaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),871.083,17.666,2.028,839.417,908.667,7839,A,S/
+T11,2024,sex_educ4,2|3,Mujeres × Superior no universitaria,inc_p90,,Ingreso laboral p90 (S/ 2024),3028.361,62.374,2.06,2888.5,3133.0,3774,A,S/
+T11,2024,sex_educ4,2|3,Mujeres × Superior no universitaria,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1521.346,29.479,1.938,1463.568,1579.123,3774,A,S/
+T11,2024,sex_educ4,2|3,Mujeres × Superior no universitaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1271.5,23.789,1.871,1209.917,1303.167,3774,A,S/
+T11,2024,sex_educ4,2|4,Mujeres × Universitaria y posgrado,inc_p90,,Ingreso laboral p90 (S/ 2024),5007.583,175.875,3.512,4660.25,5349.667,4254,A,S/
+T11,2024,sex_educ4,2|4,Mujeres × Universitaria y posgrado,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),2498.05,69.95,2.8,2360.951,2635.149,4254,A,S/
+T11,2024,sex_educ4,2|4,Mujeres × Universitaria y posgrado,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1918.25,44.963,2.344,1826.833,2003.083,4254,A,S/

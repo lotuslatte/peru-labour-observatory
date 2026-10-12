@@ -1,0 +1,37 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T12,2024,area,1,Urbano,educ_dist,1.0,Ocupados por nivel educativo: Hasta primaria,14.726,0.284,1.929,14.169,15.283,37136,A,%
+T12,2024,area,1,Urbano,educ_dist,2.0,Ocupados por nivel educativo: Secundaria,44.331,0.499,1.127,43.352,45.31,37136,A,%
+T12,2024,area,1,Urbano,educ_dist,3.0,Ocupados por nivel educativo: Superior no universitaria,19.242,0.332,1.724,18.592,19.893,37136,A,%
+T12,2024,area,1,Urbano,educ_dist,4.0,Ocupados por nivel educativo: Universitaria y posgrado,21.701,0.445,2.051,20.828,22.573,37136,A,%
+T12,2024,area,2,Rural,educ_dist,1.0,Ocupados por nivel educativo: Hasta primaria,43.752,0.551,1.258,42.673,44.831,21191,A,%
+T12,2024,area,2,Rural,educ_dist,2.0,Ocupados por nivel educativo: Secundaria,43.993,0.495,1.125,43.024,44.963,21191,A,%
+T12,2024,area,2,Rural,educ_dist,3.0,Ocupados por nivel educativo: Superior no universitaria,7.895,0.274,3.471,7.358,8.432,21191,A,%
+T12,2024,area,2,Rural,educ_dist,4.0,Ocupados por nivel educativo: Universitaria y posgrado,4.36,0.238,5.47,3.892,4.827,21191,A,%
+T12,2024,national,all,Nacional,educ_dist,1.0,Ocupados por nivel educativo: Hasta primaria,20.558,0.264,1.283,20.041,21.074,58327,A,%
+T12,2024,national,all,Nacional,educ_dist,2.0,Ocupados por nivel educativo: Secundaria,44.263,0.411,0.929,43.457,45.069,58327,A,%
+T12,2024,national,all,Nacional,educ_dist,3.0,Ocupados por nivel educativo: Superior no universitaria,16.963,0.273,1.611,16.427,17.498,58327,A,%
+T12,2024,national,all,Nacional,educ_dist,4.0,Ocupados por nivel educativo: Universitaria y posgrado,18.217,0.356,1.952,17.52,18.914,58327,A,%
+T12,2024,region_nat,1,Costa,educ_dist,1.0,Ocupados por nivel educativo: Hasta primaria,19.309,0.51,2.639,18.31,20.307,17440,A,%
+T12,2024,region_nat,1,Costa,educ_dist,2.0,Ocupados por nivel educativo: Secundaria,45.785,0.582,1.271,44.645,46.925,17440,A,%
+T12,2024,region_nat,1,Costa,educ_dist,3.0,Ocupados por nivel educativo: Superior no universitaria,17.81,0.419,2.354,16.989,18.632,17440,A,%
+T12,2024,region_nat,1,Costa,educ_dist,4.0,Ocupados por nivel educativo: Universitaria y posgrado,17.096,0.493,2.886,16.129,18.063,17440,A,%
+T12,2024,region_nat,2,Sierra,educ_dist,1.0,Ocupados por nivel educativo: Hasta primaria,30.181,0.529,1.752,29.144,31.217,21166,A,%
+T12,2024,region_nat,2,Sierra,educ_dist,2.0,Ocupados por nivel educativo: Secundaria,40.372,0.526,1.303,39.341,41.404,21166,A,%
+T12,2024,region_nat,2,Sierra,educ_dist,3.0,Ocupados por nivel educativo: Superior no universitaria,14.625,0.395,2.699,13.852,15.399,21166,A,%
+T12,2024,region_nat,2,Sierra,educ_dist,4.0,Ocupados por nivel educativo: Universitaria y posgrado,14.822,0.507,3.421,13.828,15.815,21166,A,%
+T12,2024,region_nat,3,Selva,educ_dist,1.0,Ocupados por nivel educativo: Hasta primaria,32.157,0.67,2.082,30.845,33.47,13072,A,%
+T12,2024,region_nat,3,Selva,educ_dist,2.0,Ocupados por nivel educativo: Secundaria,45.518,0.632,1.388,44.279,46.756,13072,A,%
+T12,2024,region_nat,3,Selva,educ_dist,3.0,Ocupados por nivel educativo: Superior no universitaria,12.922,0.458,3.545,12.024,13.82,13072,A,%
+T12,2024,region_nat,3,Selva,educ_dist,4.0,Ocupados por nivel educativo: Universitaria y posgrado,9.403,0.422,4.485,8.576,10.229,13072,A,%
+T12,2024,region_nat,4,Lima Metropolitana,educ_dist,1.0,Ocupados por nivel educativo: Hasta primaria,7.074,0.41,5.799,6.27,7.879,6649,A,%
+T12,2024,region_nat,4,Lima Metropolitana,educ_dist,2.0,Ocupados por nivel educativo: Secundaria,46.469,1.061,2.284,44.389,48.548,6649,A,%
+T12,2024,region_nat,4,Lima Metropolitana,educ_dist,3.0,Ocupados por nivel educativo: Superior no universitaria,20.346,0.671,3.299,19.03,21.662,6649,A,%
+T12,2024,region_nat,4,Lima Metropolitana,educ_dist,4.0,Ocupados por nivel educativo: Universitaria y posgrado,26.111,0.962,3.684,24.226,27.996,6649,A,%
+T12,2024,sex,1,Hombres,educ_dist,1.0,Ocupados por nivel educativo: Hasta primaria,17.731,0.307,1.732,17.129,18.333,31257,A,%
+T12,2024,sex,1,Hombres,educ_dist,2.0,Ocupados por nivel educativo: Secundaria,48.417,0.505,1.042,47.428,49.406,31257,A,%
+T12,2024,sex,1,Hombres,educ_dist,3.0,Ocupados por nivel educativo: Superior no universitaria,16.585,0.353,2.128,15.893,17.277,31257,A,%
+T12,2024,sex,1,Hombres,educ_dist,4.0,Ocupados por nivel educativo: Universitaria y posgrado,17.267,0.403,2.332,16.478,18.056,31257,A,%
+T12,2024,sex,2,Mujeres,educ_dist,1.0,Ocupados por nivel educativo: Hasta primaria,24.262,0.366,1.507,23.546,24.979,27070,A,%
+T12,2024,sex,2,Mujeres,educ_dist,2.0,Ocupados por nivel educativo: Secundaria,38.819,0.503,1.295,37.834,39.805,27070,A,%
+T12,2024,sex,2,Mujeres,educ_dist,3.0,Ocupados por nivel educativo: Superior no universitaria,17.458,0.365,2.09,16.742,18.173,27070,A,%
+T12,2024,sex,2,Mujeres,educ_dist,4.0,Ocupados por nivel educativo: Universitaria y posgrado,19.461,0.447,2.297,18.585,20.338,27070,A,%

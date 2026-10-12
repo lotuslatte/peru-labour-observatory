@@ -1,0 +1,38 @@
+---
+import Base from '../../layouts/Base.astro';
+import GradeLegend from '../../components/ui/GradeLegend.astro';
+import EmbedSnippet from '../../components/ui/EmbedSnippet.astro';
+import AtlasMap from '../../components/charts/AtlasMap';
+import RadarComparator from '../../components/charts/RadarComparator';
+import BivariateScatter from '../../components/charts/BivariateScatter';
+import { loadAtlas } from '../../data/loaders';
+const a = loadAtlas();
+const f = (c: any, n = 1) => c?.v == null ? '—' : c.v.toLocaleString('es-PE', { minimumFractionDigits: n, maximumFractionDigits: n });
+const depts = a.regions.filter(r => !r.parent);
+const top = (dim: string, hi = true) => [...depts].filter(r => r.values[dim].v != null).sort((x, y) => ((y.values[dim].v ?? 0) - (x.values[dim].v ?? 0)) * (hi ? 1 : -1))[0];
+const explain: Record<string, string> = {
+  lfpr: 'Porcentaje de personas de 14+ años que trabajan o buscan trabajo. Alto no siempre es bueno: en zonas rurales pobres la participación es alta porque no trabajar no es opción.',
+  ur: 'Porcentaje de la fuerza laboral que busca empleo y no lo encuentra. En el Perú es bajo por definición: sin seguro de desempleo, la gente se autoemplea.',
+  formality: 'Porcentaje de ocupados con empleo formal (unidad registrada en SUNAT y protección laboral). Es el mejor resumen de la calidad del empleo.',
+  adecuado: 'Ocupados que no están subempleados ni por horas (quieren trabajar más) ni por ingresos (ganan menos que la RMV).',
+  median_inc_real: 'Mediana del ingreso laboral mensual en soles de 2024: la mitad de los ocupados gana menos.',
+  gap_lfpr: 'Diferencia en puntos entre la participación de hombres y de mujeres. Menos es mejor.',
+};
+---
+<Base title="Atlas de capacidades" wide>
+  <div class="eyebrow" style="margin-top:28px">Atlas de capacidades · ENAHO {a.year}</div>
+  <h1>Veinticinco mercados laborales, <em>no uno.</em></h1>
+  <p class="lede">Cada departamento se mide en seis dimensiones primarias y seis secundarias. El mapa ordena; la matriz compara todas a la vez; el radar enfrenta dos departamentos y dice si sus diferencias son estadísticamente reales.</p>
+  <div class="grid grid-3" style="margin-bottom:18px">
+    {a.dims.filter(d => d.primary).map(d => <div class="card dim"><div class="eyebrow">{d.label_es}</div><p class="small">{explain[d.id]}</p><p class="small"><span class="muted">Mejor:</span> <strong>{top(d.id, d.higher_better)?.name}</strong> ({f(top(d.id, d.higher_better)?.values[d.id], d.unit === 'S/' ? 0 : 1)}) · <span class="muted">Peor:</span> <strong>{top(d.id, !d.higher_better)?.name}</strong> ({f(top(d.id, !d.higher_better)?.values[d.id], d.unit === 'S/' ? 0 : 1)})</p></div>)}
+  </div>
+  <section class="card"><GradeLegend compact /><EmbedSnippet path="/atlas/net_rate/" /><AtlasMap client:load regions={a.regions} dims={a.dims} year={a.year} /></section>
+  <section class="grid grid-2" style="margin-top:20px">
+    <div class="card"><h2>Comparar dos departamentos</h2><p class="takeaway">El radar muestra percentiles (100 = mejor posición). La tabla marca con <b>*</b> las diferencias que superan el error de muestreo.</p><RadarComparator client:visible regions={a.regions} dims={a.dims} a="15" b="21" /></div>
+    <div class="card"><h2>Dos dimensiones a la vez</h2><p class="takeaway">Informalidad e ingreso van juntos: los departamentos del cuadrante inferior-derecho combinan más informalidad y menos ingreso. Cambia los ejes para probar otras hipótesis.</p><BivariateScatter client:visible regions={a.regions} dims={a.dims} /></div>
+  </section>
+  <p style="margin:16px 0"><a class="btn primary" href="/atlas/provincias/">Ver el atlas provincial (196 provincias) →</a></p>
+  <section class="card" style="margin-top:20px"><h2>Perfiles departamentales</h2><p class="small muted">Cada perfil incluye un resumen automático en cinco frases, brechas por sexo, lengua materna y área, y la serie 2014–2024.</p>
+    <div class="grid grid-4">{a.regions.map(r => <a class="btn" href={`/atlas/${r.id}/`}>{r.name}</a>)}</div></section>
+  <style>.dim { padding: 12px 14px; } .dim p { margin: 4px 0 0; }</style>
+</Base>

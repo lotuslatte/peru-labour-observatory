@@ -1,0 +1,17 @@
+# Modelos descriptivos con controles. Coeficientes LPM ×100 = puntos porcentuales (resultados 0/1) o ×100 ≈ % (log ingreso).
+models:
+  inf_sex:  {label_es: "Informalidad: mujeres vs hombres", outcome: informal, den: ocupado, key: {var: sex, val: 2, ref: 1, label: "Mujer"}, family: lpm, logit: true, weight: w500,
+             controls: [{var: age, kind: num, square: true}, {var: educ4, ref: 1}, {var: area}, {var: region_nat, ref: 4}, {var: lengua3, ref: 2}, {var: sector9, ref: 6}, {var: status6, ref: 3}], subsamples: [area, region_nat, educ4]}
+  inc_sex:  {label_es: "Ingreso laboral (log): mujeres vs hombres", outcome: log_inc, den: has_income, key: {var: sex, val: 2, ref: 1, label: "Mujer"}, family: lpm, weight: w500,
+             controls: [{var: age, kind: num, square: true}, {var: educ4, ref: 1}, {var: area}, {var: region_nat, ref: 4}, {var: lengua3, ref: 2}, {var: sector9, ref: 6}, {var: status6, ref: 3}, {var: log_hours, kind: num}], subsamples: [area, region_nat, educ4]}
+  lfpr_sex: {label_es: "Participación laboral: mujeres vs hombres", outcome: pea, den: pet, key: {var: sex, val: 2, ref: 1, label: "Mujer"}, family: lpm, logit: true, weight: w500,
+             controls: [{var: age, kind: num, square: true}, {var: educ4, ref: 1}, {var: area}, {var: region_nat, ref: 4}, {var: lengua3, ref: 2}], subsamples: [area, region_nat, educ4]}
+  inf_lengua: {label_es: "Informalidad: lengua indígena vs castellano", outcome: informal, den: ocupado, key: {var: lengua3, val: 1, ref: 2, label: "Lengua indígena"}, family: lpm, weight: w500,
+             controls: [{var: age, kind: num, square: true}, {var: sex}, {var: educ4, ref: 1}, {var: area}, {var: region_nat, ref: 4}, {var: sector9, ref: 6}], subsamples: [area, region_nat]}
+oaxaca:
+  inc_sex_2024: {label_es: "Brecha de ingreso (log) mujeres − hombres, 2024", outcome: log_inc, den: has_income, group: sex, a: 2, b: 1, a_label: "Mujeres", b_label: "Hombres",
+                 vars: [{var: age, kind: num, square: true}, {var: educ4, contrast: dev}, {var: area, contrast: dev}, {var: region_nat, contrast: dev}, {var: sector9, contrast: dev}, {var: status6, contrast: dev}, {var: log_hours, kind: num}]}
+  inf_sex_2024: {label_es: "Brecha de informalidad mujeres − hombres, 2024", outcome: informal, den: ocupado, group: sex, a: 2, b: 1, a_label: "Mujeres", b_label: "Hombres",
+                 vars: [{var: age, kind: num, square: true}, {var: educ4, contrast: dev}, {var: area, contrast: dev}, {var: region_nat, contrast: dev}, {var: sector9, contrast: dev}, {var: status6, contrast: dev}]}
+shift_share:
+  inf_2014_2024: {label_es: "Cambio de la informalidad 2014→2024", outcome: informal, den: ocupado, years: [2014, 2024], groups: [sector9, status6, educ4, area]}

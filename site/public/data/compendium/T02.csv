@@ -1,0 +1,17 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T02,2024,sex,1,Hombres,adecuado,,Empleo adecuado (aprox.),67.27,0.408,0.607,66.47,68.07,31266,A,%
+T02,2024,sex,1,Hombres,epr,,Ratio empleo-población,76.917,0.302,0.392,76.325,77.508,40993,A,%
+T02,2024,sex,1,Hombres,informality,,Tasa de empleo informal,71.179,0.452,0.635,70.292,72.065,31266,A,%
+T02,2024,sex,1,Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.019,0.279,0.348,79.473,80.566,40993,A,%
+T02,2024,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1404.25,11.48,0.818,1382.0,1427.0,29417,A,S/
+T02,2024,sex,1,Hombres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,15.908,0.521,3.275,14.887,16.929,11962,A,%
+T02,2024,sex,1,Hombres,subemp_hours,,Subempleo por horas,3.069,0.149,4.854,2.777,3.361,31266,A,%
+T02,2024,sex,1,Hombres,ur,,Tasa de desempleo,3.877,0.18,4.652,3.524,4.231,32248,A,%
+T02,2024,sex,2,Mujeres,adecuado,,Empleo adecuado (aprox.),54.207,0.482,0.89,53.262,55.153,27080,A,%
+T02,2024,sex,2,Mujeres,epr,,Ratio empleo-población,58.537,0.349,0.597,57.853,59.221,44544,A,%
+T02,2024,sex,2,Mujeres,informality,,Tasa de empleo informal,75.576,0.47,0.622,74.655,76.497,27080,A,%
+T02,2024,sex,2,Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",62.173,0.35,0.564,61.486,62.86,44544,A,%
+T02,2024,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1025.083,5.272,0.514,1017.083,1037.75,22502,A,S/
+T02,2024,sex,2,Mujeres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,27.349,0.618,2.261,26.137,28.56,11900,A,%
+T02,2024,sex,2,Mujeres,subemp_hours,,Subempleo por horas,4.818,0.222,4.599,4.384,5.252,27080,A,%
+T02,2024,sex,2,Mujeres,ur,,Tasa de desempleo,5.849,0.234,4.0,5.391,6.308,28257,A,%

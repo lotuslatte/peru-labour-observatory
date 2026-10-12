@@ -1,0 +1,35 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T30,2024,age4,1,14–24,contract_any,,Asalariados con contrato,33.562,1.049,3.126,31.506,35.618,5002,A,%
+T30,2024,age4,1,14–24,contract_indef,,Asalariados con contrato indefinido,1.668,0.272,16.324,1.135,2.202,5002,B,%
+T30,2024,age4,2,25–44,contract_any,,Asalariados con contrato,55.639,0.771,1.385,54.129,57.15,11735,A,%
+T30,2024,age4,2,25–44,contract_indef,,Asalariados con contrato indefinido,10.7,0.428,4.001,9.861,11.539,11735,A,%
+T30,2024,age4,3,45–64,contract_any,,Asalariados con contrato,58.274,0.943,1.618,56.426,60.123,7507,A,%
+T30,2024,age4,3,45–64,contract_indef,,Asalariados con contrato indefinido,27.368,0.837,3.057,25.728,29.007,7507,A,%
+T30,2024,age4,4,65 y más,contract_any,,Asalariados con contrato,49.076,2.582,5.262,44.015,54.137,1007,A,%
+T30,2024,age4,4,65 y más,contract_indef,,Asalariados con contrato indefinido,30.179,2.292,7.596,25.685,34.672,1007,A,%
+T30,2024,area,1,Urbano,contract_any,,Asalariados con contrato,54.753,0.658,1.201,53.463,56.042,20208,A,%
+T30,2024,area,1,Urbano,contract_indef,,Asalariados con contrato indefinido,14.801,0.408,2.755,14.001,15.6,20208,A,%
+T30,2024,area,2,Rural,contract_any,,Asalariados con contrato,27.19,0.934,3.435,25.359,29.02,5043,A,%
+T30,2024,area,2,Rural,contract_indef,,Asalariados con contrato indefinido,3.711,0.315,8.482,3.094,4.329,5043,A,%
+T30,2024,educ4,1,Hasta primaria,contract_any,,Asalariados con contrato,19.607,1.041,5.311,17.567,21.648,3162,A,%
+T30,2024,educ4,1,Hasta primaria,contract_indef,,Asalariados con contrato indefinido,4.019,0.51,12.691,3.019,5.018,3162,A,%
+T30,2024,educ4,2,Secundaria,contract_any,,Asalariados con contrato,34.488,0.792,2.297,32.936,36.041,10208,A,%
+T30,2024,educ4,2,Secundaria,contract_indef,,Asalariados con contrato indefinido,6.368,0.376,5.898,5.632,7.104,10208,A,%
+T30,2024,educ4,3,Superior no universitaria,contract_any,,Asalariados con contrato,65.888,1.007,1.529,63.913,67.862,5146,A,%
+T30,2024,educ4,3,Superior no universitaria,contract_indef,,Asalariados con contrato indefinido,17.79,0.777,4.366,16.268,19.312,5146,A,%
+T30,2024,educ4,4,Universitaria y posgrado,contract_any,,Asalariados con contrato,80.472,0.813,1.011,78.878,82.066,6723,A,%
+T30,2024,educ4,4,Universitaria y posgrado,contract_indef,,Asalariados con contrato indefinido,25.478,0.806,3.164,23.898,27.058,6723,A,%
+T30,2024,national,all,Nacional,contract_any,,Asalariados con contrato,51.795,0.596,1.15,50.628,52.963,25251,A,%
+T30,2024,national,all,Nacional,contract_indef,,Asalariados con contrato indefinido,13.611,0.364,2.677,12.897,14.325,25251,A,%
+T30,2024,region_nat,1,Costa,contract_any,,Asalariados con contrato,48.494,0.841,1.735,46.845,50.143,9403,A,%
+T30,2024,region_nat,1,Costa,contract_indef,,Asalariados con contrato indefinido,12.025,0.533,4.429,10.981,13.069,9403,A,%
+T30,2024,region_nat,2,Sierra,contract_any,,Asalariados con contrato,44.123,1.029,2.332,42.106,46.139,6791,A,%
+T30,2024,region_nat,2,Sierra,contract_indef,,Asalariados con contrato indefinido,11.967,0.687,5.744,10.619,13.314,6791,A,%
+T30,2024,region_nat,3,Selva,contract_any,,Asalariados con contrato,38.547,1.206,3.129,36.183,40.911,4706,A,%
+T30,2024,region_nat,3,Selva,contract_indef,,Asalariados con contrato indefinido,10.528,0.631,5.991,9.292,11.764,4706,A,%
+T30,2024,region_nat,4,Lima Metropolitana,contract_any,,Asalariados con contrato,61.736,1.209,1.958,59.367,64.106,4351,A,%
+T30,2024,region_nat,4,Lima Metropolitana,contract_indef,,Asalariados con contrato indefinido,16.356,0.729,4.459,14.926,17.785,4351,A,%
+T30,2024,sex,1,Hombres,contract_any,,Asalariados con contrato,51.325,0.698,1.36,49.957,52.693,14663,A,%
+T30,2024,sex,1,Hombres,contract_indef,,Asalariados con contrato indefinido,12.948,0.414,3.199,12.136,13.759,14663,A,%
+T30,2024,sex,2,Mujeres,contract_any,,Asalariados con contrato,52.509,0.816,1.553,50.91,54.107,10588,A,%
+T30,2024,sex,2,Mujeres,contract_indef,,Asalariados con contrato indefinido,14.616,0.539,3.688,13.56,15.673,10588,A,%

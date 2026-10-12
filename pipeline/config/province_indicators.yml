@@ -1,0 +1,18 @@
+# Indicadores publicados a nivel provincial (frame agrupado 2022–2024). required: la construcción falla si <150 provincias con sello A/B.
+pool_years: [2022, 2023, 2024]
+indicators:
+  - {id: informality, required: true}
+  - {id: lfpr, required: true}
+  - {id: epr, required: false}
+  - {id: seguro, required: true}
+  - {id: pension, required: false}
+  - {id: adecuado, required: false}
+  - {id: median_inc_real, required: false}
+  - {id: self_emp, required: false}
+  - {id: firm_small, required: false}
+  - {id: contract_any, required: false}
+  - {id: hours_le48, required: false}
+  - {id: neet, required: false}
+  - {id: gap_lfpr, required: false}
+  - {id: ur, required: false, note: "no publicable en la mayoría de provincias (p pequeño)"}
+min_psu_for_A: 4

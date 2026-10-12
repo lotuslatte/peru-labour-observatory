@@ -1,0 +1,64 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T14,2024,area,1,Urbano,sector_dist,3.0,Distribución por rama de actividad: Manufactura,21.356,0.367,1.718,20.637,22.075,37150,A,%
+T14,2024,area,1,Urbano,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.67,0.069,10.348,0.534,0.806,37150,A,%
+T14,2024,area,1,Urbano,sector_dist,5.0,Distribución por rama de actividad: Construcción,7.76,0.221,2.85,7.326,8.193,37150,A,%
+T14,2024,area,1,Urbano,sector_dist,6.0,Distribución por rama de actividad: Comercio,22.019,0.358,1.625,21.317,22.72,37150,A,%
+T14,2024,area,1,Urbano,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,10.444,0.255,2.444,9.944,10.944,37150,A,%
+T14,2024,area,1,Urbano,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",16.096,0.301,1.869,15.506,16.685,37150,A,%
+T14,2024,area,1,Urbano,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",21.656,0.386,1.781,20.9,22.412,37150,A,%
+T14,2024,area,2,Rural,sector_dist,3.0,Distribución por rama de actividad: Manufactura,74.691,0.582,0.779,73.551,75.832,21190,A,%
+T14,2024,area,2,Rural,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,,,,,,21190,S,%
+T14,2024,area,2,Rural,sector_dist,5.0,Distribución por rama de actividad: Construcción,3.847,0.217,5.641,3.422,4.273,21190,A,%
+T14,2024,area,2,Rural,sector_dist,6.0,Distribución por rama de actividad: Comercio,7.265,0.269,3.707,6.737,7.792,21190,A,%
+T14,2024,area,2,Rural,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,2.223,0.156,7.033,1.916,2.529,21190,A,%
+T14,2024,area,2,Rural,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",5.137,0.214,4.163,4.718,5.556,21190,A,%
+T14,2024,area,2,Rural,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",6.739,0.282,4.183,6.186,7.291,21190,A,%
+T14,2024,national,all,Nacional,sector_dist,3.0,Distribución por rama de actividad: Manufactura,32.068,0.349,1.089,31.383,32.753,58340,A,%
+T14,2024,national,all,Nacional,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.555,0.056,10.079,0.446,0.665,58340,A,%
+T14,2024,national,all,Nacional,sector_dist,5.0,Distribución por rama de actividad: Construcción,6.974,0.183,2.622,6.615,7.332,58340,A,%
+T14,2024,national,all,Nacional,sector_dist,6.0,Distribución por rama de actividad: Comercio,19.055,0.296,1.556,18.475,19.636,58340,A,%
+T14,2024,national,all,Nacional,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,8.793,0.208,2.369,8.384,9.201,58340,A,%
+T14,2024,national,all,Nacional,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",13.895,0.247,1.778,13.41,14.379,58340,A,%
+T14,2024,national,all,Nacional,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",18.66,0.311,1.666,18.05,19.269,58340,A,%
+T14,2024,region_nat,1,Costa,sector_dist,3.0,Distribución por rama de actividad: Manufactura,30.573,0.657,2.15,29.284,31.861,17445,A,%
+T14,2024,region_nat,1,Costa,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.618,0.08,12.945,0.461,0.775,17445,A,%
+T14,2024,region_nat,1,Costa,sector_dist,5.0,Distribución por rama de actividad: Construcción,6.84,0.273,3.995,6.305,7.376,17445,A,%
+T14,2024,region_nat,1,Costa,sector_dist,6.0,Distribución por rama de actividad: Comercio,21.498,0.476,2.213,20.565,22.431,17445,A,%
+T14,2024,region_nat,1,Costa,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,9.563,0.32,3.342,8.936,10.189,17445,A,%
+T14,2024,region_nat,1,Costa,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",14.545,0.375,2.579,13.81,15.28,17445,A,%
+T14,2024,region_nat,1,Costa,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",16.363,0.46,2.809,15.462,17.264,17445,A,%
+T14,2024,region_nat,2,Sierra,sector_dist,3.0,Distribución por rama de actividad: Manufactura,45.946,0.711,1.548,44.553,47.34,21167,A,%
+T14,2024,region_nat,2,Sierra,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.249,0.05,20.087,0.151,0.347,21167,B,%
+T14,2024,region_nat,2,Sierra,sector_dist,5.0,Distribución por rama de actividad: Construcción,6.725,0.277,4.117,6.183,7.268,21167,A,%
+T14,2024,region_nat,2,Sierra,sector_dist,6.0,Distribución por rama de actividad: Comercio,14.532,0.44,3.029,13.669,15.394,21167,A,%
+T14,2024,region_nat,2,Sierra,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,5.72,0.269,4.703,5.193,6.248,21167,A,%
+T14,2024,region_nat,2,Sierra,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",9.904,0.318,3.212,9.281,10.528,21167,A,%
+T14,2024,region_nat,2,Sierra,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",16.923,0.472,2.792,15.997,17.849,21167,A,%
+T14,2024,region_nat,3,Selva,sector_dist,3.0,Distribución por rama de actividad: Manufactura,44.128,1.005,2.277,42.159,46.097,13073,A,%
+T14,2024,region_nat,3,Selva,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.213,0.055,25.554,0.107,0.32,13073,B,%
+T14,2024,region_nat,3,Selva,sector_dist,5.0,Distribución por rama de actividad: Construcción,4.822,0.262,5.425,4.309,5.335,13073,A,%
+T14,2024,region_nat,3,Selva,sector_dist,6.0,Distribución por rama de actividad: Comercio,17.007,0.512,3.013,16.002,18.011,13073,A,%
+T14,2024,region_nat,3,Selva,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,7.875,0.386,4.896,7.119,8.631,13073,A,%
+T14,2024,region_nat,3,Selva,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",12.628,0.476,3.771,11.694,13.561,13073,A,%
+T14,2024,region_nat,3,Selva,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",13.327,0.502,3.766,12.343,14.311,13073,A,%
+T14,2024,region_nat,4,Lima Metropolitana,sector_dist,3.0,Distribución por rama de actividad: Manufactura,14.367,0.556,3.871,13.277,15.457,6655,A,%
+T14,2024,region_nat,4,Lima Metropolitana,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.956,0.156,16.332,0.65,1.262,6655,B,%
+T14,2024,region_nat,4,Lima Metropolitana,sector_dist,5.0,Distribución por rama de actividad: Construcción,8.22,0.448,5.447,7.343,9.098,6655,A,%
+T14,2024,region_nat,4,Lima Metropolitana,sector_dist,6.0,Distribución por rama de actividad: Comercio,22.586,0.712,3.151,21.192,23.981,6655,A,%
+T14,2024,region_nat,4,Lima Metropolitana,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,11.652,0.522,4.48,10.629,12.675,6655,A,%
+T14,2024,region_nat,4,Lima Metropolitana,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",17.899,0.617,3.446,16.69,19.108,6655,A,%
+T14,2024,region_nat,4,Lima Metropolitana,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",24.319,0.792,3.256,22.767,25.871,6655,A,%
+T14,2024,sex,1,Hombres,sector_dist,3.0,Distribución por rama de actividad: Manufactura,35.564,0.44,1.238,34.701,36.427,31263,A,%
+T14,2024,sex,1,Hombres,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.591,0.066,11.217,0.461,0.72,31263,A,%
+T14,2024,sex,1,Hombres,sector_dist,5.0,Distribución por rama de actividad: Construcción,11.796,0.311,2.637,11.186,12.405,31263,A,%
+T14,2024,sex,1,Hombres,sector_dist,6.0,Distribución por rama de actividad: Comercio,13.628,0.339,2.485,12.965,14.292,31263,A,%
+T14,2024,sex,1,Hombres,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,13.922,0.331,2.379,13.272,14.571,31263,A,%
+T14,2024,sex,1,Hombres,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",7.137,0.237,3.317,6.674,7.601,31263,A,%
+T14,2024,sex,1,Hombres,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",17.362,0.367,2.113,16.643,18.081,31263,A,%
+T14,2024,sex,2,Mujeres,sector_dist,3.0,Distribución por rama de actividad: Manufactura,27.489,0.413,1.503,26.679,28.299,27077,A,%
+T14,2024,sex,2,Mujeres,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.509,0.077,15.201,0.358,0.661,27077,B,%
+T14,2024,sex,2,Mujeres,sector_dist,5.0,Distribución por rama de actividad: Construcción,0.658,0.084,12.762,0.494,0.823,27077,A,%
+T14,2024,sex,2,Mujeres,sector_dist,6.0,Distribución por rama de actividad: Comercio,26.163,0.44,1.682,25.301,27.026,27077,A,%
+T14,2024,sex,2,Mujeres,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,2.075,0.156,7.54,1.769,2.382,27077,A,%
+T14,2024,sex,2,Mujeres,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",22.745,0.429,1.885,21.904,23.585,27077,A,%
+T14,2024,sex,2,Mujeres,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",20.36,0.422,2.071,19.533,21.186,27077,A,%

@@ -1,0 +1,100 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T34,2014,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1436.872,9.825,0.684,1418.089,1456.6,33954,A,S/
+T34,2014,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),616.072,8.392,1.362,602.329,635.227,18201,A,S/
+T34,2014,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1256.598,9.252,0.736,1238.996,1275.264,52155,A,S/
+T34,2014,region_nat,1,Costa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1205.564,14.074,1.167,1171.896,1227.065,14633,A,S/
+T34,2014,region_nat,2,Sierra,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),900.422,16.093,1.787,865.1,928.184,19256,A,S/
+T34,2014,region_nat,3,Selva,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),986.661,16.997,1.723,951.693,1018.321,10879,A,S/
+T34,2014,region_nat,4,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1713.543,18.775,1.096,1687.317,1760.915,7387,A,S/
+T34,2014,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1452.111,10.91,0.751,1430.256,1473.021,31019,A,S/
+T34,2014,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1006.625,13.17,1.308,985.243,1036.868,21136,A,S/
+T34,2015,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1452.442,11.467,0.79,1427.913,1472.863,33529,A,S/
+T34,2015,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),614.86,9.372,1.524,596.789,633.525,18542,A,S/
+T34,2015,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1280.741,9.808,0.766,1261.232,1299.679,52071,A,S/
+T34,2015,region_nat,1,Costa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1203.047,13.039,1.084,1182.169,1233.28,15073,A,S/
+T34,2015,region_nat,2,Sierra,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),905.394,16.91,1.868,881.778,948.063,19021,A,S/
+T34,2015,region_nat,3,Selva,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1055.647,14.581,1.381,1022.448,1079.605,10953,A,S/
+T34,2015,region_nat,4,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1710.963,20.955,1.225,1676.965,1759.107,7024,A,S/
+T34,2015,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1462.139,12.02,0.822,1437.154,1484.272,31216,A,S/
+T34,2015,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1048.574,10.303,0.983,1028.951,1069.337,20855,A,S/
+T34,2016,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1459.553,12.446,0.853,1436.976,1485.764,39289,A,S/
+T34,2016,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),594.826,9.777,1.644,578.182,616.508,19058,A,S/
+T34,2016,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1297.772,10.676,0.823,1273.764,1315.613,58347,A,S/
+T34,2016,region_nat,1,Costa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1222.994,15.284,1.25,1196.232,1256.143,19301,A,S/
+T34,2016,region_nat,2,Sierra,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),905.599,16.407,1.812,867.824,932.14,20352,A,S/
+T34,2016,region_nat,3,Selva,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1000.972,15.368,1.535,968.043,1028.284,11265,A,S/
+T34,2016,region_nat,4,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1739.613,22.982,1.321,1703.271,1793.357,7429,A,S/
+T34,2016,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1470.786,13.514,0.919,1447.328,1500.301,34351,A,S/
+T34,2016,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1034.451,12.811,1.238,1009.011,1059.23,23996,A,S/
+T34,2017,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1451.883,15.085,1.039,1424.245,1483.378,37180,A,S/
+T34,2017,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),571.626,8.79,1.538,555.596,590.052,18811,A,S/
+T34,2017,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1282.926,5.657,0.441,1271.482,1293.658,55991,A,S/
+T34,2017,region_nat,1,Costa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1254.556,13.61,1.085,1224.99,1278.339,17791,A,S/
+T34,2017,region_nat,2,Sierra,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),864.424,15.767,1.824,833.878,895.683,19523,A,S/
+T34,2017,region_nat,3,Selva,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1001.845,13.692,1.367,970.993,1024.663,11384,A,S/
+T34,2017,region_nat,4,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1713.593,29.925,1.746,1671.064,1788.367,7293,A,S/
+T34,2017,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1472.023,17.518,1.19,1437.743,1506.41,32797,A,S/
+T34,2017,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1041.696,13.91,1.335,1021.985,1076.513,23194,A,S/
+T34,2018,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1471.607,11.868,0.806,1445.596,1492.119,38639,A,S/
+T34,2018,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),639.691,8.874,1.387,622.985,657.772,21562,A,S/
+T34,2018,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1292.811,8.041,0.622,1281.074,1312.595,60201,A,S/
+T34,2018,region_nat,1,Costa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1298.097,12.408,0.956,1275.047,1323.685,18219,A,S/
+T34,2018,region_nat,2,Sierra,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),925.279,15.167,1.639,889.882,949.334,22596,A,S/
+T34,2018,region_nat,3,Selva,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1001.936,15.672,1.564,972.542,1033.974,12125,A,S/
+T34,2018,region_nat,4,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1695.552,28.7,1.693,1650.721,1763.222,7261,A,S/
+T34,2018,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1493.811,10.924,0.731,1470.127,1512.949,35103,A,S/
+T34,2018,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1059.41,14.35,1.355,1026.255,1082.506,25098,A,S/
+T34,2019,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1485.762,7.844,0.528,1467.024,1497.771,36684,A,S/
+T34,2019,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),669.974,8.75,1.306,652.195,686.496,19193,A,S/
+T34,2019,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1313.603,9.587,0.73,1297.764,1335.343,55877,A,S/
+T34,2019,region_nat,1,Costa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1308.324,12.201,0.933,1289.897,1337.724,17842,A,S/
+T34,2019,region_nat,2,Sierra,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),981.502,12.333,1.257,952.308,1000.653,19674,A,S/
+T34,2019,region_nat,3,Selva,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1037.715,21.418,2.064,992.682,1076.639,11289,A,S/
+T34,2019,region_nat,4,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1703.471,28.654,1.682,1632.454,1744.777,7072,A,S/
+T34,2019,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1512.892,12.201,0.806,1497.46,1545.288,32335,A,S/
+T34,2019,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1070.738,12.518,1.169,1045.686,1094.756,23542,A,S/
+T34,2020,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1233.505,10.245,0.831,1220.696,1260.853,29255,A,S/
+T34,2020,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),528.355,10.53,1.993,506.192,547.468,16910,A,S/
+T34,2020,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1098.799,10.011,0.911,1077.856,1117.099,46165,A,S/
+T34,2020,region_nat,1,Costa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1156.24,16.573,1.433,1128.384,1193.348,14296,A,S/
+T34,2020,region_nat,2,Sierra,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),724.162,12.267,1.694,693.358,741.445,16636,A,S/
+T34,2020,region_nat,3,Selva,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),884.997,23.686,2.676,842.806,935.654,9893,A,S/
+T34,2020,region_nat,4,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1457.373,22.898,1.571,1402.88,1492.638,5340,A,S/
+T34,2020,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1196.703,14.135,1.181,1162.136,1217.544,27994,A,S/
+T34,2020,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),924.922,17.625,1.906,884.997,954.086,18171,A,S/
+T34,2021,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1272.416,10.048,0.79,1255.038,1294.423,33648,A,S/
+T34,2021,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),670.896,10.731,1.599,651.746,693.81,16985,A,S/
+T34,2021,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1171.585,6.688,0.571,1159.527,1185.742,50633,A,S/
+T34,2021,region_nat,1,Costa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1226.831,12.06,0.983,1204.713,1251.987,16149,A,S/
+T34,2021,region_nat,2,Sierra,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),864.33,15.44,1.786,833.922,894.444,17427,A,S/
+T34,2021,region_nat,3,Selva,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1034.53,18.715,1.809,990.137,1063.497,11088,A,S/
+T34,2021,region_nat,4,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1415.768,18.385,1.299,1376.753,1448.821,5969,A,S/
+T34,2021,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1321.133,11.269,0.853,1301.285,1345.459,29352,A,S/
+T34,2021,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),923.679,13.301,1.44,896.595,948.736,21281,A,S/
+T34,2022,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1323.365,9.503,0.718,1305.782,1343.033,35745,A,S/
+T34,2022,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),728.526,11.098,1.523,704.598,748.103,17262,A,S/
+T34,2022,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1216.053,8.832,0.726,1197.835,1232.458,53007,A,S/
+T34,2022,region_nat,1,Costa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1261.643,13.596,1.078,1233.002,1286.295,17170,A,S/
+T34,2022,region_nat,2,Sierra,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),961.277,13.827,1.438,929.827,984.027,17993,A,S/
+T34,2022,region_nat,3,Selva,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1074.572,14.89,1.386,1044.299,1102.668,11363,A,S/
+T34,2022,region_nat,4,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1439.288,24.162,1.679,1392.248,1486.962,6481,A,S/
+T34,2022,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1392.792,9.434,0.677,1377.928,1414.907,30208,A,S/
+T34,2022,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),981.217,12.301,1.254,956.293,1004.51,22799,A,S/
+T34,2023,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1325.868,5.461,0.412,1317.083,1338.491,35332,A,S/
+T34,2023,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),733.343,10.618,1.448,715.346,756.969,16795,A,S/
+T34,2023,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1233.752,6.549,0.531,1222.579,1248.252,52127,A,S/
+T34,2023,region_nat,1,Costa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1274.181,13.738,1.078,1247.11,1300.963,16972,A,S/
+T34,2023,region_nat,2,Sierra,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),973.321,16.123,1.657,937.788,1000.99,17503,A,S/
+T34,2023,region_nat,3,Selva,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1031.098,13.686,1.327,1005.34,1058.989,11038,A,S/
+T34,2023,region_nat,4,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1469.927,23.652,1.609,1428.901,1521.614,6614,A,S/
+T34,2023,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1392.908,13.012,0.934,1368.941,1419.945,29695,A,S/
+T34,2023,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1015.49,13.882,1.367,980.776,1035.192,22432,A,S/
+T34,2024,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1327.833,11.969,0.901,1308.25,1355.167,35251,A,S/
+T34,2024,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),733.667,11.076,1.51,712.333,755.75,16668,A,S/
+T34,2024,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1244.25,11.714,0.941,1218.5,1264.417,51919,A,S/
+T34,2024,region_nat,1,Costa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1295.083,7.93,0.612,1273.833,1304.917,16548,A,S/
+T34,2024,region_nat,2,Sierra,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1000.083,12.479,1.248,970.083,1019.0,17556,A,S/
+T34,2024,region_nat,3,Selva,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1078.583,15.817,1.466,1045.333,1107.333,11259,A,S/
+T34,2024,region_nat,4,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1493.458,21.897,1.466,1422.833,1508.667,6556,A,S/
+T34,2024,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1404.25,11.48,0.818,1382.0,1427.0,29417,A,S/
+T34,2024,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1025.083,5.272,0.514,1017.083,1037.75,22502,A,S/

@@ -1,0 +1,62 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Escuela de encuestas">
+  <div class="eyebrow" style="margin-top:28px">Escuela de encuestas</div>
+  <h1>Cómo leer (y no malinterpretar) la ENAHO</h1>
+  <div class="prose">
+    <p class="lede">Una guía práctica de los conceptos que separan una tabla correcta de una equivocada al trabajar con microdatos del INEI: diseño muestral, factores de expansión, varianza, escalera de conceptos laborales y plantillas de código.</p>
+
+    <h2>1. Diseño muestral en dos etapas</h2>
+    <p>La ENAHO es probabilística, estratificada, multietápica e independiente por departamento. En el área urbana la primera etapa selecciona conglomerados (manzanas agrupadas, ~140 viviendas) y la segunda viviendas; en el área rural, centros poblados/áreas de empadronamiento rural y luego viviendas. Los estratos combinan departamento y tamaño del centro poblado (<code>estrato</code> 1–5 urbano, 6–8 rural). Consecuencia: dos personas del mismo conglomerado no son observaciones independientes.</p>
+
+    <h2>2. Factores de expansión</h2>
+    <p>Cada módulo trae su factor. Para el módulo 500 se usa <code>fac500a</code>; para el 200, <code>facpob07</code>; para hogar (sumaria), <code>factor07</code>. Usar el factor de otro módulo sesga los totales. La suma de <code>fac500a</code> sobre personas 14+ reproduce la PET (26,8 millones en 2024).</p>
+
+    <h2>3. Varianza con diseño complejo</h2>
+    <p>El error estándar "ingenuo" (como si la muestra fuera aleatoria simple) subestima la incertidumbre. La linealización de Taylor agrega las contribuciones por conglomerado dentro de cada estrato:</p>
+    <pre>Var(R̂) = Σ_h  n_h/(n_h−1)  Σ_c ( Z_hc − Z̄_h )²,   con  z_i = w_i (y_i − R̂ x_i) / X̂</pre>
+    <p>Para medianas, el intervalo de Woodruff invierte la función de distribución ponderada alrededor del cuantil. Un RSE (se/estimación) mayor a 15 % debe hacer dudar de la cifra; mayor a 30 %, no publicarla.</p>
+
+    <h2>4. Escalera de conceptos</h2>
+    <table class="data"><thead><tr><th style="text-align:left">Concepto</th><th style="text-align:left">Variable</th><th style="text-align:left">Cuidado con</th></tr></thead><tbody>
+      <tr><td style="text-align:left">PET</td><td style="text-align:left">edad ≥ 14 (<code>p208a</code>)</td><td style="text-align:left">No usar 15+ (convención OIT) si se compara con INEI.</td></tr>
+      <tr><td style="text-align:left">PEA / ocupado / desocupado</td><td style="text-align:left"><code>ocu500</code> = 1, 2 (3 = desocupado oculto, 4 = inactivo)</td><td style="text-align:left">Incluir el código 3 sube la tasa de desempleo ~1,7 pp.</td></tr>
+      <tr><td style="text-align:left">Categoría ocupacional</td><td style="text-align:left"><code>p507</code></td><td style="text-align:left">Sólo ocupados; NA en el resto.</td></tr>
+      <tr><td style="text-align:left">Informalidad</td><td style="text-align:left"><code>ocupinf</code> (2014–2023)</td><td style="text-align:left">NA para no ocupados: nunca convertir a 0. Ausente en 2024.</td></tr>
+      <tr><td style="text-align:left">Horas</td><td style="text-align:left"><code>p513t</code>, <code>p518</code>, <code>p519</code>, <code>i520</code></td><td style="text-align:left"><code>i520</code> sólo está lleno cuando la semana pasada no fue normal.</td></tr>
+      <tr><td style="text-align:left">Ingreso laboral</td><td style="text-align:left"><code>i524a1, i530a, i538a1, i541a</code></td><td style="text-align:left">Son anuales e imputados; dividir entre 12; deflactar.</td></tr>
+      <tr><td style="text-align:left">Educación</td><td style="text-align:left"><code>p301a</code> (módulo 300)</td><td style="text-align:left"><code>p212</code> no es nivel educativo.</td></tr>
+      <tr><td style="text-align:left">Seguro de salud</td><td style="text-align:left"><code>p4191–p4198</code> (módulo 400)</td><td style="text-align:left"><code>p558a*</code> es pensiones, no salud.</td></tr>
+      <tr><td style="text-align:left">Llaves de unión</td><td style="text-align:left"><code>conglome, vivienda, hogar, codperso</code></td><td style="text-align:left">Ceros a la izquierda: en .sav son texto, en .dta a veces numéricos.</td></tr>
+    </tbody></table>
+
+    <h2>5. Plantillas</h2>
+    <h3>Python (pandas + pyreadstat)</h3>
+    <pre>import pyreadstat, pandas as pd
+df, meta = pyreadstat.read_dta("enaho01a-2023-500.dta", usecols=["conglome","vivienda","hogar","codperso","ocu500","p207","p208a","fac500a","ocupinf"])
+df.columns = df.columns.str.lower()
+pet = df[df.p208a >= 14]
+pea = pet[pet.ocu500.isin([1, 2])]
+tasa_actividad = pea.fac500a.sum() / pet.fac500a.sum()
+desempleo = pea.loc[pea.ocu500 == 2, "fac500a"].sum() / pea.fac500a.sum()</pre>
+    <h3>R (survey)</h3>
+    <pre>library(haven); library(survey); library(dplyr)
+d &lt;- read_dta("enaho01a-2023-500.dta") |&gt; rename_all(tolower) |&gt; filter(p208a &gt;= 14)
+options(survey.lonely.psu = "adjust")
+des &lt;- svydesign(ids = ~conglome, strata = ~interaction(substr(ubigeo,1,2), estrato), weights = ~fac500a, data = d, nest = TRUE)
+svymean(~I(ocu500 %in% 1:2), des)                       # tasa de actividad
+svyby(~I(ocu500 == 2), ~p207, subset(des, ocu500 %in% 1:2), svymean)   # desempleo por sexo</pre>
+    <h3>Stata</h3>
+    <pre>use enaho01a-2023-500.dta, clear
+keep if p208a &gt;= 14
+gen dept = substr(ubigeo, 1, 2)
+egen strat = group(dept estrato)
+svyset conglome [pw = fac500a], strata(strat) singleunit(centered)
+gen pea = inlist(ocu500, 1, 2)
+gen desocupado = ocu500 == 2 if pea
+svy: mean pea
+svy: mean desocupado, over(p207)</pre>
+    <p>El pipeline completo del Observatorio (Python) reproduce estas operaciones para 2014–2024 y publica cada resultado con su error estándar. Ver <a href="/acerca/metodologia/">Metodología</a>.</p>
+  </div>
+</Base>

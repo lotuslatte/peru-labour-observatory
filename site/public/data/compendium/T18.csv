@@ -1,0 +1,201 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T18,2024,dept_sex,01|1,Amazonas × Hombres,informality,,Tasa de empleo informal,85.763,1.733,2.02,82.367,89.158,1192,A,%
+T18,2024,dept_sex,01|1,Amazonas × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",84.387,1.214,1.439,82.007,86.767,1466,A,%
+T18,2024,dept_sex,01|1,Amazonas × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1106.25,44.835,4.053,993.25,1169.0,1077,A,S/
+T18,2024,dept_sex,01|1,Amazonas × Hombres,ur,,Tasa de desempleo,2.75,0.73,26.534,1.32,4.181,1215,B,%
+T18,2024,dept_sex,01|2,Amazonas × Mujeres,informality,,Tasa de empleo informal,85.848,1.625,1.893,82.662,89.033,1006,A,%
+T18,2024,dept_sex,01|2,Amazonas × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",68.39,1.542,2.254,65.368,71.412,1518,A,%
+T18,2024,dept_sex,01|2,Amazonas × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),830.75,51.319,6.177,714.0,915.167,684,A,S/
+T18,2024,dept_sex,01|2,Amazonas × Mujeres,ur,,Tasa de desempleo,2.097,0.587,27.981,0.947,3.247,1023,B,%
+T18,2024,dept_sex,02|1,Áncash × Hombres,informality,,Tasa de empleo informal,76.909,1.651,2.146,73.674,80.144,1367,A,%
+T18,2024,dept_sex,02|1,Áncash × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",83.328,1.104,1.325,81.164,85.492,1716,A,%
+T18,2024,dept_sex,02|1,Áncash × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1286.083,32.824,2.552,1227.333,1356.0,1267,A,S/
+T18,2024,dept_sex,02|1,Áncash × Hombres,ur,,Tasa de desempleo,2.587,0.497,19.212,1.613,3.561,1409,B,%
+T18,2024,dept_sex,02|2,Áncash × Mujeres,informality,,Tasa de empleo informal,82.324,1.544,1.875,79.298,85.349,1210,A,%
+T18,2024,dept_sex,02|2,Áncash × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",66.274,1.409,2.126,63.512,69.036,1904,A,%
+T18,2024,dept_sex,02|2,Áncash × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),775.833,63.132,8.137,647.11,894.583,892,A,S/
+T18,2024,dept_sex,02|2,Áncash × Mujeres,ur,,Tasa de desempleo,5.263,0.868,16.503,3.56,6.965,1259,B,%
+T18,2024,dept_sex,03|1,Apurímac × Hombres,informality,,Tasa de empleo informal,86.959,1.705,1.96,83.618,90.3,832,A,%
+T18,2024,dept_sex,03|1,Apurímac × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",86.075,1.148,1.333,83.826,88.325,1005,A,%
+T18,2024,dept_sex,03|1,Apurímac × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1138.729,52.169,4.581,1061.25,1265.748,759,A,S/
+T18,2024,dept_sex,03|1,Apurímac × Hombres,ur,,Tasa de desempleo,,,,,,845,S,%
+T18,2024,dept_sex,03|2,Apurímac × Mujeres,informality,,Tasa de empleo informal,88.788,1.801,2.029,85.257,92.318,801,A,%
+T18,2024,dept_sex,03|2,Apurímac × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",74.413,1.588,2.134,71.3,77.525,1081,A,%
+T18,2024,dept_sex,03|2,Apurímac × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),800.917,67.518,8.43,656.417,921.083,524,A,S/
+T18,2024,dept_sex,03|2,Apurímac × Mujeres,ur,,Tasa de desempleo,3.716,0.941,25.32,1.872,5.56,820,B,%
+T18,2024,dept_sex,04|1,Arequipa × Hombres,informality,,Tasa de empleo informal,61.55,2.223,3.611,57.193,65.906,1332,A,%
+T18,2024,dept_sex,04|1,Arequipa × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.015,1.234,1.582,75.596,80.435,1787,A,%
+T18,2024,dept_sex,04|1,Arequipa × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1781.253,64.329,3.611,1650.75,1902.917,1265,A,S/
+T18,2024,dept_sex,04|1,Arequipa × Hombres,ur,,Tasa de desempleo,6.124,1.091,17.816,3.985,8.262,1399,B,%
+T18,2024,dept_sex,04|2,Arequipa × Mujeres,informality,,Tasa de empleo informal,68.41,2.147,3.139,64.201,72.619,1150,A,%
+T18,2024,dept_sex,04|2,Arequipa × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",62.751,1.605,2.558,59.604,65.897,1956,A,%
+T18,2024,dept_sex,04|2,Arequipa × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1140.667,40.498,3.55,1051.417,1210.167,1079,A,S/
+T18,2024,dept_sex,04|2,Arequipa × Mujeres,ur,,Tasa de desempleo,8.692,1.163,13.378,6.412,10.971,1242,A,%
+T18,2024,dept_sex,05|1,Ayacucho × Hombres,informality,,Tasa de empleo informal,88.222,1.689,1.915,84.911,91.533,988,A,%
+T18,2024,dept_sex,05|1,Ayacucho × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",82.059,1.219,1.486,79.669,84.449,1256,A,%
+T18,2024,dept_sex,05|1,Ayacucho × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1020.5,56.974,5.583,921.333,1144.667,907,A,S/
+T18,2024,dept_sex,05|1,Ayacucho × Hombres,ur,,Tasa de desempleo,3.431,0.755,22.014,1.951,4.911,1013,B,%
+T18,2024,dept_sex,05|2,Ayacucho × Mujeres,informality,,Tasa de empleo informal,91.296,1.443,1.581,88.467,94.124,946,A,%
+T18,2024,dept_sex,05|2,Ayacucho × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.491,1.589,2.255,67.376,73.606,1418,A,%
+T18,2024,dept_sex,05|2,Ayacucho × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),658.667,57.314,8.702,567.667,792.333,668,A,S/
+T18,2024,dept_sex,05|2,Ayacucho × Mujeres,ur,,Tasa de desempleo,4.174,0.871,20.865,2.467,5.881,971,B,%
+T18,2024,dept_sex,06|1,Cajamarca × Hombres,informality,,Tasa de empleo informal,85.023,1.446,1.701,82.189,87.858,1340,A,%
+T18,2024,dept_sex,06|1,Cajamarca × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",84.762,1.078,1.271,82.65,86.874,1674,A,%
+T18,2024,dept_sex,06|1,Cajamarca × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),959.626,48.598,5.064,851.167,1041.667,1246,A,S/
+T18,2024,dept_sex,06|1,Cajamarca × Hombres,ur,,Tasa de desempleo,2.578,0.571,22.169,1.458,3.698,1369,B,%
+T18,2024,dept_sex,06|2,Cajamarca × Mujeres,informality,,Tasa de empleo informal,88.372,1.253,1.418,85.916,90.829,1168,A,%
+T18,2024,dept_sex,06|2,Cajamarca × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",65.757,1.51,2.296,62.798,68.715,1819,A,%
+T18,2024,dept_sex,06|2,Cajamarca × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),434.667,38.627,8.887,380.167,531.583,876,A,S/
+T18,2024,dept_sex,06|2,Cajamarca × Mujeres,ur,,Tasa de desempleo,3.679,0.768,20.859,2.175,5.184,1200,B,%
+T18,2024,dept_sex,07|1,Callao × Hombres,informality,,Tasa de empleo informal,55.062,2.043,3.711,51.058,59.067,884,A,%
+T18,2024,dept_sex,07|1,Callao × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",75.04,1.255,1.672,72.581,77.499,1353,A,%
+T18,2024,dept_sex,07|1,Callao × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1543.75,45.388,2.94,1500.917,1678.833,865,A,S/
+T18,2024,dept_sex,07|1,Callao × Hombres,ur,,Tasa de desempleo,4.947,0.807,16.313,3.365,6.528,929,B,%
+T18,2024,dept_sex,07|2,Callao × Mujeres,informality,,Tasa de empleo informal,61.897,2.101,3.394,57.78,66.015,743,A,%
+T18,2024,dept_sex,07|2,Callao × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",55.45,1.56,2.813,52.393,58.508,1491,A,%
+T18,2024,dept_sex,07|2,Callao × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1255.833,26.467,2.108,1197.0,1300.75,736,A,S/
+T18,2024,dept_sex,07|2,Callao × Mujeres,ur,,Tasa de desempleo,7.117,1.113,15.641,4.935,9.299,795,B,%
+T18,2024,dept_sex,08|1,Cusco × Hombres,informality,,Tasa de empleo informal,79.456,1.619,2.038,76.282,82.629,1152,A,%
+T18,2024,dept_sex,08|1,Cusco × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.953,1.296,1.621,77.412,82.493,1490,A,%
+T18,2024,dept_sex,08|1,Cusco × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1290.417,53.36,4.135,1204.083,1413.25,1049,A,S/
+T18,2024,dept_sex,08|1,Cusco × Hombres,ur,,Tasa de desempleo,3.846,0.857,22.279,2.167,5.526,1186,B,%
+T18,2024,dept_sex,08|2,Cusco × Mujeres,informality,,Tasa de empleo informal,83.782,1.575,1.88,80.696,86.869,1148,A,%
+T18,2024,dept_sex,08|2,Cusco × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",73.185,1.459,1.994,70.325,76.046,1621,A,%
+T18,2024,dept_sex,08|2,Cusco × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),931.917,56.485,6.061,819.417,1040.833,796,A,S/
+T18,2024,dept_sex,08|2,Cusco × Mujeres,ur,,Tasa de desempleo,3.871,0.948,24.483,2.013,5.728,1184,B,%
+T18,2024,dept_sex,09|1,Huancavelica × Hombres,informality,,Tasa de empleo informal,86.667,1.526,1.761,83.675,89.659,984,A,%
+T18,2024,dept_sex,09|1,Huancavelica × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",83.15,1.486,1.787,80.237,86.063,1189,A,%
+T18,2024,dept_sex,09|1,Huancavelica × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),912.25,41.625,4.563,834.833,998.0,900,A,S/
+T18,2024,dept_sex,09|1,Huancavelica × Hombres,ur,,Tasa de desempleo,2.944,0.8,27.162,1.377,4.511,1001,B,%
+T18,2024,dept_sex,09|2,Huancavelica × Mujeres,informality,,Tasa de empleo informal,91.57,1.614,1.763,88.406,94.733,1092,A,%
+T18,2024,dept_sex,09|2,Huancavelica × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",77.974,1.342,1.721,75.345,80.604,1399,A,%
+T18,2024,dept_sex,09|2,Huancavelica × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),626.083,38.096,6.085,551.75,701.083,680,A,S/
+T18,2024,dept_sex,09|2,Huancavelica × Mujeres,ur,,Tasa de desempleo,,,,,,1114,S,%
+T18,2024,dept_sex,10|1,Huánuco × Hombres,informality,,Tasa de empleo informal,86.85,1.804,2.078,83.313,90.386,1156,A,%
+T18,2024,dept_sex,10|1,Huánuco × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",82.882,1.46,1.762,80.019,85.744,1438,A,%
+T18,2024,dept_sex,10|1,Huánuco × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),856.236,59.18,6.912,740.25,972.231,1087,A,S/
+T18,2024,dept_sex,10|1,Huánuco × Hombres,ur,,Tasa de desempleo,,,,,,1176,S,%
+T18,2024,dept_sex,10|2,Huánuco × Mujeres,informality,,Tasa de empleo informal,88.262,2.013,2.281,84.316,92.209,1005,A,%
+T18,2024,dept_sex,10|2,Huánuco × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",62.5,2.151,3.441,58.285,66.715,1554,A,%
+T18,2024,dept_sex,10|2,Huánuco × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),506.833,42.135,8.313,420.0,585.167,734,A,S/
+T18,2024,dept_sex,10|2,Huánuco × Mujeres,ur,,Tasa de desempleo,3.19,0.895,28.07,1.435,4.945,1037,B,%
+T18,2024,dept_sex,11|1,Ica × Hombres,informality,,Tasa de empleo informal,61.956,1.722,2.779,58.581,65.33,1373,A,%
+T18,2024,dept_sex,11|1,Ica × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.747,1.095,1.356,78.601,82.893,1813,A,%
+T18,2024,dept_sex,11|1,Ica × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1867.75,24.086,1.29,1813.167,1907.583,1313,A,S/
+T18,2024,dept_sex,11|1,Ica × Hombres,ur,,Tasa de desempleo,1.877,0.456,24.305,0.983,2.77,1398,B,%
+T18,2024,dept_sex,11|2,Ica × Mujeres,informality,,Tasa de empleo informal,65.782,1.88,2.857,62.098,69.466,1203,A,%
+T18,2024,dept_sex,11|2,Ica × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",65.571,1.277,1.948,63.068,68.074,1966,A,%
+T18,2024,dept_sex,11|2,Ica × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1415.417,45.707,3.229,1334.5,1513.667,1120,A,S/
+T18,2024,dept_sex,11|2,Ica × Mujeres,ur,,Tasa de desempleo,4.127,0.737,17.851,2.683,5.571,1248,B,%
+T18,2024,dept_sex,12|1,Junín × Hombres,informality,,Tasa de empleo informal,78.868,1.824,2.313,75.293,82.443,1405,A,%
+T18,2024,dept_sex,12|1,Junín × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",82.065,1.185,1.443,79.743,84.386,1783,A,%
+T18,2024,dept_sex,12|1,Junín × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1378.75,45.664,3.312,1290.5,1469.5,1292,A,S/
+T18,2024,dept_sex,12|1,Junín × Hombres,ur,,Tasa de desempleo,1.864,0.543,29.136,0.8,2.929,1433,B,%
+T18,2024,dept_sex,12|2,Junín × Mujeres,informality,,Tasa de empleo informal,84.53,1.358,1.606,81.87,87.191,1267,A,%
+T18,2024,dept_sex,12|2,Junín × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.6,1.362,1.957,66.931,72.27,1956,A,%
+T18,2024,dept_sex,12|2,Junín × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),943.5,44.155,4.68,831.083,1004.167,1023,A,S/
+T18,2024,dept_sex,12|2,Junín × Mujeres,ur,,Tasa de desempleo,3.42,0.74,21.633,1.97,4.87,1303,B,%
+T18,2024,dept_sex,13|1,La Libertad × Hombres,informality,,Tasa de empleo informal,67.582,1.724,2.55,64.204,70.96,1332,A,%
+T18,2024,dept_sex,13|1,La Libertad × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.677,1.071,1.345,77.577,81.776,1816,A,%
+T18,2024,dept_sex,13|1,La Libertad × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1489.667,37.216,2.498,1397.417,1543.299,1279,A,S/
+T18,2024,dept_sex,13|1,La Libertad × Hombres,ur,,Tasa de desempleo,2.974,0.485,16.313,2.023,3.926,1374,B,%
+T18,2024,dept_sex,13|2,La Libertad × Mujeres,informality,,Tasa de empleo informal,72.551,1.616,2.228,69.383,75.719,1149,A,%
+T18,2024,dept_sex,13|2,La Libertad × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",57.475,1.323,2.301,54.883,60.068,2110,A,%
+T18,2024,dept_sex,13|2,La Libertad × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),952.75,43.474,4.563,858.417,1028.833,1052,A,S/
+T18,2024,dept_sex,13|2,La Libertad × Mujeres,ur,,Tasa de desempleo,5.933,0.829,13.969,4.309,7.558,1209,A,%
+T18,2024,dept_sex,14|1,Lambayeque × Hombres,informality,,Tasa de empleo informal,73.613,1.95,2.649,69.79,77.435,1199,A,%
+T18,2024,dept_sex,14|1,Lambayeque × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",77.856,1.199,1.54,75.507,80.205,1640,A,%
+T18,2024,dept_sex,14|1,Lambayeque × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1401.917,26.446,1.886,1316.0,1419.667,1146,A,S/
+T18,2024,dept_sex,14|1,Lambayeque × Hombres,ur,,Tasa de desempleo,3.925,0.728,18.56,2.497,5.352,1237,B,%
+T18,2024,dept_sex,14|2,Lambayeque × Mujeres,informality,,Tasa de empleo informal,78.223,1.601,2.046,75.085,81.36,1011,A,%
+T18,2024,dept_sex,14|2,Lambayeque × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",57.08,1.393,2.44,54.35,59.809,1860,A,%
+T18,2024,dept_sex,14|2,Lambayeque × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),797.417,50.171,6.292,722.917,919.583,909,A,S/
+T18,2024,dept_sex,14|2,Lambayeque × Mujeres,ur,,Tasa de desempleo,4.006,0.782,19.52,2.473,5.538,1042,B,%
+T18,2024,dept_sex,15|1,Lima × Hombres,informality,,Tasa de empleo informal,58.452,1.165,1.992,56.169,60.734,4100,A,%
+T18,2024,dept_sex,15|1,Lima × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",76.972,0.661,0.859,75.677,78.268,5771,A,%
+T18,2024,dept_sex,15|1,Lima × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1596.75,37.931,2.376,1540.417,1689.104,4001,A,S/
+T18,2024,dept_sex,15|1,Lima × Hombres,ur,,Tasa de desempleo,5.136,0.455,8.862,4.244,6.029,4294,A,%
+T18,2024,dept_sex,15|2,Lima × Mujeres,informality,,Tasa de empleo informal,64.519,1.2,1.859,62.168,66.87,3452,A,%
+T18,2024,dept_sex,15|2,Lima × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",58.25,0.749,1.286,56.781,59.718,6424,A,%
+T18,2024,dept_sex,15|2,Lima × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1268.833,23.342,1.84,1206.917,1298.417,3316,A,S/
+T18,2024,dept_sex,15|2,Lima × Mujeres,ur,,Tasa de desempleo,6.631,0.538,8.109,5.577,7.684,3667,A,%
+T18,2024,dept_sex,16|1,Loreto × Hombres,informality,,Tasa de empleo informal,81.292,1.365,1.679,78.617,83.967,1442,A,%
+T18,2024,dept_sex,16|1,Loreto × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.86,1.073,1.343,77.757,81.962,1917,A,%
+T18,2024,dept_sex,16|1,Loreto × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1129.5,45.062,3.99,1050.861,1227.5,1328,A,S/
+T18,2024,dept_sex,16|1,Loreto × Hombres,ur,,Tasa de desempleo,2.487,0.457,18.388,1.591,3.384,1472,B,%
+T18,2024,dept_sex,16|2,Loreto × Mujeres,informality,,Tasa de empleo informal,81.731,1.84,2.252,78.124,85.337,1062,A,%
+T18,2024,dept_sex,16|2,Loreto × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",55.778,1.378,2.47,53.078,58.478,1998,A,%
+T18,2024,dept_sex,16|2,Loreto × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),993.833,51.808,5.213,909.417,1112.5,854,A,S/
+T18,2024,dept_sex,16|2,Loreto × Mujeres,ur,,Tasa de desempleo,4.219,0.859,20.362,2.536,5.903,1096,B,%
+T18,2024,dept_sex,17|1,Madre de Dios × Hombres,informality,,Tasa de empleo informal,80.316,3.106,3.867,74.229,86.404,541,A,%
+T18,2024,dept_sex,17|1,Madre de Dios × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",84.656,2.018,2.383,80.702,88.611,670,A,%
+T18,2024,dept_sex,17|1,Madre de Dios × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1959.833,109.398,5.582,1754.917,2183.75,504,A,S/
+T18,2024,dept_sex,17|1,Madre de Dios × Hombres,ur,,Tasa de desempleo,,,,,,545,S,%
+T18,2024,dept_sex,17|2,Madre de Dios × Mujeres,informality,,Tasa de empleo informal,83.493,3.048,3.651,77.519,89.468,466,A,%
+T18,2024,dept_sex,17|2,Madre de Dios × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",65.316,2.339,3.581,60.732,69.9,751,A,%
+T18,2024,dept_sex,17|2,Madre de Dios × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1366.833,131.975,9.656,1094.0,1611.333,402,A,S/
+T18,2024,dept_sex,17|2,Madre de Dios × Mujeres,ur,,Tasa de desempleo,,,,,,476,S,%
+T18,2024,dept_sex,18|1,Moquegua × Hombres,informality,,Tasa de empleo informal,62.275,2.526,4.056,57.325,67.226,761,A,%
+T18,2024,dept_sex,18|1,Moquegua × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.514,1.454,1.829,76.664,82.365,1053,A,%
+T18,2024,dept_sex,18|1,Moquegua × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1953.083,106.741,5.465,1784.333,2202.75,717,A,S/
+T18,2024,dept_sex,18|1,Moquegua × Hombres,ur,,Tasa de desempleo,5.327,1.053,19.77,3.263,7.391,803,B,%
+T18,2024,dept_sex,18|2,Moquegua × Mujeres,informality,,Tasa de empleo informal,72.401,2.544,3.513,67.415,77.386,688,A,%
+T18,2024,dept_sex,18|2,Moquegua × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",66.763,1.868,2.798,63.102,70.424,1052,A,%
+T18,2024,dept_sex,18|2,Moquegua × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1197.0,73.768,6.163,1064.333,1353.5,598,A,S/
+T18,2024,dept_sex,18|2,Moquegua × Mujeres,ur,,Tasa de desempleo,3.763,1.084,28.806,1.638,5.887,712,B,%
+T18,2024,dept_sex,19|1,Pasco × Hombres,informality,,Tasa de empleo informal,73.859,2.681,3.63,68.604,79.115,796,A,%
+T18,2024,dept_sex,19|1,Pasco × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",84.275,1.388,1.647,81.555,86.995,1005,A,%
+T18,2024,dept_sex,19|1,Pasco × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1179.167,65.052,5.517,1062.083,1317.083,742,A,S/
+T18,2024,dept_sex,19|1,Pasco × Hombres,ur,,Tasa de desempleo,3.866,1.082,27.987,1.745,5.986,827,B,%
+T18,2024,dept_sex,19|2,Pasco × Mujeres,informality,,Tasa de empleo informal,82.62,1.928,2.333,78.841,86.399,682,A,%
+T18,2024,dept_sex,19|2,Pasco × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",64.362,2.426,3.769,59.608,69.116,1096,A,%
+T18,2024,dept_sex,19|2,Pasco × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),691.833,52.403,7.575,605.75,811.167,504,A,S/
+T18,2024,dept_sex,19|2,Pasco × Mujeres,ur,,Tasa de desempleo,5.973,1.194,19.992,3.633,8.313,715,B,%
+T18,2024,dept_sex,20|1,Piura × Hombres,informality,,Tasa de empleo informal,77.114,1.398,1.813,74.374,79.854,1699,A,%
+T18,2024,dept_sex,20|1,Piura × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",85.359,0.716,0.839,83.955,86.763,2141,A,%
+T18,2024,dept_sex,20|1,Piura × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1296.25,29.146,2.248,1257.333,1371.583,1633,A,S/
+T18,2024,dept_sex,20|1,Piura × Hombres,ur,,Tasa de desempleo,3.659,0.552,15.074,2.578,4.74,1756,B,%
+T18,2024,dept_sex,20|2,Piura × Mujeres,informality,,Tasa de empleo informal,79.52,1.462,1.838,76.655,82.384,1348,A,%
+T18,2024,dept_sex,20|2,Piura × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",62.674,1.213,1.936,60.296,65.051,2330,A,%
+T18,2024,dept_sex,20|2,Piura × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),644.417,36.289,5.631,566.083,708.333,1209,A,S/
+T18,2024,dept_sex,20|2,Piura × Mujeres,ur,,Tasa de desempleo,6.537,0.729,11.152,5.108,7.966,1426,A,%
+T18,2024,dept_sex,21|1,Puno × Hombres,informality,,Tasa de empleo informal,86.212,1.536,1.781,83.202,89.222,932,A,%
+T18,2024,dept_sex,21|1,Puno × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.826,1.387,1.76,76.107,81.545,1251,A,%
+T18,2024,dept_sex,21|1,Puno × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1078.083,42.985,3.987,987.5,1156.0,816,A,S/
+T18,2024,dept_sex,21|1,Puno × Hombres,ur,,Tasa de desempleo,7.06,1.039,14.722,5.023,9.097,993,A,%
+T18,2024,dept_sex,21|2,Puno × Mujeres,informality,,Tasa de empleo informal,91.503,1.263,1.38,89.028,93.977,961,A,%
+T18,2024,dept_sex,21|2,Puno × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",71.199,1.739,2.443,67.79,74.607,1391,A,%
+T18,2024,dept_sex,21|2,Puno × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),606.25,35.8,5.905,525.083,665.417,814,A,S/
+T18,2024,dept_sex,21|2,Puno × Mujeres,ur,,Tasa de desempleo,12.93,1.412,10.924,10.161,15.698,1046,A,%
+T18,2024,dept_sex,22|1,San Martín × Hombres,informality,,Tasa de empleo informal,82.657,1.335,1.615,80.041,85.274,1410,A,%
+T18,2024,dept_sex,22|1,San Martín × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",87.485,0.896,1.024,85.728,89.241,1699,A,%
+T18,2024,dept_sex,22|1,San Martín × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1203.25,51.957,4.318,1091.583,1295.25,1323,A,S/
+T18,2024,dept_sex,22|1,San Martín × Hombres,ur,,Tasa de desempleo,,,,,,1422,S,%
+T18,2024,dept_sex,22|2,San Martín × Mujeres,informality,,Tasa de empleo informal,84.447,1.329,1.574,81.842,87.053,1115,A,%
+T18,2024,dept_sex,22|2,San Martín × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",64.673,1.596,2.468,61.545,67.801,1776,A,%
+T18,2024,dept_sex,22|2,San Martín × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),862.75,50.001,5.796,777.167,973.167,885,A,S/
+T18,2024,dept_sex,22|2,San Martín × Mujeres,ur,,Tasa de desempleo,4.13,0.884,21.408,2.397,5.863,1158,B,%
+T18,2024,dept_sex,23|1,Tacna × Hombres,informality,,Tasa de empleo informal,73.098,2.411,3.298,68.373,77.823,1047,A,%
+T18,2024,dept_sex,23|1,Tacna × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",76.92,1.571,2.042,73.841,80.0,1477,A,%
+T18,2024,dept_sex,23|1,Tacna × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1471.917,50.235,3.413,1361.833,1558.75,1012,A,S/
+T18,2024,dept_sex,23|1,Tacna × Hombres,ur,,Tasa de desempleo,4.142,0.948,22.897,2.283,6.0,1094,B,%
+T18,2024,dept_sex,23|2,Tacna × Mujeres,informality,,Tasa de empleo informal,80.552,3.08,3.823,74.516,86.588,882,A,%
+T18,2024,dept_sex,23|2,Tacna × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",60.864,1.999,3.284,56.946,64.781,1491,A,%
+T18,2024,dept_sex,23|2,Tacna × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1076.0,34.014,3.161,993.667,1127.0,817,A,S/
+T18,2024,dept_sex,23|2,Tacna × Mujeres,ur,,Tasa de desempleo,8.33,1.578,18.947,5.237,11.423,942,B,%
+T18,2024,dept_sex,24|1,Tumbes × Hombres,informality,,Tasa de empleo informal,78.85,1.91,2.423,75.106,82.594,802,A,%
+T18,2024,dept_sex,24|1,Tumbes × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",81.124,1.278,1.576,78.619,83.63,1085,A,%
+T18,2024,dept_sex,24|1,Tumbes × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1318.833,31.931,2.421,1221.083,1346.25,774,A,S/
+T18,2024,dept_sex,24|1,Tumbes × Hombres,ur,,Tasa de desempleo,,,,,,823,S,%
+T18,2024,dept_sex,24|2,Tumbes × Mujeres,informality,,Tasa de empleo informal,80.196,2.257,2.814,75.773,84.619,590,A,%
+T18,2024,dept_sex,24|2,Tumbes × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",55.886,2.057,3.68,51.855,59.917,1075,A,%
+T18,2024,dept_sex,24|2,Tumbes × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1110.167,55.082,4.962,955.333,1171.25,549,A,S/
+T18,2024,dept_sex,24|2,Tumbes × Mujeres,ur,,Tasa de desempleo,3.813,1.028,26.956,1.799,5.828,612,B,%
+T18,2024,dept_sex,25|1,Ucayali × Hombres,informality,,Tasa de empleo informal,83.375,1.361,1.633,80.707,86.043,1200,A,%
+T18,2024,dept_sex,25|1,Ucayali × Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",85.816,0.881,1.026,84.09,87.541,1498,A,%
+T18,2024,dept_sex,25|1,Ucayali × Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1172.917,25.064,2.137,1128.333,1226.583,1115,A,S/
+T18,2024,dept_sex,25|1,Ucayali × Hombres,ur,,Tasa de desempleo,2.925,0.59,20.166,1.769,4.081,1235,B,%
+T18,2024,dept_sex,25|2,Ucayali × Mujeres,informality,,Tasa de empleo informal,84.433,1.468,1.739,81.556,87.311,935,A,%
+T18,2024,dept_sex,25|2,Ucayali × Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",65.098,1.551,2.383,62.058,68.138,1507,A,%
+T18,2024,dept_sex,25|2,Ucayali × Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),889.5,40.073,4.505,812.417,969.5,781,A,S/
+T18,2024,dept_sex,25|2,Ucayali × Mujeres,ur,,Tasa de desempleo,2.501,0.563,22.524,1.397,3.605,960,B,%

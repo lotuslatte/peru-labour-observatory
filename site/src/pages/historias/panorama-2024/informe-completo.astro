@@ -1,0 +1,16 @@
+---
+import Base from '../../../layouts/Base.astro';
+import CompendiumTable from '../../../components/charts/CompendiumTable';
+import { loadCompendiumIndex, loadHeadline } from '../../../data/loaders';
+const idx = loadCompendiumIndex(); const h = loadHeadline();
+const bySection = Object.entries(idx.sections).map(([n, title]) => ({ n: +n, title, tables: idx.tables.filter((t: any) => t.section === +n) }));
+---
+<Base title="Informe completo ENAHO 2024" wide>
+  <div class="eyebrow" style="margin-top:28px">Informe de microdatos · ENAHO {h.year} · {idx.tables.length} tablas</div>
+  <h1>Compendio ENAHO 2024: informe completo</h1>
+  <p class="lede">Las once secciones del compendio estadístico, con cada celda acompañada de su error estándar, intervalo de confianza y grado de confiabilidad.</p>
+  <nav class="card small" style="margin-bottom:24px"><strong>Secciones:</strong> {bySection.map(s => <a href={`#s${s.n}`} style="margin-right:12px">{s.n}. {s.title}</a>)}</nav>
+  {bySection.map(s => <section id={`s${s.n}`} style="margin-top:36px"><h2>{s.n}. {s.title}</h2>
+    {s.tables.map((t: any) => <div class="card" style="margin-top:16px"><h3 id={t.id}>{t.id} · {t.title}</h3><CompendiumTable client:visible file={t.file} title={t.title} id={t.id} /></div>)}
+  </section>)}
+</Base>

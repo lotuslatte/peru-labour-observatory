@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import KpiTile from '../../components/ui/KpiTile.astro';
+import GradeLegend from '../../components/ui/GradeLegend.astro';
+import PrintBar from '../../components/ui/PrintBar.astro';
+import EmbedSnippet from '../../components/ui/EmbedSnippet.astro';
+import BarDist from '../../components/charts/BarDist';
+import Dumbbell from '../../components/charts/Dumbbell';
+import TrendLine from '../../components/charts/TrendLine';
+import RadarComparator from '../../components/charts/RadarComparator';
+import { loadAtlas, loadProfile, loadHeadline } from '../../data/loaders';
+export async function getStaticPaths() { return loadAtlas().regions.map(r => ({ params: { id: r.id } })); }
+const { id } = Astro.params; const p = loadProfile(id!); const a = loadAtlas(); const h = loadHeadline();
+const dims = a.dims.filter(d => d.primary);
+const fmt = (c: any, u: string) => c?.v == null ? '—' : u === 'S/' ? 'S/ ' + c.v.toLocaleString('es-PE') : u === 'h' ? c.v.toFixed(1) + ' h' : c.v.toFixed(1) + (u === '%' ? ' %' : ' pp');
+const labelOf = (ind: string) => ({ lfpr: 'Tasa de actividad', ur: 'Desempleo', informality: 'Informalidad', median_inc_real: 'Ingreso mediano', adecuado: 'Empleo adecuado', neet: 'NiNi 15–29' } as any)[ind] ?? ind;
+const dumb = (g: string, aK: string, bK: string) => p.dumbbells[g] ? Object.entries(p.dumbbells[g]).map(([ind, cells]: any) => ({ label: labelOf(ind), a: cells[aK], b: cells[bK] })) : [];
+const pctOnly = (rows: any[]) => rows.filter(r => r.label !== 'Ingreso mediano');
+const incOnly = (rows: any[]) => rows.filter(r => r.label === 'Ingreso mediano');
+const qLabels: Record<string, string> = { subemp_hours: 'Subempleo por horas', subemp_income: 'Subempleo por ingresos (aprox.)', hours_mean: 'Horas semanales promedio', hours_ge60: 'Ocupados con ≥60 h', contract_any: 'Asalariados con contrato', pension: 'Afiliados a pensión', seguro: 'Con seguro de salud', firm_small: 'En unidades ≤20 trabajadores', self_emp: 'Independientes', tfnr: 'Familiares no remunerados', ur_youth: 'Desempleo juvenil 15–29' };
+const iLabels: Record<string, string> = { inc_p10: 'p10', inc_p25: 'p25', median_inc_real: 'Mediana', inc_p75: 'p75', inc_p90: 'p90', mean_inc_real: 'Promedio' };
+---
+<Base title={`${p.name} · perfil laboral`} wide image={`/share/${p.id}.png`}>
+  <div class="eyebrow" style="margin-top:28px"><a href="/atlas/">Atlas</a> › {p.region_nat} · ENAHO {p.year} · n = {p.n.toLocaleString('es-PE')} personas 14+ · {(p.pet_weighted / 1e6).toFixed(2)} M representadas</div>
+  <div class="toolbar" style="justify-content:space-between"><h1 style="margin:0">{p.name}</h1><span><a class="btn primary" href={`/atlas/${p.id}/resumen/`}>Resumen de una página (PDF)</a></span></div>
+  {p.summary?.length > 0 && <div class="card summary"><div class="eyebrow">En cinco frases · generado desde las estimaciones</div><ol>{p.summary.map((t: string) => <li>{t}</li>)}</ol></div>}
+  <div class="grid grid-3">
+    {dims.map(d => <KpiTile label={d.label_es} cell={p.dims[d.id]} unit={d.unit === '%' ? '%' : d.unit === 'pp' ? ' pp' : ''} decimals={d.unit === 'S/' ? 0 : 1} note={p.rank?.[d.id] ? `Puesto ${p.rank[d.id]} de 25 · percentil ${p.pct[d.id]}` : undefined} kind={d.id === 'gap_lfpr' ? 'informal' : 'formal'} />)}
+  </div>
+  <GradeLegend /><EmbedSnippet path="/atlas/formality/" />
+  <section class="grid grid-2" style="margin-top:24px">
+    <div class="card"><h2>Categoría ocupacional</h2><p class="takeaway">Quiénes son los ocupados: cuanto mayor la suma de independientes y familiares no remunerados, más frágil el empleo.</p><BarDist client:visible items={p.status_dist} title="Distribución de los ocupados" /></div>
+    <div class="card"><h2>Rama de actividad</h2><p class="takeaway">La estructura productiva explica buena parte de la informalidad: agro y comercio concentran el empleo desprotegido.</p><BarDist client:visible items={p.sector_dist} title="Distribución de los ocupados por rama" color={1} /></div>
+  </section>
+  <section class="grid grid-2" style="margin-top:24px">
+    <div class="card"><h2>Ingreso laboral mensual (S/ 2024)</h2>
+      <div class="grid grid-3">{Object.keys(iLabels).map(q => <KpiTile label={iLabels[q]} cell={p.inc_pct[q]} unit="" decimals={0} />)}</div>
+      <p class="small muted">Ingreso monetario mensual de la ocupación principal y secundaria (dependiente e independiente), deflactado a soles de 2024 con el IPC de Lima Metropolitana (BCRP).</p></div>
+    <div class="card"><h2>Calidad del empleo</h2>
+      <div class="scroll-x"><table class="data"><tbody>
+        {Object.entries(p.quality).map(([k, c]: any) => <tr><td>{qLabels[k] ?? k}</td><td>{fmt(c, k === 'hours_mean' ? 'h' : '%')}</td><td><span class={`badge ${c.g}`}></span></td></tr>)}
+      </tbody></table></div></div>
+  </section>
+  {!p.parent && <section class="grid grid-2" style="margin-top:24px">
+    <div class="card"><h2>Brechas por sexo</h2><p class="takeaway">Barras sombreadas = IC 95 %. Cuando los puntos están dentro del intervalo del otro, la diferencia no es concluyente.</p><Dumbbell client:visible rows={pctOnly(dumb('sex', '1', '2'))} title="Hombres vs mujeres" unit="%" aLabel="Hombres" bLabel="Mujeres" /><Dumbbell client:visible rows={incOnly(dumb('sex', '1', '2'))} title="Ingreso mediano (S/ 2024)" unit="S/" aLabel="Hombres" bLabel="Mujeres" /></div>
+    <div class="card"><h2>Brechas por lengua materna y área</h2><Dumbbell client:visible rows={pctOnly(dumb('lengua3', '2', '1'))} title="Castellano vs lengua indígena u originaria" unit="%" aLabel="Castellano" bLabel="Lengua indígena" /><Dumbbell client:visible rows={pctOnly(dumb('area', '1', '2'))} title="Urbano vs rural" unit="%" aLabel="Urbano" bLabel="Rural" /></div>
+  </section>}
+  <section class="grid grid-2" style="margin-top:24px">
+    <div class="card"><h2>Tendencia 2014–2024</h2><TrendLine client:visible years={h.years} unit="%" title={`${p.name}: actividad, informalidad y desempleo`} series={[{ label: 'Actividad', cells: p.trend.lfpr }, { label: 'Informalidad', cells: p.trend.informality }, { label: 'Desempleo', cells: p.trend.ur }]} notes={{ '2020': 'Pandemia' }} yZero /><TrendLine client:visible years={h.years} unit="S/" title="Ingreso laboral mediano real (S/ 2024)" series={[{ label: p.name, cells: p.trend.median_inc_real }, { label: 'Nacional', cells: h.trend.median_inc_real }]} height={240} /></div>
+    <div class="card"><h2>Comparar con otro departamento</h2>{!p.parent ? <RadarComparator client:visible regions={a.regions} dims={a.dims} a={p.id} /> : <p class="muted">El radar compara los 25 departamentos; Lima Metropolitana y Lima Región aparecen en la matriz del Atlas.</p>}</div>
+  </section>
+  <p class="small muted" style="margin-top:20px">Fuente: INEI – ENAHO {p.year}, módulo 500, factor fac500a. Errores estándar por linealización de Taylor (PSU = conglomerado; estratos = departamento × estrato). Descarga: <a href="/compendio/">compendio T17–T20</a>.</p>
+  <style>.summary ol { margin: 0; padding-left: 20px; font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.5; } .summary li { margin: 4px 0; }</style>
+</Base>

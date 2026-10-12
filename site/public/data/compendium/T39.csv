@@ -1,0 +1,221 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T39,2014,area,1,Urbano,informality,,Tasa de empleo informal,65.533,0.441,0.673,64.669,66.397,36537,A,%
+T39,2014,area,1,Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.873,0.255,0.364,69.374,70.372,55651,A,%
+T39,2014,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1436.872,9.825,0.684,1418.089,1456.6,33954,A,S/
+T39,2014,area,1,Urbano,ur,,Tasa de desempleo,4.533,0.145,3.193,4.249,4.816,38160,A,%
+T39,2014,area,2,Rural,informality,,Tasa de empleo informal,95.165,0.232,0.244,94.71,95.62,24821,A,%
+T39,2014,area,2,Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.537,0.326,0.41,78.899,80.176,31634,A,%
+T39,2014,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),616.072,8.392,1.362,602.329,635.227,18201,A,S/
+T39,2014,area,2,Rural,ur,,Tasa de desempleo,0.937,0.074,7.94,0.791,1.083,25030,A,%
+T39,2014,lengua3,1,Lengua indígena u originaria,informality,,Tasa de empleo informal,88.388,0.446,0.505,87.514,89.263,15768,A,%
+T39,2014,lengua3,1,Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",81.083,0.409,0.505,80.28,81.885,19594,A,%
+T39,2014,lengua3,1,Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),861.202,17.268,2.005,832.731,900.422,11902,A,S/
+T39,2014,lengua3,1,Lengua indígena u originaria,ur,,Tasa de desempleo,1.201,0.125,10.417,0.956,1.447,15910,A,%
+T39,2014,lengua3,2,Castellano,informality,,Tasa de empleo informal,69.049,0.391,0.566,68.283,69.815,45449,A,%
+T39,2014,lengua3,2,Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.179,0.239,0.341,69.709,70.648,67381,A,%
+T39,2014,lengua3,2,Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1348.389,12.025,0.892,1323.226,1370.362,40154,A,S/
+T39,2014,lengua3,2,Castellano,ur,,Tasa de desempleo,4.26,0.135,3.162,3.996,4.524,47133,A,%
+T39,2014,lengua3,3,Otra / no habla,informality,,Tasa de empleo informal,75.296,5.21,6.92,65.084,85.509,128,A,%
+T39,2014,lengua3,3,Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",49.825,4.242,8.513,41.512,58.139,261,A,%
+T39,2014,lengua3,3,Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1605.805,236.605,14.734,1243.722,2171.197,87,A,S/
+T39,2014,lengua3,3,Otra / no habla,ur,,Tasa de desempleo,,,,,,133,S,%
+T39,2015,area,1,Urbano,informality,,Tasa de empleo informal,65.831,0.457,0.694,64.935,66.726,36012,A,%
+T39,2015,area,1,Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",68.932,0.265,0.384,68.413,69.45,55362,A,%
+T39,2015,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1452.442,11.467,0.79,1427.913,1472.863,33529,A,S/
+T39,2015,area,1,Urbano,ur,,Tasa de desempleo,4.358,0.159,3.657,4.046,4.671,37502,A,%
+T39,2015,area,2,Rural,informality,,Tasa de empleo informal,95.784,0.205,0.214,95.382,96.187,25202,A,%
+T39,2015,area,2,Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.903,0.338,0.428,78.241,79.565,32291,A,%
+T39,2015,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),614.86,9.372,1.524,596.789,633.525,18542,A,S/
+T39,2015,area,2,Rural,ur,,Tasa de desempleo,0.815,0.079,9.728,0.66,0.971,25381,A,%
+T39,2015,lengua3,1,Lengua indígena u originaria,informality,,Tasa de empleo informal,88.322,0.483,0.547,87.375,89.268,16101,A,%
+T39,2015,lengua3,1,Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.69,0.414,0.513,79.879,81.501,20042,A,%
+T39,2015,lengua3,1,Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),896.724,18.685,2.084,870.826,944.07,12214,A,S/
+T39,2015,lengua3,1,Lengua indígena u originaria,ur,,Tasa de desempleo,1.493,0.162,10.838,1.176,1.81,16254,A,%
+T39,2015,lengua3,2,Castellano,informality,,Tasa de empleo informal,69.284,0.404,0.583,68.491,70.076,44989,A,%
+T39,2015,lengua3,2,Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.172,0.252,0.365,68.677,69.666,67263,A,%
+T39,2015,lengua3,2,Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1368.359,7.945,0.581,1350.22,1381.365,39769,A,S/
+T39,2015,lengua3,2,Castellano,ur,,Tasa de desempleo,4.021,0.149,3.71,3.729,4.314,46502,A,%
+T39,2015,lengua3,3,Otra / no habla,informality,,Tasa de empleo informal,73.906,6.502,8.797,61.163,86.65,110,A,%
+T39,2015,lengua3,3,Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",52.824,4.68,8.86,43.651,61.996,234,A,%
+T39,2015,lengua3,3,Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1411.484,231.118,16.374,885.543,1791.508,75,B,S/
+T39,2015,lengua3,3,Otra / no habla,ur,,Tasa de desempleo,,,,,,113,S,%
+T39,2016,area,1,Urbano,informality,,Tasa de empleo informal,64.78,0.453,0.7,63.892,65.668,42105,A,%
+T39,2016,area,1,Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.065,0.27,0.386,69.535,70.595,64145,A,%
+T39,2016,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1459.553,12.446,0.853,1436.976,1485.764,39289,A,S/
+T39,2016,area,1,Urbano,ur,,Tasa de desempleo,5.161,0.162,3.136,4.844,5.478,44088,A,%
+T39,2016,area,2,Rural,informality,,Tasa de empleo informal,95.225,0.232,0.244,94.769,95.68,25412,A,%
+T39,2016,area,2,Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.059,0.32,0.41,77.433,78.686,32772,A,%
+T39,2016,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),594.826,9.777,1.644,578.182,616.508,19058,A,S/
+T39,2016,area,2,Rural,ur,,Tasa de desempleo,0.837,0.077,9.169,0.686,0.987,25590,A,%
+T39,2016,lengua3,1,Lengua indígena u originaria,informality,,Tasa de empleo informal,86.49,0.506,0.585,85.499,87.482,17035,A,%
+T39,2016,lengua3,1,Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.151,0.423,0.527,79.323,80.979,21349,A,%
+T39,2016,lengua3,1,Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),907.361,20.931,2.307,863.419,945.466,13230,A,S/
+T39,2016,lengua3,1,Lengua indígena u originaria,ur,,Tasa de desempleo,1.617,0.18,11.123,1.264,1.969,17200,A,%
+T39,2016,lengua3,2,Castellano,informality,,Tasa de empleo informal,68.247,0.401,0.587,67.461,69.032,50158,A,%
+T39,2016,lengua3,2,Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.169,0.257,0.366,69.666,70.672,74854,A,%
+T39,2016,lengua3,2,Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1373.982,8.962,0.652,1356.361,1391.493,44864,A,S/
+T39,2016,lengua3,2,Castellano,ur,,Tasa de desempleo,4.817,0.152,3.152,4.52,5.115,52140,A,%
+T39,2016,lengua3,3,Otra / no habla,informality,,Tasa de empleo informal,68.536,3.598,5.25,61.485,75.588,310,A,%
+T39,2016,lengua3,3,Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",55.396,3.072,5.545,49.375,61.416,555,A,%
+T39,2016,lengua3,3,Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1495.345,180.594,12.077,1185.549,1893.465,240,A,S/
+T39,2016,lengua3,3,Otra / no habla,ur,,Tasa de desempleo,,,,,,322,S,%
+T39,2017,area,1,Urbano,informality,,Tasa de empleo informal,65.768,0.446,0.678,64.894,66.641,39671,A,%
+T39,2017,area,1,Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.549,0.262,0.371,70.036,71.062,60473,A,%
+T39,2017,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1451.883,15.085,1.039,1424.245,1483.378,37180,A,S/
+T39,2017,area,1,Urbano,ur,,Tasa de desempleo,5.031,0.16,3.177,4.718,5.345,41525,A,%
+T39,2017,area,2,Rural,informality,,Tasa de empleo informal,95.469,0.213,0.223,95.052,95.886,24969,A,%
+T39,2017,area,2,Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.439,0.304,0.388,77.842,79.035,32220,A,%
+T39,2017,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),571.626,8.79,1.538,555.596,590.052,18811,A,S/
+T39,2017,area,2,Rural,ur,,Tasa de desempleo,0.804,0.078,9.672,0.652,0.957,25141,A,%
+T39,2017,lengua3,1,Lengua indígena u originaria,informality,,Tasa de empleo informal,87.896,0.468,0.532,86.978,88.813,16368,A,%
+T39,2017,lengua3,1,Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.33,0.428,0.54,78.491,80.17,20766,A,%
+T39,2017,lengua3,1,Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),850.583,19.157,2.252,818.338,893.434,12780,A,S/
+T39,2017,lengua3,1,Lengua indígena u originaria,ur,,Tasa de desempleo,1.626,0.175,10.739,1.284,1.968,16537,A,%
+T39,2017,lengua3,2,Castellano,informality,,Tasa de empleo informal,68.641,0.392,0.571,67.872,69.41,48001,A,%
+T39,2017,lengua3,2,Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.655,0.251,0.356,70.163,71.147,71425,A,%
+T39,2017,lengua3,2,Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1375.288,10.4,0.756,1351.399,1392.167,42995,A,S/
+T39,2017,lengua3,2,Castellano,ur,,Tasa de desempleo,4.689,0.149,3.182,4.396,4.981,49847,A,%
+T39,2017,lengua3,3,Otra / no habla,informality,,Tasa de empleo informal,71.04,4.177,5.88,62.853,79.228,266,A,%
+T39,2017,lengua3,3,Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",57.816,3.095,5.353,51.75,63.882,481,A,%
+T39,2017,lengua3,3,Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1395.642,110.954,7.95,1220.812,1655.745,211,A,S/
+T39,2017,lengua3,3,Otra / no habla,ur,,Tasa de desempleo,,,,,,277,S,%
+T39,2018,area,1,Urbano,informality,,Tasa de empleo informal,65.653,0.444,0.677,64.782,66.523,41262,A,%
+T39,2018,area,1,Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.449,0.25,0.355,69.959,70.938,62534,A,%
+T39,2018,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1471.607,11.868,0.806,1445.596,1492.119,38639,A,S/
+T39,2018,area,1,Urbano,ur,,Tasa de desempleo,4.794,0.167,3.49,4.466,5.122,43007,A,%
+T39,2018,area,2,Rural,informality,,Tasa de empleo informal,95.546,0.196,0.205,95.162,95.93,28488,A,%
+T39,2018,area,2,Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.623,0.297,0.377,78.042,79.205,36616,A,%
+T39,2018,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),639.691,8.874,1.387,622.985,657.772,21562,A,S/
+T39,2018,area,2,Rural,ur,,Tasa de desempleo,0.88,0.07,7.995,0.743,1.018,28724,A,%
+T39,2018,lengua3,1,Lengua indígena u originaria,informality,,Tasa de empleo informal,87.172,0.484,0.555,86.225,88.12,19015,A,%
+T39,2018,lengua3,1,Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.493,0.408,0.514,78.692,80.293,23834,A,%
+T39,2018,lengua3,1,Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),887.109,18.872,2.127,853.417,927.394,14837,A,S/
+T39,2018,lengua3,1,Lengua indígena u originaria,ur,,Tasa de desempleo,1.685,0.174,10.302,1.345,2.025,19208,A,%
+T39,2018,lengua3,2,Castellano,informality,,Tasa de empleo informal,68.734,0.405,0.589,67.941,69.528,50453,A,%
+T39,2018,lengua3,2,Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.636,0.236,0.335,70.172,71.099,74760,A,%
+T39,2018,lengua3,2,Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1382.685,7.984,0.577,1368.516,1399.814,45139,A,S/
+T39,2018,lengua3,2,Castellano,ur,,Tasa de desempleo,4.477,0.155,3.473,4.172,4.781,52227,A,%
+T39,2018,lengua3,3,Otra / no habla,informality,,Tasa de empleo informal,63.976,4.588,7.171,54.984,72.968,276,A,%
+T39,2018,lengua3,3,Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",53.212,3.162,5.942,47.015,59.41,526,A,%
+T39,2018,lengua3,3,Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1596.056,247.886,15.531,1255.169,2226.866,219,B,S/
+T39,2018,lengua3,3,Otra / no habla,ur,,Tasa de desempleo,,,,,,290,S,%
+T39,2019,area,1,Urbano,informality,,Tasa de empleo informal,66.325,0.445,0.67,65.454,67.197,39316,A,%
+T39,2019,area,1,Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.785,0.258,0.364,70.28,71.29,59296,A,%
+T39,2019,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1485.762,7.844,0.528,1467.024,1497.771,36684,A,S/
+T39,2019,area,1,Urbano,ur,,Tasa de desempleo,4.788,0.168,3.511,4.459,5.118,40934,A,%
+T39,2019,area,2,Rural,informality,,Tasa de empleo informal,95.143,0.22,0.231,94.713,95.573,25372,A,%
+T39,2019,area,2,Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.194,0.317,0.4,78.573,79.815,32372,A,%
+T39,2019,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),669.974,8.75,1.306,652.195,686.496,19193,A,S/
+T39,2019,area,2,Rural,ur,,Tasa de desempleo,0.714,0.066,9.237,0.585,0.843,25526,A,%
+T39,2019,lengua3,1,Lengua indígena u originaria,informality,,Tasa de empleo informal,87.623,0.482,0.55,86.678,88.567,16348,A,%
+T39,2019,lengua3,1,Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.887,0.406,0.502,80.091,81.684,20362,A,%
+T39,2019,lengua3,1,Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),940.921,17.945,1.907,903.756,974.1,12733,A,S/
+T39,2019,lengua3,1,Lengua indígena u originaria,ur,,Tasa de desempleo,1.77,0.214,12.075,1.351,2.189,16504,A,%
+T39,2019,lengua3,2,Castellano,informality,,Tasa de empleo informal,69.055,0.401,0.58,68.27,69.841,48106,A,%
+T39,2019,lengua3,2,Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.827,0.241,0.34,70.355,71.299,70833,A,%
+T39,2019,lengua3,2,Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1390.728,13.601,0.978,1368.367,1421.681,42964,A,S/
+T39,2019,lengua3,2,Castellano,ur,,Tasa de desempleo,4.42,0.155,3.504,4.117,4.724,49715,A,%
+T39,2019,lengua3,3,Otra / no habla,informality,,Tasa de empleo informal,74.191,4.368,5.887,65.63,82.752,227,A,%
+T39,2019,lengua3,3,Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",47.995,3.365,7.011,41.4,54.591,444,A,%
+T39,2019,lengua3,3,Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1374.992,230.607,16.772,968.251,1872.213,173,B,S/
+T39,2019,lengua3,3,Otra / no habla,ur,,Tasa de desempleo,,,,,,234,S,%
+T39,2020,area,1,Urbano,informality,,Tasa de empleo informal,68.432,0.49,0.716,67.472,69.393,31819,A,%
+T39,2020,area,1,Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",61.023,0.415,0.681,60.208,61.837,58914,A,%
+T39,2020,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1233.505,10.245,0.831,1220.696,1260.853,29255,A,S/
+T39,2020,area,1,Urbano,ur,,Tasa de desempleo,9.354,0.277,2.958,8.811,9.896,34635,A,%
+T39,2020,area,2,Rural,informality,,Tasa de empleo informal,96.034,0.221,0.231,95.6,96.468,24422,A,%
+T39,2020,area,2,Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.409,0.384,0.484,78.655,80.162,31646,A,%
+T39,2020,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),528.355,10.53,1.993,506.192,547.468,16910,A,S/
+T39,2020,area,2,Rural,ur,,Tasa de desempleo,1.069,0.111,10.37,0.851,1.286,24638,A,%
+T39,2020,lengua3,1,Lengua indígena u originaria,informality,,Tasa de empleo informal,88.999,0.498,0.559,88.024,89.975,15468,A,%
+T39,2020,lengua3,1,Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",74.309,0.647,0.871,73.04,75.578,20531,A,%
+T39,2020,lengua3,1,Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),727.517,12.842,1.765,693.358,743.699,11163,A,S/
+T39,2020,lengua3,1,Lengua indígena u originaria,ur,,Tasa de desempleo,3.398,0.286,8.427,2.837,3.96,15759,A,%
+T39,2020,lengua3,2,Castellano,informality,,Tasa de empleo informal,71.414,0.44,0.615,70.552,72.275,40646,A,%
+T39,2020,lengua3,2,Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",62.406,0.375,0.602,61.67,63.142,69731,A,%
+T39,2020,lengua3,2,Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1177.386,12.734,1.082,1155.732,1205.649,34921,A,S/
+T39,2020,lengua3,2,Castellano,ur,,Tasa de desempleo,8.505,0.256,3.013,8.003,9.007,43382,A,%
+T39,2020,lengua3,3,Otra / no habla,informality,,Tasa de empleo informal,90.787,3.159,3.48,84.595,96.978,111,A,%
+T39,2020,lengua3,3,Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",36.5,4.097,11.224,28.471,44.53,261,A,%
+T39,2020,lengua3,3,Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1067.486,298.44,27.957,813.323,1983.186,69,B,S/
+T39,2020,lengua3,3,Otra / no habla,ur,,Tasa de desempleo,,,,,,114,S,%
+T39,2021,area,1,Urbano,informality,,Tasa de empleo informal,71.361,0.429,0.601,70.52,72.202,36306,A,%
+T39,2021,area,1,Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.083,0.294,0.425,68.508,69.659,57500,A,%
+T39,2021,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1272.416,10.048,0.79,1255.038,1294.423,33648,A,S/
+T39,2021,area,1,Urbano,ur,,Tasa de desempleo,7.008,0.212,3.03,6.592,7.424,38630,A,%
+T39,2021,area,2,Rural,informality,,Tasa de empleo informal,95.368,0.266,0.279,94.847,95.888,23235,A,%
+T39,2021,area,2,Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",83.261,0.317,0.381,82.639,83.883,28666,A,%
+T39,2021,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),670.896,10.731,1.599,651.746,693.81,16985,A,S/
+T39,2021,area,2,Rural,ur,,Tasa de desempleo,0.722,0.084,11.621,0.557,0.886,23377,A,%
+T39,2021,lengua3,1,Lengua indígena u originaria,informality,,Tasa de empleo informal,88.594,0.49,0.553,87.635,89.554,15171,A,%
+T39,2021,lengua3,1,Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.169,0.472,0.589,79.243,81.095,18944,A,%
+T39,2021,lengua3,1,Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),857.192,17.585,2.051,823.753,892.684,11678,A,S/
+T39,2021,lengua3,1,Lengua indígena u originaria,ur,,Tasa de desempleo,2.421,0.235,9.718,1.96,2.882,15391,A,%
+T39,2021,lengua3,2,Castellano,informality,,Tasa de empleo informal,73.719,0.393,0.533,72.949,74.489,44213,A,%
+T39,2021,lengua3,2,Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.959,0.282,0.404,69.406,70.512,66879,A,%
+T39,2021,lengua3,2,Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1234.994,9.058,0.733,1216.186,1251.695,38831,A,S/
+T39,2021,lengua3,2,Castellano,ur,,Tasa de desempleo,6.474,0.2,3.088,6.082,6.866,46456,A,%
+T39,2021,lengua3,3,Otra / no habla,informality,,Tasa de empleo informal,66.486,7.132,10.728,52.507,80.465,150,A,%
+T39,2021,lengua3,3,Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",47.755,4.32,9.046,39.288,56.222,318,A,%
+T39,2021,lengua3,3,Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),996.814,195.528,19.615,687.259,1453.716,117,B,S/
+T39,2021,lengua3,3,Otra / no habla,ur,,Tasa de desempleo,,,,,,153,S,%
+T39,2022,area,1,Urbano,informality,,Tasa de empleo informal,70.426,0.427,0.607,69.588,71.263,38217,A,%
+T39,2022,area,1,Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.36,0.274,0.389,69.823,70.897,58469,A,%
+T39,2022,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1323.365,9.503,0.718,1305.782,1343.033,35745,A,S/
+T39,2022,area,1,Urbano,ur,,Tasa de desempleo,5.147,0.178,3.456,4.798,5.496,40017,A,%
+T39,2022,area,2,Rural,informality,,Tasa de empleo informal,95.288,0.234,0.246,94.829,95.747,22679,A,%
+T39,2022,area,2,Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.142,0.327,0.409,79.5,80.784,28687,A,%
+T39,2022,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),728.526,11.098,1.523,704.598,748.103,17262,A,S/
+T39,2022,area,2,Rural,ur,,Tasa de desempleo,0.769,0.092,11.907,0.59,0.949,22812,A,%
+T39,2022,lengua3,1,Lengua indígena u originaria,informality,,Tasa de empleo informal,88.401,0.458,0.519,87.502,89.299,15088,A,%
+T39,2022,lengua3,1,Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.018,0.486,0.607,79.066,80.97,18813,A,%
+T39,2022,lengua3,1,Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),952.244,15.538,1.632,916.05,976.957,11949,A,S/
+T39,2022,lengua3,1,Lengua indígena u originaria,ur,,Tasa de desempleo,1.666,0.203,12.169,1.269,2.064,15226,A,%
+T39,2022,lengua3,2,Castellano,informality,,Tasa de empleo informal,72.422,0.402,0.555,71.634,73.21,45660,A,%
+T39,2022,lengua3,2,Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.603,0.264,0.374,70.086,71.12,67986,A,%
+T39,2022,lengua3,2,Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1279.86,9.421,0.736,1261.371,1298.3,40954,A,S/
+T39,2022,lengua3,2,Castellano,ur,,Tasa de desempleo,4.901,0.17,3.46,4.569,5.234,47452,A,%
+T39,2022,lengua3,3,Otra / no habla,informality,,Tasa de empleo informal,75.694,5.112,6.753,65.675,85.714,133,A,%
+T39,2022,lengua3,3,Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",41.57,4.287,10.314,33.166,49.973,316,A,%
+T39,2022,lengua3,3,Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1200.464,331.975,27.654,655.499,1956.815,91,B,S/
+T39,2022,lengua3,3,Otra / no habla,ur,,Tasa de desempleo,,,,,,136,S,%
+T39,2023,area,1,Urbano,informality,,Tasa de empleo informal,68.589,0.425,0.62,67.756,69.423,37672,A,%
+T39,2023,area,1,Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.848,0.287,0.411,69.286,70.41,58148,A,%
+T39,2023,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1325.868,5.461,0.412,1317.083,1338.491,35332,A,S/
+T39,2023,area,1,Urbano,ur,,Tasa de desempleo,5.523,0.168,3.051,5.192,5.853,39675,A,%
+T39,2023,area,2,Rural,informality,,Tasa de empleo informal,94.516,0.268,0.283,93.992,95.041,21517,A,%
+T39,2023,area,2,Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.294,0.326,0.416,77.655,78.933,28035,A,%
+T39,2023,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),733.343,10.618,1.448,715.346,756.969,16795,A,S/
+T39,2023,area,2,Rural,ur,,Tasa de desempleo,1.607,0.138,8.569,1.337,1.876,21754,A,%
+T39,2023,lengua3,1,Lengua indígena u originaria,informality,,Tasa de empleo informal,87.977,0.508,0.577,86.982,88.973,14571,A,%
+T39,2023,lengua3,1,Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.543,0.484,0.608,78.595,80.492,18507,A,%
+T39,2023,lengua3,1,Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),946.062,17.168,1.815,915.527,982.823,11728,A,S/
+T39,2023,lengua3,1,Lengua indígena u originaria,ur,,Tasa de desempleo,3.253,0.293,8.998,2.679,3.827,14825,A,%
+T39,2023,lengua3,2,Castellano,informality,,Tasa de empleo informal,70.394,0.393,0.558,69.624,71.164,44452,A,%
+T39,2023,lengua3,2,Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.775,0.272,0.39,69.241,70.309,67292,A,%
+T39,2023,lengua3,2,Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1292.263,10.292,0.796,1274.01,1314.354,40255,A,S/
+T39,2023,lengua3,2,Castellano,ur,,Tasa de desempleo,5.106,0.16,3.125,4.794,5.419,46433,A,%
+T39,2023,lengua3,3,Otra / no habla,informality,,Tasa de empleo informal,70.672,6.431,9.1,58.067,83.277,146,A,%
+T39,2023,lengua3,3,Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",45.927,4.241,9.235,37.614,54.24,330,A,%
+T39,2023,lengua3,3,Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1332.691,90.559,6.795,1193.494,1548.481,125,A,S/
+T39,2023,lengua3,3,Otra / no habla,ur,,Tasa de desempleo,,,,,,151,S,%
+T39,2024,area,1,Urbano,informality,,Tasa de empleo informal,67.84,0.469,0.692,66.92,68.759,37153,A,%
+T39,2024,area,1,Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.496,0.26,0.374,68.987,70.004,57959,A,%
+T39,2024,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1327.833,11.969,0.901,1308.25,1355.167,35251,A,S/
+T39,2024,area,1,Urbano,ur,,Tasa de desempleo,5.479,0.175,3.186,5.137,5.821,39061,A,%
+T39,2024,area,2,Rural,informality,,Tasa de empleo informal,93.945,0.286,0.305,93.384,94.506,21193,A,%
+T39,2024,area,2,Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.506,0.326,0.416,77.866,79.146,27578,A,%
+T39,2024,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),733.667,11.076,1.51,712.333,755.75,16668,A,S/
+T39,2024,area,2,Rural,ur,,Tasa de desempleo,1.685,0.133,7.894,1.424,1.946,21444,A,%
+T39,2024,lengua3,1,Lengua indígena u originaria,informality,,Tasa de empleo informal,87.904,0.53,0.603,86.866,88.943,14130,A,%
+T39,2024,lengua3,1,Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.071,0.508,0.651,77.075,79.067,18161,A,%
+T39,2024,lengua3,1,Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),939.25,19.655,2.093,901.25,978.294,11591,A,S/
+T39,2024,lengua3,1,Lengua indígena u originaria,ur,,Tasa de desempleo,3.283,0.262,7.968,2.771,3.796,14411,A,%
+T39,2024,lengua3,2,Castellano,informality,,Tasa de empleo informal,69.633,0.427,0.613,68.796,70.47,44043,A,%
+T39,2024,lengua3,2,Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.795,0.251,0.359,69.304,70.286,66999,A,%
+T39,2024,lengua3,2,Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1298.417,4.634,0.357,1293.083,1311.25,40198,A,S/
+T39,2024,lengua3,2,Castellano,ur,,Tasa de desempleo,5.077,0.164,3.232,4.756,5.399,45915,A,%
+T39,2024,lengua3,3,Otra / no habla,informality,,Tasa de empleo informal,75.802,4.645,6.128,66.698,84.906,154,A,%
+T39,2024,lengua3,3,Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",48.185,4.022,8.346,40.303,56.068,316,A,%
+T39,2024,lengua3,3,Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1450.25,222.818,15.364,893.153,1766.583,113,B,S/
+T39,2024,lengua3,3,Otra / no habla,ur,,Tasa de desempleo,,,,,,160,S,%

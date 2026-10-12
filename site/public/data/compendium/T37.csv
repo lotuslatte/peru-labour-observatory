@@ -1,0 +1,111 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T37,2014,sex,1,Hombres,informality,,Tasa de empleo informal,70.488,0.394,0.559,69.716,71.26,33669,A,%
+T37,2014,sex,1,Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",81.067,0.261,0.322,80.555,81.579,42518,A,%
+T37,2014,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1452.111,10.91,0.751,1430.256,1473.021,31019,A,S/
+T37,2014,sex,1,Hombres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,15.023,0.442,2.941,14.156,15.889,14088,A,%
+T37,2014,sex,1,Hombres,ur,,Tasa de desempleo,3.339,0.138,4.132,3.069,3.61,34599,A,%
+T37,2014,sex,2,Mujeres,informality,,Tasa de empleo informal,76.214,0.428,0.562,75.375,77.053,27689,A,%
+T37,2014,sex,2,Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",62.911,0.319,0.507,62.286,63.536,44767,A,%
+T37,2014,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1006.625,13.17,1.308,985.243,1036.868,21136,A,S/
+T37,2014,sex,2,Mujeres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,27.138,0.532,1.961,26.095,28.181,13431,A,%
+T37,2014,sex,2,Mujeres,ur,,Tasa de desempleo,4.063,0.173,4.247,3.725,4.401,28591,A,%
+T37,2015,sex,1,Hombres,informality,,Tasa de empleo informal,71.083,0.4,0.562,70.3,71.866,33578,A,%
+T37,2015,sex,1,Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.33,0.277,0.344,79.788,80.873,42610,A,%
+T37,2015,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1462.139,12.02,0.822,1437.154,1484.272,31216,A,S/
+T37,2015,sex,1,Hombres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,16.285,0.483,2.964,15.338,17.231,13879,A,%
+T37,2015,sex,1,Hombres,ur,,Tasa de desempleo,3.401,0.158,4.654,3.091,3.712,34477,A,%
+T37,2015,sex,2,Mujeres,informality,,Tasa de empleo informal,76.03,0.46,0.606,75.128,76.933,27636,A,%
+T37,2015,sex,2,Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",61.808,0.345,0.558,61.131,62.484,45043,A,%
+T37,2015,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1048.574,10.303,0.983,1028.951,1069.337,20855,A,S/
+T37,2015,sex,2,Mujeres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,27.528,0.596,2.165,26.36,28.696,13700,A,%
+T37,2015,sex,2,Mujeres,ur,,Tasa de desempleo,3.646,0.188,5.159,3.277,4.014,28406,A,%
+T37,2016,sex,1,Hombres,informality,,Tasa de empleo informal,69.544,0.415,0.596,68.732,70.357,36735,A,%
+T37,2016,sex,1,Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.653,0.256,0.317,80.153,81.154,46979,A,%
+T37,2016,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1470.786,13.514,0.919,1447.328,1500.301,34351,A,S/
+T37,2016,sex,1,Hombres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,15.659,0.433,2.765,14.811,16.508,15022,A,%
+T37,2016,sex,1,Hombres,ur,,Tasa de desempleo,3.845,0.159,4.138,3.533,4.157,37891,A,%
+T37,2016,sex,2,Mujeres,informality,,Tasa de empleo informal,75.19,0.442,0.587,74.324,76.055,30782,A,%
+T37,2016,sex,2,Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",62.832,0.344,0.548,62.157,63.507,49938,A,%
+T37,2016,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1034.451,12.811,1.238,1009.011,1059.23,23996,A,S/
+T37,2016,sex,2,Mujeres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,27.421,0.545,1.987,26.353,28.489,15008,A,%
+T37,2016,sex,2,Mujeres,ur,,Tasa de desempleo,4.587,0.197,4.292,4.201,4.973,31787,A,%
+T37,2017,sex,1,Hombres,informality,,Tasa de empleo informal,69.887,0.405,0.579,69.094,70.679,35024,A,%
+T37,2017,sex,1,Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.686,0.259,0.321,80.178,81.193,44940,A,%
+T37,2017,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1472.023,17.518,1.19,1437.743,1506.41,32797,A,S/
+T37,2017,sex,1,Hombres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,15.541,0.492,3.169,14.576,16.506,13941,A,%
+T37,2017,sex,1,Hombres,ur,,Tasa de desempleo,3.818,0.164,4.306,3.495,4.14,36088,A,%
+T37,2017,sex,2,Mujeres,informality,,Tasa de empleo informal,76.132,0.427,0.561,75.294,76.969,29616,A,%
+T37,2017,sex,2,Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",63.671,0.323,0.507,63.039,64.304,47753,A,%
+T37,2017,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1041.696,13.91,1.335,1021.985,1076.513,23194,A,S/
+T37,2017,sex,2,Mujeres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,27.915,0.544,1.949,26.849,28.982,13655,A,%
+T37,2017,sex,2,Mujeres,ur,,Tasa de desempleo,4.427,0.19,4.291,4.055,4.799,30578,A,%
+T37,2018,sex,1,Hombres,informality,,Tasa de empleo informal,70.129,0.393,0.56,69.359,70.899,37626,A,%
+T37,2018,sex,1,Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.409,0.261,0.324,79.898,80.92,47923,A,%
+T37,2018,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1493.811,10.924,0.731,1470.127,1512.949,35103,A,S/
+T37,2018,sex,1,Hombres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,16.143,0.469,2.903,15.224,17.061,14467,A,%
+T37,2018,sex,1,Hombres,ur,,Tasa de desempleo,3.502,0.152,4.338,3.204,3.8,38630,A,%
+T37,2018,sex,2,Mujeres,informality,,Tasa de empleo informal,75.301,0.435,0.578,74.447,76.154,32124,A,%
+T37,2018,sex,2,Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",63.77,0.316,0.496,63.149,64.39,51227,A,%
+T37,2018,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1059.41,14.35,1.355,1026.255,1082.506,25098,A,S/
+T37,2018,sex,2,Mujeres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,28.023,0.578,2.063,26.89,29.156,14145,A,%
+T37,2018,sex,2,Mujeres,ur,,Tasa de desempleo,4.486,0.205,4.572,4.084,4.888,33101,A,%
+T37,2019,sex,1,Hombres,informality,,Tasa de empleo informal,70.307,0.403,0.574,69.516,71.097,34718,A,%
+T37,2019,sex,1,Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.705,0.28,0.346,80.157,81.253,44216,A,%
+T37,2019,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1512.892,12.201,0.806,1497.46,1545.288,32335,A,S/
+T37,2019,sex,1,Hombres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,15.226,0.465,3.056,14.314,16.138,13105,A,%
+T37,2019,sex,1,Hombres,ur,,Tasa de desempleo,3.433,0.164,4.779,3.111,3.754,35592,A,%
+T37,2019,sex,2,Mujeres,informality,,Tasa de empleo informal,75.795,0.431,0.568,74.951,76.639,29970,A,%
+T37,2019,sex,2,Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",64.181,0.323,0.503,63.549,64.813,47452,A,%
+T37,2019,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1070.738,12.518,1.169,1045.686,1094.756,23542,A,S/
+T37,2019,sex,2,Mujeres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,27.166,0.572,2.107,26.044,28.288,12998,A,%
+T37,2019,sex,2,Mujeres,ur,,Tasa de desempleo,4.515,0.205,4.548,4.113,4.917,30868,A,%
+T37,2020,sex,1,Hombres,informality,,Tasa de empleo informal,73.91,0.441,0.597,73.046,74.775,31081,A,%
+T37,2020,sex,1,Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",74.754,0.393,0.526,73.982,75.525,43916,A,%
+T37,2020,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1196.703,14.135,1.181,1162.136,1217.544,27994,A,S/
+T37,2020,sex,1,Hombres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,26.143,0.644,2.462,24.882,27.405,13377,A,%
+T37,2020,sex,1,Hombres,ur,,Tasa de desempleo,7.174,0.263,3.666,6.659,7.69,32825,A,%
+T37,2020,sex,2,Mujeres,informality,,Tasa de empleo informal,77.317,0.483,0.625,76.37,78.264,25160,A,%
+T37,2020,sex,2,Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",54.359,0.441,0.81,53.496,55.223,46644,A,%
+T37,2020,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),924.922,17.625,1.906,884.997,954.086,18171,A,S/
+T37,2020,sex,2,Mujeres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,38.515,0.687,1.784,37.168,39.861,13028,A,%
+T37,2020,sex,2,Mujeres,ur,,Tasa de desempleo,7.736,0.296,3.83,7.156,8.317,26448,A,%
+T37,2021,sex,1,Hombres,informality,,Tasa de empleo informal,75.361,0.414,0.549,74.55,76.172,31955,A,%
+T37,2021,sex,1,Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.705,0.302,0.374,80.113,81.297,41258,A,%
+T37,2021,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1321.133,11.269,0.853,1301.285,1345.459,29352,A,S/
+T37,2021,sex,1,Hombres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,16.968,0.552,3.256,15.886,18.051,12503,A,%
+T37,2021,sex,1,Hombres,ur,,Tasa de desempleo,4.87,0.192,3.936,4.494,5.246,33197,A,%
+T37,2021,sex,2,Mujeres,informality,,Tasa de empleo informal,78.72,0.441,0.56,77.856,79.583,27586,A,%
+T37,2021,sex,2,Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",62.772,0.364,0.579,62.059,63.485,44908,A,%
+T37,2021,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),923.679,13.301,1.44,896.595,948.736,21281,A,S/
+T37,2021,sex,2,Mujeres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,29.485,0.66,2.239,28.191,30.778,12404,A,%
+T37,2021,sex,2,Mujeres,ur,,Tasa de desempleo,6.649,0.273,4.104,6.114,7.184,28810,A,%
+T37,2022,sex,1,Hombres,informality,,Tasa de empleo informal,73.486,0.418,0.569,72.666,74.306,32484,A,%
+T37,2022,sex,1,Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.883,0.278,0.344,80.338,81.428,41760,A,%
+T37,2022,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1392.792,9.434,0.677,1377.928,1414.907,30208,A,S/
+T37,2022,sex,1,Hombres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,16.202,0.49,3.023,15.242,17.162,12668,A,%
+T37,2022,sex,1,Hombres,ur,,Tasa de desempleo,3.425,0.154,4.49,3.123,3.726,33421,A,%
+T37,2022,sex,2,Mujeres,informality,,Tasa de empleo informal,78.489,0.432,0.551,77.642,79.336,28412,A,%
+T37,2022,sex,2,Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",63.426,0.348,0.548,62.744,64.107,45396,A,%
+T37,2022,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),981.217,12.301,1.254,956.293,1004.51,22799,A,S/
+T37,2022,sex,2,Mujeres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,28.753,0.639,2.223,27.5,30.006,12468,A,%
+T37,2022,sex,2,Mujeres,ur,,Tasa de desempleo,5.318,0.247,4.652,4.833,5.803,29408,A,%
+T37,2023,sex,1,Hombres,informality,,Tasa de empleo informal,72.038,0.434,0.603,71.187,72.889,31657,A,%
+T37,2023,sex,1,Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.762,0.3,0.377,79.174,80.351,41453,A,%
+T37,2023,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1392.908,13.012,0.934,1368.941,1419.945,29695,A,S/
+T37,2023,sex,1,Hombres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,18.046,0.553,3.066,16.961,19.13,12642,A,%
+T37,2023,sex,1,Hombres,ur,,Tasa de desempleo,3.923,0.163,4.162,3.603,4.243,32729,A,%
+T37,2023,sex,2,Mujeres,informality,,Tasa de empleo informal,76.285,0.456,0.598,75.391,77.18,27532,A,%
+T37,2023,sex,2,Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",62.973,0.344,0.546,62.3,63.647,44730,A,%
+T37,2023,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1015.49,13.882,1.367,980.776,1035.192,22432,A,S/
+T37,2023,sex,2,Mujeres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,28.405,0.641,2.257,27.149,29.662,12000,A,%
+T37,2023,sex,2,Mujeres,ur,,Tasa de desempleo,5.793,0.233,4.028,5.336,6.251,28700,A,%
+T37,2024,sex,1,Hombres,informality,,Tasa de empleo informal,71.179,0.452,0.635,70.292,72.065,31266,A,%
+T37,2024,sex,1,Hombres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.019,0.279,0.348,79.473,80.566,40993,A,%
+T37,2024,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1404.25,11.48,0.818,1382.0,1427.0,29417,A,S/
+T37,2024,sex,1,Hombres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,15.908,0.521,3.275,14.887,16.929,11962,A,%
+T37,2024,sex,1,Hombres,ur,,Tasa de desempleo,3.877,0.18,4.652,3.524,4.231,32248,A,%
+T37,2024,sex,2,Mujeres,informality,,Tasa de empleo informal,75.576,0.47,0.622,74.655,76.497,27080,A,%
+T37,2024,sex,2,Mujeres,lfpr,,"Tasa de actividad (PEA/PET, 14+)",62.173,0.35,0.564,61.486,62.86,44544,A,%
+T37,2024,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1025.083,5.272,0.514,1017.083,1037.75,22502,A,S/
+T37,2024,sex,2,Mujeres,neet,,Jóvenes 15–29 que ni estudian ni trabajan,27.349,0.618,2.261,26.137,28.56,11900,A,%
+T37,2024,sex,2,Mujeres,ur,,Tasa de desempleo,5.849,0.234,4.0,5.391,6.308,28257,A,%

@@ -1,0 +1,37 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T03,2024,area,1,Urbano,adecuado,,Empleo adecuado (aprox.),64.875,0.405,0.624,64.081,65.668,37153,A,%
+T03,2024,area,1,Urbano,epr,,Ratio empleo-población,65.688,0.261,0.398,65.176,66.2,57959,A,%
+T03,2024,area,1,Urbano,informality,,Tasa de empleo informal,67.84,0.469,0.692,66.92,68.759,37153,A,%
+T03,2024,area,1,Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.496,0.26,0.374,68.987,70.004,57959,A,%
+T03,2024,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1327.833,11.969,0.901,1308.25,1355.167,35251,A,S/
+T03,2024,area,1,Urbano,ur,,Tasa de desempleo,5.479,0.175,3.186,5.137,5.821,39061,A,%
+T03,2024,area,2,Rural,adecuado,,Empleo adecuado (aprox.),48.644,0.524,1.078,47.616,49.671,21193,A,%
+T03,2024,area,2,Rural,epr,,Ratio empleo-población,77.183,0.34,0.441,76.516,77.85,27578,A,%
+T03,2024,area,2,Rural,informality,,Tasa de empleo informal,93.945,0.286,0.305,93.384,94.506,21193,A,%
+T03,2024,area,2,Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.506,0.326,0.416,77.866,79.146,27578,A,%
+T03,2024,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),733.667,11.076,1.51,712.333,755.75,16668,A,S/
+T03,2024,area,2,Rural,ur,,Tasa de desempleo,1.685,0.133,7.894,1.424,1.946,21444,A,%
+T03,2024,sex_area,1|1,Hombres × Urbano,adecuado,,Empleo adecuado (aprox.),72.196,0.479,0.663,71.258,73.134,19800,A,%
+T03,2024,sex_area,1|1,Hombres × Urbano,epr,,Ratio empleo-población,75.106,0.359,0.479,74.401,75.81,27432,A,%
+T03,2024,sex_area,1|1,Hombres × Urbano,informality,,Tasa de empleo informal,65.497,0.561,0.857,64.397,66.598,19800,A,%
+T03,2024,sex_area,1|1,Hombres × Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.69,0.332,0.422,78.039,79.341,27432,A,%
+T03,2024,sex_area,1|1,Hombres × Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1514.25,10.523,0.695,1499.167,1540.417,19010,A,S/
+T03,2024,sex_area,1|1,Hombres × Urbano,ur,,Tasa de desempleo,4.555,0.222,4.873,4.12,4.99,20678,A,%
+T03,2024,sex_area,1|2,Hombres × Rural,adecuado,,Empleo adecuado (aprox.),48.632,0.693,1.425,47.274,49.991,11466,A,%
+T03,2024,sex_area,1|2,Hombres × Rural,epr,,Ratio empleo-población,84.64,0.406,0.48,83.843,85.436,13561,A,%
+T03,2024,sex_area,1|2,Hombres × Rural,informality,,Tasa de empleo informal,92.673,0.388,0.419,91.912,93.434,11466,A,%
+T03,2024,sex_area,1|2,Hombres × Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",85.688,0.39,0.456,84.923,86.453,13561,A,%
+T03,2024,sex_area,1|2,Hombres × Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),893.0,15.774,1.766,864.5,926.333,10407,A,S/
+T03,2024,sex_area,1|2,Hombres × Rural,ur,,Tasa de desempleo,1.223,0.154,12.562,0.922,1.524,11570,A,%
+T03,2024,sex_area,2|1,Mujeres × Urbano,adecuado,,Empleo adecuado (aprox.),55.508,0.569,1.025,54.393,56.623,17353,A,%
+T03,2024,sex_area,2|1,Mujeres × Urbano,epr,,Ratio empleo-población,56.608,0.401,0.709,55.821,57.394,30527,A,%
+T03,2024,sex_area,2|1,Mujeres × Urbano,informality,,Tasa de empleo informal,70.836,0.573,0.809,69.713,71.96,17353,A,%
+T03,2024,sex_area,2|1,Mujeres × Urbano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",60.631,0.405,0.668,59.837,61.424,30527,A,%
+T03,2024,sex_area,2|1,Mujeres × Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1100.917,12.118,1.101,1078.25,1125.75,16241,A,S/
+T03,2024,sex_area,2|1,Mujeres × Urbano,ur,,Tasa de desempleo,6.635,0.281,4.229,6.085,7.185,18383,A,%
+T03,2024,sex_area,2|2,Mujeres × Rural,adecuado,,Empleo adecuado (aprox.),48.66,0.76,1.562,47.17,50.15,9727,A,%
+T03,2024,sex_area,2|2,Mujeres × Rural,epr,,Ratio empleo-población,68.486,0.535,0.782,67.437,69.536,14017,A,%
+T03,2024,sex_area,2|2,Mujeres × Rural,informality,,Tasa de empleo informal,95.779,0.286,0.298,95.219,96.339,9727,A,%
+T03,2024,sex_area,2|2,Mujeres × Rural,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.13,0.515,0.735,69.12,71.14,14017,A,%
+T03,2024,sex_area,2|2,Mujeres × Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),464.0,12.203,2.63,442.333,490.167,6261,A,S/
+T03,2024,sex_area,2|2,Mujeres × Rural,ur,,Tasa de desempleo,2.343,0.23,9.834,1.892,2.795,9874,A,%

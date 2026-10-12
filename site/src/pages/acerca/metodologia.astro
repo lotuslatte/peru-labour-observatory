@@ -1,0 +1,64 @@
+---
+import Base from '../../layouts/Base.astro';
+import { loadMeta } from '../../data/loaders';
+const m = loadMeta();
+const ag = Object.entries(m.informality_rule.agreement);
+---
+<Base title="Metodología">
+  <div class="eyebrow" style="margin-top:28px">Metodología</div>
+  <h1>Cómo se construye cada cifra</h1>
+  <div class="prose">
+    <p class="lede">Todas las estimaciones provienen de un único pipeline reproducible que lee los microdatos públicos de la ENAHO (INEI) 2014–2024, armoniza variables entre años, construye indicadores con definiciones INEI/OIT y calcula errores estándar de diseño.</p>
+
+    <h2 id="lectura">Guía de lectura en 60 segundos</h2>
+    <ol><li><strong>Toda cifra es una estimación</strong> a partir de ~86 000 entrevistas anuales; nunca un conteo. Por eso lleva un intervalo de confianza.</li>
+    <li><strong>El sello</strong> resume la precisión: <span class="badge A"></span> error relativo menor a 15 % (se puede citar sin más); <span class="badge B"></span> entre 15 y 30 % (citar con el intervalo); <span class="badge S"></span> mayor a 30 % o menos de 30 casos (no se publica).</li>
+    <li><strong>Comparar</strong> dos cifras exige mirar los intervalos o la prueba de diferencia: en el sitio, las diferencias marcadas con ▲/▼ o * superan el error de muestreo; ≈ significa que no.</li>
+    <li><strong>Los colores</strong> tienen significado fijo: carmín = informal/desprotegido; jade = formal/protegido.</li>
+    <li><strong>2024</strong> es el año titular; 2014–2023 forman la serie. 2020 se anota como año de pandemia.</li></ol>
+
+    <h2 id="datos">Datos</h2>
+    <p>Encuesta Nacional de Hogares sobre Condiciones de Vida y Pobreza (ENAHO), levantamiento anual (enero–diciembre), módulos 200 (miembros), 300 (educación), 400 (salud), 500 (empleo e ingresos) y Sumaria. Unidad de análisis: personas de 14 años o más (Población en Edad de Trabajar, PET) miembros del hogar, con factor de expansión del módulo 500 (<code>fac500a</code>).</p>
+    <table class="data"><thead><tr><th>Año</th>{m.years.map((y: number) => <th>{y}</th>)}</tr></thead><tbody><tr><td>Personas 14+ (n)</td>{m.years.map((y: number) => <td>{m.sample[y].toLocaleString('es-PE')}</td>)}</tr></tbody></table>
+    <p class="small muted">2020: levantamiento parcialmente telefónico por la pandemia; las series se muestran con esa anotación.</p>
+
+    <h2 id="definitions">Definiciones</h2>
+    <table class="data"><thead><tr><th>Indicador</th><th style="text-align:left">Definición</th></tr></thead><tbody>
+      <tr><td>Tasa de actividad</td><td style="text-align:left">PEA / PET. PEA = ocupados + desocupados abiertos (<code>ocu500 ∈ {'{1,2}'}</code>). Los "desocupados ocultos" se tratan como inactivos, como hace INEI.</td></tr>
+      <tr><td>Ratio empleo-población</td><td style="text-align:left">Ocupados / PET.</td></tr>
+      <tr><td>Tasa de desempleo</td><td style="text-align:left">Desocupados abiertos / PEA. Nota: la cifra de desempleo 2024 que INEI difunde en prensa (5,6 %) proviene de la EPEN, una encuesta distinta; la serie ENAHO es sistemáticamente ~1 pp menor.</td></tr>
+      <tr><td>Empleo informal</td><td style="text-align:left">Definición INEI/OIT: (i) empleadores e independientes cuya unidad productiva pertenece al sector informal; (ii) asalariados sin protección; (iii) trabajadores familiares no remunerados. 2014–2023: variable oficial <code>ocupinf</code> de INEI. 2024: INEI no incluye <code>ocupinf</code> en el archivo; se aplica la regla del Observatorio (abajo).</td></tr>
+      <tr><td>Empleo en el sector informal</td><td style="text-align:left">Variable <code>emplpsec == 1</code> (2014–2023); 2024: informal en unidad sin RUC.</td></tr>
+      <tr><td>Subempleo por horas</td><td style="text-align:left">Ocupados con menos de 35 horas semanales normales (<code>p513t + p518</code> si la semana fue normal; <code>i520</code> en caso contrario) que desean y están disponibles para trabajar más horas (<code>p521 = p521a = 1</code>).</td></tr>
+      <tr><td>Subempleo por ingresos (aprox.)</td><td style="text-align:left">Ocupados no subempleados por horas cuyo ingreso laboral mensual es menor a la Remuneración Mínima Vital del año. INEI usa un "ingreso mínimo referencial" (canasta) no disponible en los microdatos; por eso la cifra es una aproximación y se etiqueta así.</td></tr>
+      <tr><td>Empleo adecuado (aprox.)</td><td style="text-align:left">Ocupados sin subempleo por horas ni por ingresos.</td></tr>
+      <tr><td>NiNi 15–29</td><td style="text-align:left">Personas de 15 a 29 años que no están ocupadas y no asisten a un centro educativo (<code>p307 ≠ 1</code>).</td></tr>
+      <tr><td>Ingreso laboral mensual</td><td style="text-align:left">Ingreso proveniente del trabajo según INEI: monetario (<code>i524a1, i530a, i538a1, i541a</code>), pago en especie y autoconsumo (<code>d529t, d536, d540t, d543</code>) e ingresos extraordinarios de los últimos 12 meses (<code>d544t</code>), anualizados e imputados por INEI, divididos entre 12, entre ocupados con ingreso positivo. Esta suma reproduce el ingreso promedio oficial de INEI 2014–2021 con diferencias menores a S/ 2. Deflactado a soles de 2024 con el IPC promedio anual de Lima Metropolitana (BCRP, series PN01270PM y PN38705PM encadenadas).</td></tr>
+      <tr><td>Contrato</td><td style="text-align:left">Asalariados (empleados, obreros, trabajadores del hogar) con <code>p511a ≠ 7</code>; indefinido: <code>p511a = 1</code>.</td></tr>
+      <tr><td>Seguro de salud / pensión</td><td style="text-align:left">Ocupados afiliados a cualquier seguro (<code>p4191–p4198</code>, módulo 400) / a cualquier sistema de pensiones (<code>p558a5 ≠ 5</code>).</td></tr>
+      <tr><td>Lengua materna</td><td style="text-align:left"><code>p300a</code>: lengua indígena u originaria (quechua, aimara, otras nativas y las 6 lenguas amazónicas codificadas desde 2024) vs castellano vs otras.</td></tr>
+      <tr><td>Autoidentificación étnica</td><td style="text-align:left"><code>p558c</code> agrupada: quechua; aimara; nativo de la Amazonía u otro pueblo indígena (código 9, desde 2016); afroperuano; blanco/mestizo; otro/no sabe.</td></tr>
+      <tr><td>Migrante reciente</td><td style="text-align:left">Residía hace 5 años en otro departamento o en el extranjero (<code>p401f = 2</code> y departamento de <code>p401g</code> distinto).</td></tr>
+      <tr><td>Región natural</td><td style="text-align:left">Dominio INEI: costa (1–3), sierra (4–6), selva (7), Lima Metropolitana (8, incluye Callao).</td></tr>
+      <tr><td>Lima Metropolitana / Lima Región</td><td style="text-align:left">Provincia de Lima (1501) + Callao (07) vs resto del departamento de Lima. El mapa muestra el departamento completo.</td></tr>
+    </tbody></table>
+
+    <h2 id="informalidad">Regla de informalidad (2024)</h2>
+    <p>Sector informal: unidad productiva no registrada en SUNAT (<code>p510a1 = 3</code>). Asalariados informales: {m.informality_rule.wage}. Trabajadores familiares no remunerados: siempre informales. La regla se ajustó buscando la máxima concordancia con <code>ocupinf</code> en 2023 y se valida en cada año disponible:</p>
+    <table class="data"><thead><tr><th>Año</th><th>Concordancia ponderada</th><th>Tasa según regla</th><th>Tasa INEI (ocupinf)</th></tr></thead><tbody>
+      {ag.map(([y, r]: any) => <tr><td>{y}</td><td>{(r.agree_w * 100).toFixed(2)} %</td><td>{r.rate_rule.toFixed(1)} %</td><td>{r.rate_inei.toFixed(1)} %</td></tr>)}
+    </tbody></table>
+    <p>La regla subestima la tasa INEI entre 0,2 y 1,5 pp (INEI utiliza información sobre quién financia el seguro de salud que no está en los archivos públicos). Por eso la informalidad de 2024 debe leerse con ese sesgo conocido y así se anota en las series.</p>
+
+    <h2 id="uncertainty">Incertidumbre y grados de confiabilidad</h2>
+    <p>Errores estándar por linealización de Taylor con PSU = conglomerado (<code>conglome</code>) y pseudo-estratos = departamento × estrato de tamaño de centro poblado; los estratos con un solo PSU se centran en la media global (equivalente a <code>singleunit(centered)</code> en Stata). Medianas y percentiles con intervalos de Woodruff. Las diferencias (brechas) usan la covarianza de diseño. Cada celda recibe un grado según su error estándar relativo (RSE):</p>
+    <table class="data"><tbody><tr><td><span class="badge A">A</span></td><td style="text-align:left">{m.grades.A}: publicable.</td></tr><tr><td><span class="badge B">B</span></td><td style="text-align:left">{m.grades.B}: usar con cautela.</td></tr><tr><td><span class="badge S">S</span></td><td style="text-align:left">{m.grades.S}: suprimido (se muestra "—").</td></tr></tbody></table>
+
+    <h2 id="validacion">Validación</h2>
+    <p>Los titulares se comparan con las tablas oficiales "Indicadores de empleo – ENAHO" de INEI (2007–2021): tasa de actividad nacional, urbana, rural y de Lima Metropolitana dentro de ±0,5 pp en 30 de 32 celdas; tasa de empleo informal dentro de ±0,2 pp en todas. La tabla T42 del compendio reproduce la comparación completa.</p>
+
+    <h2 id="limitaciones">Limitaciones</h2>
+    <ul><li>La ENAHO no tiene un estado de actividad de referencia anual (equivalente al UPSS indio): todos los indicadores usan la semana de referencia.</li><li>Sin deflactor espacial: los ingresos reales se expresan en soles de Lima 2024.</li><li>Los pseudo-estratos aproximan el diseño real de INEI; los errores estándar pueden diferir ligeramente de los oficiales.</li><li>Departamentos pequeños (Madre de Dios, Tumbes, Moquegua) producen muchas celdas suprimidas en cruces.</li></ul>
+    <p><a href="/datos/">Descargar todos los datos</a> · <a href="/acerca/escuela-de-encuestas/">Escuela de encuestas</a></p>
+  </div>
+</Base>

@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import { loadHeadline } from '../../data/loaders';
+const h = loadHeadline();
+---
+<Base title="Acerca de">
+  <div class="eyebrow" style="margin-top:28px">Acerca del Observatorio</div>
+  <h1>Infraestructura abierta para leer el trabajo en el Perú</h1>
+  <div class="prose">
+    <p class="lede">El Observatorio Laboral del Perú es un proyecto de investigación independiente que convierte los microdatos públicos de la Encuesta Nacional de Hogares (ENAHO, INEI) en indicadores comparables, con incertidumbre explícita y descarga libre.</p>
+    <h2>Por qué</h2><p>INEI publica tablas y boletines; los investigadores y periodistas necesitan además intervalos de confianza, desagregaciones cruzadas (departamento × sexo, lengua materna × área) y series armonizadas. Este sitio replica para el Perú la lógica del <a href="https://indialabourobservatory.com/">India Labour Observatory</a>: un solo pipeline reproducible, un solo conjunto de definiciones, y cada cifra con su grado de confiabilidad.</p>
+    <h2>Quién</h2><p>Creado y mantenido por <strong><a href="https://lotuslatte.github.io/" rel="author">Favio Samillan Flores</a></strong>, economista (PUCP) e investigador en migración, cambio climático y desarrollo rural. Página personal: <a href="https://lotuslatte.github.io/">lotuslatte.github.io</a> · <a href="https://www.linkedin.com/in/favio-samillan-flores-367054295/">LinkedIn</a> · <a href="mailto:samillanf.f@pucp.edu.pe">samillanf.f@pucp.edu.pe</a>.</p>
+    <h2>Cómo citar</h2><p>Samillan Flores, F. (2026). <em>Observatorio Laboral del Perú</em>: indicadores del mercado laboral a partir de ENAHO 2014–2024. Generado el {h.generated}. Licencia CC BY 4.0.</p>
+    <h2>Fuente</h2><p>Instituto Nacional de Estadística e Informática (INEI). Encuesta Nacional de Hogares sobre Condiciones de Vida y Pobreza, 2014–2024. Microdatos: <a href="https://proyectos.inei.gob.pe/microdatos/">proyectos.inei.gob.pe/microdatos</a>. Deflactor: BCRP, IPC Lima Metropolitana. Límites: INEI.</p>
+    <h2 id="contact">Contacto y correcciones</h2><p>Errores, sugerencias y solicitudes de nuevas tablas: escribir al correo indicado. Cada tabla lleva su identificador (T01–T42) para facilitar la referencia.</p>
+  </div>
+</Base>

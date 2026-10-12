@@ -1,0 +1,43 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T22,2024,etnia6,1,Quechua,adecuado,,Empleo adecuado (aprox.),56.768,0.646,1.138,55.502,58.034,15647,A,%
+T22,2024,etnia6,1,Quechua,epr,,Ratio empleo-población,72.993,0.459,0.629,72.094,73.893,20684,A,%
+T22,2024,etnia6,1,Quechua,informality,,Tasa de empleo informal,83.426,0.569,0.682,82.31,84.541,15647,A,%
+T22,2024,etnia6,1,Quechua,lfpr,,"Tasa de actividad (PEA/PET, 14+)",76.146,0.46,0.604,75.245,77.047,20684,A,%
+T22,2024,etnia6,1,Quechua,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1071.417,15.432,1.44,1042.167,1102.66,12961,A,S/
+T22,2024,etnia6,1,Quechua,neet,,Jóvenes 15–29 que ni estudian ni trabajan,18.931,0.855,4.517,17.254,20.607,4619,A,%
+T22,2024,etnia6,1,Quechua,ur,,Tasa de desempleo,4.141,0.268,6.472,3.615,4.666,16093,A,%
+T22,2024,etnia6,2,Aimara,adecuado,,Empleo adecuado (aprox.),51.022,2.066,4.049,46.973,55.071,1929,A,%
+T22,2024,etnia6,2,Aimara,epr,,Ratio empleo-población,72.244,1.25,1.73,69.794,74.694,2612,A,%
+T22,2024,etnia6,2,Aimara,informality,,Tasa de empleo informal,82.852,1.767,2.133,79.389,86.315,1929,A,%
+T22,2024,etnia6,2,Aimara,lfpr,,"Tasa de actividad (PEA/PET, 14+)",77.01,1.256,1.63,74.549,79.471,2612,A,%
+T22,2024,etnia6,2,Aimara,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),914.123,62.912,6.882,803.471,1050.083,1733,A,S/
+T22,2024,etnia6,2,Aimara,neet,,Jóvenes 15–29 que ni estudian ni trabajan,18.768,2.489,13.263,13.89,23.647,489,A,%
+T22,2024,etnia6,2,Aimara,ur,,Tasa de desempleo,6.189,0.833,13.461,4.556,7.822,2023,A,%
+T22,2024,etnia6,3,Amazónico / otro pueblo indígena,adecuado,,Empleo adecuado (aprox.),53.104,2.053,3.866,49.08,57.128,1375,A,%
+T22,2024,etnia6,3,Amazónico / otro pueblo indígena,epr,,Ratio empleo-población,72.327,1.568,2.168,69.254,75.399,1908,A,%
+T22,2024,etnia6,3,Amazónico / otro pueblo indígena,informality,,Tasa de empleo informal,87.189,2.15,2.466,82.975,91.403,1375,A,%
+T22,2024,etnia6,3,Amazónico / otro pueblo indígena,lfpr,,"Tasa de actividad (PEA/PET, 14+)",74.235,1.554,2.093,71.189,77.28,1908,A,%
+T22,2024,etnia6,3,Amazónico / otro pueblo indígena,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),884.167,61.821,6.992,765.667,1008.0,1024,A,S/
+T22,2024,etnia6,3,Amazónico / otro pueblo indígena,neet,,Jóvenes 15–29 que ni estudian ni trabajan,22.051,2.455,11.135,17.239,26.863,689,A,%
+T22,2024,etnia6,3,Amazónico / otro pueblo indígena,ur,,Tasa de desempleo,2.57,0.702,27.327,1.194,3.947,1397,B,%
+T22,2024,etnia6,4,Afroperuano,adecuado,,Empleo adecuado (aprox.),53.789,1.081,2.009,51.67,55.907,3909,A,%
+T22,2024,etnia6,4,Afroperuano,epr,,Ratio empleo-población,69.64,0.769,1.104,68.133,71.147,5695,A,%
+T22,2024,etnia6,4,Afroperuano,informality,,Tasa de empleo informal,80.757,0.917,1.136,78.959,82.554,3909,A,%
+T22,2024,etnia6,4,Afroperuano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",72.85,0.736,1.011,71.407,74.293,5695,A,%
+T22,2024,etnia6,4,Afroperuano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1071.417,22.79,2.127,1026.833,1116.167,3568,A,S/
+T22,2024,etnia6,4,Afroperuano,neet,,Jóvenes 15–29 que ni estudian ni trabajan,20.862,1.307,6.265,18.3,23.423,1537,A,%
+T22,2024,etnia6,4,Afroperuano,ur,,Tasa de desempleo,4.406,0.459,10.416,3.507,5.306,4058,A,%
+T22,2024,etnia6,5,Blanco / mestizo,adecuado,,Empleo adecuado (aprox.),65.28,0.436,0.668,64.425,66.134,30915,A,%
+T22,2024,etnia6,5,Blanco / mestizo,epr,,Ratio empleo-población,66.195,0.308,0.465,65.592,66.799,47147,A,%
+T22,2024,etnia6,5,Blanco / mestizo,informality,,Tasa de empleo informal,66.809,0.512,0.767,65.805,67.813,30915,A,%
+T22,2024,etnia6,5,Blanco / mestizo,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.652,0.299,0.429,69.067,70.238,47147,A,%
+T22,2024,etnia6,5,Blanco / mestizo,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1335.417,15.923,1.192,1309.833,1372.25,28523,A,S/
+T22,2024,etnia6,5,Blanco / mestizo,neet,,Jóvenes 15–29 que ni estudian ni trabajan,22.067,0.556,2.519,20.978,23.157,14481,A,%
+T22,2024,etnia6,5,Blanco / mestizo,ur,,Tasa de desempleo,4.963,0.201,4.058,4.568,5.358,32164,A,%
+T22,2024,etnia6,6,Otro / no sabe,adecuado,,Empleo adecuado (aprox.),61.285,1.103,1.8,59.124,63.447,4571,A,%
+T22,2024,etnia6,6,Otro / no sabe,epr,,Ratio empleo-población,63.952,0.813,1.271,62.359,65.546,7299,A,%
+T22,2024,etnia6,6,Otro / no sabe,informality,,Tasa de empleo informal,74.953,1.084,1.446,72.828,77.077,4571,A,%
+T22,2024,etnia6,6,Otro / no sabe,lfpr,,"Tasa de actividad (PEA/PET, 14+)",67.356,0.761,1.129,65.865,68.846,7299,A,%
+T22,2024,etnia6,6,Otro / no sabe,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1204.167,29.298,2.433,1161.667,1276.512,4110,A,S/
+T22,2024,etnia6,6,Otro / no sabe,neet,,Jóvenes 15–29 que ni estudian ni trabajan,22.504,1.299,5.771,19.958,25.05,1971,A,%
+T22,2024,etnia6,6,Otro / no sabe,ur,,Tasa de desempleo,5.053,0.496,9.81,4.081,6.024,4770,A,%

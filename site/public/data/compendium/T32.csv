@@ -1,0 +1,19 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T32,2024,area,1,Urbano,firm_small,,Ocupados en unidades de hasta 20 trabajadores,72.703,0.426,0.586,71.868,73.539,37153,A,%
+T32,2024,area,1,Urbano,secondary_job,,Ocupados con ocupación secundaria,17.21,0.311,1.808,16.6,17.819,37153,A,%
+T32,2024,area,2,Rural,firm_small,,Ocupados en unidades de hasta 20 trabajadores,91.636,0.315,0.344,91.019,92.253,21193,A,%
+T32,2024,area,2,Rural,secondary_job,,Ocupados con ocupación secundaria,36.032,0.543,1.507,34.968,37.096,21193,A,%
+T32,2024,national,all,Nacional,firm_small,,Ocupados en unidades de hasta 20 trabajadores,76.505,0.347,0.454,75.825,77.185,58346,A,%
+T32,2024,national,all,Nacional,secondary_job,,Ocupados con ocupación secundaria,20.989,0.28,1.336,20.44,21.539,58346,A,%
+T32,2024,region_nat,1,Costa,firm_small,,Ocupados en unidades de hasta 20 trabajadores,75.357,0.55,0.73,74.279,76.436,17449,A,%
+T32,2024,region_nat,1,Costa,secondary_job,,Ocupados con ocupación secundaria,19.805,0.456,2.303,18.911,20.699,17449,A,%
+T32,2024,region_nat,2,Sierra,firm_small,,Ocupados en unidades de hasta 20 trabajadores,83.506,0.457,0.548,82.609,84.402,21167,A,%
+T32,2024,region_nat,2,Sierra,secondary_job,,Ocupados con ocupación secundaria,29.214,0.503,1.723,28.227,30.201,21167,A,%
+T32,2024,region_nat,3,Selva,firm_small,,Ocupados en unidades de hasta 20 trabajadores,85.495,0.531,0.621,84.454,86.536,13073,A,%
+T32,2024,region_nat,3,Selva,secondary_job,,Ocupados con ocupación secundaria,29.651,0.644,2.171,28.389,30.913,13073,A,%
+T32,2024,region_nat,4,Lima Metropolitana,firm_small,,Ocupados en unidades de hasta 20 trabajadores,66.658,0.894,1.342,64.905,68.411,6657,A,%
+T32,2024,region_nat,4,Lima Metropolitana,secondary_job,,Ocupados con ocupación secundaria,10.093,0.513,5.078,9.089,11.098,6657,A,%
+T32,2024,sex,1,Hombres,firm_small,,Ocupados en unidades de hasta 20 trabajadores,75.19,0.428,0.57,74.35,76.029,31266,A,%
+T32,2024,sex,1,Hombres,secondary_job,,Ocupados con ocupación secundaria,20.786,0.335,1.612,20.129,21.443,31266,A,%
+T32,2024,sex,2,Mujeres,firm_small,,Ocupados en unidades de hasta 20 trabajadores,78.229,0.44,0.562,77.366,79.091,27080,A,%
+T32,2024,sex,2,Mujeres,secondary_job,,Ocupados con ocupación secundaria,21.256,0.38,1.787,20.512,22.001,27080,A,%

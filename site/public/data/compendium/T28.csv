@@ -1,0 +1,52 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T28,2024,age4,1,14–24,adecuado,,Empleo adecuado (aprox.),56.913,0.818,1.437,55.31,58.515,8323,A,%
+T28,2024,age4,1,14–24,subemp_hours,,Subempleo por horas,4.523,0.319,7.058,3.898,5.149,8323,A,%
+T28,2024,age4,1,14–24,subemp_income,,Subempleo por ingresos (aprox. RMV),38.564,0.806,2.089,36.985,40.143,8323,A,%
+T28,2024,age4,2,25–44,adecuado,,Empleo adecuado (aprox.),67.417,0.479,0.711,66.477,68.356,22266,A,%
+T28,2024,age4,2,25–44,subemp_hours,,Subempleo por horas,3.584,0.178,4.975,3.234,3.933,22266,A,%
+T28,2024,age4,2,25–44,subemp_income,,Subempleo por ingresos (aprox. RMV),28.999,0.467,1.612,28.083,29.915,22266,A,%
+T28,2024,age4,3,45–64,adecuado,,Empleo adecuado (aprox.),61.043,0.536,0.879,59.992,62.094,20680,A,%
+T28,2024,age4,3,45–64,subemp_hours,,Subempleo por horas,3.833,0.225,5.858,3.393,4.273,20680,A,%
+T28,2024,age4,3,45–64,subemp_income,,Subempleo por ingresos (aprox. RMV),35.124,0.514,1.463,34.117,36.131,20680,A,%
+T28,2024,age4,4,65 y más,adecuado,,Empleo adecuado (aprox.),35.348,0.927,2.623,33.53,37.165,7077,A,%
+T28,2024,age4,4,65 y más,subemp_hours,,Subempleo por horas,3.882,0.391,10.084,3.114,4.649,7077,A,%
+T28,2024,age4,4,65 y más,subemp_income,,Subempleo por ingresos (aprox. RMV),60.771,0.94,1.547,58.928,62.613,7077,A,%
+T28,2024,area,1,Urbano,adecuado,,Empleo adecuado (aprox.),64.875,0.405,0.624,64.081,65.668,37153,A,%
+T28,2024,area,1,Urbano,subemp_hours,,Subempleo por horas,3.797,0.157,4.138,3.489,4.105,37153,A,%
+T28,2024,area,1,Urbano,subemp_income,,Subempleo por ingresos (aprox. RMV),31.329,0.394,1.259,30.556,32.102,37153,A,%
+T28,2024,area,2,Rural,adecuado,,Empleo adecuado (aprox.),48.644,0.524,1.078,47.616,49.671,21193,A,%
+T28,2024,area,2,Rural,subemp_hours,,Subempleo por horas,3.943,0.248,6.299,3.457,4.43,21193,A,%
+T28,2024,area,2,Rural,subemp_income,,Subempleo por ingresos (aprox. RMV),47.413,0.508,1.072,46.417,48.409,21193,A,%
+T28,2024,educ4,1,Hasta primaria,adecuado,,Empleo adecuado (aprox.),42.62,0.574,1.347,41.494,43.746,17019,A,%
+T28,2024,educ4,1,Hasta primaria,subemp_hours,,Subempleo por horas,4.079,0.245,6.007,3.599,4.559,17019,A,%
+T28,2024,educ4,1,Hasta primaria,subemp_income,,Subempleo por ingresos (aprox. RMV),53.301,0.569,1.067,52.186,54.416,17019,A,%
+T28,2024,educ4,2,Secundaria,adecuado,,Empleo adecuado (aprox.),59.316,0.489,0.824,58.357,60.274,23554,A,%
+T28,2024,educ4,2,Secundaria,subemp_hours,,Subempleo por horas,3.939,0.188,4.763,3.571,4.307,23554,A,%
+T28,2024,educ4,2,Secundaria,subemp_income,,Subempleo por ingresos (aprox. RMV),36.745,0.48,1.306,35.805,37.685,23554,A,%
+T28,2024,educ4,3,Superior no universitaria,adecuado,,Empleo adecuado (aprox.),71.727,0.72,1.004,70.316,73.138,8360,A,%
+T28,2024,educ4,3,Superior no universitaria,subemp_hours,,Subempleo por horas,3.445,0.263,7.636,2.929,3.961,8360,A,%
+T28,2024,educ4,3,Superior no universitaria,subemp_income,,Subempleo por ingresos (aprox. RMV),24.828,0.696,2.803,23.464,26.192,8360,A,%
+T28,2024,educ4,4,Universitaria y posgrado,adecuado,,Empleo adecuado (aprox.),79.239,0.643,0.811,77.98,80.499,9394,A,%
+T28,2024,educ4,4,Universitaria y posgrado,subemp_hours,,Subempleo por horas,3.625,0.274,7.565,3.088,4.163,9394,A,%
+T28,2024,educ4,4,Universitaria y posgrado,subemp_income,,Subempleo por ingresos (aprox. RMV),17.135,0.598,3.489,15.964,18.307,9394,A,%
+T28,2024,national,all,Nacional,adecuado,,Empleo adecuado (aprox.),61.615,0.34,0.552,60.949,62.281,58346,A,%
+T28,2024,national,all,Nacional,subemp_hours,,Subempleo por horas,3.826,0.135,3.531,3.561,4.091,58346,A,%
+T28,2024,national,all,Nacional,subemp_income,,Subempleo por ingresos (aprox. RMV),34.559,0.331,0.957,33.91,35.207,58346,A,%
+T28,2024,region_nat,1,Costa,adecuado,,Empleo adecuado (aprox.),62.195,0.516,0.83,61.183,63.206,17449,A,%
+T28,2024,region_nat,1,Costa,subemp_hours,,Subempleo por horas,4.437,0.249,5.609,3.95,4.925,17449,A,%
+T28,2024,region_nat,1,Costa,subemp_income,,Subempleo por ingresos (aprox. RMV),33.368,0.498,1.492,32.392,34.343,17449,A,%
+T28,2024,region_nat,2,Sierra,adecuado,,Empleo adecuado (aprox.),54.01,0.542,1.003,52.949,55.072,21167,A,%
+T28,2024,region_nat,2,Sierra,subemp_hours,,Subempleo por horas,4.183,0.221,5.293,3.749,4.617,21167,A,%
+T28,2024,region_nat,2,Sierra,subemp_income,,Subempleo por ingresos (aprox. RMV),41.807,0.528,1.263,40.772,42.842,21167,A,%
+T28,2024,region_nat,3,Selva,adecuado,,Empleo adecuado (aprox.),56.873,0.638,1.122,55.622,58.124,13073,A,%
+T28,2024,region_nat,3,Selva,subemp_hours,,Subempleo por horas,2.404,0.215,8.94,1.982,2.825,13073,A,%
+T28,2024,region_nat,3,Selva,subemp_income,,Subempleo por ingresos (aprox. RMV),40.723,0.639,1.57,39.471,41.976,13073,A,%
+T28,2024,region_nat,4,Lima Metropolitana,adecuado,,Empleo adecuado (aprox.),70.705,0.81,1.145,69.119,72.292,6657,A,%
+T28,2024,region_nat,4,Lima Metropolitana,subemp_hours,,Subempleo por horas,3.615,0.303,8.375,3.022,4.208,6657,A,%
+T28,2024,region_nat,4,Lima Metropolitana,subemp_income,,Subempleo por ingresos (aprox. RMV),25.679,0.784,3.054,24.142,27.217,6657,A,%
+T28,2024,sex,1,Hombres,adecuado,,Empleo adecuado (aprox.),67.27,0.408,0.607,66.47,68.07,31266,A,%
+T28,2024,sex,1,Hombres,subemp_hours,,Subempleo por horas,3.069,0.149,4.854,2.777,3.361,31266,A,%
+T28,2024,sex,1,Hombres,subemp_income,,Subempleo por ingresos (aprox. RMV),29.661,0.399,1.345,28.879,30.443,31266,A,%
+T28,2024,sex,2,Mujeres,adecuado,,Empleo adecuado (aprox.),54.207,0.482,0.89,53.262,55.153,27080,A,%
+T28,2024,sex,2,Mujeres,subemp_hours,,Subempleo por horas,4.818,0.222,4.599,4.384,5.252,27080,A,%
+T28,2024,sex,2,Mujeres,subemp_income,,Subempleo por ingresos (aprox. RMV),40.975,0.467,1.14,40.059,41.891,27080,A,%

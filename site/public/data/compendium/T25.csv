@@ -1,0 +1,226 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T25,2024,dept_lengua3,01|1,Amazonas × Lengua indígena u originaria,informality,,Tasa de empleo informal,89.963,4.021,4.47,82.082,97.844,295,A,%
+T25,2024,dept_lengua3,01|1,Amazonas × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.967,2.548,3.226,73.973,83.96,377,A,%
+T25,2024,dept_lengua3,01|1,Amazonas × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),712.0,41.625,5.846,675.25,838.417,192,A,S/
+T25,2024,dept_lengua3,01|2,Amazonas × Castellano,informality,,Tasa de empleo informal,85.312,1.527,1.79,82.318,88.305,1899,A,%
+T25,2024,dept_lengua3,01|2,Amazonas × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",76.928,1.069,1.389,74.833,79.023,2593,A,%
+T25,2024,dept_lengua3,01|2,Amazonas × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1003.333,46.196,4.604,930.333,1111.417,1568,A,S/
+T25,2024,dept_lengua3,01|3,Amazonas × Otra / no habla,informality,,Tasa de empleo informal,,,,,,3,S,%
+T25,2024,dept_lengua3,01|3,Amazonas × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,13,S,%
+T25,2024,dept_lengua3,01|3,Amazonas × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,1,S,S/
+T25,2024,dept_lengua3,02|1,Áncash × Lengua indígena u originaria,informality,,Tasa de empleo informal,90.439,1.256,1.389,87.976,92.901,1108,A,%
+T25,2024,dept_lengua3,02|1,Áncash × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",83.261,1.276,1.533,80.759,85.763,1385,A,%
+T25,2024,dept_lengua3,02|1,Áncash × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),823.333,53.679,6.52,709.5,919.917,841,A,S/
+T25,2024,dept_lengua3,02|2,Áncash × Castellano,informality,,Tasa de empleo informal,73.368,1.694,2.309,70.047,76.688,1463,A,%
+T25,2024,dept_lengua3,02|2,Áncash × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",71.645,1.192,1.663,69.31,73.981,2219,A,%
+T25,2024,dept_lengua3,02|2,Áncash × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1247.917,31.782,2.547,1184.417,1309.0,1313,A,S/
+T25,2024,dept_lengua3,02|3,Áncash × Otra / no habla,informality,,Tasa de empleo informal,,,,,,6,S,%
+T25,2024,dept_lengua3,02|3,Áncash × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,16,S,%
+T25,2024,dept_lengua3,02|3,Áncash × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,5,S,S/
+T25,2024,dept_lengua3,03|1,Apurímac × Lengua indígena u originaria,informality,,Tasa de empleo informal,91.827,1.35,1.47,89.181,94.473,1302,A,%
+T25,2024,dept_lengua3,03|1,Apurímac × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",86.864,1.226,1.411,84.461,89.266,1540,A,%
+T25,2024,dept_lengua3,03|1,Apurímac × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),979.0,45.957,4.694,883.2,1063.35,1015,A,S/
+T25,2024,dept_lengua3,03|2,Apurímac × Castellano,informality,,Tasa de empleo informal,75.884,3.271,4.31,69.473,82.294,329,A,%
+T25,2024,dept_lengua3,03|2,Apurímac × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",67.162,1.795,2.673,63.643,70.68,536,A,%
+T25,2024,dept_lengua3,03|2,Apurímac × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1344.083,146.878,10.928,1026.167,1601.917,268,A,S/
+T25,2024,dept_lengua3,03|3,Apurímac × Otra / no habla,informality,,Tasa de empleo informal,,,,,,2,S,%
+T25,2024,dept_lengua3,03|3,Apurímac × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,10,S,%
+T25,2024,dept_lengua3,03|3,Apurímac × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,0,S,S/
+T25,2024,dept_lengua3,04|1,Arequipa × Lengua indígena u originaria,informality,,Tasa de empleo informal,79.556,2.427,3.05,74.799,84.312,741,A,%
+T25,2024,dept_lengua3,04|1,Arequipa × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",72.526,1.961,2.704,68.682,76.371,1027,A,%
+T25,2024,dept_lengua3,04|1,Arequipa × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1213.167,66.413,5.474,1084.667,1345.0,701,A,S/
+T25,2024,dept_lengua3,04|2,Arequipa × Castellano,informality,,Tasa de empleo informal,59.217,2.006,3.388,55.284,63.149,1739,A,%
+T25,2024,dept_lengua3,04|2,Arequipa × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.515,0.961,1.382,67.632,71.399,2711,A,%
+T25,2024,dept_lengua3,04|2,Arequipa × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1513.75,45.26,2.99,1401.25,1578.667,1642,A,S/
+T25,2024,dept_lengua3,04|3,Arequipa × Otra / no habla,informality,,Tasa de empleo informal,,,,,,2,S,%
+T25,2024,dept_lengua3,04|3,Arequipa × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,4,S,%
+T25,2024,dept_lengua3,04|3,Arequipa × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,1,S,S/
+T25,2024,dept_lengua3,05|1,Ayacucho × Lengua indígena u originaria,informality,,Tasa de empleo informal,91.552,1.384,1.511,88.84,94.264,1482,A,%
+T25,2024,dept_lengua3,05|1,Ayacucho × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",83.131,1.056,1.27,81.062,85.201,1892,A,%
+T25,2024,dept_lengua3,05|1,Ayacucho × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),809.75,42.582,5.259,731.667,898.583,1204,A,S/
+T25,2024,dept_lengua3,05|2,Ayacucho × Castellano,informality,,Tasa de empleo informal,84.142,2.608,3.1,79.03,89.254,446,A,%
+T25,2024,dept_lengua3,05|2,Ayacucho × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",63.995,2.32,3.625,59.448,68.541,772,A,%
+T25,2024,dept_lengua3,05|2,Ayacucho × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1141.917,58.101,5.088,971.5,1199.25,369,A,S/
+T25,2024,dept_lengua3,05|3,Ayacucho × Otra / no habla,informality,,Tasa de empleo informal,,,,,,6,S,%
+T25,2024,dept_lengua3,05|3,Ayacucho × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,10,S,%
+T25,2024,dept_lengua3,05|3,Ayacucho × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,2,S,S/
+T25,2024,dept_lengua3,06|1,Cajamarca × Lengua indígena u originaria,informality,,Tasa de empleo informal,,,,,,6,S,%
+T25,2024,dept_lengua3,06|1,Cajamarca × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,7,S,%
+T25,2024,dept_lengua3,06|1,Cajamarca × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,5,S,S/
+T25,2024,dept_lengua3,06|2,Cajamarca × Castellano,informality,,Tasa de empleo informal,86.392,1.145,1.326,84.147,88.636,2495,A,%
+T25,2024,dept_lengua3,06|2,Cajamarca × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",75.429,0.963,1.277,73.541,77.318,3470,A,%
+T25,2024,dept_lengua3,06|2,Cajamarca × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),726.833,29.89,4.112,670.167,787.333,2112,A,S/
+T25,2024,dept_lengua3,06|3,Cajamarca × Otra / no habla,informality,,Tasa de empleo informal,,,,,,7,S,%
+T25,2024,dept_lengua3,06|3,Cajamarca × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,15,S,%
+T25,2024,dept_lengua3,06|3,Cajamarca × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,5,S,S/
+T25,2024,dept_lengua3,07|1,Callao × Lengua indígena u originaria,informality,,Tasa de empleo informal,72.05,5.135,7.127,61.986,82.114,106,A,%
+T25,2024,dept_lengua3,07|1,Callao × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",54.912,3.995,7.275,47.082,62.742,203,A,%
+T25,2024,dept_lengua3,07|1,Callao × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1197.0,98.599,8.237,1038.917,1425.417,104,A,S/
+T25,2024,dept_lengua3,07|2,Callao × Castellano,informality,,Tasa de empleo informal,56.981,1.674,2.938,53.699,60.263,1517,A,%
+T25,2024,dept_lengua3,07|2,Callao × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",65.991,1.082,1.64,63.87,68.113,2630,A,%
+T25,2024,dept_lengua3,07|2,Callao × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1451.167,32.143,2.215,1380.75,1506.75,1493,A,S/
+T25,2024,dept_lengua3,07|3,Callao × Otra / no habla,informality,,Tasa de empleo informal,,,,,,2,S,%
+T25,2024,dept_lengua3,07|3,Callao × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,7,S,%
+T25,2024,dept_lengua3,07|3,Callao × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,2,S,S/
+T25,2024,dept_lengua3,08|1,Cusco × Lengua indígena u originaria,informality,,Tasa de empleo informal,89.052,1.124,1.262,86.85,91.255,1636,A,%
+T25,2024,dept_lengua3,08|1,Cusco × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",82.962,1.117,1.347,80.772,85.152,2001,A,%
+T25,2024,dept_lengua3,08|1,Cusco × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1007.917,44.329,4.398,911.733,1085.5,1274,A,S/
+T25,2024,dept_lengua3,08|2,Cusco × Castellano,informality,,Tasa de empleo informal,65.418,2.775,4.243,59.978,70.857,659,A,%
+T25,2024,dept_lengua3,08|2,Cusco × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",66.701,1.948,2.921,62.883,70.52,1099,A,%
+T25,2024,dept_lengua3,08|2,Cusco × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1495.333,68.517,4.582,1306.25,1574.833,570,A,S/
+T25,2024,dept_lengua3,08|3,Cusco × Otra / no habla,informality,,Tasa de empleo informal,,,,,,5,S,%
+T25,2024,dept_lengua3,08|3,Cusco × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,9,S,%
+T25,2024,dept_lengua3,08|3,Cusco × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,1,S,S/
+T25,2024,dept_lengua3,09|1,Huancavelica × Lengua indígena u originaria,informality,,Tasa de empleo informal,92.022,1.205,1.309,89.661,94.383,1505,A,%
+T25,2024,dept_lengua3,09|1,Huancavelica × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",88.311,0.925,1.048,86.497,90.124,1726,A,%
+T25,2024,dept_lengua3,09|1,Huancavelica × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),678.709,28.551,4.207,628.083,740.0,1143,A,S/
+T25,2024,dept_lengua3,09|2,Huancavelica × Castellano,informality,,Tasa de empleo informal,83.174,2.661,3.2,77.958,88.39,562,A,%
+T25,2024,dept_lengua3,09|2,Huancavelica × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.352,2.075,2.991,65.286,73.418,849,A,%
+T25,2024,dept_lengua3,09|2,Huancavelica × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),998.167,63.011,6.313,898.583,1145.583,432,A,S/
+T25,2024,dept_lengua3,09|3,Huancavelica × Otra / no habla,informality,,Tasa de empleo informal,,,,,,9,S,%
+T25,2024,dept_lengua3,09|3,Huancavelica × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,13,S,%
+T25,2024,dept_lengua3,09|3,Huancavelica × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,5,S,S/
+T25,2024,dept_lengua3,10|1,Huánuco × Lengua indígena u originaria,informality,,Tasa de empleo informal,94.355,2.047,2.17,90.342,98.367,758,A,%
+T25,2024,dept_lengua3,10|1,Huánuco × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",77.63,2.47,3.182,72.789,82.472,964,A,%
+T25,2024,dept_lengua3,10|1,Huánuco × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),556.15,55.316,9.946,440.25,657.083,597,A,S/
+T25,2024,dept_lengua3,10|2,Huánuco × Castellano,informality,,Tasa de empleo informal,83.547,2.031,2.43,79.567,87.527,1396,A,%
+T25,2024,dept_lengua3,10|2,Huánuco × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.449,1.759,2.496,67.002,73.895,2012,A,%
+T25,2024,dept_lengua3,10|2,Huánuco × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),865.25,49.831,5.759,755.0,950.333,1220,A,S/
+T25,2024,dept_lengua3,10|3,Huánuco × Otra / no habla,informality,,Tasa de empleo informal,,,,,,7,S,%
+T25,2024,dept_lengua3,10|3,Huánuco × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,15,S,%
+T25,2024,dept_lengua3,10|3,Huánuco × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,4,S,S/
+T25,2024,dept_lengua3,11|1,Ica × Lengua indígena u originaria,informality,,Tasa de empleo informal,76.766,4.922,6.411,67.12,86.412,132,A,%
+T25,2024,dept_lengua3,11|1,Ica × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",68.989,3.587,5.199,61.959,76.018,207,A,%
+T25,2024,dept_lengua3,11|1,Ica × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1507.167,158.613,10.524,1203.833,1825.583,124,A,S/
+T25,2024,dept_lengua3,11|2,Ica × Castellano,informality,,Tasa de empleo informal,62.936,1.408,2.236,60.177,65.695,2439,A,%
+T25,2024,dept_lengua3,11|2,Ica × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",73.511,0.902,1.226,71.744,75.278,3563,A,%
+T25,2024,dept_lengua3,11|2,Ica × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1716.25,33.334,1.942,1664.333,1795.0,2305,A,S/
+T25,2024,dept_lengua3,11|3,Ica × Otra / no habla,informality,,Tasa de empleo informal,,,,,,5,S,%
+T25,2024,dept_lengua3,11|3,Ica × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,9,S,%
+T25,2024,dept_lengua3,11|3,Ica × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,4,S,S/
+T25,2024,dept_lengua3,12|1,Junín × Lengua indígena u originaria,informality,,Tasa de empleo informal,92.972,1.54,1.657,89.953,95.991,518,A,%
+T25,2024,dept_lengua3,12|1,Junín × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.81,1.751,2.193,76.379,83.241,685,A,%
+T25,2024,dept_lengua3,12|1,Junín × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),971.0,58.59,6.034,866.167,1095.833,422,A,S/
+T25,2024,dept_lengua3,12|2,Junín × Castellano,informality,,Tasa de empleo informal,79.029,1.403,1.775,76.28,81.779,2148,A,%
+T25,2024,dept_lengua3,12|2,Junín × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",75.328,0.995,1.321,73.378,77.278,3041,A,%
+T25,2024,dept_lengua3,12|2,Junín × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1188.833,29.741,2.502,1114.917,1231.5,1891,A,S/
+T25,2024,dept_lengua3,12|3,Junín × Otra / no habla,informality,,Tasa de empleo informal,,,,,,6,S,%
+T25,2024,dept_lengua3,12|3,Junín × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,12,S,%
+T25,2024,dept_lengua3,12|3,Junín × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,2,S,S/
+T25,2024,dept_lengua3,13|1,La Libertad × Lengua indígena u originaria,informality,,Tasa de empleo informal,,,,,,5,S,%
+T25,2024,dept_lengua3,13|1,La Libertad × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,7,S,%
+T25,2024,dept_lengua3,13|1,La Libertad × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,5,S,S/
+T25,2024,dept_lengua3,13|2,La Libertad × Castellano,informality,,Tasa de empleo informal,69.652,1.318,1.892,67.069,72.235,2465,A,%
+T25,2024,dept_lengua3,13|2,La Libertad × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",68.491,0.812,1.186,66.899,70.083,3900,A,%
+T25,2024,dept_lengua3,13|2,La Libertad × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1276.512,27.02,2.117,1203.167,1309.083,2316,A,S/
+T25,2024,dept_lengua3,13|3,La Libertad × Otra / no habla,informality,,Tasa de empleo informal,,,,,,9,S,%
+T25,2024,dept_lengua3,13|3,La Libertad × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,16,S,%
+T25,2024,dept_lengua3,13|3,La Libertad × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,8,S,S/
+T25,2024,dept_lengua3,14|1,Lambayeque × Lengua indígena u originaria,informality,,Tasa de empleo informal,93.387,3.331,3.567,86.858,99.916,53,A,%
+T25,2024,dept_lengua3,14|1,Lambayeque × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",75.479,8.311,11.012,59.189,91.769,73,A,%
+T25,2024,dept_lengua3,14|1,Lambayeque × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),851.833,133.867,15.715,574.75,1099.5,44,B,S/
+T25,2024,dept_lengua3,14|2,Lambayeque × Castellano,informality,,Tasa de empleo informal,75.388,1.544,2.048,72.361,78.414,2145,A,%
+T25,2024,dept_lengua3,14|2,Lambayeque × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",67.097,0.934,1.392,65.266,68.928,3403,A,%
+T25,2024,dept_lengua3,14|2,Lambayeque × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1170.333,34.057,2.91,1121.583,1255.083,2001,A,S/
+T25,2024,dept_lengua3,14|3,Lambayeque × Otra / no habla,informality,,Tasa de empleo informal,,,,,,10,S,%
+T25,2024,dept_lengua3,14|3,Lambayeque × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,22,S,%
+T25,2024,dept_lengua3,14|3,Lambayeque × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,9,S,S/
+T25,2024,dept_lengua3,15|1,Lima × Lengua indígena u originaria,informality,,Tasa de empleo informal,76.295,2.519,3.302,71.357,81.232,666,A,%
+T25,2024,dept_lengua3,15|1,Lima × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",65.868,1.887,2.866,62.169,69.568,1101,A,%
+T25,2024,dept_lengua3,15|1,Lima × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1267.0,37.671,2.973,1196.417,1344.083,643,A,S/
+T25,2024,dept_lengua3,15|2,Lima × Castellano,informality,,Tasa de empleo informal,59.758,0.996,1.666,57.807,61.709,6864,A,%
+T25,2024,dept_lengua3,15|2,Lima × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",67.442,0.52,0.771,66.422,68.461,11047,A,%
+T25,2024,dept_lengua3,15|2,Lima × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1493.583,22.343,1.496,1422.75,1510.333,6654,A,S/
+T25,2024,dept_lengua3,15|3,Lima × Otra / no habla,informality,,Tasa de empleo informal,,,,,,14,S,%
+T25,2024,dept_lengua3,15|3,Lima × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",37.917,9.77,25.766,18.769,57.066,33,B,%
+T25,2024,dept_lengua3,15|3,Lima × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,12,S,S/
+T25,2024,dept_lengua3,16|1,Loreto × Lengua indígena u originaria,informality,,Tasa de empleo informal,96.175,1.474,1.532,93.286,99.063,228,A,%
+T25,2024,dept_lengua3,16|1,Loreto × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",68.204,3.28,4.81,61.775,74.634,341,A,%
+T25,2024,dept_lengua3,16|1,Loreto × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),387.75,62.82,16.201,324.917,571.167,162,B,S/
+T25,2024,dept_lengua3,16|2,Loreto × Castellano,informality,,Tasa de empleo informal,80.357,1.403,1.746,77.606,83.108,2265,A,%
+T25,2024,dept_lengua3,16|2,Loreto × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",68.686,0.887,1.291,66.947,70.425,3552,A,%
+T25,2024,dept_lengua3,16|2,Loreto × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1125.399,40.116,3.565,1056.333,1213.583,2012,A,S/
+T25,2024,dept_lengua3,16|3,Loreto × Otra / no habla,informality,,Tasa de empleo informal,,,,,,11,S,%
+T25,2024,dept_lengua3,16|3,Loreto × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,20,S,%
+T25,2024,dept_lengua3,16|3,Loreto × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,8,S,S/
+T25,2024,dept_lengua3,17|1,Madre de Dios × Lengua indígena u originaria,informality,,Tasa de empleo informal,88.768,2.78,3.132,83.32,94.217,288,A,%
+T25,2024,dept_lengua3,17|1,Madre de Dios × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",86.967,2.511,2.888,82.045,91.889,362,A,%
+T25,2024,dept_lengua3,17|1,Madre de Dios × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1628.0,164.523,10.106,1286.75,1931.667,264,A,S/
+T25,2024,dept_lengua3,17|2,Madre de Dios × Castellano,informality,,Tasa de empleo informal,78.406,3.346,4.268,71.847,84.964,713,A,%
+T25,2024,dept_lengua3,17|2,Madre de Dios × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",73.369,1.834,2.499,69.774,76.963,1048,A,%
+T25,2024,dept_lengua3,17|2,Madre de Dios × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1830.667,81.677,4.462,1643.25,1963.417,637,A,S/
+T25,2024,dept_lengua3,17|3,Madre de Dios × Otra / no habla,informality,,Tasa de empleo informal,,,,,,6,S,%
+T25,2024,dept_lengua3,17|3,Madre de Dios × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,10,S,%
+T25,2024,dept_lengua3,17|3,Madre de Dios × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,5,S,S/
+T25,2024,dept_lengua3,18|1,Moquegua × Lengua indígena u originaria,informality,,Tasa de empleo informal,76.022,2.719,3.577,70.692,81.351,528,A,%
+T25,2024,dept_lengua3,18|1,Moquegua × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",84.928,1.996,2.35,81.016,88.84,650,A,%
+T25,2024,dept_lengua3,18|1,Moquegua × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1353.5,95.963,7.09,1193.833,1570.0,460,A,S/
+T25,2024,dept_lengua3,18|2,Moquegua × Castellano,informality,,Tasa de empleo informal,61.839,2.424,3.92,57.088,66.59,919,A,%
+T25,2024,dept_lengua3,18|2,Moquegua × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.369,1.443,2.08,66.541,72.198,1450,A,%
+T25,2024,dept_lengua3,18|2,Moquegua × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1679.0,81.018,4.825,1505.167,1822.75,854,A,S/
+T25,2024,dept_lengua3,18|3,Moquegua × Otra / no habla,informality,,Tasa de empleo informal,,,,,,2,S,%
+T25,2024,dept_lengua3,18|3,Moquegua × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,4,S,%
+T25,2024,dept_lengua3,18|3,Moquegua × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,1,S,S/
+T25,2024,dept_lengua3,19|1,Pasco × Lengua indígena u originaria,informality,,Tasa de empleo informal,89.539,2.642,2.951,84.36,94.717,350,A,%
+T25,2024,dept_lengua3,19|1,Pasco × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.837,3.404,4.211,74.165,87.509,425,A,%
+T25,2024,dept_lengua3,19|1,Pasco × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),640.0,51.765,8.088,518.917,721.833,279,A,S/
+T25,2024,dept_lengua3,19|2,Pasco × Castellano,informality,,Tasa de empleo informal,74.417,2.313,3.109,69.883,78.951,1124,A,%
+T25,2024,dept_lengua3,19|2,Pasco × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",74.411,1.553,2.087,71.368,77.454,1664,A,%
+T25,2024,dept_lengua3,19|2,Pasco × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1092.0,51.553,4.721,1009.5,1211.583,964,A,S/
+T25,2024,dept_lengua3,19|3,Pasco × Otra / no habla,informality,,Tasa de empleo informal,,,,,,4,S,%
+T25,2024,dept_lengua3,19|3,Pasco × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,10,S,%
+T25,2024,dept_lengua3,19|3,Pasco × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,3,S,S/
+T25,2024,dept_lengua3,20|1,Piura × Lengua indígena u originaria,informality,,Tasa de empleo informal,,,,,,7,S,%
+T25,2024,dept_lengua3,20|1,Piura × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,9,S,%
+T25,2024,dept_lengua3,20|1,Piura × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,7,S,S/
+T25,2024,dept_lengua3,20|2,Piura × Castellano,informality,,Tasa de empleo informal,78.054,1.173,1.503,75.754,80.354,3030,A,%
+T25,2024,dept_lengua3,20|2,Piura × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",74.0,0.741,1.001,72.547,75.452,4448,A,%
+T25,2024,dept_lengua3,20|2,Piura × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1071.333,22.598,2.109,1036.833,1125.417,2826,A,S/
+T25,2024,dept_lengua3,20|3,Piura × Otra / no habla,informality,,Tasa de empleo informal,,,,,,9,S,%
+T25,2024,dept_lengua3,20|3,Piura × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,12,S,%
+T25,2024,dept_lengua3,20|3,Piura × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,8,S,S/
+T25,2024,dept_lengua3,21|1,Puno × Lengua indígena u originaria,informality,,Tasa de empleo informal,90.822,1.134,1.248,88.599,93.044,1465,A,%
+T25,2024,dept_lengua3,21|1,Puno × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.431,1.305,1.643,76.872,81.989,1891,A,%
+T25,2024,dept_lengua3,21|1,Puno × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),750.583,33.212,4.425,678.938,809.127,1268,A,S/
+T25,2024,dept_lengua3,21|2,Puno × Castellano,informality,,Tasa de empleo informal,83.22,2.315,2.782,78.683,87.758,426,A,%
+T25,2024,dept_lengua3,21|2,Puno × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",68.272,2.048,2.999,64.258,72.285,733,A,%
+T25,2024,dept_lengua3,21|2,Puno × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1041.833,55.375,5.315,920.833,1137.9,360,A,S/
+T25,2024,dept_lengua3,21|3,Puno × Otra / no habla,informality,,Tasa de empleo informal,,,,,,2,S,%
+T25,2024,dept_lengua3,21|3,Puno × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,5,S,%
+T25,2024,dept_lengua3,21|3,Puno × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,2,S,S/
+T25,2024,dept_lengua3,22|1,San Martín × Lengua indígena u originaria,informality,,Tasa de empleo informal,90.835,3.672,4.042,83.639,98.031,63,A,%
+T25,2024,dept_lengua3,22|1,San Martín × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",73.93,5.686,7.692,62.785,85.075,90,A,%
+T25,2024,dept_lengua3,22|1,San Martín × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,48,S,S/
+T25,2024,dept_lengua3,22|2,San Martín × Castellano,informality,,Tasa de empleo informal,83.162,1.152,1.385,80.904,85.419,2456,A,%
+T25,2024,dept_lengua3,22|2,San Martín × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",77.425,0.928,1.199,75.606,79.244,3368,A,%
+T25,2024,dept_lengua3,22|2,San Martín × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1078.583,31.697,2.939,1022.833,1147.083,2154,A,S/
+T25,2024,dept_lengua3,22|3,San Martín × Otra / no habla,informality,,Tasa de empleo informal,,,,,,6,S,%
+T25,2024,dept_lengua3,22|3,San Martín × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,16,S,%
+T25,2024,dept_lengua3,22|3,San Martín × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,6,S,S/
+T25,2024,dept_lengua3,23|1,Tacna × Lengua indígena u originaria,informality,,Tasa de empleo informal,91.894,1.706,1.857,88.55,95.239,564,A,%
+T25,2024,dept_lengua3,23|1,Tacna × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.034,1.96,2.48,75.192,82.876,766,A,%
+T25,2024,dept_lengua3,23|1,Tacna × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1097.833,60.248,5.488,996.5,1232.667,535,A,S/
+T25,2024,dept_lengua3,23|2,Tacna × Castellano,informality,,Tasa de empleo informal,69.521,2.662,3.829,64.303,74.739,1359,A,%
+T25,2024,dept_lengua3,23|2,Tacna × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",65.976,1.734,2.629,62.576,69.375,2184,A,%
+T25,2024,dept_lengua3,23|2,Tacna × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1361.833,40.137,2.947,1304.417,1461.75,1289,A,S/
+T25,2024,dept_lengua3,23|3,Tacna × Otra / no habla,informality,,Tasa de empleo informal,,,,,,4,S,%
+T25,2024,dept_lengua3,23|3,Tacna × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,10,S,%
+T25,2024,dept_lengua3,23|3,Tacna × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,3,S,S/
+T25,2024,dept_lengua3,24|1,Tumbes × Lengua indígena u originaria,informality,,Tasa de empleo informal,,,,,,1,S,%
+T25,2024,dept_lengua3,24|1,Tumbes × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,1,S,%
+T25,2024,dept_lengua3,24|1,Tumbes × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,1,S,S/
+T25,2024,dept_lengua3,24|2,Tumbes × Castellano,informality,,Tasa de empleo informal,79.282,1.596,2.013,76.153,82.41,1384,A,%
+T25,2024,dept_lengua3,24|2,Tumbes × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.852,1.1,1.575,67.696,72.008,2146,A,%
+T25,2024,dept_lengua3,24|2,Tumbes × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1223.583,42.645,3.485,1151.667,1318.833,1316,A,S/
+T25,2024,dept_lengua3,24|3,Tumbes × Otra / no habla,informality,,Tasa de empleo informal,,,,,,7,S,%
+T25,2024,dept_lengua3,24|3,Tumbes × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,13,S,%
+T25,2024,dept_lengua3,24|3,Tumbes × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,6,S,S/
+T25,2024,dept_lengua3,25|1,Ucayali × Lengua indígena u originaria,informality,,Tasa de empleo informal,93.793,1.782,1.899,90.301,97.285,323,A,%
+T25,2024,dept_lengua3,25|1,Ucayali × Lengua indígena u originaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",78.114,2.498,3.198,73.218,83.01,431,A,%
+T25,2024,dept_lengua3,25|1,Ucayali × Lengua indígena u originaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),770.25,68.22,8.857,618.917,886.333,253,A,S/
+T25,2024,dept_lengua3,25|2,Ucayali × Castellano,informality,,Tasa de empleo informal,82.273,1.298,1.578,79.728,84.818,1801,A,%
+T25,2024,dept_lengua3,25|2,Ucayali × Castellano,lfpr,,"Tasa de actividad (PEA/PET, 14+)",76.148,0.962,1.263,74.262,78.034,2561,A,%
+T25,2024,dept_lengua3,25|2,Ucayali × Castellano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1133.167,23.002,2.03,1070.917,1161.083,1632,A,S/
+T25,2024,dept_lengua3,25|3,Ucayali × Otra / no habla,informality,,Tasa de empleo informal,,,,,,10,S,%
+T25,2024,dept_lengua3,25|3,Ucayali × Otra / no habla,lfpr,,"Tasa de actividad (PEA/PET, 14+)",,,,,,12,S,%
+T25,2024,dept_lengua3,25|3,Ucayali × Otra / no habla,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),,,,,,10,S,S/

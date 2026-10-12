@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import HowToRead from '../components/ui/HowToRead.astro';
+import CoefPlot from '../components/charts/CoefPlot';
+import DecompBars from '../components/charts/DecompBars';
+import { loadModels, loadDecomp } from '../data/loaders';
+const M = loadModels(); const D = loadDecomp();
+const f = (c: any, n = 1) => c?.v == null ? '—' : c.v.toLocaleString('es-PE', { minimumFractionDigits: n, maximumFractionDigits: n });
+const ms = M.models; const ox = D.oaxaca; const ss = D.shift_share.inf_2014_2024;
+---
+<Base title="Análisis con controles" wide>
+  <div class="eyebrow" style="margin-top:28px">Para investigadores y policymakers · modelos descriptivos</div>
+  <h1>Las brechas, <em>con y sin controles.</em></h1>
+  <p class="lede">Un promedio compara grupos distintos en edad, educación, región y rama. Aquí cada brecha se muestra cruda y ajustada por esas diferencias (modelo lineal de probabilidad con pesos de encuesta y errores estándar de diseño), y se descompone en la parte que explican las características y la que no.</p>
+  <HowToRead />
+  <section class="grid grid-2">
+    <div class="card"><h2>Mujeres ganan menos incluso a igual trabajo</h2><p class="takeaway">La brecha cruda de ingreso es <b>{f(ms.inc_sex.raw_gap)} %</b>; controlando edad, educación, región, rama, categoría y horas sigue en <b>{f(ms.inc_sex.adj_gap)} %</b>: dos tercios de la brecha no se explican por características observables.</p><CoefPlot client:visible model={ms.inc_sex} /></div>
+    <div class="card"><h2>La informalidad femenina no es composición</h2><p class="takeaway">La brecha de informalidad mujer−hombre es {f(ms.inf_sex.raw_gap)} pp cruda y <b>{f(ms.inf_sex.adj_gap)} pp</b> ajustada: las mujeres son más informales dentro de cada rama y categoría, no porque trabajen en ramas más informales.</p><CoefPlot client:visible model={ms.inf_sex} /></div>
+  </section>
+  <section class="grid grid-2" style="margin-top:20px">
+    <div class="card"><h2>Lengua materna: casi todo es geografía y educación</h2><p class="takeaway">Quienes aprendieron una lengua indígena tienen {f(ms.inf_lengua.raw_gap)} pp más de informalidad; con controles la brecha cae a <b>{f(ms.inf_lengua.adj_gap)} pp</b>. La desventaja opera a través de dónde viven y cuánta educación recibieron.</p><CoefPlot client:visible model={ms.inf_lengua} /></div>
+    <div class="card"><h2>Participación: la brecha resiste a los controles</h2><p class="takeaway">{f(ms.lfpr_sex.raw_gap)} pp cruda, <b>{f(ms.lfpr_sex.adj_gap)} pp</b> ajustada. La educación y la edad no cierran la brecha de entrada al mercado laboral.</p><CoefPlot client:visible model={ms.lfpr_sex} /></div>
+  </section>
+  <section class="grid grid-2" style="margin-top:20px">
+    <div class="card"><h2>Descomposición de la brecha de ingreso</h2><p class="takeaway">De la brecha total de {f({ v: ox.inc_sex_2024.gap.v * 100 }, 1)} log-puntos, sólo {f({ v: ox.inc_sex_2024.explained.v * 100 }, 1)} se explican por diferencias en horas, rama, educación y categoría; <b>{f({ v: ox.inc_sex_2024.unexplained.v * 100 }, 1)}</b> corresponden a retornos distintos a las mismas características.</p><DecompBars client:visible data={ox.inc_sex_2024} mode="oaxaca" unit="log-pp" /></div>
+    <div class="card"><h2>Diez años de informalidad: mejor composición, peores tasas</h2><p class="takeaway">Entre 2014 y 2024 la informalidad subió {f({ v: ss.by_group_var.educ4.total.v * 100 }, 1)} pp. La mayor educación de la fuerza laboral <b>habría reducido</b> la informalidad en {f({ v: -ss.by_group_var.educ4.composition.v * 100 }, 1)} pp; pero dentro de cada nivel educativo la informalidad <b>subió</b> {f({ v: ss.by_group_var.educ4.rate.v * 100 }, 1)} pp. El país educó a su fuerza laboral y el mercado no la formalizó.</p><DecompBars client:visible data={ss.by_group_var.educ4} mode="shift" /></div>
+  </section>
+  <section class="card" style="margin-top:20px"><h2>Shift-share por otras dimensiones</h2><div class="grid grid-3">{['sector9', 'status6', 'area'].map(g => <DecompBars client:visible data={ss.by_group_var[g]} mode="shift" title={`Por ${({ sector9: 'rama de actividad', status6: 'categoría ocupacional', area: 'área' } as any)[g]}`} />)}</div></section>
+  <section class="card" style="margin-top:20px"><h2>Brechas ajustadas por submuestra</h2><div class="scroll-x"><table class="data"><thead><tr><th style="text-align:left">Modelo</th><th style="text-align:left">Submuestra</th><th>Cruda</th><th>Ajustada</th><th>n</th></tr></thead><tbody>
+    {Object.entries(ms).flatMap(([mid, m]: any) => Object.entries(m.by_subsample).flatMap(([sv, groups]: any) => Object.entries(groups).map(([k, g]: any) => <tr><td style="text-align:left">{m.label_es}</td><td style="text-align:left">{g.label}</td><td>{f(g.raw_gap)} <span class={`badge compact ${g.raw_gap.g}`} /></td><td><b>{f(g.adj_gap)}</b> <span class={`badge compact ${g.adj_gap.g}`} /></td><td class="mono">{g.adj_gap.n.toLocaleString('es-PE')}</td></tr>)))}
+  </tbody></table></div></section>
+  <p class="small muted" style="margin-top:16px">{M.design.note} {M.design.se}. Los sellos de las brechas se asignan por tamaño de muestra (A ≥ 200, B ≥ 30), no por error relativo. Descarga: <a href="/data/models.json">models.json</a>, <a href="/data/decompositions.json">decompositions.json</a>.</p>
+</Base>
