@@ -1,0 +1,25 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T04,2024,region_nat,1,Costa,adecuado,,Empleo adecuado (aprox.),62.195,0.516,0.83,61.183,63.206,17449,A,%
+T04,2024,region_nat,1,Costa,epr,,Ratio empleo-población,67.401,0.375,0.556,66.667,68.136,26647,A,%
+T04,2024,region_nat,1,Costa,informality,,Tasa de empleo informal,71.792,0.582,0.81,70.652,72.932,17449,A,%
+T04,2024,region_nat,1,Costa,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.493,0.356,0.506,69.795,71.192,26647,A,%
+T04,2024,region_nat,1,Costa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1295.083,7.93,0.612,1273.833,1304.917,16548,A,S/
+T04,2024,region_nat,1,Costa,ur,,Tasa de desempleo,4.386,0.209,4.774,3.976,4.797,18178,A,%
+T04,2024,region_nat,2,Sierra,adecuado,,Empleo adecuado (aprox.),54.01,0.542,1.003,52.949,55.072,21167,A,%
+T04,2024,region_nat,2,Sierra,epr,,Ratio empleo-población,71.415,0.36,0.504,70.709,72.12,29135,A,%
+T04,2024,region_nat,2,Sierra,informality,,Tasa de empleo informal,82.699,0.521,0.63,81.677,83.721,21167,A,%
+T04,2024,region_nat,2,Sierra,lfpr,,"Tasa de actividad (PEA/PET, 14+)",74.911,0.349,0.465,74.228,75.595,29135,A,%
+T04,2024,region_nat,2,Sierra,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1000.083,12.479,1.248,970.083,1019.0,17556,A,S/
+T04,2024,region_nat,2,Sierra,ur,,Tasa de desempleo,4.668,0.229,4.913,4.219,5.118,21878,A,%
+T04,2024,region_nat,3,Selva,adecuado,,Empleo adecuado (aprox.),56.873,0.638,1.122,55.622,58.124,13073,A,%
+T04,2024,region_nat,3,Selva,epr,,Ratio empleo-población,73.167,0.464,0.635,72.257,74.078,18485,A,%
+T04,2024,region_nat,3,Selva,informality,,Tasa de empleo informal,84.495,0.55,0.651,83.417,85.573,13073,A,%
+T04,2024,region_nat,3,Selva,lfpr,,"Tasa de actividad (PEA/PET, 14+)",75.029,0.453,0.604,74.141,75.918,18485,A,%
+T04,2024,region_nat,3,Selva,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1078.583,15.817,1.466,1045.333,1107.333,11259,A,S/
+T04,2024,region_nat,3,Selva,ur,,Tasa de desempleo,2.481,0.201,8.104,2.087,2.875,13378,A,%
+T04,2024,region_nat,4,Lima Metropolitana,adecuado,,Empleo adecuado (aprox.),70.705,0.81,1.145,69.119,72.292,6657,A,%
+T04,2024,region_nat,4,Lima Metropolitana,epr,,Ratio empleo-población,62.748,0.483,0.77,61.801,63.695,11270,A,%
+T04,2024,region_nat,4,Lima Metropolitana,informality,,Tasa de empleo informal,59.732,0.997,1.668,57.779,61.686,6657,A,%
+T04,2024,region_nat,4,Lima Metropolitana,lfpr,,"Tasa de actividad (PEA/PET, 14+)",66.741,0.49,0.734,65.781,67.7,11270,A,%
+T04,2024,region_nat,4,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1493.458,21.897,1.466,1422.833,1508.667,6556,A,S/
+T04,2024,region_nat,4,Lima Metropolitana,ur,,Tasa de desempleo,5.982,0.343,5.738,5.309,6.655,7071,A,%

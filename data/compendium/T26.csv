@@ -1,0 +1,15 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T26,2024,mig2,1,No migrante,adecuado,,Empleo adecuado (aprox.),61.426,0.346,0.563,60.748,62.103,56027,A,%
+T26,2024,mig2,1,No migrante,contract_any,,Asalariados con contrato,52.046,0.613,1.177,50.845,53.246,23996,A,%
+T26,2024,mig2,1,No migrante,epr,,Ratio empleo-población,67.676,0.232,0.342,67.222,68.13,82147,A,%
+T26,2024,mig2,1,No migrante,informality,,Tasa de empleo informal,72.943,0.389,0.533,72.18,73.706,56027,A,%
+T26,2024,mig2,1,No migrante,lfpr,,"Tasa de actividad (PEA/PET, 14+)",71.05,0.229,0.323,70.601,71.499,82147,A,%
+T26,2024,mig2,1,No migrante,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1238.417,10.821,0.874,1214.917,1257.333,49807,A,S/
+T26,2024,mig2,1,No migrante,ur,,Tasa de desempleo,4.749,0.148,3.11,4.46,5.039,58085,A,%
+T26,2024,mig2,2,Migrante interdepartamental reciente,adecuado,,Empleo adecuado (aprox.),66.388,1.403,2.113,63.639,69.137,2311,A,%
+T26,2024,mig2,2,Migrante interdepartamental reciente,contract_any,,Asalariados con contrato,46.49,2.141,4.605,42.294,50.687,1250,A,%
+T26,2024,mig2,2,Migrante interdepartamental reciente,epr,,Ratio empleo-población,69.719,1.133,1.625,67.499,71.94,3331,A,%
+T26,2024,mig2,2,Migrante interdepartamental reciente,informality,,Tasa de empleo informal,76.544,1.28,1.672,74.035,79.052,2311,A,%
+T26,2024,mig2,2,Migrante interdepartamental reciente,lfpr,,"Tasa de actividad (PEA/PET, 14+)",73.06,1.107,1.515,70.89,75.229,3331,A,%
+T26,2024,mig2,2,Migrante interdepartamental reciente,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1345.139,36.778,2.734,1294.5,1438.667,2104,A,S/
+T26,2024,mig2,2,Migrante interdepartamental reciente,ur,,Tasa de desempleo,4.572,0.599,13.111,3.397,5.747,2412,A,%

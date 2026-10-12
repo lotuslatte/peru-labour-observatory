@@ -1,0 +1,49 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T06,2024,age4,1,14–24,adecuado,,Empleo adecuado (aprox.),56.913,0.818,1.437,55.31,58.515,8323,A,%
+T06,2024,age4,1,14–24,hours_mean,,Horas semanales promedio,38.547,0.301,0.781,37.957,39.137,8323,A,h
+T06,2024,age4,1,14–24,informality,,Tasa de empleo informal,84.62,0.66,0.78,83.327,85.913,8323,A,%
+T06,2024,age4,1,14–24,subemp_hours,,Subempleo por horas,4.523,0.319,7.058,3.898,5.149,8323,A,%
+T06,2024,age4,2,25–44,adecuado,,Empleo adecuado (aprox.),67.417,0.479,0.711,66.477,68.356,22266,A,%
+T06,2024,age4,2,25–44,hours_mean,,Horas semanales promedio,46.861,0.181,0.386,46.507,47.215,22266,A,h
+T06,2024,age4,2,25–44,informality,,Tasa de empleo informal,69.004,0.538,0.779,67.95,70.057,22266,A,%
+T06,2024,age4,2,25–44,subemp_hours,,Subempleo por horas,3.584,0.178,4.975,3.234,3.933,22266,A,%
+T06,2024,age4,3,45–64,adecuado,,Empleo adecuado (aprox.),61.043,0.536,0.879,59.992,62.094,20680,A,%
+T06,2024,age4,3,45–64,hours_mean,,Horas semanales promedio,46.734,0.218,0.466,46.307,47.16,20680,A,h
+T06,2024,age4,3,45–64,informality,,Tasa de empleo informal,70.468,0.582,0.826,69.327,71.609,20680,A,%
+T06,2024,age4,3,45–64,subemp_hours,,Subempleo por horas,3.833,0.225,5.858,3.393,4.273,20680,A,%
+T06,2024,age4,4,65 y más,adecuado,,Empleo adecuado (aprox.),35.348,0.927,2.623,33.53,37.165,7077,A,%
+T06,2024,age4,4,65 y más,hours_mean,,Horas semanales promedio,37.638,0.401,1.066,36.851,38.425,7077,A,h
+T06,2024,age4,4,65 y más,informality,,Tasa de empleo informal,86.29,0.733,0.849,84.855,87.726,7077,A,%
+T06,2024,age4,4,65 y más,subemp_hours,,Subempleo por horas,3.882,0.391,10.084,3.114,4.649,7077,A,%
+T06,2024,sex_age4,1|1,Hombres × 14–24,adecuado,,Empleo adecuado (aprox.),59.075,0.994,1.683,57.127,61.023,4800,A,%
+T06,2024,sex_age4,1|1,Hombres × 14–24,hours_mean,,Horas semanales promedio,39.879,0.37,0.927,39.154,40.603,4800,A,h
+T06,2024,sex_age4,1|1,Hombres × 14–24,informality,,Tasa de empleo informal,84.226,0.873,1.037,82.514,85.938,4800,A,%
+T06,2024,sex_age4,1|1,Hombres × 14–24,subemp_hours,,Subempleo por horas,4.229,0.389,9.2,3.466,4.991,4800,A,%
+T06,2024,sex_age4,1|2,Hombres × 25–44,adecuado,,Empleo adecuado (aprox.),74.168,0.571,0.77,73.048,75.288,11704,A,%
+T06,2024,sex_age4,1|2,Hombres × 25–44,hours_mean,,Horas semanales promedio,49.879,0.212,0.426,49.463,50.296,11704,A,h
+T06,2024,sex_age4,1|2,Hombres × 25–44,informality,,Tasa de empleo informal,67.553,0.658,0.973,66.264,68.841,11704,A,%
+T06,2024,sex_age4,1|2,Hombres × 25–44,subemp_hours,,Subempleo por horas,2.554,0.195,7.648,2.171,2.937,11704,A,%
+T06,2024,sex_age4,1|3,Hombres × 45–64,adecuado,,Empleo adecuado (aprox.),67.439,0.668,0.991,66.129,68.749,10765,A,%
+T06,2024,sex_age4,1|3,Hombres × 45–64,hours_mean,,Horas semanales promedio,49.149,0.255,0.519,48.649,49.649,10765,A,h
+T06,2024,sex_age4,1|3,Hombres × 45–64,informality,,Tasa de empleo informal,67.259,0.743,1.105,65.802,68.716,10765,A,%
+T06,2024,sex_age4,1|3,Hombres × 45–64,subemp_hours,,Subempleo por horas,3.028,0.245,8.081,2.548,3.508,10765,A,%
+T06,2024,sex_age4,1|4,Hombres × 65 y más,adecuado,,Empleo adecuado (aprox.),38.538,1.241,3.221,36.106,40.971,3997,A,%
+T06,2024,sex_age4,1|4,Hombres × 65 y más,hours_mean,,Horas semanales promedio,39.81,0.448,1.127,38.931,40.689,3997,A,h
+T06,2024,sex_age4,1|4,Hombres × 65 y más,informality,,Tasa de empleo informal,83.178,1.021,1.228,81.176,85.179,3997,A,%
+T06,2024,sex_age4,1|4,Hombres × 65 y más,subemp_hours,,Subempleo por horas,4.126,0.541,13.114,3.065,5.186,3997,A,%
+T06,2024,sex_age4,2|1,Mujeres × 14–24,adecuado,,Empleo adecuado (aprox.),54.047,1.237,2.289,51.622,56.471,3523,A,%
+T06,2024,sex_age4,2|1,Mujeres × 14–24,hours_mean,,Horas semanales promedio,36.782,0.466,1.267,35.868,37.695,3523,A,h
+T06,2024,sex_age4,2|1,Mujeres × 14–24,informality,,Tasa de empleo informal,85.142,0.954,1.12,83.272,87.012,3523,A,%
+T06,2024,sex_age4,2|1,Mujeres × 14–24,subemp_hours,,Subempleo por horas,4.914,0.504,10.248,3.927,5.901,3523,A,%
+T06,2024,sex_age4,2|2,Mujeres × 25–44,adecuado,,Empleo adecuado (aprox.),58.494,0.745,1.274,57.033,59.955,10562,A,%
+T06,2024,sex_age4,2|2,Mujeres × 25–44,hours_mean,,Horas semanales promedio,42.872,0.291,0.679,42.302,43.442,10562,A,h
+T06,2024,sex_age4,2|2,Mujeres × 25–44,informality,,Tasa de empleo informal,70.921,0.725,1.022,69.5,72.342,10562,A,%
+T06,2024,sex_age4,2|2,Mujeres × 25–44,subemp_hours,,Subempleo por horas,4.944,0.308,6.23,4.34,5.548,10562,A,%
+T06,2024,sex_age4,2|3,Mujeres × 45–64,adecuado,,Empleo adecuado (aprox.),52.895,0.774,1.463,51.379,54.412,9915,A,%
+T06,2024,sex_age4,2|3,Mujeres × 45–64,hours_mean,,Horas semanales promedio,43.657,0.323,0.739,43.025,44.289,9915,A,h
+T06,2024,sex_age4,2|3,Mujeres × 45–64,informality,,Tasa de empleo informal,74.556,0.728,0.977,73.129,75.983,9915,A,%
+T06,2024,sex_age4,2|3,Mujeres × 45–64,subemp_hours,,Subempleo por horas,4.859,0.373,7.674,4.128,5.59,9915,A,%
+T06,2024,sex_age4,2|4,Mujeres × 65 y más,adecuado,,Empleo adecuado (aprox.),31.01,1.302,4.199,28.458,33.562,3080,A,%
+T06,2024,sex_age4,2|4,Mujeres × 65 y más,hours_mean,,Horas semanales promedio,34.684,0.664,1.913,33.384,35.985,3080,A,h
+T06,2024,sex_age4,2|4,Mujeres × 65 y más,informality,,Tasa de empleo informal,90.523,0.926,1.023,88.707,92.338,3080,A,%
+T06,2024,sex_age4,2|4,Mujeres × 65 y más,subemp_hours,,Subempleo por horas,3.55,0.536,15.088,2.5,4.6,3080,B,%

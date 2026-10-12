@@ -1,0 +1,89 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T36,2014,national,all,Nacional,adecuado,,Empleo adecuado (aprox.),61.785,0.298,0.482,61.2,62.369,61358,A,%
+T36,2014,national,all,Nacional,epr,,Ratio empleo-población,69.378,0.215,0.31,68.956,69.8,87285,A,%
+T36,2014,national,all,Nacional,informality,,Tasa de empleo informal,72.973,0.33,0.453,72.326,73.62,61358,A,%
+T36,2014,national,all,Nacional,lfpr,,"Tasa de actividad (PEA/PET, 14+)",72.01,0.21,0.292,71.598,72.422,87285,A,%
+T36,2014,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1256.598,9.252,0.736,1238.996,1275.264,52155,A,S/
+T36,2014,national,all,Nacional,neet,,Jóvenes 15–29 que ni estudian ni trabajan,20.874,0.357,1.709,20.175,21.574,27519,A,%
+T36,2014,national,all,Nacional,subemp_hours,,Subempleo por horas,3.369,0.113,3.34,3.149,3.59,61358,A,%
+T36,2014,national,all,Nacional,ur,,Tasa de desempleo,3.655,0.111,3.042,3.437,3.873,63190,A,%
+T36,2015,national,all,Nacional,adecuado,,Empleo adecuado (aprox.),64.363,0.304,0.472,63.768,64.958,61214,A,%
+T36,2015,national,all,Nacional,epr,,Ratio empleo-población,68.596,0.23,0.336,68.145,69.048,87653,A,%
+T36,2015,national,all,Nacional,informality,,Tasa de empleo informal,73.226,0.342,0.467,72.555,73.896,61214,A,%
+T36,2015,national,all,Nacional,lfpr,,"Tasa de actividad (PEA/PET, 14+)",71.09,0.22,0.31,70.658,71.521,87653,A,%
+T36,2015,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1280.741,9.808,0.766,1261.232,1299.679,52071,A,S/
+T36,2015,national,all,Nacional,neet,,Jóvenes 15–29 que ni estudian ni trabajan,21.803,0.404,1.854,21.01,22.595,27579,A,%
+T36,2015,national,all,Nacional,subemp_hours,,Subempleo por horas,3.009,0.107,3.54,2.8,3.218,61214,A,%
+T36,2015,national,all,Nacional,ur,,Tasa de desempleo,3.507,0.123,3.51,3.266,3.749,62883,A,%
+T36,2016,national,all,Nacional,adecuado,,Empleo adecuado (aprox.),60.102,0.289,0.481,59.535,60.669,67517,A,%
+T36,2016,national,all,Nacional,epr,,Ratio empleo-población,68.758,0.225,0.327,68.317,69.199,96917,A,%
+T36,2016,national,all,Nacional,informality,,Tasa de empleo informal,72.003,0.346,0.48,71.325,72.681,67517,A,%
+T36,2016,national,all,Nacional,lfpr,,"Tasa de actividad (PEA/PET, 14+)",71.75,0.224,0.312,71.311,72.189,96917,A,%
+T36,2016,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1297.772,10.676,0.823,1273.764,1315.613,58347,A,S/
+T36,2016,national,all,Nacional,neet,,Jóvenes 15–29 que ni estudian ni trabajan,21.416,0.358,1.671,20.714,22.117,30030,A,%
+T36,2016,national,all,Nacional,subemp_hours,,Subempleo por horas,3.002,0.101,3.375,2.803,3.2,67517,A,%
+T36,2016,national,all,Nacional,ur,,Tasa de desempleo,4.17,0.127,3.044,3.921,4.418,69678,A,%
+T36,2017,national,all,Nacional,adecuado,,Empleo adecuado (aprox.),60.991,0.302,0.495,60.4,61.582,64640,A,%
+T36,2017,national,all,Nacional,epr,,Ratio empleo-población,69.222,0.222,0.321,68.787,69.658,92693,A,%
+T36,2017,national,all,Nacional,informality,,Tasa de empleo informal,72.634,0.337,0.464,71.974,73.294,64640,A,%
+T36,2017,national,all,Nacional,lfpr,,"Tasa de actividad (PEA/PET, 14+)",72.172,0.216,0.3,71.747,72.596,92693,A,%
+T36,2017,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1282.926,5.657,0.441,1271.482,1293.658,55991,A,S/
+T36,2017,national,all,Nacional,neet,,Jóvenes 15–29 que ni estudian ni trabajan,21.608,0.387,1.791,20.85,22.367,27596,A,%
+T36,2017,national,all,Nacional,subemp_hours,,Subempleo por horas,2.78,0.098,3.514,2.589,2.972,64640,A,%
+T36,2017,national,all,Nacional,ur,,Tasa de desempleo,4.087,0.126,3.095,3.839,4.334,66666,A,%
+T36,2018,national,all,Nacional,adecuado,,Empleo adecuado (aprox.),58.344,0.297,0.508,57.763,58.925,69750,A,%
+T36,2018,national,all,Nacional,epr,,Ratio empleo-población,69.251,0.211,0.305,68.837,69.665,99150,A,%
+T36,2018,national,all,Nacional,informality,,Tasa de empleo informal,72.403,0.339,0.468,71.74,73.067,69750,A,%
+T36,2018,national,all,Nacional,lfpr,,"Tasa de actividad (PEA/PET, 14+)",72.089,0.207,0.288,71.683,72.496,99150,A,%
+T36,2018,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1292.811,8.041,0.622,1281.074,1312.595,60201,A,S/
+T36,2018,national,all,Nacional,neet,,Jóvenes 15–29 que ni estudian ni trabajan,21.912,0.392,1.789,21.144,22.68,28612,A,%
+T36,2018,national,all,Nacional,subemp_hours,,Subempleo por horas,2.494,0.098,3.925,2.302,2.686,69750,A,%
+T36,2018,national,all,Nacional,ur,,Tasa de desempleo,3.937,0.133,3.376,3.677,4.198,71731,A,%
+T36,2019,national,all,Nacional,adecuado,,Empleo adecuado (aprox.),59.804,0.308,0.515,59.201,60.408,64688,A,%
+T36,2019,national,all,Nacional,epr,,Ratio empleo-población,69.604,0.219,0.315,69.175,70.033,91668,A,%
+T36,2019,national,all,Nacional,informality,,Tasa de empleo informal,72.724,0.342,0.47,72.054,73.394,64688,A,%
+T36,2019,national,all,Nacional,lfpr,,"Tasa de actividad (PEA/PET, 14+)",72.438,0.216,0.298,72.015,72.861,91668,A,%
+T36,2019,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1313.603,9.587,0.73,1297.764,1335.343,55877,A,S/
+T36,2019,national,all,Nacional,neet,,Jóvenes 15–29 que ni estudian ni trabajan,21.055,0.392,1.864,20.286,21.824,26103,A,%
+T36,2019,national,all,Nacional,subemp_hours,,Subempleo por horas,4.216,0.123,2.923,3.974,4.457,64688,A,%
+T36,2019,national,all,Nacional,ur,,Tasa de desempleo,3.913,0.134,3.421,3.65,4.175,66460,A,%
+T36,2020,national,all,Nacional,adecuado,,Empleo adecuado (aprox.),54.354,0.37,0.68,53.63,55.079,56241,A,%
+T36,2020,national,all,Nacional,epr,,Ratio empleo-población,59.742,0.359,0.602,59.037,60.446,90560,A,%
+T36,2020,national,all,Nacional,informality,,Tasa de empleo informal,75.345,0.368,0.489,74.623,76.067,56241,A,%
+T36,2020,national,all,Nacional,lfpr,,"Tasa de actividad (PEA/PET, 14+)",64.524,0.347,0.537,63.845,65.204,90560,A,%
+T36,2020,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1098.799,10.011,0.911,1077.856,1117.099,46165,A,S/
+T36,2020,national,all,Nacional,neet,,Jóvenes 15–29 que ni estudian ni trabajan,32.216,0.525,1.629,31.187,33.245,26405,A,%
+T36,2020,national,all,Nacional,subemp_hours,,Subempleo por horas,3.269,0.136,4.156,3.003,3.535,56241,A,%
+T36,2020,national,all,Nacional,ur,,Tasa de desempleo,7.412,0.215,2.899,6.991,7.833,59273,A,%
+T36,2021,national,all,Nacional,adecuado,,Empleo adecuado (aprox.),58.293,0.322,0.552,57.663,58.923,59541,A,%
+T36,2021,national,all,Nacional,epr,,Ratio empleo-población,67.669,0.263,0.388,67.154,68.184,86166,A,%
+T36,2021,national,all,Nacional,informality,,Tasa de empleo informal,76.818,0.338,0.44,76.156,77.48,59541,A,%
+T36,2021,national,all,Nacional,lfpr,,"Tasa de actividad (PEA/PET, 14+)",71.722,0.247,0.345,71.237,72.206,86166,A,%
+T36,2021,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1171.585,6.688,0.571,1159.527,1185.742,50633,A,S/
+T36,2021,national,all,Nacional,neet,,Jóvenes 15–29 que ni estudian ni trabajan,23.095,0.45,1.95,22.212,23.977,24907,A,%
+T36,2021,national,all,Nacional,subemp_hours,,Subempleo por horas,2.999,0.118,3.946,2.767,3.231,59541,A,%
+T36,2021,national,all,Nacional,ur,,Tasa de desempleo,5.65,0.169,3.0,5.318,5.982,62007,A,%
+T36,2022,national,all,Nacional,adecuado,,Empleo adecuado (aprox.),58.119,0.331,0.57,57.47,58.768,60896,A,%
+T36,2022,national,all,Nacional,epr,,Ratio empleo-población,69.078,0.241,0.349,68.605,69.551,87156,A,%
+T36,2022,national,all,Nacional,informality,,Tasa de empleo informal,75.662,0.341,0.45,74.994,76.33,60896,A,%
+T36,2022,national,all,Nacional,lfpr,,"Tasa de actividad (PEA/PET, 14+)",72.149,0.231,0.32,71.697,72.602,87156,A,%
+T36,2022,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1216.053,8.832,0.726,1197.835,1232.458,53007,A,S/
+T36,2022,national,all,Nacional,neet,,Jóvenes 15–29 que ni estudian ni trabajan,22.35,0.42,1.881,21.526,23.174,25136,A,%
+T36,2022,national,all,Nacional,subemp_hours,,Subempleo por horas,3.194,0.121,3.797,2.957,3.432,60896,A,%
+T36,2022,national,all,Nacional,ur,,Tasa de desempleo,4.257,0.144,3.385,3.975,4.54,62829,A,%
+T36,2023,national,all,Nacional,adecuado,,Empleo adecuado (aprox.),60.54,0.316,0.522,59.921,61.159,59189,A,%
+T36,2023,national,all,Nacional,epr,,Ratio empleo-población,67.984,0.245,0.361,67.503,68.464,86183,A,%
+T36,2023,national,all,Nacional,informality,,Tasa de empleo informal,73.89,0.345,0.466,73.215,74.566,59189,A,%
+T36,2023,national,all,Nacional,lfpr,,"Tasa de actividad (PEA/PET, 14+)",71.372,0.243,0.34,70.896,71.848,86183,A,%
+T36,2023,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1233.752,6.549,0.531,1222.579,1248.252,52127,A,S/
+T36,2023,national,all,Nacional,neet,,Jóvenes 15–29 que ni estudian ni trabajan,23.098,0.442,1.913,22.232,23.964,24642,A,%
+T36,2023,national,all,Nacional,subemp_hours,,Subempleo por horas,3.864,0.132,3.422,3.605,4.123,59189,A,%
+T36,2023,national,all,Nacional,ur,,Tasa de desempleo,4.747,0.139,2.921,4.476,5.019,61429,A,%
+T36,2024,national,all,Nacional,adecuado,,Empleo adecuado (aprox.),61.615,0.34,0.552,60.949,62.281,58346,A,%
+T36,2024,national,all,Nacional,epr,,Ratio empleo-población,67.713,0.226,0.333,67.271,68.155,85537,A,%
+T36,2024,national,all,Nacional,informality,,Tasa de empleo informal,73.082,0.378,0.518,72.34,73.824,58346,A,%
+T36,2024,national,all,Nacional,lfpr,,"Tasa de actividad (PEA/PET, 14+)",71.083,0.223,0.313,70.647,71.519,85537,A,%
+T36,2024,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1244.25,11.714,0.941,1218.5,1264.417,51919,A,S/
+T36,2024,national,all,Nacional,neet,,Jóvenes 15–29 que ni estudian ni trabajan,21.537,0.423,1.963,20.708,22.366,23862,A,%
+T36,2024,national,all,Nacional,subemp_hours,,Subempleo por horas,3.826,0.135,3.531,3.561,4.091,58346,A,%
+T36,2024,national,all,Nacional,ur,,Tasa de desempleo,4.741,0.144,3.037,4.459,5.023,60505,A,%

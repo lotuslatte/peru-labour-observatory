@@ -1,0 +1,53 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T29,2024,age4,1,14–24,hours_ge60,,Ocupados con 60 h o más,12.889,0.517,4.013,11.875,13.902,8323,A,%
+T29,2024,age4,1,14–24,hours_le48,,Ocupados con 48 h o menos,75.732,0.711,0.939,74.338,77.126,8323,A,%
+T29,2024,age4,1,14–24,hours_lt35,,Ocupados con menos de 35 h,40.9,0.761,1.86,39.409,42.391,8323,A,%
+T29,2024,age4,1,14–24,hours_mean,,Horas semanales promedio,38.547,0.301,0.781,37.957,39.137,8323,A,h
+T29,2024,age4,2,25–44,hours_ge60,,Ocupados con 60 h o más,21.308,0.428,2.009,20.469,22.147,22266,A,%
+T29,2024,age4,2,25–44,hours_le48,,Ocupados con 48 h o menos,62.791,0.493,0.785,61.825,63.757,22266,A,%
+T29,2024,age4,2,25–44,hours_lt35,,Ocupados con menos de 35 h,20.532,0.38,1.852,19.787,21.278,22266,A,%
+T29,2024,age4,2,25–44,hours_mean,,Horas semanales promedio,46.861,0.181,0.386,46.507,47.215,22266,A,h
+T29,2024,age4,3,45–64,hours_ge60,,Ocupados con 60 h o más,22.52,0.466,2.068,21.607,23.433,20680,A,%
+T29,2024,age4,3,45–64,hours_le48,,Ocupados con 48 h o menos,61.337,0.537,0.876,60.284,62.391,20680,A,%
+T29,2024,age4,3,45–64,hours_lt35,,Ocupados con menos de 35 h,23.4,0.435,1.858,22.547,24.252,20680,A,%
+T29,2024,age4,3,45–64,hours_mean,,Horas semanales promedio,46.734,0.218,0.466,46.307,47.16,20680,A,h
+T29,2024,age4,4,65 y más,hours_ge60,,Ocupados con 60 h o más,14.176,0.707,4.986,12.791,15.562,7077,A,%
+T29,2024,age4,4,65 y más,hours_le48,,Ocupados con 48 h o menos,74.25,0.874,1.177,72.537,75.963,7077,A,%
+T29,2024,age4,4,65 y más,hours_lt35,,Ocupados con menos de 35 h,44.315,0.902,2.036,42.547,46.084,7077,A,%
+T29,2024,age4,4,65 y más,hours_mean,,Horas semanales promedio,37.638,0.401,1.066,36.851,38.425,7077,A,h
+T29,2024,area,1,Urbano,hours_ge60,,Ocupados con 60 h o más,21.661,0.348,1.609,20.978,22.344,37153,A,%
+T29,2024,area,1,Urbano,hours_le48,,Ocupados con 48 h o menos,63.875,0.4,0.627,63.091,64.66,37153,A,%
+T29,2024,area,1,Urbano,hours_lt35,,Ocupados con menos de 35 h,23.991,0.318,1.324,23.369,24.614,37153,A,%
+T29,2024,area,1,Urbano,hours_mean,,Horas semanales promedio,45.91,0.159,0.346,45.599,46.222,37153,A,h
+T29,2024,area,2,Rural,hours_ge60,,Ocupados con 60 h o más,12.732,0.388,3.051,11.97,13.493,21193,A,%
+T29,2024,area,2,Rural,hours_le48,,Ocupados con 48 h o menos,70.288,0.511,0.727,69.287,71.289,21193,A,%
+T29,2024,area,2,Rural,hours_lt35,,Ocupados con menos de 35 h,35.129,0.472,1.343,34.204,36.054,21193,A,%
+T29,2024,area,2,Rural,hours_mean,,Horas semanales promedio,40.809,0.2,0.491,40.416,41.202,21193,A,h
+T29,2024,national,all,Nacional,hours_ge60,,Ocupados con 60 h o más,19.868,0.29,1.462,19.298,20.437,58346,A,%
+T29,2024,national,all,Nacional,hours_le48,,Ocupados con 48 h o menos,65.163,0.337,0.517,64.503,65.823,58346,A,%
+T29,2024,national,all,Nacional,hours_lt35,,Ocupados con menos de 35 h,26.228,0.272,1.039,25.694,26.762,58346,A,%
+T29,2024,national,all,Nacional,hours_mean,,Horas semanales promedio,44.886,0.134,0.299,44.623,45.149,58346,A,h
+T29,2024,region_nat,1,Costa,hours_ge60,,Ocupados con 60 h o más,22.564,0.445,1.972,21.692,23.436,17449,A,%
+T29,2024,region_nat,1,Costa,hours_le48,,Ocupados con 48 h o menos,62.992,0.516,0.819,61.981,64.003,17449,A,%
+T29,2024,region_nat,1,Costa,hours_lt35,,Ocupados con menos de 35 h,25.798,0.427,1.654,24.962,26.634,17449,A,%
+T29,2024,region_nat,1,Costa,hours_mean,,Horas semanales promedio,45.592,0.204,0.447,45.193,45.991,17449,A,h
+T29,2024,region_nat,2,Sierra,hours_ge60,,Ocupados con 60 h o más,17.636,0.459,2.604,16.736,18.537,21167,A,%
+T29,2024,region_nat,2,Sierra,hours_le48,,Ocupados con 48 h o menos,65.546,0.529,0.806,64.51,66.582,21167,A,%
+T29,2024,region_nat,2,Sierra,hours_lt35,,Ocupados con menos de 35 h,30.799,0.452,1.468,29.913,31.685,21167,A,%
+T29,2024,region_nat,2,Sierra,hours_mean,,Horas semanales promedio,43.431,0.222,0.511,42.995,43.866,21167,A,h
+T29,2024,region_nat,3,Selva,hours_ge60,,Ocupados con 60 h o más,19.752,0.602,3.045,18.573,20.931,13073,A,%
+T29,2024,region_nat,3,Selva,hours_le48,,Ocupados con 48 h o menos,65.292,0.69,1.057,63.939,66.645,13073,A,%
+T29,2024,region_nat,3,Selva,hours_lt35,,Ocupados con menos de 35 h,29.374,0.594,2.022,28.21,30.539,13073,A,%
+T29,2024,region_nat,3,Selva,hours_mean,,Horas semanales promedio,44.568,0.288,0.646,44.004,45.132,13073,A,h
+T29,2024,region_nat,4,Lima Metropolitana,hours_ge60,,Ocupados con 60 h o más,20.127,0.683,3.391,18.789,21.465,6657,A,%
+T29,2024,region_nat,4,Lima Metropolitana,hours_le48,,Ocupados con 48 h o menos,66.34,0.794,1.197,64.783,67.896,6657,A,%
+T29,2024,region_nat,4,Lima Metropolitana,hours_lt35,,Ocupados con menos de 35 h,20.701,0.612,2.957,19.501,21.9,6657,A,%
+T29,2024,region_nat,4,Lima Metropolitana,hours_mean,,Horas semanales promedio,45.937,0.308,0.67,45.333,46.54,6657,A,h
+T29,2024,sex,1,Hombres,hours_ge60,,Ocupados con 60 h o más,21.798,0.387,1.773,21.041,22.556,31266,A,%
+T29,2024,sex,1,Hombres,hours_le48,,Ocupados con 48 h o menos,61.391,0.431,0.702,60.546,62.235,31266,A,%
+T29,2024,sex,1,Hombres,hours_lt35,,Ocupados con menos de 35 h,19.381,0.314,1.618,18.767,19.996,31266,A,%
+T29,2024,sex,1,Hombres,hours_mean,,Horas semanales promedio,47.384,0.154,0.325,47.082,47.686,31266,A,h
+T29,2024,sex,2,Mujeres,hours_ge60,,Ocupados con 60 h o más,17.339,0.365,2.107,16.622,18.055,27080,A,%
+T29,2024,sex,2,Mujeres,hours_le48,,Ocupados con 48 h o menos,70.105,0.447,0.637,69.23,70.98,27080,A,%
+T29,2024,sex,2,Mujeres,hours_lt35,,Ocupados con menos de 35 h,35.197,0.441,1.252,34.334,36.061,27080,A,%
+T29,2024,sex,2,Mujeres,hours_mean,,Horas semanales promedio,41.613,0.198,0.476,41.225,42.001,27080,A,h

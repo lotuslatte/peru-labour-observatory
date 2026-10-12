@@ -1,0 +1,37 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T10,2024,educ4,1,Hasta primaria,adecuado,,Empleo adecuado (aprox.),42.62,0.574,1.347,41.494,43.746,17019,A,%
+T10,2024,educ4,1,Hasta primaria,contract_any,,Asalariados con contrato,19.607,1.041,5.311,17.567,21.648,3162,A,%
+T10,2024,educ4,1,Hasta primaria,informality,,Tasa de empleo informal,94.404,0.301,0.319,93.813,94.994,17019,A,%
+T10,2024,educ4,2,Secundaria,adecuado,,Empleo adecuado (aprox.),59.316,0.489,0.824,58.357,60.274,23554,A,%
+T10,2024,educ4,2,Secundaria,contract_any,,Asalariados con contrato,34.488,0.792,2.297,32.936,36.041,10208,A,%
+T10,2024,educ4,2,Secundaria,informality,,Tasa de empleo informal,82.411,0.401,0.487,81.624,83.197,23554,A,%
+T10,2024,educ4,3,Superior no universitaria,adecuado,,Empleo adecuado (aprox.),71.727,0.72,1.004,70.316,73.138,8360,A,%
+T10,2024,educ4,3,Superior no universitaria,contract_any,,Asalariados con contrato,65.888,1.007,1.529,63.913,67.862,5146,A,%
+T10,2024,educ4,3,Superior no universitaria,informality,,Tasa de empleo informal,56.568,0.829,1.465,54.945,58.192,8360,A,%
+T10,2024,educ4,4,Universitaria y posgrado,adecuado,,Empleo adecuado (aprox.),79.239,0.643,0.811,77.98,80.499,9394,A,%
+T10,2024,educ4,4,Universitaria y posgrado,contract_any,,Asalariados con contrato,80.472,0.813,1.011,78.878,82.066,6723,A,%
+T10,2024,educ4,4,Universitaria y posgrado,informality,,Tasa de empleo informal,41.672,0.855,2.051,39.997,43.348,9394,A,%
+T10,2024,sex_educ4,1|1,Hombres × Hasta primaria,adecuado,,Empleo adecuado (aprox.),45.704,0.848,1.854,44.042,47.365,7782,A,%
+T10,2024,sex_educ4,1|1,Hombres × Hasta primaria,contract_any,,Asalariados con contrato,20.341,1.356,6.668,17.683,22.999,1868,A,%
+T10,2024,sex_educ4,1|1,Hombres × Hasta primaria,informality,,Tasa de empleo informal,93.32,0.472,0.506,92.395,94.245,7782,A,%
+T10,2024,sex_educ4,1|2,Hombres × Secundaria,adecuado,,Empleo adecuado (aprox.),66.355,0.576,0.867,65.227,67.483,14172,A,%
+T10,2024,sex_educ4,1|2,Hombres × Secundaria,contract_any,,Asalariados con contrato,37.186,0.94,2.528,35.343,39.028,6691,A,%
+T10,2024,sex_educ4,1|2,Hombres × Secundaria,informality,,Tasa de empleo informal,79.527,0.539,0.677,78.472,80.583,14172,A,%
+T10,2024,sex_educ4,1|3,Hombres × Superior no universitaria,adecuado,,Empleo adecuado (aprox.),77.999,0.872,1.117,76.29,79.707,4364,A,%
+T10,2024,sex_educ4,1|3,Hombres × Superior no universitaria,contract_any,,Asalariados con contrato,67.499,1.271,1.882,65.009,69.989,2682,A,%
+T10,2024,sex_educ4,1|3,Hombres × Superior no universitaria,informality,,Tasa de empleo informal,53.682,1.056,1.967,51.613,55.751,4364,A,%
+T10,2024,sex_educ4,1|4,Hombres × Universitaria y posgrado,adecuado,,Empleo adecuado (aprox.),81.662,0.831,1.017,80.034,83.29,4939,A,%
+T10,2024,sex_educ4,1|4,Hombres × Universitaria y posgrado,contract_any,,Asalariados con contrato,80.672,1.037,1.286,78.638,82.705,3416,A,%
+T10,2024,sex_educ4,1|4,Hombres × Universitaria y posgrado,informality,,Tasa de empleo informal,41.758,1.099,2.633,39.603,43.913,4939,A,%
+T10,2024,sex_educ4,2|1,Mujeres × Hasta primaria,adecuado,,Empleo adecuado (aprox.),39.667,0.768,1.936,38.162,41.172,9237,A,%
+T10,2024,sex_educ4,2|1,Mujeres × Hasta primaria,contract_any,,Asalariados con contrato,18.379,1.528,8.316,15.383,21.374,1294,A,%
+T10,2024,sex_educ4,2|1,Mujeres × Hasta primaria,informality,,Tasa de empleo informal,95.441,0.356,0.373,94.743,96.139,9237,A,%
+T10,2024,sex_educ4,2|2,Mujeres × Secundaria,adecuado,,Empleo adecuado (aprox.),47.81,0.766,1.603,46.308,49.312,9382,A,%
+T10,2024,sex_educ4,2|2,Mujeres × Secundaria,contract_any,,Asalariados con contrato,29.01,1.144,3.943,26.768,31.253,3517,A,%
+T10,2024,sex_educ4,2|2,Mujeres × Secundaria,informality,,Tasa de empleo informal,87.123,0.535,0.614,86.074,88.173,9382,A,%
+T10,2024,sex_educ4,2|3,Mujeres × Superior no universitaria,adecuado,,Empleo adecuado (aprox.),63.919,1.109,1.735,61.745,66.092,3996,A,%
+T10,2024,sex_educ4,2|3,Mujeres × Superior no universitaria,contract_any,,Asalariados con contrato,63.848,1.502,2.353,60.904,66.792,2464,A,%
+T10,2024,sex_educ4,2|3,Mujeres × Superior no universitaria,informality,,Tasa de empleo informal,60.162,1.165,1.936,57.879,62.446,3996,A,%
+T10,2024,sex_educ4,2|4,Mujeres × Universitaria y posgrado,adecuado,,Empleo adecuado (aprox.),76.422,0.941,1.231,74.579,78.266,4455,A,%
+T10,2024,sex_educ4,2|4,Mujeres × Universitaria y posgrado,contract_any,,Asalariados con contrato,80.254,1.104,1.375,78.09,82.417,3307,A,%
+T10,2024,sex_educ4,2|4,Mujeres × Universitaria y posgrado,informality,,Tasa de empleo informal,41.573,1.143,2.75,39.332,43.814,4455,A,%

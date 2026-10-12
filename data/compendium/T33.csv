@@ -1,0 +1,103 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T33,2024,age4,1,14–24,inc_p10,,Ingreso laboral p10 (S/ 2024),208.083,7.738,3.719,188.833,219.167,6233,A,S/
+T33,2024,age4,1,14–24,inc_p25,,Ingreso laboral p25 (S/ 2024),500.75,11.352,2.267,474.0,518.5,6233,A,S/
+T33,2024,age4,1,14–24,inc_p75,,Ingreso laboral p75 (S/ 2024),1496.083,18.729,1.252,1441.583,1515.0,6233,A,S/
+T33,2024,age4,1,14–24,inc_p90,,Ingreso laboral p90 (S/ 2024),2029.75,28.019,1.38,1991.417,2101.25,6233,A,S/
+T33,2024,age4,1,14–24,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1105.867,15.587,1.409,1075.317,1136.417,6233,A,S/
+T33,2024,age4,1,14–24,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1024.167,6.186,0.604,1010.25,1034.5,6233,A,S/
+T33,2024,age4,2,25–44,inc_p10,,Ingreso laboral p10 (S/ 2024),387.75,7.186,1.853,371.667,399.833,20571,A,S/
+T33,2024,age4,2,25–44,inc_p25,,Ingreso laboral p25 (S/ 2024),819.333,14.031,1.712,799.333,854.333,20571,A,S/
+T33,2024,age4,2,25–44,inc_p75,,Ingreso laboral p75 (S/ 2024),2193.0,27.466,1.252,2146.667,2254.333,20571,A,S/
+T33,2024,age4,2,25–44,inc_p90,,Ingreso laboral p90 (S/ 2024),3462.917,43.219,1.248,3359.667,3529.083,20571,A,S/
+T33,2024,age4,2,25–44,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1794.466,21.749,1.212,1751.838,1837.094,20571,A,S/
+T33,2024,age4,2,25–44,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1406.583,15.604,1.109,1375.75,1436.917,20571,A,S/
+T33,2024,age4,3,45–64,inc_p10,,Ingreso laboral p10 (S/ 2024),297.917,6.25,2.098,279.083,303.583,18866,A,S/
+T33,2024,age4,3,45–64,inc_p25,,Ingreso laboral p25 (S/ 2024),647.917,11.99,1.851,623.167,670.167,18866,A,S/
+T33,2024,age4,3,45–64,inc_p75,,Ingreso laboral p75 (S/ 2024),2196.139,36.395,1.657,2128.167,2270.833,18866,A,S/
+T33,2024,age4,3,45–64,inc_p90,,Ingreso laboral p90 (S/ 2024),3645.0,61.587,1.69,3552.833,3794.25,18866,A,S/
+T33,2024,age4,3,45–64,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1793.375,28.343,1.58,1737.823,1848.926,18866,A,S/
+T33,2024,age4,3,45–64,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1275.083,12.649,0.992,1245.667,1295.25,18866,A,S/
+T33,2024,age4,4,65 y más,inc_p10,,Ingreso laboral p10 (S/ 2024),101.333,3.061,3.021,95.917,107.917,6249,A,S/
+T33,2024,age4,4,65 y más,inc_p25,,Ingreso laboral p25 (S/ 2024),237.333,9.269,3.905,220.167,256.5,6249,A,S/
+T33,2024,age4,4,65 y más,inc_p75,,Ingreso laboral p75 (S/ 2024),1199.667,31.633,2.637,1146.75,1270.75,6249,A,S/
+T33,2024,age4,4,65 y más,inc_p90,,Ingreso laboral p90 (S/ 2024),2110.25,104.7,4.961,1994.917,2405.333,6249,A,S/
+T33,2024,age4,4,65 y más,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),997.375,29.343,2.942,939.864,1054.886,6249,A,S/
+T33,2024,age4,4,65 y más,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),567.917,17.9,3.152,534.0,604.167,6249,A,S/
+T33,2024,area,1,Urbano,inc_p10,,Ingreso laboral p10 (S/ 2024),345.333,5.697,1.65,331.25,353.583,35251,A,S/
+T33,2024,area,1,Urbano,inc_p25,,Ingreso laboral p25 (S/ 2024),767.333,10.14,1.322,747.0,786.75,35251,A,S/
+T33,2024,area,1,Urbano,inc_p75,,Ingreso laboral p75 (S/ 2024),2152.417,24.108,1.12,2103.583,2198.083,35251,A,S/
+T33,2024,area,1,Urbano,inc_p90,,Ingreso laboral p90 (S/ 2024),3495.167,34.142,0.977,3422.75,3556.583,35251,A,S/
+T33,2024,area,1,Urbano,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1775.461,19.824,1.117,1736.606,1814.316,35251,A,S/
+T33,2024,area,1,Urbano,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1327.833,11.969,0.901,1308.25,1355.167,35251,A,S/
+T33,2024,area,2,Rural,inc_p10,,Ingreso laboral p10 (S/ 2024),145.5,3.642,2.503,138.389,152.667,16668,A,S/
+T33,2024,area,2,Rural,inc_p25,,Ingreso laboral p25 (S/ 2024),333.167,6.845,2.055,320.75,347.583,16668,A,S/
+T33,2024,area,2,Rural,inc_p75,,Ingreso laboral p75 (S/ 2024),1357.917,21.101,1.554,1317.898,1400.613,16668,A,S/
+T33,2024,area,2,Rural,inc_p90,,Ingreso laboral p90 (S/ 2024),2114.312,32.271,1.526,2047.417,2173.917,16668,A,S/
+T33,2024,area,2,Rural,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1014.083,12.992,1.281,988.619,1039.548,16668,A,S/
+T33,2024,area,2,Rural,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),733.667,11.076,1.51,712.333,755.75,16668,A,S/
+T33,2024,educ4,1,Hasta primaria,inc_p10,,Ingreso laboral p10 (S/ 2024),142.833,4.31,3.017,135.388,152.283,14054,A,S/
+T33,2024,educ4,1,Hasta primaria,inc_p25,,Ingreso laboral p25 (S/ 2024),329.583,7.55,2.291,314.656,344.25,14054,A,S/
+T33,2024,educ4,1,Hasta primaria,inc_p75,,Ingreso laboral p75 (S/ 2024),1292.917,10.438,0.807,1264.0,1304.917,14054,A,S/
+T33,2024,educ4,1,Hasta primaria,inc_p90,,Ingreso laboral p90 (S/ 2024),1934.417,30.443,1.574,1867.167,1986.5,14054,A,S/
+T33,2024,educ4,1,Hasta primaria,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),944.507,14.894,1.577,915.316,973.698,14054,A,S/
+T33,2024,educ4,1,Hasta primaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),719.0,12.435,1.729,694.174,742.917,14054,A,S/
+T33,2024,educ4,2,Secundaria,inc_p10,,Ingreso laboral p10 (S/ 2024),287.25,7.568,2.635,270.583,300.25,20829,A,S/
+T33,2024,educ4,2,Secundaria,inc_p25,,Ingreso laboral p25 (S/ 2024),620.5,11.331,1.826,601.833,646.25,20829,A,S/
+T33,2024,educ4,2,Secundaria,inc_p75,,Ingreso laboral p75 (S/ 2024),1730.833,13.967,0.807,1711.083,1765.833,20829,A,S/
+T33,2024,educ4,2,Secundaria,inc_p90,,Ingreso laboral p90 (S/ 2024),2540.667,24.937,0.982,2492.583,2590.333,20829,A,S/
+T33,2024,educ4,2,Secundaria,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1355.871,12.129,0.895,1332.099,1379.643,20829,A,S/
+T33,2024,educ4,2,Secundaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1171.796,13.223,1.128,1144.083,1195.917,20829,A,S/
+T33,2024,educ4,3,Superior no universitaria,inc_p10,,Ingreso laboral p10 (S/ 2024),438.333,14.754,3.366,409.0,466.833,7975,A,S/
+T33,2024,educ4,3,Superior no universitaria,inc_p25,,Ingreso laboral p25 (S/ 2024),969.0,23.619,2.437,913.583,1006.167,7975,A,S/
+T33,2024,educ4,3,Superior no universitaria,inc_p75,,Ingreso laboral p75 (S/ 2024),2377.25,45.728,1.924,2300.0,2479.25,7975,A,S/
+T33,2024,educ4,3,Superior no universitaria,inc_p90,,Ingreso laboral p90 (S/ 2024),3488.5,47.173,1.352,3375.917,3560.833,7975,A,S/
+T33,2024,educ4,3,Superior no universitaria,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1859.491,28.304,1.522,1804.016,1914.966,7975,A,S/
+T33,2024,educ4,3,Superior no universitaria,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1498.75,16.539,1.104,1464.167,1529.0,7975,A,S/
+T33,2024,educ4,4,Universitaria y posgrado,inc_p10,,Ingreso laboral p10 (S/ 2024),600.917,22.301,3.711,560.417,647.833,9044,A,S/
+T33,2024,educ4,4,Universitaria y posgrado,inc_p25,,Ingreso laboral p25 (S/ 2024),1194.25,21.748,1.821,1126.417,1211.667,9044,A,S/
+T33,2024,educ4,4,Universitaria y posgrado,inc_p75,,Ingreso laboral p75 (S/ 2024),3549.083,42.56,1.199,3472.167,3639.0,9044,A,S/
+T33,2024,educ4,4,Universitaria y posgrado,inc_p90,,Ingreso laboral p90 (S/ 2024),5632.917,130.126,2.31,5415.167,5925.25,9044,A,S/
+T33,2024,educ4,4,Universitaria y posgrado,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),2824.671,54.315,1.923,2718.216,2931.127,9044,A,S/
+T33,2024,educ4,4,Universitaria y posgrado,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),2060.75,47.989,2.329,1999.417,2187.531,9044,A,S/
+T33,2024,national,all,Nacional,inc_p10,,Ingreso laboral p10 (S/ 2024),278.251,5.549,1.994,266.667,288.417,51919,A,S/
+T33,2024,national,all,Nacional,inc_p25,,Ingreso laboral p25 (S/ 2024),641.25,7.164,1.117,622.833,650.917,51919,A,S/
+T33,2024,national,all,Nacional,inc_p75,,Ingreso laboral p75 (S/ 2024),2013.417,13.074,0.649,1993.167,2044.417,51919,A,S/
+T33,2024,national,all,Nacional,inc_p90,,Ingreso laboral p90 (S/ 2024),3299.0,45.26,1.372,3203.667,3381.083,51919,A,S/
+T33,2024,national,all,Nacional,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1645.585,16.4,0.997,1613.442,1677.729,51919,A,S/
+T33,2024,national,all,Nacional,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1244.25,11.714,0.941,1218.5,1264.417,51919,A,S/
+T33,2024,region_nat,1,Costa,inc_p10,,Ingreso laboral p10 (S/ 2024),283.333,8.886,3.136,265.667,300.5,16548,A,S/
+T33,2024,region_nat,1,Costa,inc_p25,,Ingreso laboral p25 (S/ 2024),689.083,13.84,2.008,656.0,710.25,16548,A,S/
+T33,2024,region_nat,1,Costa,inc_p75,,Ingreso laboral p75 (S/ 2024),1991.333,18.283,0.918,1948.583,2020.25,16548,A,S/
+T33,2024,region_nat,1,Costa,inc_p90,,Ingreso laboral p90 (S/ 2024),3079.917,36.013,1.169,3010.0,3151.167,16548,A,S/
+T33,2024,region_nat,1,Costa,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1581.922,19.812,1.252,1543.091,1620.753,16548,A,S/
+T33,2024,region_nat,1,Costa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1295.083,7.93,0.612,1273.833,1304.917,16548,A,S/
+T33,2024,region_nat,2,Sierra,inc_p10,,Ingreso laboral p10 (S/ 2024),197.167,5.092,2.582,186.541,206.5,17556,A,S/
+T33,2024,region_nat,2,Sierra,inc_p25,,Ingreso laboral p25 (S/ 2024),454.75,8.865,1.949,437.417,472.167,17556,A,S/
+T33,2024,region_nat,2,Sierra,inc_p75,,Ingreso laboral p75 (S/ 2024),1766.75,24.101,1.364,1713.026,1807.5,17556,A,S/
+T33,2024,region_nat,2,Sierra,inc_p90,,Ingreso laboral p90 (S/ 2024),2987.75,52.127,1.745,2887.333,3091.667,17556,A,S/
+T33,2024,region_nat,2,Sierra,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1368.195,21.002,1.535,1327.033,1409.358,17556,A,S/
+T33,2024,region_nat,2,Sierra,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1000.083,12.479,1.248,970.083,1019.0,17556,A,S/
+T33,2024,region_nat,3,Selva,inc_p10,,Ingreso laboral p10 (S/ 2024),237.583,7.568,3.185,220.417,250.083,11259,A,S/
+T33,2024,region_nat,3,Selva,inc_p25,,Ingreso laboral p25 (S/ 2024),536.667,11.82,2.202,516.75,563.083,11259,A,S/
+T33,2024,region_nat,3,Selva,inc_p75,,Ingreso laboral p75 (S/ 2024),1785.792,23.64,1.324,1736.583,1829.25,11259,A,S/
+T33,2024,region_nat,3,Selva,inc_p90,,Ingreso laboral p90 (S/ 2024),3031.0,52.084,1.718,2928.333,3132.5,11259,A,S/
+T33,2024,region_nat,3,Selva,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1435.795,21.83,1.52,1393.009,1478.581,11259,A,S/
+T33,2024,region_nat,3,Selva,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1078.583,15.817,1.466,1045.333,1107.333,11259,A,S/
+T33,2024,region_nat,4,Lima Metropolitana,inc_p10,,Ingreso laboral p10 (S/ 2024),475.833,15.583,3.275,438.5,499.583,6556,A,S/
+T33,2024,region_nat,4,Lima Metropolitana,inc_p25,,Ingreso laboral p25 (S/ 2024),994.167,25.027,2.517,913.583,1011.688,6556,A,S/
+T33,2024,region_nat,4,Lima Metropolitana,inc_p75,,Ingreso laboral p75 (S/ 2024),2398.5,54.848,2.287,2280.667,2495.667,6556,A,S/
+T33,2024,region_nat,4,Lima Metropolitana,inc_p90,,Ingreso laboral p90 (S/ 2024),3894.583,114.415,2.938,3616.75,4065.25,6556,A,S/
+T33,2024,region_nat,4,Lima Metropolitana,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),2010.886,44.248,2.2,1924.162,2097.61,6556,A,S/
+T33,2024,region_nat,4,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1493.458,21.897,1.466,1422.833,1508.667,6556,A,S/
+T33,2024,sex,1,Hombres,inc_p10,,Ingreso laboral p10 (S/ 2024),406.0,6.441,1.587,397.667,422.917,29417,A,S/
+T33,2024,sex,1,Hombres,inc_p25,,Ingreso laboral p25 (S/ 2024),834.833,13.533,1.621,807.951,861.0,29417,A,S/
+T33,2024,sex,1,Hombres,inc_p75,,Ingreso laboral p75 (S/ 2024),2208.0,25.468,1.153,2163.25,2263.083,29417,A,S/
+T33,2024,sex,1,Hombres,inc_p90,,Ingreso laboral p90 (S/ 2024),3526.917,34.291,0.972,3467.417,3601.833,29417,A,S/
+T33,2024,sex,1,Hombres,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1845.905,19.98,1.082,1806.745,1885.065,29417,A,S/
+T33,2024,sex,1,Hombres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1404.25,11.48,0.818,1382.0,1427.0,29417,A,S/
+T33,2024,sex,2,Mujeres,inc_p10,,Ingreso laboral p10 (S/ 2024),177.417,5.604,3.158,167.701,189.667,22502,A,S/
+T33,2024,sex,2,Mujeres,inc_p25,,Ingreso laboral p25 (S/ 2024),458.333,10.098,2.203,438.167,477.75,22502,A,S/
+T33,2024,sex,2,Mujeres,inc_p75,,Ingreso laboral p75 (S/ 2024),1709.083,23.045,1.348,1664.75,1755.083,22502,A,S/
+T33,2024,sex,2,Mujeres,inc_p90,,Ingreso laboral p90 (S/ 2024),2917.583,51.468,1.764,2813.583,3015.333,22502,A,S/
+T33,2024,sex,2,Mujeres,mean_inc_real,,Ingreso laboral mensual promedio (S/ 2024),1364.335,19.824,1.453,1325.48,1403.19,22502,A,S/
+T33,2024,sex,2,Mujeres,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1025.083,5.272,0.514,1017.083,1037.75,22502,A,S/

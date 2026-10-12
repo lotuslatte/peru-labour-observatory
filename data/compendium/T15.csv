@@ -1,0 +1,53 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T15,2024,area,1,Urbano,firm_small,,Ocupados en unidades de hasta 20 trabajadores,72.703,0.426,0.586,71.868,73.539,37153,A,%
+T15,2024,area,1,Urbano,secondary_job,,Ocupados con ocupación secundaria,17.21,0.311,1.808,16.6,17.819,37153,A,%
+T15,2024,area,1,Urbano,self_emp,,Trabajadores independientes,34.631,0.368,1.063,33.91,35.352,37153,A,%
+T15,2024,area,1,Urbano,tfnr,,Trabajadores familiares no remunerados,3.795,0.133,3.511,3.534,4.056,37153,A,%
+T15,2024,area,2,Rural,firm_small,,Ocupados en unidades de hasta 20 trabajadores,91.636,0.315,0.344,91.019,92.253,21193,A,%
+T15,2024,area,2,Rural,secondary_job,,Ocupados con ocupación secundaria,36.032,0.543,1.507,34.968,37.096,21193,A,%
+T15,2024,area,2,Rural,self_emp,,Trabajadores independientes,48.379,0.444,0.917,47.509,49.249,21193,A,%
+T15,2024,area,2,Rural,tfnr,,Trabajadores familiares no remunerados,21.149,0.425,2.012,20.315,21.983,21193,A,%
+T15,2024,educ4,1,Hasta primaria,firm_small,,Ocupados en unidades de hasta 20 trabajadores,94.42,0.301,0.319,93.83,95.01,17019,A,%
+T15,2024,educ4,1,Hasta primaria,secondary_job,,Ocupados con ocupación secundaria,28.367,0.528,1.862,27.332,29.402,17019,A,%
+T15,2024,educ4,1,Hasta primaria,self_emp,,Trabajadores independientes,58.74,0.559,0.952,57.644,59.836,17019,A,%
+T15,2024,educ4,1,Hasta primaria,tfnr,,Trabajadores familiares no remunerados,12.797,0.332,2.598,12.146,13.449,17019,A,%
+T15,2024,educ4,2,Secundaria,firm_small,,Ocupados en unidades de hasta 20 trabajadores,84.306,0.415,0.493,83.492,85.12,23554,A,%
+T15,2024,educ4,2,Secundaria,secondary_job,,Ocupados con ocupación secundaria,20.201,0.402,1.988,19.414,20.988,23554,A,%
+T15,2024,educ4,2,Secundaria,self_emp,,Trabajadores independientes,39.304,0.469,1.194,38.384,40.223,23554,A,%
+T15,2024,educ4,2,Secundaria,tfnr,,Trabajadores familiares no remunerados,7.998,0.226,2.829,7.554,8.441,23554,A,%
+T15,2024,educ4,3,Superior no universitaria,firm_small,,Ocupados en unidades de hasta 20 trabajadores,63.721,0.847,1.329,62.061,65.381,8360,A,%
+T15,2024,educ4,3,Superior no universitaria,secondary_job,,Ocupados con ocupación secundaria,19.962,0.62,3.107,18.746,21.178,8360,A,%
+T15,2024,educ4,3,Superior no universitaria,self_emp,,Trabajadores independientes,27.256,0.718,2.633,25.85,28.663,8360,A,%
+T15,2024,educ4,3,Superior no universitaria,tfnr,,Trabajadores familiares no remunerados,3.53,0.246,6.969,3.048,4.012,8360,A,%
+T15,2024,educ4,4,Universitaria y posgrado,firm_small,,Ocupados en unidades de hasta 20 trabajadores,49.169,0.847,1.723,47.509,50.829,9394,A,%
+T15,2024,educ4,4,Universitaria y posgrado,secondary_job,,Ocupados con ocupación secundaria,15.58,0.545,3.501,14.51,16.649,9394,A,%
+T15,2024,educ4,4,Universitaria y posgrado,self_emp,,Trabajadores independientes,18.141,0.593,3.27,16.978,19.303,9394,A,%
+T15,2024,educ4,4,Universitaria y posgrado,tfnr,,Trabajadores familiares no remunerados,2.815,0.227,8.079,2.369,3.26,9394,A,%
+T15,2024,national,all,Nacional,firm_small,,Ocupados en unidades de hasta 20 trabajadores,76.505,0.347,0.454,75.825,77.185,58346,A,%
+T15,2024,national,all,Nacional,secondary_job,,Ocupados con ocupación secundaria,20.989,0.28,1.336,20.44,21.539,58346,A,%
+T15,2024,national,all,Nacional,self_emp,,Trabajadores independientes,37.392,0.309,0.825,36.787,37.997,58346,A,%
+T15,2024,national,all,Nacional,tfnr,,Trabajadores familiares no remunerados,7.28,0.146,2.008,6.993,7.566,58346,A,%
+T15,2024,region_nat,1,Costa,firm_small,,Ocupados en unidades de hasta 20 trabajadores,75.357,0.55,0.73,74.279,76.436,17449,A,%
+T15,2024,region_nat,1,Costa,secondary_job,,Ocupados con ocupación secundaria,19.805,0.456,2.303,18.911,20.699,17449,A,%
+T15,2024,region_nat,1,Costa,self_emp,,Trabajadores independientes,36.693,0.496,1.353,35.72,37.666,17449,A,%
+T15,2024,region_nat,1,Costa,tfnr,,Trabajadores familiares no remunerados,4.243,0.205,4.824,3.842,4.644,17449,A,%
+T15,2024,region_nat,2,Sierra,firm_small,,Ocupados en unidades de hasta 20 trabajadores,83.506,0.457,0.548,82.609,84.402,21167,A,%
+T15,2024,region_nat,2,Sierra,secondary_job,,Ocupados con ocupación secundaria,29.214,0.503,1.723,28.227,30.201,21167,A,%
+T15,2024,region_nat,2,Sierra,self_emp,,Trabajadores independientes,43.422,0.502,1.157,42.438,44.407,21167,A,%
+T15,2024,region_nat,2,Sierra,tfnr,,Trabajadores familiares no remunerados,13.545,0.352,2.597,12.855,14.234,21167,A,%
+T15,2024,region_nat,3,Selva,firm_small,,Ocupados en unidades de hasta 20 trabajadores,85.495,0.531,0.621,84.454,86.536,13073,A,%
+T15,2024,region_nat,3,Selva,secondary_job,,Ocupados con ocupación secundaria,29.651,0.644,2.171,28.389,30.913,13073,A,%
+T15,2024,region_nat,3,Selva,self_emp,,Trabajadores independientes,44.603,0.631,1.414,43.367,45.839,13073,A,%
+T15,2024,region_nat,3,Selva,tfnr,,Trabajadores familiares no remunerados,11.576,0.427,3.693,10.738,12.414,13073,A,%
+T15,2024,region_nat,4,Lima Metropolitana,firm_small,,Ocupados en unidades de hasta 20 trabajadores,66.658,0.894,1.342,64.905,68.411,6657,A,%
+T15,2024,region_nat,4,Lima Metropolitana,secondary_job,,Ocupados con ocupación secundaria,10.093,0.513,5.078,9.089,11.098,6657,A,%
+T15,2024,region_nat,4,Lima Metropolitana,self_emp,,Trabajadores independientes,28.916,0.699,2.416,27.547,30.285,6657,A,%
+T15,2024,region_nat,4,Lima Metropolitana,tfnr,,Trabajadores familiares no remunerados,1.526,0.189,12.361,1.156,1.895,6657,A,%
+T15,2024,sex,1,Hombres,firm_small,,Ocupados en unidades de hasta 20 trabajadores,75.19,0.428,0.57,74.35,76.029,31266,A,%
+T15,2024,sex,1,Hombres,secondary_job,,Ocupados con ocupación secundaria,20.786,0.335,1.612,20.129,21.443,31266,A,%
+T15,2024,sex,1,Hombres,self_emp,,Trabajadores independientes,36.043,0.405,1.123,35.25,36.836,31266,A,%
+T15,2024,sex,1,Hombres,tfnr,,Trabajadores familiares no remunerados,4.539,0.153,3.373,4.239,4.839,31266,A,%
+T15,2024,sex,2,Mujeres,firm_small,,Ocupados en unidades de hasta 20 trabajadores,78.229,0.44,0.562,77.366,79.091,27080,A,%
+T15,2024,sex,2,Mujeres,secondary_job,,Ocupados con ocupación secundaria,21.256,0.38,1.787,20.512,22.001,27080,A,%
+T15,2024,sex,2,Mujeres,self_emp,,Trabajadores independientes,39.158,0.45,1.15,38.275,40.041,27080,A,%
+T15,2024,sex,2,Mujeres,tfnr,,Trabajadores familiares no remunerados,10.87,0.249,2.288,10.383,11.358,27080,A,%

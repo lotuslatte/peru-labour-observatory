@@ -1,0 +1,37 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T09,2024,educ4,1,Hasta primaria,epr,,Ratio empleo-población,67.039,0.5,0.746,66.059,68.019,24097,A,%
+T09,2024,educ4,1,Hasta primaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",68.718,0.491,0.714,67.756,69.68,24097,A,%
+T09,2024,educ4,1,Hasta primaria,ur,,Tasa de desempleo,2.443,0.218,8.909,2.017,2.87,17293,A,%
+T09,2024,educ4,2,Secundaria,epr,,Ratio empleo-población,64.369,0.352,0.547,63.679,65.059,36903,A,%
+T09,2024,educ4,2,Secundaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",67.842,0.345,0.508,67.166,68.518,36903,A,%
+T09,2024,educ4,2,Secundaria,ur,,Tasa de desempleo,5.119,0.228,4.458,4.671,5.566,24520,A,%
+T09,2024,educ4,3,Superior no universitaria,epr,,Ratio empleo-población,76.362,0.596,0.78,75.195,77.53,11065,A,%
+T09,2024,educ4,3,Superior no universitaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.962,0.567,0.709,78.851,81.074,11065,A,%
+T09,2024,educ4,3,Superior no universitaria,ur,,Tasa de desempleo,4.502,0.317,7.038,3.881,5.123,8703,A,%
+T09,2024,educ4,4,Universitaria y posgrado,epr,,Ratio empleo-población,70.124,0.602,0.858,68.945,71.303,13411,A,%
+T09,2024,educ4,4,Universitaria y posgrado,lfpr,,"Tasa de actividad (PEA/PET, 14+)",75.041,0.574,0.765,73.916,76.167,13411,A,%
+T09,2024,educ4,4,Universitaria y posgrado,ur,,Tasa de desempleo,6.553,0.374,5.711,5.819,7.286,9970,A,%
+T09,2024,sex_educ4,1|1,Hombres × Hasta primaria,epr,,Ratio empleo-población,79.532,0.644,0.809,78.271,80.794,9600,A,%
+T09,2024,sex_educ4,1|1,Hombres × Hasta primaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",81.103,0.624,0.769,79.88,82.326,9600,A,%
+T09,2024,sex_educ4,1|1,Hombres × Hasta primaria,ur,,Tasa de desempleo,1.937,0.269,13.913,1.409,2.465,7894,A,%
+T09,2024,sex_educ4,1|2,Hombres × Secundaria,epr,,Ratio empleo-población,74.381,0.445,0.599,73.509,75.254,19474,A,%
+T09,2024,sex_educ4,1|2,Hombres × Secundaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",77.612,0.423,0.545,76.782,78.441,19474,A,%
+T09,2024,sex_educ4,1|2,Hombres × Secundaria,ur,,Tasa de desempleo,4.162,0.29,6.961,3.594,4.73,14639,A,%
+T09,2024,sex_educ4,1|3,Hombres × Superior no universitaria,epr,,Ratio empleo-población,85.301,0.684,0.802,83.959,86.642,5220,A,%
+T09,2024,sex_educ4,1|3,Hombres × Superior no universitaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",87.842,0.636,0.724,86.595,89.089,5220,A,%
+T09,2024,sex_educ4,1|3,Hombres × Superior no universitaria,ur,,Tasa de desempleo,2.893,0.321,11.09,2.264,3.522,4495,A,%
+T09,2024,sex_educ4,1|4,Hombres × Universitaria y posgrado,epr,,Ratio empleo-población,74.748,0.797,1.066,73.187,76.31,6668,A,%
+T09,2024,sex_educ4,1|4,Hombres × Universitaria y posgrado,lfpr,,"Tasa de actividad (PEA/PET, 14+)",79.459,0.734,0.924,78.021,80.898,6668,A,%
+T09,2024,sex_educ4,1|4,Hombres × Universitaria y posgrado,ur,,Tasa de desempleo,5.929,0.485,8.179,4.978,6.879,5211,A,%
+T09,2024,sex_educ4,2|1,Mujeres × Hasta primaria,epr,,Ratio empleo-población,58.272,0.641,1.1,57.015,59.529,14497,A,%
+T09,2024,sex_educ4,2|1,Mujeres × Hasta primaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",60.027,0.641,1.068,58.77,61.283,14497,A,%
+T09,2024,sex_educ4,2|1,Mujeres × Hasta primaria,ur,,Tasa de desempleo,2.924,0.33,11.278,2.277,3.57,9399,A,%
+T09,2024,sex_educ4,2|2,Mujeres × Secundaria,epr,,Ratio empleo-población,52.761,0.555,1.051,51.674,53.848,17429,A,%
+T09,2024,sex_educ4,2|2,Mujeres × Secundaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",56.514,0.556,0.984,55.424,57.605,17429,A,%
+T09,2024,sex_educ4,2|2,Mujeres × Secundaria,ur,,Tasa de desempleo,6.641,0.411,6.184,5.836,7.446,9881,A,%
+T09,2024,sex_educ4,2|3,Mujeres × Superior no universitaria,epr,,Ratio empleo-población,67.55,0.908,1.344,65.77,69.33,5845,A,%
+T09,2024,sex_educ4,2|3,Mujeres × Superior no universitaria,lfpr,,"Tasa de actividad (PEA/PET, 14+)",72.193,0.86,1.192,70.507,73.879,5845,A,%
+T09,2024,sex_educ4,2|3,Mujeres × Superior no universitaria,ur,,Tasa de desempleo,6.432,0.59,9.172,5.276,7.588,4208,A,%
+T09,2024,sex_educ4,2|4,Mujeres × Universitaria y posgrado,epr,,Ratio empleo-población,65.418,0.889,1.358,63.677,67.16,6743,A,%
+T09,2024,sex_educ4,2|4,Mujeres × Universitaria y posgrado,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.546,0.874,1.239,68.833,72.258,6743,A,%
+T09,2024,sex_educ4,2|4,Mujeres × Universitaria y posgrado,ur,,Tasa de desempleo,7.268,0.569,7.825,6.153,8.383,4759,A,%

@@ -1,0 +1,64 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T24,2024,etnia6,1,Quechua,sector_dist,3.0,Distribución por rama de actividad: Manufactura,43.836,0.753,1.718,42.36,45.312,15645,A,%
+T24,2024,etnia6,1,Quechua,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.456,0.1,22.015,0.259,0.652,15645,B,%
+T24,2024,etnia6,1,Quechua,sector_dist,5.0,Distribución por rama de actividad: Construcción,6.665,0.309,4.633,6.06,7.27,15645,A,%
+T24,2024,etnia6,1,Quechua,sector_dist,6.0,Distribución por rama de actividad: Comercio,16.489,0.515,3.121,15.481,17.498,15645,A,%
+T24,2024,etnia6,1,Quechua,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,6.389,0.33,5.158,5.743,7.035,15645,A,%
+T24,2024,etnia6,1,Quechua,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",11.921,0.462,3.878,11.015,12.827,15645,A,%
+T24,2024,etnia6,1,Quechua,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",14.245,0.503,3.534,13.258,15.232,15645,A,%
+T24,2024,etnia6,2,Aimara,sector_dist,3.0,Distribución por rama de actividad: Manufactura,42.432,2.384,5.619,37.76,47.105,1929,A,%
+T24,2024,etnia6,2,Aimara,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,,,,,,1929,S,%
+T24,2024,etnia6,2,Aimara,sector_dist,5.0,Distribución por rama de actividad: Construcción,9.913,1.402,14.14,7.166,12.66,1929,A,%
+T24,2024,etnia6,2,Aimara,sector_dist,6.0,Distribución por rama de actividad: Comercio,15.136,1.395,9.216,12.402,17.87,1929,A,%
+T24,2024,etnia6,2,Aimara,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,7.875,0.964,12.24,5.985,9.764,1929,A,%
+T24,2024,etnia6,2,Aimara,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",10.335,1.37,13.253,7.651,13.02,1929,A,%
+T24,2024,etnia6,2,Aimara,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",13.742,1.46,10.627,10.88,16.604,1929,A,%
+T24,2024,etnia6,3,Amazónico / otro pueblo indígena,sector_dist,3.0,Distribución por rama de actividad: Manufactura,60.222,3.188,5.294,53.973,66.47,1375,A,%
+T24,2024,etnia6,3,Amazónico / otro pueblo indígena,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,,,,,,1375,S,%
+T24,2024,etnia6,3,Amazónico / otro pueblo indígena,sector_dist,5.0,Distribución por rama de actividad: Construcción,4.542,0.96,21.126,2.662,6.423,1375,B,%
+T24,2024,etnia6,3,Amazónico / otro pueblo indígena,sector_dist,6.0,Distribución por rama de actividad: Comercio,10.361,1.498,14.461,7.424,13.298,1375,A,%
+T24,2024,etnia6,3,Amazónico / otro pueblo indígena,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,2.86,0.661,23.108,1.565,4.155,1375,B,%
+T24,2024,etnia6,3,Amazónico / otro pueblo indígena,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",9.54,1.672,17.527,6.263,12.817,1375,B,%
+T24,2024,etnia6,3,Amazónico / otro pueblo indígena,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",11.74,1.688,14.381,8.431,15.049,1375,A,%
+T24,2024,etnia6,4,Afroperuano,sector_dist,3.0,Distribución por rama de actividad: Manufactura,42.646,1.215,2.848,40.266,45.027,3909,A,%
+T24,2024,etnia6,4,Afroperuano,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,,,,,,3909,S,%
+T24,2024,etnia6,4,Afroperuano,sector_dist,5.0,Distribución por rama de actividad: Construcción,6.908,0.543,7.866,5.843,7.973,3909,A,%
+T24,2024,etnia6,4,Afroperuano,sector_dist,6.0,Distribución por rama de actividad: Comercio,16.825,0.891,5.295,15.079,18.571,3909,A,%
+T24,2024,etnia6,4,Afroperuano,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,9.331,0.649,6.96,8.058,10.603,3909,A,%
+T24,2024,etnia6,4,Afroperuano,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",12.918,0.779,6.028,11.392,14.445,3909,A,%
+T24,2024,etnia6,4,Afroperuano,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",11.135,0.774,6.947,9.619,12.651,3909,A,%
+T24,2024,etnia6,5,Blanco / mestizo,sector_dist,3.0,Distribución por rama de actividad: Manufactura,25.07,0.415,1.656,24.256,25.883,30911,A,%
+T24,2024,etnia6,5,Blanco / mestizo,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.657,0.085,12.9,0.491,0.823,30911,A,%
+T24,2024,etnia6,5,Blanco / mestizo,sector_dist,5.0,Distribución por rama de actividad: Construcción,7.02,0.249,3.549,6.531,7.508,30911,A,%
+T24,2024,etnia6,5,Blanco / mestizo,sector_dist,6.0,Distribución por rama de actividad: Comercio,20.316,0.39,1.919,19.552,21.08,30911,A,%
+T24,2024,etnia6,5,Blanco / mestizo,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,9.762,0.298,3.055,9.178,10.347,30911,A,%
+T24,2024,etnia6,5,Blanco / mestizo,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",14.73,0.339,2.304,14.065,15.395,30911,A,%
+T24,2024,etnia6,5,Blanco / mestizo,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",22.446,0.435,1.936,21.594,23.297,30911,A,%
+T24,2024,etnia6,6,Otro / no sabe,sector_dist,3.0,Distribución por rama de actividad: Manufactura,30.551,1.071,3.507,28.451,32.651,4571,A,%
+T24,2024,etnia6,6,Otro / no sabe,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.406,0.105,25.73,0.201,0.611,4571,B,%
+T24,2024,etnia6,6,Otro / no sabe,sector_dist,5.0,Distribución por rama de actividad: Construcción,7.1,0.661,9.309,5.804,8.395,4571,A,%
+T24,2024,etnia6,6,Otro / no sabe,sector_dist,6.0,Distribución por rama de actividad: Comercio,21.715,1.0,4.603,19.756,23.674,4571,A,%
+T24,2024,etnia6,6,Otro / no sabe,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,9.59,0.699,7.294,8.219,10.96,4571,A,%
+T24,2024,etnia6,6,Otro / no sabe,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",16.039,0.866,5.402,14.341,17.737,4571,A,%
+T24,2024,etnia6,6,Otro / no sabe,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",14.599,0.814,5.578,13.003,16.195,4571,A,%
+T24,2024,lengua3,1,Lengua indígena u originaria,sector_dist,3.0,Distribución por rama de actividad: Manufactura,51.697,0.807,1.561,50.115,53.279,14128,A,%
+T24,2024,lengua3,1,Lengua indígena u originaria,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.429,0.097,22.6,0.239,0.619,14128,B,%
+T24,2024,lengua3,1,Lengua indígena u originaria,sector_dist,5.0,Distribución por rama de actividad: Construcción,6.719,0.371,5.528,5.991,7.447,14128,A,%
+T24,2024,lengua3,1,Lengua indígena u originaria,sector_dist,6.0,Distribución por rama de actividad: Comercio,14.567,0.522,3.582,13.544,15.59,14128,A,%
+T24,2024,lengua3,1,Lengua indígena u originaria,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,5.412,0.337,6.227,4.751,6.072,14128,A,%
+T24,2024,lengua3,1,Lengua indígena u originaria,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",10.664,0.502,4.711,9.679,11.649,14128,A,%
+T24,2024,lengua3,1,Lengua indígena u originaria,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",10.512,0.465,4.427,9.6,11.424,14128,A,%
+T24,2024,lengua3,2,Castellano,sector_dist,3.0,Distribución por rama de actividad: Manufactura,27.53,0.369,1.341,26.806,28.253,44039,A,%
+T24,2024,lengua3,2,Castellano,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,0.587,0.064,10.904,0.461,0.712,44039,A,%
+T24,2024,lengua3,2,Castellano,sector_dist,5.0,Distribución por rama de actividad: Construcción,7.04,0.204,2.896,6.641,7.44,44039,A,%
+T24,2024,lengua3,2,Castellano,sector_dist,6.0,Distribución por rama de actividad: Comercio,20.06,0.331,1.65,19.412,20.709,44039,A,%
+T24,2024,lengua3,2,Castellano,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,9.588,0.246,2.569,9.105,10.071,44039,A,%
+T24,2024,lengua3,2,Castellano,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",14.64,0.275,1.876,14.102,15.179,44039,A,%
+T24,2024,lengua3,2,Castellano,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",20.555,0.357,1.736,19.856,21.255,44039,A,%
+T24,2024,lengua3,3,Otra / no habla,sector_dist,3.0,Distribución por rama de actividad: Manufactura,39.433,4.971,12.607,29.689,49.177,154,A,%
+T24,2024,lengua3,3,Otra / no habla,sector_dist,4.0,Distribución por rama de actividad: Electricidad y agua,,,,,,154,S,%
+T24,2024,lengua3,3,Otra / no habla,sector_dist,5.0,Distribución por rama de actividad: Construcción,,,,,,154,S,%
+T24,2024,lengua3,3,Otra / no habla,sector_dist,6.0,Distribución por rama de actividad: Comercio,19.133,4.509,23.564,10.297,27.97,154,B,%
+T24,2024,lengua3,3,Otra / no habla,sector_dist,7.0,Distribución por rama de actividad: Transporte y comunicaciones,,,,,,154,S,%
+T24,2024,lengua3,3,Otra / no habla,sector_dist,8.0,"Distribución por rama de actividad: Alojamiento, restaurantes y otros servicios",13.544,3.613,26.672,6.464,20.625,154,B,%
+T24,2024,lengua3,3,Otra / no habla,sector_dist,9.0,"Distribución por rama de actividad: Servicios profesionales, públicos y sociales",18.089,4.261,23.553,9.739,26.44,154,B,%

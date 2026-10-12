@@ -1,0 +1,55 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T13,2024,area,1,Urbano,status_dist,1.0,Distribución por categoría ocupacional: Empleador,3.58,0.133,3.71,3.32,3.84,37153,A,%
+T13,2024,area,1,Urbano,status_dist,2.0,Distribución por categoría ocupacional: Independiente,34.631,0.368,1.063,33.91,35.352,37153,A,%
+T13,2024,area,1,Urbano,status_dist,3.0,Distribución por categoría ocupacional: Empleado,31.235,0.447,1.431,30.359,32.11,37153,A,%
+T13,2024,area,1,Urbano,status_dist,4.0,Distribución por categoría ocupacional: Obrero,24.074,0.393,1.632,23.304,24.844,37153,A,%
+T13,2024,area,1,Urbano,status_dist,5.0,Distribución por categoría ocupacional: Trab. familiar no remunerado,3.795,0.133,3.511,3.534,4.056,37153,A,%
+T13,2024,area,1,Urbano,status_dist,6.0,Distribución por categoría ocupacional: Trab. del hogar / otro,2.685,0.126,4.681,2.439,2.932,37153,A,%
+T13,2024,area,2,Rural,status_dist,1.0,Distribución por categoría ocupacional: Empleador,2.611,0.146,5.598,2.324,2.897,21193,A,%
+T13,2024,area,2,Rural,status_dist,2.0,Distribución por categoría ocupacional: Independiente,48.379,0.444,0.917,47.509,49.249,21193,A,%
+T13,2024,area,2,Rural,status_dist,3.0,Distribución por categoría ocupacional: Empleado,6.35,0.258,4.065,5.844,6.855,21193,A,%
+T13,2024,area,2,Rural,status_dist,4.0,Distribución por categoría ocupacional: Obrero,20.673,0.471,2.279,19.75,21.596,21193,A,%
+T13,2024,area,2,Rural,status_dist,5.0,Distribución por categoría ocupacional: Trab. familiar no remunerado,21.149,0.425,2.012,20.315,21.983,21193,A,%
+T13,2024,area,2,Rural,status_dist,6.0,Distribución por categoría ocupacional: Trab. del hogar / otro,0.839,0.078,9.254,0.687,0.991,21193,A,%
+T13,2024,national,all,Nacional,status_dist,1.0,Distribución por categoría ocupacional: Empleador,3.385,0.11,3.249,3.17,3.601,58346,A,%
+T13,2024,national,all,Nacional,status_dist,2.0,Distribución por categoría ocupacional: Independiente,37.392,0.309,0.825,36.787,37.997,58346,A,%
+T13,2024,national,all,Nacional,status_dist,3.0,Distribución por categoría ocupacional: Empleado,26.237,0.365,1.392,25.522,26.953,58346,A,%
+T13,2024,national,all,Nacional,status_dist,4.0,Distribución por categoría ocupacional: Obrero,23.391,0.328,1.404,22.748,24.035,58346,A,%
+T13,2024,national,all,Nacional,status_dist,5.0,Distribución por categoría ocupacional: Trab. familiar no remunerado,7.28,0.146,2.008,6.993,7.566,58346,A,%
+T13,2024,national,all,Nacional,status_dist,6.0,Distribución por categoría ocupacional: Trab. del hogar / otro,2.314,0.102,4.408,2.114,2.514,58346,A,%
+T13,2024,region_nat,1,Costa,status_dist,1.0,Distribución por categoría ocupacional: Empleador,2.83,0.16,5.643,2.517,3.143,17449,A,%
+T13,2024,region_nat,1,Costa,status_dist,2.0,Distribución por categoría ocupacional: Independiente,36.693,0.496,1.353,35.72,37.666,17449,A,%
+T13,2024,region_nat,1,Costa,status_dist,3.0,Distribución por categoría ocupacional: Empleado,23.696,0.499,2.106,22.718,24.675,17449,A,%
+T13,2024,region_nat,1,Costa,status_dist,4.0,Distribución por categoría ocupacional: Obrero,30.19,0.552,1.829,29.108,31.272,17449,A,%
+T13,2024,region_nat,1,Costa,status_dist,5.0,Distribución por categoría ocupacional: Trab. familiar no remunerado,4.243,0.205,4.824,3.842,4.644,17449,A,%
+T13,2024,region_nat,1,Costa,status_dist,6.0,Distribución por categoría ocupacional: Trab. del hogar / otro,2.347,0.156,6.661,2.041,2.654,17449,A,%
+T13,2024,region_nat,2,Sierra,status_dist,1.0,Distribución por categoría ocupacional: Empleador,3.201,0.17,5.302,2.868,3.534,21167,A,%
+T13,2024,region_nat,2,Sierra,status_dist,2.0,Distribución por categoría ocupacional: Independiente,43.422,0.502,1.157,42.438,44.407,21167,A,%
+T13,2024,region_nat,2,Sierra,status_dist,3.0,Distribución por categoría ocupacional: Empleado,17.875,0.498,2.786,16.899,18.851,21167,A,%
+T13,2024,region_nat,2,Sierra,status_dist,4.0,Distribución por categoría ocupacional: Obrero,20.775,0.492,2.369,19.811,21.74,21167,A,%
+T13,2024,region_nat,2,Sierra,status_dist,5.0,Distribución por categoría ocupacional: Trab. familiar no remunerado,13.545,0.352,2.597,12.855,14.234,21167,A,%
+T13,2024,region_nat,2,Sierra,status_dist,6.0,Distribución por categoría ocupacional: Trab. del hogar / otro,1.182,0.101,8.574,0.983,1.38,21167,A,%
+T13,2024,region_nat,3,Selva,status_dist,1.0,Distribución por categoría ocupacional: Empleador,4.397,0.261,5.944,3.884,4.909,13073,A,%
+T13,2024,region_nat,3,Selva,status_dist,2.0,Distribución por categoría ocupacional: Independiente,44.603,0.631,1.414,43.367,45.839,13073,A,%
+T13,2024,region_nat,3,Selva,status_dist,3.0,Distribución por categoría ocupacional: Empleado,16.173,0.541,3.342,15.114,17.232,13073,A,%
+T13,2024,region_nat,3,Selva,status_dist,4.0,Distribución por categoría ocupacional: Obrero,21.723,0.647,2.979,20.455,22.991,13073,A,%
+T13,2024,region_nat,3,Selva,status_dist,5.0,Distribución por categoría ocupacional: Trab. familiar no remunerado,11.576,0.427,3.693,10.738,12.414,13073,A,%
+T13,2024,region_nat,3,Selva,status_dist,6.0,Distribución por categoría ocupacional: Trab. del hogar / otro,1.528,0.138,9.047,1.257,1.799,13073,A,%
+T13,2024,region_nat,4,Lima Metropolitana,status_dist,1.0,Distribución por categoría ocupacional: Empleador,3.557,0.258,7.257,3.051,4.063,6657,A,%
+T13,2024,region_nat,4,Lima Metropolitana,status_dist,2.0,Distribución por categoría ocupacional: Independiente,28.916,0.699,2.416,27.547,30.285,6657,A,%
+T13,2024,region_nat,4,Lima Metropolitana,status_dist,3.0,Distribución por categoría ocupacional: Empleado,40.62,0.945,2.327,38.768,42.473,6657,A,%
+T13,2024,region_nat,4,Lima Metropolitana,status_dist,4.0,Distribución por categoría ocupacional: Obrero,21.64,0.77,3.559,20.13,23.15,6657,A,%
+T13,2024,region_nat,4,Lima Metropolitana,status_dist,5.0,Distribución por categoría ocupacional: Trab. familiar no remunerado,1.526,0.189,12.361,1.156,1.895,6657,A,%
+T13,2024,region_nat,4,Lima Metropolitana,status_dist,6.0,Distribución por categoría ocupacional: Trab. del hogar / otro,3.741,0.273,7.288,3.207,4.275,6657,A,%
+T13,2024,sex,1,Hombres,status_dist,1.0,Distribución por categoría ocupacional: Empleador,4.274,0.162,3.794,3.956,4.592,31266,A,%
+T13,2024,sex,1,Hombres,status_dist,2.0,Distribución por categoría ocupacional: Independiente,36.043,0.405,1.123,35.25,36.836,31266,A,%
+T13,2024,sex,1,Hombres,status_dist,3.0,Distribución por categoría ocupacional: Empleado,22.39,0.437,1.953,21.533,23.248,31266,A,%
+T13,2024,sex,1,Hombres,status_dist,4.0,Distribución por categoría ocupacional: Obrero,32.441,0.468,1.444,31.522,33.359,31266,A,%
+T13,2024,sex,1,Hombres,status_dist,5.0,Distribución por categoría ocupacional: Trab. familiar no remunerado,4.539,0.153,3.373,4.239,4.839,31266,A,%
+T13,2024,sex,1,Hombres,status_dist,6.0,Distribución por categoría ocupacional: Trab. del hogar / otro,0.313,0.049,15.626,0.217,0.409,31266,B,%
+T13,2024,sex,2,Mujeres,status_dist,1.0,Distribución por categoría ocupacional: Empleador,2.222,0.132,5.927,1.963,2.48,27080,A,%
+T13,2024,sex,2,Mujeres,status_dist,2.0,Distribución por categoría ocupacional: Independiente,39.158,0.45,1.15,38.275,40.041,27080,A,%
+T13,2024,sex,2,Mujeres,status_dist,3.0,Distribución por categoría ocupacional: Empleado,31.277,0.491,1.57,30.315,32.24,27080,A,%
+T13,2024,sex,2,Mujeres,status_dist,4.0,Distribución por categoría ocupacional: Obrero,11.536,0.302,2.62,10.944,12.128,27080,A,%
+T13,2024,sex,2,Mujeres,status_dist,5.0,Distribución por categoría ocupacional: Trab. familiar no remunerado,10.87,0.249,2.288,10.383,11.358,27080,A,%
+T13,2024,sex,2,Mujeres,status_dist,6.0,Distribución por categoría ocupacional: Trab. del hogar / otro,4.937,0.221,4.468,4.504,5.369,27080,A,%

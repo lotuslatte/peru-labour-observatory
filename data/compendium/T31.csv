@@ -1,0 +1,52 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T31,2024,age4,1,14–24,essalud,,Ocupados afiliados a EsSalud,13.741,0.614,4.466,12.538,14.944,8323,A,%
+T31,2024,age4,1,14–24,pension,,Ocupados afiliados a un sistema de pensiones,20.507,0.698,3.402,19.139,21.874,8323,A,%
+T31,2024,age4,1,14–24,seguro,,Ocupados con seguro de salud,88.341,0.608,0.689,87.149,89.533,8323,A,%
+T31,2024,age4,2,25–44,essalud,,Ocupados afiliados a EsSalud,27.262,0.522,1.916,26.239,28.286,22266,A,%
+T31,2024,age4,2,25–44,pension,,Ocupados afiliados a un sistema de pensiones,43.435,0.577,1.328,42.305,44.566,22266,A,%
+T31,2024,age4,2,25–44,seguro,,Ocupados con seguro de salud,88.2,0.346,0.393,87.521,88.879,22266,A,%
+T31,2024,age4,3,45–64,essalud,,Ocupados afiliados a EsSalud,30.143,0.586,1.945,28.994,31.293,20680,A,%
+T31,2024,age4,3,45–64,pension,,Ocupados afiliados a un sistema de pensiones,37.883,0.589,1.554,36.729,39.037,20680,A,%
+T31,2024,age4,3,45–64,seguro,,Ocupados con seguro de salud,89.244,0.361,0.405,88.536,89.952,20680,A,%
+T31,2024,age4,4,65 y más,essalud,,Ocupados afiliados a EsSalud,29.065,0.957,3.293,27.189,30.941,7077,A,%
+T31,2024,age4,4,65 y más,pension,,Ocupados afiliados a un sistema de pensiones,28.265,0.926,3.276,26.45,30.08,7077,A,%
+T31,2024,age4,4,65 y más,seguro,,Ocupados con seguro de salud,93.1,0.503,0.54,92.115,94.086,7077,A,%
+T31,2024,area,1,Urbano,essalud,,Ocupados afiliados a EsSalud,30.999,0.465,1.501,30.087,31.911,37153,A,%
+T31,2024,area,1,Urbano,pension,,Ocupados afiliados a un sistema de pensiones,42.784,0.499,1.167,41.805,43.763,37153,A,%
+T31,2024,area,1,Urbano,seguro,,Ocupados con seguro de salud,88.031,0.305,0.347,87.433,88.629,37153,A,%
+T31,2024,area,2,Rural,essalud,,Ocupados afiliados a EsSalud,6.891,0.319,4.622,6.267,7.515,21193,A,%
+T31,2024,area,2,Rural,pension,,Ocupados afiliados a un sistema de pensiones,14.622,0.435,2.972,13.77,15.474,21193,A,%
+T31,2024,area,2,Rural,seguro,,Ocupados con seguro de salud,92.258,0.349,0.378,91.574,92.942,21193,A,%
+T31,2024,educ4,1,Hasta primaria,essalud,,Ocupados afiliados a EsSalud,9.3,0.403,4.333,8.51,10.089,17019,A,%
+T31,2024,educ4,1,Hasta primaria,pension,,Ocupados afiliados a un sistema de pensiones,13.498,0.456,3.378,12.604,14.392,17019,A,%
+T31,2024,educ4,1,Hasta primaria,seguro,,Ocupados con seguro de salud,90.055,0.39,0.433,89.29,90.82,17019,A,%
+T31,2024,educ4,2,Secundaria,essalud,,Ocupados afiliados a EsSalud,18.435,0.455,2.467,17.543,19.326,23554,A,%
+T31,2024,educ4,2,Secundaria,pension,,Ocupados afiliados a un sistema de pensiones,28.997,0.495,1.708,28.027,29.968,23554,A,%
+T31,2024,educ4,2,Secundaria,seguro,,Ocupados con seguro de salud,87.825,0.389,0.443,87.062,88.587,23554,A,%
+T31,2024,educ4,3,Superior no universitaria,essalud,,Ocupados afiliados a EsSalud,39.709,0.842,2.119,38.06,41.358,8360,A,%
+T31,2024,educ4,3,Superior no universitaria,pension,,Ocupados afiliados a un sistema de pensiones,55.331,0.826,1.493,53.712,56.95,8360,A,%
+T31,2024,educ4,3,Superior no universitaria,seguro,,Ocupados con seguro de salud,89.514,0.52,0.58,88.496,90.533,8360,A,%
+T31,2024,educ4,4,Universitaria y posgrado,essalud,,Ocupados afiliados a EsSalud,51.36,0.897,1.747,49.602,53.119,9394,A,%
+T31,2024,educ4,4,Universitaria y posgrado,pension,,Ocupados afiliados a un sistema de pensiones,66.603,0.8,1.201,65.035,68.17,9394,A,%
+T31,2024,educ4,4,Universitaria y posgrado,seguro,,Ocupados con seguro de salud,89.608,0.518,0.578,88.592,90.624,9394,A,%
+T31,2024,national,all,Nacional,essalud,,Ocupados afiliados a EsSalud,26.158,0.377,1.442,25.418,26.897,58346,A,%
+T31,2024,national,all,Nacional,pension,,Ocupados afiliados a un sistema de pensiones,37.129,0.408,1.098,36.33,37.928,58346,A,%
+T31,2024,national,all,Nacional,seguro,,Ocupados con seguro de salud,88.88,0.255,0.287,88.38,89.379,58346,A,%
+T31,2024,region_nat,1,Costa,essalud,,Ocupados afiliados a EsSalud,29.273,0.629,2.147,28.041,30.505,17449,A,%
+T31,2024,region_nat,1,Costa,pension,,Ocupados afiliados a un sistema de pensiones,42.553,0.649,1.524,41.282,43.824,17449,A,%
+T31,2024,region_nat,1,Costa,seguro,,Ocupados con seguro de salud,89.476,0.372,0.415,88.748,90.204,17449,A,%
+T31,2024,region_nat,2,Sierra,essalud,,Ocupados afiliados a EsSalud,17.477,0.534,3.054,16.43,18.523,21167,A,%
+T31,2024,region_nat,2,Sierra,pension,,Ocupados afiliados a un sistema de pensiones,26.278,0.591,2.248,25.12,27.436,21167,A,%
+T31,2024,region_nat,2,Sierra,seguro,,Ocupados con seguro de salud,90.59,0.392,0.433,89.821,91.359,21167,A,%
+T31,2024,region_nat,3,Selva,essalud,,Ocupados afiliados a EsSalud,14.572,0.552,3.79,13.49,15.655,13073,A,%
+T31,2024,region_nat,3,Selva,pension,,Ocupados afiliados a un sistema de pensiones,23.456,0.653,2.782,22.178,24.735,13073,A,%
+T31,2024,region_nat,3,Selva,seguro,,Ocupados con seguro de salud,89.108,0.488,0.548,88.151,90.065,13073,A,%
+T31,2024,region_nat,4,Lima Metropolitana,essalud,,Ocupados afiliados a EsSalud,37.298,0.953,2.554,35.431,39.165,6657,A,%
+T31,2024,region_nat,4,Lima Metropolitana,pension,,Ocupados afiliados a un sistema de pensiones,49.581,1.039,2.095,47.546,51.617,6657,A,%
+T31,2024,region_nat,4,Lima Metropolitana,seguro,,Ocupados con seguro de salud,86.648,0.609,0.703,85.454,87.842,6657,A,%
+T31,2024,sex,1,Hombres,essalud,,Ocupados afiliados a EsSalud,25.811,0.424,1.642,24.98,26.642,31266,A,%
+T31,2024,sex,1,Hombres,pension,,Ocupados afiliados a un sistema de pensiones,41.945,0.489,1.165,40.988,42.903,31266,A,%
+T31,2024,sex,1,Hombres,seguro,,Ocupados con seguro de salud,86.688,0.327,0.377,86.047,87.329,31266,A,%
+T31,2024,sex,2,Mujeres,essalud,,Ocupados afiliados a EsSalud,26.612,0.474,1.78,25.683,27.54,27080,A,%
+T31,2024,sex,2,Mujeres,pension,,Ocupados afiliados a un sistema de pensiones,30.82,0.512,1.66,29.817,31.822,27080,A,%
+T31,2024,sex,2,Mujeres,seguro,,Ocupados con seguro de salud,91.752,0.299,0.325,91.166,92.337,27080,A,%

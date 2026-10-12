@@ -1,0 +1,28 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T16,2024,area,1,Urbano,formality,,Tasa de empleo formal,32.16,0.469,1.459,31.241,33.08,37153,A,%
+T16,2024,area,1,Urbano,informal_in_sector,,Empleo en el sector informal,49.414,0.488,0.987,48.458,50.37,37153,A,%
+T16,2024,area,1,Urbano,informality,,Tasa de empleo informal,67.84,0.469,0.692,66.92,68.759,37153,A,%
+T16,2024,area,2,Rural,formality,,Tasa de empleo formal,6.055,0.286,4.728,5.494,6.616,21193,A,%
+T16,2024,area,2,Rural,informal_in_sector,,Empleo en el sector informal,86.652,0.405,0.467,85.859,87.445,21193,A,%
+T16,2024,area,2,Rural,informality,,Tasa de empleo informal,93.945,0.286,0.305,93.384,94.506,21193,A,%
+T16,2024,national,all,Nacional,formality,,Tasa de empleo formal,26.918,0.378,1.406,26.176,27.66,58346,A,%
+T16,2024,national,all,Nacional,informal_in_sector,,Empleo en el sector informal,56.892,0.407,0.715,56.095,57.689,58346,A,%
+T16,2024,national,all,Nacional,informality,,Tasa de empleo informal,73.082,0.378,0.518,72.34,73.824,58346,A,%
+T16,2024,region_nat,1,Costa,formality,,Tasa de empleo formal,28.208,0.582,2.062,27.068,29.348,17449,A,%
+T16,2024,region_nat,1,Costa,informal_in_sector,,Empleo en el sector informal,55.931,0.633,1.131,54.691,57.171,17449,A,%
+T16,2024,region_nat,1,Costa,informality,,Tasa de empleo informal,71.792,0.582,0.81,70.652,72.932,17449,A,%
+T16,2024,region_nat,2,Sierra,formality,,Tasa de empleo formal,17.301,0.521,3.014,16.279,18.323,21167,A,%
+T16,2024,region_nat,2,Sierra,informal_in_sector,,Empleo en el sector informal,70.598,0.623,0.882,69.378,71.819,21167,A,%
+T16,2024,region_nat,2,Sierra,informality,,Tasa de empleo informal,82.699,0.521,0.63,81.677,83.721,21167,A,%
+T16,2024,region_nat,3,Selva,formality,,Tasa de empleo formal,15.505,0.55,3.547,14.427,16.583,13073,A,%
+T16,2024,region_nat,3,Selva,informal_in_sector,,Empleo en el sector informal,71.522,0.74,1.034,70.072,72.971,13073,A,%
+T16,2024,region_nat,3,Selva,informality,,Tasa de empleo informal,84.495,0.55,0.651,83.417,85.573,13073,A,%
+T16,2024,region_nat,4,Lima Metropolitana,formality,,Tasa de empleo formal,40.268,0.997,2.475,38.314,42.221,6657,A,%
+T16,2024,region_nat,4,Lima Metropolitana,informal_in_sector,,Empleo en el sector informal,37.901,0.967,2.551,36.006,39.796,6657,A,%
+T16,2024,region_nat,4,Lima Metropolitana,informality,,Tasa de empleo informal,59.732,0.997,1.668,57.779,61.686,6657,A,%
+T16,2024,sex,1,Hombres,formality,,Tasa de empleo formal,28.821,0.452,1.569,27.935,29.708,31266,A,%
+T16,2024,sex,1,Hombres,informal_in_sector,,Empleo en el sector informal,57.174,0.49,0.857,56.213,58.135,31266,A,%
+T16,2024,sex,1,Hombres,informality,,Tasa de empleo informal,71.179,0.452,0.635,70.292,72.065,31266,A,%
+T16,2024,sex,2,Mujeres,formality,,Tasa de empleo formal,24.424,0.47,1.924,23.503,25.345,27080,A,%
+T16,2024,sex,2,Mujeres,informal_in_sector,,Empleo en el sector informal,56.523,0.526,0.93,55.493,57.554,27080,A,%
+T16,2024,sex,2,Mujeres,informality,,Tasa de empleo informal,75.576,0.47,0.622,74.655,76.497,27080,A,%

@@ -1,0 +1,163 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T17,2024,dept,01,Amazonas,adecuado,,Empleo adecuado (aprox.),55.75,1.523,2.732,52.765,58.735,2198,A,%
+T17,2024,dept,01,Amazonas,formality,,Tasa de empleo formal,14.202,1.421,10.003,11.418,16.986,2198,A,%
+T17,2024,dept,01,Amazonas,gap_lfpr,,Brecha de participación hombres−mujeres (pp),15.997,1.908,11.929,12.257,19.737,1466,A,pp
+T17,2024,dept,01,Amazonas,lfpr,,"Tasa de actividad (PEA/PET, 14+)",76.929,0.996,1.295,74.976,78.882,2984,A,%
+T17,2024,dept,01,Amazonas,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),974.567,41.54,4.262,913.417,1076.25,1761,A,S/
+T17,2024,dept,01,Amazonas,ur,,Tasa de desempleo,2.48,0.503,20.27,1.494,3.465,2238,B,%
+T17,2024,dept,02,Áncash,adecuado,,Empleo adecuado (aprox.),57.949,1.308,2.257,55.385,60.512,2577,A,%
+T17,2024,dept,02,Áncash,formality,,Tasa de empleo formal,20.802,1.279,6.15,18.295,23.309,2577,A,%
+T17,2024,dept,02,Áncash,gap_lfpr,,Brecha de participación hombres−mujeres (pp),17.055,1.727,10.129,13.669,20.44,1716,A,pp
+T17,2024,dept,02,Áncash,lfpr,,"Tasa de actividad (PEA/PET, 14+)",75.035,0.916,1.221,73.24,76.83,3620,A,%
+T17,2024,dept,02,Áncash,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1130.75,38.117,3.371,1050.917,1200.333,2159,A,S/
+T17,2024,dept,02,Áncash,ur,,Tasa de desempleo,3.736,0.462,12.36,2.831,4.641,2668,A,%
+T17,2024,dept,03,Apurímac,adecuado,,Empleo adecuado (aprox.),57.972,2.032,3.505,53.99,61.954,1633,A,%
+T17,2024,dept,03,Apurímac,formality,,Tasa de empleo formal,12.236,1.363,11.139,9.564,14.907,1633,A,%
+T17,2024,dept,03,Apurímac,gap_lfpr,,Brecha de participación hombres−mujeres (pp),11.662,1.797,15.409,8.14,15.184,1005,B,pp
+T17,2024,dept,03,Apurímac,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.456,1.05,1.305,78.398,82.513,2086,A,%
+T17,2024,dept,03,Apurímac,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1026.167,42.05,4.098,962.333,1127.167,1283,A,S/
+T17,2024,dept,03,Apurímac,ur,,Tasa de desempleo,2.543,0.543,21.362,1.478,3.608,1665,B,%
+T17,2024,dept,04,Arequipa,adecuado,,Empleo adecuado (aprox.),66.768,1.552,2.325,63.726,69.811,2482,A,%
+T17,2024,dept,04,Arequipa,formality,,Tasa de empleo formal,35.376,1.857,5.248,31.737,39.015,2482,A,%
+T17,2024,dept,04,Arequipa,gap_lfpr,,Brecha de participación hombres−mujeres (pp),15.265,2.264,14.828,10.828,19.701,1787,A,pp
+T17,2024,dept,04,Arequipa,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.241,0.87,1.239,68.535,71.946,3743,A,%
+T17,2024,dept,04,Arequipa,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1410.333,45.919,3.256,1327.75,1507.75,2344,A,S/
+T17,2024,dept,04,Arequipa,ur,,Tasa de desempleo,7.292,0.799,10.957,5.726,8.858,2641,A,%
+T17,2024,dept,05,Ayacucho,adecuado,,Empleo adecuado (aprox.),51.271,1.715,3.345,47.909,54.632,1934,A,%
+T17,2024,dept,05,Ayacucho,formality,,Tasa de empleo formal,10.427,1.349,12.938,7.783,13.071,1934,A,%
+T17,2024,dept,05,Ayacucho,gap_lfpr,,Brecha de participación hombres−mujeres (pp),11.567,1.988,17.186,7.671,15.464,1256,B,pp
+T17,2024,dept,05,Ayacucho,lfpr,,"Tasa de actividad (PEA/PET, 14+)",76.515,0.981,1.282,74.592,78.438,2674,A,%
+T17,2024,dept,05,Ayacucho,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),888.5,42.114,4.74,809.75,974.833,1575,A,S/
+T17,2024,dept,05,Ayacucho,ur,,Tasa de desempleo,3.759,0.539,14.346,2.702,4.816,1984,A,%
+T17,2024,dept,06,Cajamarca,adecuado,,Empleo adecuado (aprox.),45.606,1.404,3.078,42.855,48.357,2508,A,%
+T17,2024,dept,06,Cajamarca,formality,,Tasa de empleo formal,13.534,1.141,8.433,11.297,15.771,2508,A,%
+T17,2024,dept,06,Cajamarca,gap_lfpr,,Brecha de participación hombres−mujeres (pp),19.005,1.718,9.039,15.638,22.372,1674,A,pp
+T17,2024,dept,06,Cajamarca,lfpr,,"Tasa de actividad (PEA/PET, 14+)",75.322,0.964,1.279,73.433,77.21,3493,A,%
+T17,2024,dept,06,Cajamarca,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),721.043,30.804,4.272,664.583,785.333,2122,A,S/
+T17,2024,dept,06,Cajamarca,ur,,Tasa de desempleo,3.055,0.482,15.782,2.11,4.001,2569,B,%
+T17,2024,dept,07,Callao,adecuado,,Empleo adecuado (aprox.),70.26,1.302,1.854,67.707,72.812,1627,A,%
+T17,2024,dept,07,Callao,formality,,Tasa de empleo formal,42.013,1.642,3.908,38.795,45.231,1627,A,%
+T17,2024,dept,07,Callao,gap_lfpr,,Brecha de participación hombres−mujeres (pp),19.59,1.856,9.476,15.951,23.228,1353,A,pp
+T17,2024,dept,07,Callao,lfpr,,"Tasa de actividad (PEA/PET, 14+)",65.072,1.062,1.632,62.991,67.153,2844,A,%
+T17,2024,dept,07,Callao,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1429.583,34.886,2.44,1364.167,1500.917,1601,A,S/
+T17,2024,dept,07,Callao,ur,,Tasa de desempleo,5.888,0.722,12.254,4.474,7.302,1724,A,%
+T17,2024,dept,08,Cusco,adecuado,,Empleo adecuado (aprox.),61.194,1.406,2.298,58.438,63.95,2300,A,%
+T17,2024,dept,08,Cusco,formality,,Tasa de empleo formal,18.535,1.265,6.826,16.055,21.015,2300,A,%
+T17,2024,dept,08,Cusco,gap_lfpr,,Brecha de participación hombres−mujeres (pp),6.767,1.926,28.467,2.991,10.543,1490,B,pp
+T17,2024,dept,08,Cusco,lfpr,,"Tasa de actividad (PEA/PET, 14+)",76.66,0.985,1.284,74.73,78.59,3111,A,%
+T17,2024,dept,08,Cusco,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1123.75,40.796,3.63,1049.583,1209.5,1845,A,S/
+T17,2024,dept,08,Cusco,ur,,Tasa de desempleo,3.858,0.596,15.459,2.689,5.026,2370,B,%
+T17,2024,dept,09,Huancavelica,adecuado,,Empleo adecuado (aprox.),51.964,1.592,3.063,48.844,55.084,2076,A,%
+T17,2024,dept,09,Huancavelica,formality,,Tasa de empleo formal,11.025,1.221,11.079,8.631,13.42,2076,A,%
+T17,2024,dept,09,Huancavelica,gap_lfpr,,Brecha de participación hombres−mujeres (pp),,,,,,1189,S,pp
+T17,2024,dept,09,Huancavelica,lfpr,,"Tasa de actividad (PEA/PET, 14+)",80.638,0.992,1.23,78.693,82.583,2588,A,%
+T17,2024,dept,09,Huancavelica,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),802.167,40.647,5.067,721.75,881.083,1580,A,S/
+T17,2024,dept,09,Huancavelica,ur,,Tasa de desempleo,2.684,0.641,23.877,1.428,3.94,2115,B,%
+T17,2024,dept,10,Huánuco,adecuado,,Empleo adecuado (aprox.),44.395,1.551,3.494,41.355,47.436,2161,A,%
+T17,2024,dept,10,Huánuco,formality,,Tasa de empleo formal,12.559,1.633,13.006,9.358,15.761,2161,A,%
+T17,2024,dept,10,Huánuco,gap_lfpr,,Brecha de participación hombres−mujeres (pp),20.382,2.171,10.652,16.127,24.637,1438,A,pp
+T17,2024,dept,10,Huánuco,lfpr,,"Tasa de actividad (PEA/PET, 14+)",72.796,1.423,1.955,70.007,75.585,2992,A,%
+T17,2024,dept,10,Huánuco,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),725.5,39.116,5.392,656.917,810.25,1821,A,S/
+T17,2024,dept,10,Huánuco,ur,,Tasa de desempleo,1.695,0.39,23.034,0.93,2.46,2213,B,%
+T17,2024,dept,11,Ica,adecuado,,Empleo adecuado (aprox.),76.458,0.903,1.181,74.688,78.228,2576,A,%
+T17,2024,dept,11,Ica,formality,,Tasa de empleo formal,36.362,1.378,3.791,33.66,39.064,2576,A,%
+T17,2024,dept,11,Ica,gap_lfpr,,Brecha de participación hombres−mujeres (pp),15.176,1.631,10.75,11.978,18.373,1813,A,pp
+T17,2024,dept,11,Ica,lfpr,,"Tasa de actividad (PEA/PET, 14+)",73.2,0.88,1.202,71.476,74.924,3779,A,%
+T17,2024,dept,11,Ica,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1715.75,30.868,1.799,1660.417,1781.417,2433,A,S/
+T17,2024,dept,11,Ica,ur,,Tasa de desempleo,2.879,0.416,14.44,2.064,3.694,2646,A,%
+T17,2024,dept,12,Junín,adecuado,,Empleo adecuado (aprox.),60.562,1.327,2.19,57.962,63.163,2672,A,%
+T17,2024,dept,12,Junín,formality,,Tasa de empleo formal,18.593,1.243,6.687,16.156,21.03,2672,A,%
+T17,2024,dept,12,Junín,gap_lfpr,,Brecha de participación hombres−mujeres (pp),12.464,1.829,14.671,8.88,16.048,1783,A,pp
+T17,2024,dept,12,Junín,lfpr,,"Tasa de actividad (PEA/PET, 14+)",75.915,0.888,1.17,74.175,77.655,3739,A,%
+T17,2024,dept,12,Junín,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1155.583,30.421,2.633,1085.75,1205.0,2315,A,S/
+T17,2024,dept,12,Junín,ur,,Tasa de desempleo,2.568,0.451,17.558,1.684,3.452,2736,B,%
+T17,2024,dept,13,La Libertad,adecuado,,Empleo adecuado (aprox.),61.787,1.253,2.029,59.331,64.244,2481,A,%
+T17,2024,dept,13,La Libertad,formality,,Tasa de empleo formal,30.358,1.328,4.374,27.755,32.961,2481,A,%
+T17,2024,dept,13,La Libertad,gap_lfpr,,Brecha de participación hombres−mujeres (pp),22.201,1.795,8.086,18.683,25.72,1816,A,pp
+T17,2024,dept,13,La Libertad,lfpr,,"Tasa de actividad (PEA/PET, 14+)",68.507,0.801,1.169,66.937,70.077,3926,A,%
+T17,2024,dept,13,La Libertad,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1281.0,27.02,2.109,1203.167,1309.083,2331,A,S/
+T17,2024,dept,13,La Libertad,ur,,Tasa de desempleo,4.223,0.432,10.222,3.377,5.07,2583,A,%
+T17,2024,dept,14,Lambayeque,adecuado,,Empleo adecuado (aprox.),57.635,1.387,2.407,54.916,60.354,2210,A,%
+T17,2024,dept,14,Lambayeque,formality,,Tasa de empleo formal,24.346,1.525,6.264,21.357,27.336,2210,A,%
+T17,2024,dept,14,Lambayeque,gap_lfpr,,Brecha de participación hombres−mujeres (pp),20.776,1.859,8.95,17.132,24.421,1640,A,pp
+T17,2024,dept,14,Lambayeque,lfpr,,"Tasa de actividad (PEA/PET, 14+)",67.047,0.927,1.383,65.23,68.864,3500,A,%
+T17,2024,dept,14,Lambayeque,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1167.833,32.611,2.792,1114.5,1242.333,2055,A,S/
+T17,2024,dept,14,Lambayeque,ur,,Tasa de desempleo,3.961,0.519,13.092,2.944,4.977,2279,A,%
+T17,2024,dept,15,Lima,adecuado,,Empleo adecuado (aprox.),69.853,0.812,1.163,68.261,71.445,7552,A,%
+T17,2024,dept,15,Lima,formality,,Tasa de empleo formal,38.834,0.99,2.55,36.893,40.775,7552,A,%
+T17,2024,dept,15,Lima,gap_lfpr,,Brecha de participación hombres−mujeres (pp),18.723,1.018,5.439,16.727,20.719,5771,A,pp
+T17,2024,dept,15,Lima,lfpr,,"Tasa de actividad (PEA/PET, 14+)",67.223,0.492,0.731,66.259,68.186,12195,A,%
+T17,2024,dept,15,Lima,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1465.667,24.66,1.683,1402.417,1499.083,7317,A,S/
+T17,2024,dept,15,Lima,ur,,Tasa de desempleo,5.811,0.343,5.906,5.138,6.483,7961,A,%
+T17,2024,dept,16,Loreto,adecuado,,Empleo adecuado (aprox.),57.131,1.428,2.5,54.332,59.931,2504,A,%
+T17,2024,dept,16,Loreto,formality,,Tasa de empleo formal,18.543,1.311,7.068,15.974,21.112,2504,A,%
+T17,2024,dept,16,Loreto,gap_lfpr,,Brecha de participación hombres−mujeres (pp),24.082,1.775,7.372,20.602,27.561,1917,A,pp
+T17,2024,dept,16,Loreto,lfpr,,"Tasa de actividad (PEA/PET, 14+)",68.577,0.838,1.222,66.935,70.219,3915,A,%
+T17,2024,dept,16,Loreto,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1092.095,39.01,3.572,1032.583,1185.5,2182,A,S/
+T17,2024,dept,16,Loreto,ur,,Tasa de desempleo,3.147,0.415,13.178,2.334,3.96,2568,A,%
+T17,2024,dept,17,Madre de Dios,adecuado,,Empleo adecuado (aprox.),76.878,2.113,2.748,72.737,81.018,1007,A,%
+T17,2024,dept,17,Madre de Dios,formality,,Tasa de empleo formal,18.6,2.641,14.197,13.425,23.776,1007,A,%
+T17,2024,dept,17,Madre de Dios,gap_lfpr,,Brecha de participación hombres−mujeres (pp),19.34,3.121,16.14,13.222,25.458,670,B,pp
+T17,2024,dept,17,Madre de Dios,lfpr,,"Tasa de actividad (PEA/PET, 14+)",76.739,1.511,1.968,73.779,79.7,1421,A,%
+T17,2024,dept,17,Madre de Dios,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1758.417,92.88,5.282,1580.75,1944.833,906,A,S/
+T17,2024,dept,17,Madre de Dios,ur,,Tasa de desempleo,,,,,,1021,S,%
+T17,2024,dept,18,Moquegua,adecuado,,Empleo adecuado (aprox.),70.362,1.572,2.234,67.282,73.442,1449,A,%
+T17,2024,dept,18,Moquegua,formality,,Tasa de empleo formal,33.445,1.988,5.945,29.548,37.342,1449,A,%
+T17,2024,dept,18,Moquegua,gap_lfpr,,Brecha de participación hombres−mujeres (pp),12.751,2.558,20.064,7.737,17.766,1052,B,pp
+T17,2024,dept,18,Moquegua,lfpr,,"Tasa de actividad (PEA/PET, 14+)",73.627,1.073,1.458,71.523,75.73,2105,A,%
+T17,2024,dept,18,Moquegua,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1561.333,65.881,4.22,1468.417,1726.667,1315,A,S/
+T17,2024,dept,18,Moquegua,ur,,Tasa de desempleo,4.672,0.748,16.014,3.206,6.139,1515,B,%
+T17,2024,dept,19,Pasco,adecuado,,Empleo adecuado (aprox.),56.176,1.697,3.021,52.849,59.502,1478,A,%
+T17,2024,dept,19,Pasco,formality,,Tasa de empleo formal,22.816,2.046,8.966,18.806,26.825,1478,A,%
+T17,2024,dept,19,Pasco,gap_lfpr,,Brecha de participación hombres−mujeres (pp),19.912,2.528,12.694,14.958,24.866,1005,A,pp
+T17,2024,dept,19,Pasco,lfpr,,"Tasa de actividad (PEA/PET, 14+)",75.309,1.464,1.944,72.44,78.179,2101,A,%
+T17,2024,dept,19,Pasco,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1024.009,43.283,4.227,931.667,1101.333,1246,A,S/
+T17,2024,dept,19,Pasco,ur,,Tasa de desempleo,4.677,0.83,17.752,3.049,6.304,1542,B,%
+T17,2024,dept,20,Piura,adecuado,,Empleo adecuado (aprox.),54.535,1.069,1.961,52.44,56.631,3047,A,%
+T17,2024,dept,20,Piura,formality,,Tasa de empleo formal,21.885,1.168,5.336,19.596,24.174,3047,A,%
+T17,2024,dept,20,Piura,gap_lfpr,,Brecha de participación hombres−mujeres (pp),22.685,1.356,5.98,20.026,25.344,2141,A,pp
+T17,2024,dept,20,Piura,lfpr,,"Tasa de actividad (PEA/PET, 14+)",74.011,0.734,0.992,72.572,75.45,4471,A,%
+T17,2024,dept,20,Piura,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1070.083,21.875,2.044,1036.833,1122.583,2842,A,S/
+T17,2024,dept,20,Piura,ur,,Tasa de desempleo,4.878,0.494,10.125,3.91,5.846,3182,A,%
+T17,2024,dept,21,Puno,adecuado,,Empleo adecuado (aprox.),46.833,1.573,3.359,43.749,49.916,1893,A,%
+T17,2024,dept,21,Puno,formality,,Tasa de empleo formal,11.384,1.16,10.187,9.111,13.657,1893,A,%
+T17,2024,dept,21,Puno,gap_lfpr,,Brecha de participación hombres−mujeres (pp),,,,,,1251,S,pp
+T17,2024,dept,21,Puno,lfpr,,"Tasa de actividad (PEA/PET, 14+)",75.043,1.078,1.437,72.93,77.156,2642,A,%
+T17,2024,dept,21,Puno,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),827.083,36.183,4.375,754.417,896.25,1630,A,S/
+T17,2024,dept,21,Puno,ur,,Tasa de desempleo,9.822,0.855,8.702,8.147,11.498,2039,A,%
+T17,2024,dept,22,San Martín,adecuado,,Empleo adecuado (aprox.),56.773,1.418,2.498,53.993,59.553,2525,A,%
+T17,2024,dept,22,San Martín,formality,,Tasa de empleo formal,16.684,1.123,6.734,14.482,18.886,2525,A,%
+T17,2024,dept,22,San Martín,gap_lfpr,,Brecha de participación hombres−mujeres (pp),22.811,1.774,7.777,19.334,26.288,1699,A,pp
+T17,2024,dept,22,San Martín,lfpr,,"Tasa de actividad (PEA/PET, 14+)",77.238,0.906,1.173,75.462,79.014,3475,A,%
+T17,2024,dept,22,San Martín,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1078.583,31.888,2.957,1022.833,1147.833,2208,A,S/
+T17,2024,dept,22,San Martín,ur,,Tasa de desempleo,1.991,0.43,21.595,1.148,2.834,2580,B,%
+T17,2024,dept,23,Tacna,adecuado,,Empleo adecuado (aprox.),63.383,1.591,2.51,60.266,66.501,1929,A,%
+T17,2024,dept,23,Tacna,formality,,Tasa de empleo formal,23.795,2.243,9.428,19.398,28.193,1929,A,%
+T17,2024,dept,23,Tacna,gap_lfpr,,Brecha de participación hombres−mujeres (pp),16.057,2.348,14.622,11.455,20.658,1477,A,pp
+T17,2024,dept,23,Tacna,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.122,1.36,1.967,66.457,71.787,2968,A,%
+T17,2024,dept,23,Tacna,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1317.333,35.928,2.727,1212.667,1353.5,1829,A,S/
+T17,2024,dept,23,Tacna,ur,,Tasa de desempleo,5.933,0.811,13.665,4.344,7.522,2036,A,%
+T17,2024,dept,24,Tumbes,adecuado,,Empleo adecuado (aprox.),63.388,1.859,2.932,59.745,67.031,1392,A,%
+T17,2024,dept,24,Tumbes,formality,,Tasa de empleo formal,20.669,1.609,7.783,17.516,23.821,1392,A,%
+T17,2024,dept,24,Tumbes,gap_lfpr,,Brecha de participación hombres−mujeres (pp),25.239,2.618,10.372,20.108,30.369,1075,A,pp
+T17,2024,dept,24,Tumbes,lfpr,,"Tasa de actividad (PEA/PET, 14+)",69.783,1.098,1.573,67.632,71.934,2160,A,%
+T17,2024,dept,24,Tumbes,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1223.583,42.624,3.484,1151.667,1318.75,1323,A,S/
+T17,2024,dept,24,Tumbes,ur,,Tasa de desempleo,3.225,0.666,20.641,1.921,4.53,1435,B,%
+T17,2024,dept,25,Ucayali,adecuado,,Empleo adecuado (aprox.),55.58,1.33,2.392,52.974,58.186,2135,A,%
+T17,2024,dept,25,Ucayali,formality,,Tasa de empleo formal,16.215,1.168,7.2,13.927,18.503,2135,A,%
+T17,2024,dept,25,Ucayali,gap_lfpr,,Brecha de participación hombres−mujeres (pp),20.718,1.698,8.195,17.39,24.045,1498,A,pp
+T17,2024,dept,25,Ucayali,lfpr,,"Tasa de actividad (PEA/PET, 14+)",76.423,0.898,1.175,74.663,78.183,3005,A,%
+T17,2024,dept,25,Ucayali,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1079.417,29.853,2.766,1018.229,1135.25,1896,A,S/
+T17,2024,dept,25,Ucayali,ur,,Tasa de desempleo,2.761,0.452,16.383,1.875,3.648,2195,B,%
+T17,2024,lima,15M,Lima Metropolitana,adecuado,,Empleo adecuado (aprox.),70.705,0.81,1.145,69.119,72.292,6657,A,%
+T17,2024,lima,15M,Lima Metropolitana,formality,,Tasa de empleo formal,40.268,0.997,2.475,38.314,42.221,6657,A,%
+T17,2024,lima,15M,Lima Metropolitana,gap_lfpr,,Brecha de participación hombres−mujeres (pp),18.775,1.008,5.367,16.8,20.75,5335,A,pp
+T17,2024,lima,15M,Lima Metropolitana,lfpr,,"Tasa de actividad (PEA/PET, 14+)",66.741,0.49,0.734,65.781,67.7,11270,A,%
+T17,2024,lima,15M,Lima Metropolitana,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1493.458,21.897,1.466,1422.833,1508.667,6556,A,S/
+T17,2024,lima,15M,Lima Metropolitana,ur,,Tasa de desempleo,5.982,0.343,5.738,5.309,6.655,7071,A,%
+T17,2024,lima,15R,Lima Región,adecuado,,Empleo adecuado (aprox.),60.788,1.253,2.061,58.333,63.244,2522,A,%
+T17,2024,lima,15R,Lima Región,formality,,Tasa de empleo formal,26.346,1.261,4.785,23.875,28.817,2522,A,%
+T17,2024,lima,15R,Lima Región,gap_lfpr,,Brecha de participación hombres−mujeres (pp),18.904,1.762,9.318,15.452,22.357,1789,A,pp
+T17,2024,lima,15R,Lima Región,lfpr,,"Tasa de actividad (PEA/PET, 14+)",70.398,0.847,1.204,68.737,72.059,3769,A,%
+T17,2024,lima,15R,Lima Región,median_inc_real,,Ingreso laboral mensual mediano (S/ 2024),1258.5,25.447,2.022,1197.0,1296.75,2362,A,S/
+T17,2024,lima,15R,Lima Región,ur,,Tasa de desempleo,3.943,0.519,13.165,2.926,4.961,2614,A,%

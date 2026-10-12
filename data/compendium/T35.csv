@@ -1,0 +1,122 @@
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
+T35,2014,area,1,Urbano,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,14991,S,ratio
+T35,2014,area,2,Rural,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6145,S,ratio
+T35,2014,educ4,1,Hasta primaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7471,S,ratio
+T35,2014,educ4,2,Secundaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6794,S,ratio
+T35,2014,educ4,3,Superior no universitaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3168,S,ratio
+T35,2014,educ4,4,Universitaria y posgrado,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3698,S,ratio
+T35,2014,national,all,Nacional,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,21136,S,ratio
+T35,2014,region_nat,1,Costa,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6202,S,ratio
+T35,2014,region_nat,2,Sierra,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7704,S,ratio
+T35,2014,region_nat,3,Selva,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3911,S,ratio
+T35,2014,region_nat,4,Lima Metropolitana,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3319,S,ratio
+T35,2015,area,1,Urbano,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,14745,S,ratio
+T35,2015,area,2,Rural,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6110,S,ratio
+T35,2015,educ4,1,Hasta primaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7136,S,ratio
+T35,2015,educ4,2,Secundaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7066,S,ratio
+T35,2015,educ4,3,Superior no universitaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3103,S,ratio
+T35,2015,educ4,4,Universitaria y posgrado,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3549,S,ratio
+T35,2015,national,all,Nacional,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,20855,S,ratio
+T35,2015,region_nat,1,Costa,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6346,S,ratio
+T35,2015,region_nat,2,Sierra,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7511,S,ratio
+T35,2015,region_nat,3,Selva,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3908,S,ratio
+T35,2015,region_nat,4,Lima Metropolitana,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3090,S,ratio
+T35,2016,area,1,Urbano,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,17553,S,ratio
+T35,2016,area,2,Rural,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6443,S,ratio
+T35,2016,educ4,1,Hasta primaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,8090,S,ratio
+T35,2016,educ4,2,Secundaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7872,S,ratio
+T35,2016,educ4,3,Superior no universitaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3752,S,ratio
+T35,2016,educ4,4,Universitaria y posgrado,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4276,S,ratio
+T35,2016,national,all,Nacional,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,23996,S,ratio
+T35,2016,region_nat,1,Costa,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,8384,S,ratio
+T35,2016,region_nat,2,Sierra,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,8280,S,ratio
+T35,2016,region_nat,3,Selva,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4045,S,ratio
+T35,2016,region_nat,4,Lima Metropolitana,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3287,S,ratio
+T35,2017,area,1,Urbano,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,16774,S,ratio
+T35,2017,area,2,Rural,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6420,S,ratio
+T35,2017,educ4,1,Hasta primaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7750,S,ratio
+T35,2017,educ4,2,Secundaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7717,S,ratio
+T35,2017,educ4,3,Superior no universitaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3607,S,ratio
+T35,2017,educ4,4,Universitaria y posgrado,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4118,S,ratio
+T35,2017,national,all,Nacional,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,23194,S,ratio
+T35,2017,region_nat,1,Costa,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7756,S,ratio
+T35,2017,region_nat,2,Sierra,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7943,S,ratio
+T35,2017,region_nat,3,Selva,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4238,S,ratio
+T35,2017,region_nat,4,Lima Metropolitana,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3257,S,ratio
+T35,2018,area,1,Urbano,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,17441,S,ratio
+T35,2018,area,2,Rural,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7657,S,ratio
+T35,2018,educ4,1,Hasta primaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,8748,S,ratio
+T35,2018,educ4,2,Secundaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,8179,S,ratio
+T35,2018,educ4,3,Superior no universitaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3789,S,ratio
+T35,2018,educ4,4,Universitaria y posgrado,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4377,S,ratio
+T35,2018,national,all,Nacional,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,25098,S,ratio
+T35,2018,region_nat,1,Costa,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7994,S,ratio
+T35,2018,region_nat,2,Sierra,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,9349,S,ratio
+T35,2018,region_nat,3,Selva,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4544,S,ratio
+T35,2018,region_nat,4,Lima Metropolitana,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3211,S,ratio
+T35,2019,area,1,Urbano,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,16689,S,ratio
+T35,2019,area,2,Rural,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6853,S,ratio
+T35,2019,educ4,1,Hasta primaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7812,S,ratio
+T35,2019,educ4,2,Secundaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7799,S,ratio
+T35,2019,educ4,3,Superior no universitaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3703,S,ratio
+T35,2019,educ4,4,Universitaria y posgrado,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4225,S,ratio
+T35,2019,national,all,Nacional,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,23542,S,ratio
+T35,2019,region_nat,1,Costa,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7976,S,ratio
+T35,2019,region_nat,2,Sierra,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,8211,S,ratio
+T35,2019,region_nat,3,Selva,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4228,S,ratio
+T35,2019,region_nat,4,Lima Metropolitana,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3127,S,ratio
+T35,2020,area,1,Urbano,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,12723,S,ratio
+T35,2020,area,2,Rural,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,5448,S,ratio
+T35,2020,educ4,1,Hasta primaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,5777,S,ratio
+T35,2020,educ4,2,Secundaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,5965,S,ratio
+T35,2020,educ4,3,Superior no universitaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,2952,S,ratio
+T35,2020,educ4,4,Universitaria y posgrado,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3474,S,ratio
+T35,2020,national,all,Nacional,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,18171,S,ratio
+T35,2020,region_nat,1,Costa,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,5996,S,ratio
+T35,2020,region_nat,2,Sierra,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6334,S,ratio
+T35,2020,region_nat,3,Selva,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3564,S,ratio
+T35,2020,region_nat,4,Lima Metropolitana,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,2277,S,ratio
+T35,2021,area,1,Urbano,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,15253,S,ratio
+T35,2021,area,2,Rural,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6028,S,ratio
+T35,2021,educ4,1,Hasta primaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6752,S,ratio
+T35,2021,educ4,2,Secundaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7375,S,ratio
+T35,2021,educ4,3,Superior no universitaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3334,S,ratio
+T35,2021,educ4,4,Universitaria y posgrado,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3817,S,ratio
+T35,2021,national,all,Nacional,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,21281,S,ratio
+T35,2021,region_nat,1,Costa,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7085,S,ratio
+T35,2021,region_nat,2,Sierra,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7226,S,ratio
+T35,2021,region_nat,3,Selva,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4270,S,ratio
+T35,2021,region_nat,4,Lima Metropolitana,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,2700,S,ratio
+T35,2022,area,1,Urbano,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,16420,S,ratio
+T35,2022,area,2,Rural,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6379,S,ratio
+T35,2022,educ4,1,Hasta primaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7045,S,ratio
+T35,2022,educ4,2,Secundaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7945,S,ratio
+T35,2022,educ4,3,Superior no universitaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3636,S,ratio
+T35,2022,educ4,4,Universitaria y posgrado,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4167,S,ratio
+T35,2022,national,all,Nacional,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,22799,S,ratio
+T35,2022,region_nat,1,Costa,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7687,S,ratio
+T35,2022,region_nat,2,Sierra,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7783,S,ratio
+T35,2022,region_nat,3,Selva,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4420,S,ratio
+T35,2022,region_nat,4,Lima Metropolitana,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,2909,S,ratio
+T35,2023,area,1,Urbano,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,16213,S,ratio
+T35,2023,area,2,Rural,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6219,S,ratio
+T35,2023,educ4,1,Hasta primaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6744,S,ratio
+T35,2023,educ4,2,Secundaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7906,S,ratio
+T35,2023,educ4,3,Superior no universitaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3703,S,ratio
+T35,2023,educ4,4,Universitaria y posgrado,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4073,S,ratio
+T35,2023,national,all,Nacional,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,22432,S,ratio
+T35,2023,region_nat,1,Costa,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7599,S,ratio
+T35,2023,region_nat,2,Sierra,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7522,S,ratio
+T35,2023,region_nat,3,Selva,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4319,S,ratio
+T35,2023,region_nat,4,Lima Metropolitana,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,2992,S,ratio
+T35,2024,area,1,Urbano,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,16241,S,ratio
+T35,2024,area,2,Rural,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6261,S,ratio
+T35,2024,educ4,1,Hasta primaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6627,S,ratio
+T35,2024,educ4,2,Secundaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7839,S,ratio
+T35,2024,educ4,3,Superior no universitaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3774,S,ratio
+T35,2024,educ4,4,Universitaria y posgrado,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4254,S,ratio
+T35,2024,national,all,Nacional,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,22502,S,ratio
+T35,2024,region_nat,1,Costa,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7405,S,ratio
+T35,2024,region_nat,2,Sierra,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7560,S,ratio
+T35,2024,region_nat,3,Selva,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4533,S,ratio
+T35,2024,region_nat,4,Lima Metropolitana,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3004,S,ratio
