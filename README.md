@@ -18,5 +18,5 @@ make validate   # compara titulares 2024 con cifras oficiales INEI
 ```
 Licencia de datos y sitio: CC-BY 4.0. Fuente: INEI – ENAHO.
 
-Prototipo en desarrollo, abierto a colaboración y financiamiento:
+Prototipo en desarrollo, abierto a colaboración:
 [Favio Samillan](https://lotuslatte.github.io).
