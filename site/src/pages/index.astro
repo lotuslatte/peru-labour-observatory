@@ -54,7 +54,7 @@ const nTables = loadCompendiumIndex().tables.length;
   <section class="grid grid-2" style="margin-top:20px">
     <div class="card">
       <h2>Una década, casi el mismo lugar</h2>
-      <p class="takeaway">Entre 2014 y 2024 la informalidad pasó de <b>{f(inf14)} %</b> a <b>{f(inf24)} %</b> y el ingreso mediano real de S/ {f(inc14, 0)} a S/ {f(inc24, 0)}: la pandemia (2020) borró la mejora lenta de los años previos y la recuperación devolvió al país al punto de partida.</p>
+      <p class="takeaway">Entre 2014 y 2024 la informalidad pasó de <b>{f(inf14)} %</b> a <b>{f(inf24)} %</b> y el ingreso mediano real de S/ {f(inc14, 0)} a S/ {f(inc24, 0)}: la pandemia (2020) borró la mejora lenta de los años previos y la recuperación devolvió al país cerca del punto de partida. La cifra de informalidad de 2024 usa otro método y no es estrictamente comparable.</p>
       <TrendLine client:visible years={h.years} unit="%" title="Informalidad, empleo adecuado y desempleo, 2014–2024 (%)" series={[{ label: 'Informalidad', cells: h.trend.informality }, { label: 'Empleo adecuado', cells: h.trend.adecuado }, { label: 'Desempleo', cells: h.trend.ur }]} notes={{ '2020': 'Pandemia: levantamiento parcialmente telefónico', '2024': 'Informalidad por regla del Observatorio' }} yZero smooth={[tr.smooth.national.informality, tr.smooth.national.adecuado, tr.smooth.national.ur]} />
     </div>
     <div class="card">
