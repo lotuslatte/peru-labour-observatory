@@ -1,8 +1,8 @@
 year,indicator,domain,official,observatorio,tolerance,source,diff,ok
-2024,ur,national:all,5.6,4.74,0.5,"INEI 2024, nota de prensa mar-2025",-0.86,False
-2024,ur,sex:2,6.6,5.85,0.5,INEI 2024,-0.75,False
-2024,ur,sex:1,4.7,3.88,0.5,INEI 2024,-0.82,False
-2024,ur,age4:1,11.5,11.37,0.5,INEI 2024,-0.13,True
+2024,ur,national:all,5.6,4.74,0.5,"INEI EPEN 2024 (referencial, no ENAHO anual)",-0.86,False
+2024,ur,sex:2,6.6,5.85,0.5,"INEI EPEN 2024 (referencial, no ENAHO anual)",-0.75,False
+2024,ur,sex:1,4.7,3.88,0.5,"INEI EPEN 2024 (referencial, no ENAHO anual)",-0.82,False
+2024,ur,age4:1,11.5,11.37,0.5,"INEI EPEN 2024 (referencial, no ENAHO anual)",-0.13,True
 2024,informality,national:all,71.2,73.08,2.0,"INEI EPEN abr23-mar24 (referencial, no ENAHO anual)",1.88,True
 2024,informality,area:2,94.1,93.95,2.0,INEI EPEN abr23-mar24,-0.15,True
 2024,informality,area:1,65.6,67.84,2.0,INEI EPEN abr23-mar24,2.24,False
