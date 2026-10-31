@@ -1,7 +1,9 @@
 ---
-const { path: p, height = 520 } = Astro.props;
+interface Option { label: string; path: string }
+const { path, options, height = 520 } = Astro.props as { path?: string; options?: Option[]; height?: number };
 const site = (Astro.site?.toString() ?? '').replace(/\/$/, '');
-const src = `${site}/embed${p}`;
-const code = `<iframe src="${src}" width="100%" height="${height}" style="border:0" loading="lazy" title="Observatorio"></iframe>`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const code = (p: string) => `<iframe src="${site}${base}/embed${p}" width="100%" height="${height}" style="border:0" loading="lazy" title="Observatorio Laboral del Perú"></iframe>`;
+const items: Option[] = options ?? (path ? [{ label: '', path }] : []);
 ---
-<details class="embed"><summary class="small muted">Insertar este gráfico en tu sitio</summary><pre class="small mono" style="white-space:pre-wrap;user-select:all">{code}</pre><p class="small muted">Licencia CC BY 4.0. Cita: Samillan Flores, F. (2026), Observatorio.</p></details>
+<details class="embed"><summary class="small muted">Insertar este gráfico en tu sitio</summary>{items.map(o => <>{o.label && <p class="small muted">{o.label}</p>}<pre class="small mono" style="white-space:pre-wrap;user-select:all">{code(o.path)}</pre></>)}<p class="small muted">Licencia CC BY 4.0. Cita: Samillan Flores, F. (2026), Observatorio Laboral del Perú.</p></details>
