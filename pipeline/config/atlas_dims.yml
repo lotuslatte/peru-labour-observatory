@@ -12,4 +12,6 @@ secondary:
   - {id: pension,       label_es: "Ocupados afiliados a pensión", label_en: "Employed with pension affiliation", unit: "%", higher_better: true}
   - {id: hours_le48,    label_es: "Ocupados con ≤48 h semanales", label_en: "Employed ≤48 h/week", unit: "%", higher_better: true}
   - {id: contract_any,  label_es: "Asalariados con contrato", label_en: "Wage workers with contract", unit: "%", higher_better: true}
+  - {id: working_poor,  label_es: "Ocupados en hogares pobres", label_en: "Working poor", unit: "%", higher_better: false}
+  - {id: ur_ext,        label_es: "Desempleo ampliado (abierto + oculto)", label_en: "Extended unemployment", unit: "%", higher_better: false}
   - {id: subemp_hours,  label_es: "Subempleo por horas", label_en: "Time-related underemployment", unit: "%", higher_better: false}

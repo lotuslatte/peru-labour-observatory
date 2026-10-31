@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import * as d3 from 'd3';
-import { cat as catColors, onThemeChange } from './lib/theme';
+import { cat as catColors } from './lib/theme';
+import { useThemeTick } from './lib/hooks';
 import { fmtNum } from './lib/format';
 import ExportBar from './lib/ExportBar';
 type Term = { id: string; label: string; group: string; est: number; se: number; lo: number; hi: number; p: number };
 interface Props { model: any; showAll?: boolean; title?: string }
 export default function CoefPlot({ model, showAll: s0 = false, title }: Props) {
-  const ref = useRef<SVGSVGElement>(null); const [tick, setTick] = useState(0); const [showAll, setShowAll] = useState(s0);
-  useEffect(() => onThemeChange(() => setTick(t => t + 1)), []);
+  const ref = useRef<SVGSVGElement>(null); const tick = useThemeTick(); const [showAll, setShowAll] = useState(s0);
   const unit = model.unit === '%' ? ' %' : ' pp';
   useEffect(() => {
     const svg = d3.select(ref.current!); svg.selectAll('*').remove();

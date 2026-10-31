@@ -1,4 +1,4 @@
-"""Motor de indicadores: indicators.yml × domains.yml × años → tabla tidy de estimaciones."""
+"""Motor de indicadores: indicadores × dominios (ambos en indicators.yml) × años → tabla tidy de estimaciones."""
 import numpy as np
 import pandas as pd
 from .config import load_yaml, OUT_DIR, YEARS
@@ -60,10 +60,7 @@ def run_year(d: pd.DataFrame, year: int, domains=None, indicators=None) -> pd.Da
                         rows.append(_row(year, ind, dom, key, e, scale=bscale))
                     else:
                         den = cols[base["den"]] == 1
-                        ea = D.quantile(cols[base["var"]], m & den & ma, 0.5)
-                        eb = D.quantile(cols[base["var"]], m & den & mb, 0.5)
-                        r = ea.est / eb.est if eb.est else np.nan
-                        e = Estimate(r, np.nan, min(ea.n, eb.n), ea.N + eb.N, np.nan, np.nan)
+                        e = D.quantile_ratio(cols[base["var"]], m & den & ma, m & den & mb, 0.5)
                         rows.append(_row(year, ind, dom, key, e))
                 continue
             den = cols[spec["den"]] == 1
@@ -79,6 +76,9 @@ def run_year(d: pd.DataFrame, year: int, domains=None, indicators=None) -> pd.Da
                     rows.append(_row(year, ind, dom, key, e, scale=scale))
                 elif t in ("median", "quantile"):
                     e = D.quantile(cols[spec["var"]], mm, spec.get("q", 0.5))
+                    rows.append(_row(year, ind, dom, key, e, scale=scale))
+                elif t == "gini":
+                    e = D.gini(cols[spec["var"]], mm)
                     rows.append(_row(year, ind, dom, key, e, scale=scale))
                 elif t == "dist":
                     v = cols[spec["var"]]

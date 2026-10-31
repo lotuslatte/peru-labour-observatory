@@ -2,7 +2,6 @@
 import Base from '../../layouts/Base.astro';
 import KpiTile from '../../components/ui/KpiTile.astro';
 import GradeLegend from '../../components/ui/GradeLegend.astro';
-import PrintBar from '../../components/ui/PrintBar.astro';
 import EmbedSnippet from '../../components/ui/EmbedSnippet.astro';
 import BarDist from '../../components/charts/BarDist';
 import Dumbbell from '../../components/charts/Dumbbell';
@@ -47,7 +46,7 @@ const iLabels: Record<string, string> = { inc_p10: 'p10', inc_p25: 'p25', median
   </section>}
   <section class="grid grid-2" style="margin-top:24px">
     <div class="card"><h2>Tendencia 2014–2024</h2><TrendLine client:visible years={h.years} unit="%" title={`${p.name}: actividad, informalidad y desempleo`} series={[{ label: 'Actividad', cells: p.trend.lfpr }, { label: 'Informalidad', cells: p.trend.informality }, { label: 'Desempleo', cells: p.trend.ur }]} notes={{ '2020': 'Pandemia' }} yZero /><TrendLine client:visible years={h.years} unit="S/" title="Ingreso laboral mediano real (S/ 2024)" series={[{ label: p.name, cells: p.trend.median_inc_real }, { label: 'Nacional', cells: h.trend.median_inc_real }]} height={240} /></div>
-    <div class="card"><h2>Comparar con otro departamento</h2>{!p.parent ? <RadarComparator client:visible regions={a.regions} dims={a.dims} a={p.id} /> : <p class="muted">El radar compara los 25 departamentos; Lima Metropolitana y Lima Región aparecen en la matriz del Atlas.</p>}</div>
+    <div class="card"><h2>Comparar con otro departamento</h2>{!p.parent ? <RadarComparator client:visible a={p.id} /> : <p class="muted">El radar compara los 25 departamentos; Lima Metropolitana y Lima Región aparecen en la matriz del Atlas.</p>}</div>
   </section>
   <p class="small muted" style="margin-top:20px">Fuente: INEI – ENAHO {p.year}, módulo 500, factor fac500a. Errores estándar por linealización de Taylor (PSU = conglomerado; estratos = departamento × estrato). Descarga: <a href="/compendio/">compendio T17–T20</a>.</p>
   <style>.summary ol { margin: 0; padding-left: 20px; font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.5; } .summary li { margin: 4px 0; }</style>

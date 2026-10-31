@@ -38,6 +38,10 @@ def derive(df: pd.DataFrame) -> pd.DataFrame:
     d["pea"] = d["ocu500"].isin([1, 2]).astype("Int8")
     d["ocupado"] = occ.astype("Int8")
     d["desocupado"] = d["ocu500"].eq(2).astype("Int8")
+    # Desempleo oculto (ocu500 == 3: sin empleo, disponibles, no buscaron) y PEA ampliada que los incluye
+    d["desocupado_oculto"] = d["ocu500"].eq(3).astype("Int8")
+    d["desocupado_ext"] = d["ocu500"].isin([2, 3]).astype("Int8")
+    d["pea_ext"] = d["ocu500"].isin([1, 2, 3]).astype("Int8")
     d["youth"] = d["age"].between(*YOUTH).astype("Int8")
     d["age4"] = pd.cut(d["age"], [13, 24, 44, 64, 200], labels=[1, 2, 3, 4]).astype("Int8")
     # informality
@@ -73,6 +77,8 @@ def derive(df: pd.DataFrame) -> pd.DataFrame:
     d["inc_month_real"] = (inc * float(_IPC.loc[y])).where(occ)
     d["has_income"] = (d["inc_month_nom"] > 0).astype("Int8").where(occ)
     d["inc_real_pos"] = d["inc_month_real"].where(d["inc_month_nom"] > 0)
+    # Ingreso por hora: mensual / (horas semanales × 52/12)
+    d["inc_hour_real"] = (d["inc_real_pos"] / (d["hours"] * 52 / 12)).where(d["hours"] > 0)
     d["subemp_income"] = ((d["subemp_hours"].eq(0)) & (d["inc_month_nom"] < RMV[y]) & d["cat_ocup"].ne(5)).astype("Int8").where(occ)
     d["adecuado"] = ((d["subemp_hours"].eq(0)) & (d["subemp_income"].eq(0))).astype("Int8").where(occ)
     # status & protection
@@ -87,6 +93,13 @@ def derive(df: pd.DataFrame) -> pd.DataFrame:
     ins = d[["ins_essalud", "ins_priv", "ins_eps", "ins_ffaa", "ins_sis", "ins_univ", "ins_other1", "ins_other"]].eq(1).any(axis=1)
     d["seguro"] = ins.astype("Int8").where(occ)
     d["essalud"] = d["ins_essalud"].eq(1).astype("Int8").where(occ)
+    # Seguro contributivo (EsSalud, EPS, privado, FF.AA./PNP) frente al SIS, que es subsidiado
+    d["seguro_contrib"] = d[["ins_essalud", "ins_eps", "ins_priv", "ins_ffaa"]].eq(1).any(axis=1).astype("Int8").where(occ)
+    d["sis"] = d["ins_sis"].eq(1).astype("Int8").where(occ)
+    # Trabajadores pobres: ocupados en hogares pobres (pobreza monetaria de la sumaria: 1 extremo, 2 no extremo, 3 no pobre)
+    d["working_poor"] = d["pobreza"].isin([1, 2]).astype("Int8").where(occ & d["pobreza"].notna())
+    # Gran grupo ocupacional: primer dígito del CNO-2015 (p505r4); 0 = militares y policías
+    d["ocup10"] = (pd.to_numeric(d["ciuo"], errors="coerce") // 1000).astype("Int8").where(occ)
     d["firm_small"] = d["firm_size"].eq(1).astype("Int8").where(occ)
     d["secondary_job"] = d["cat_ocup_sec"].notna().astype("Int8").where(occ)
     d["sector9"] = ciiu4_section(d["ciiu4"]).map(SECTOR9).astype("Int8").where(occ)

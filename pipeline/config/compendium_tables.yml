@@ -51,6 +51,14 @@ tables:
   - {id: T37, section: 10, title: "Indicadores por sexo, 2014–2024", domains: [sex], indicators: [lfpr, ur, informality, median_inc_real, neet], years: all}
   - {id: T38, section: 10, title: "Indicadores por departamento, 2014–2024", domains: [dept, lima], indicators: [lfpr, ur, informality, median_inc_real], years: all}
   - {id: T39, section: 10, title: "Indicadores por lengua materna y área, 2014–2024", domains: [lengua3, area], indicators: [lfpr, ur, informality, median_inc_real], years: all}
+  - {id: T43, section: 4, title: "Ocupados por gran grupo ocupacional, 2024", domains: [national, sex, area, region_nat], indicators: [ocup_dist], years: [2024]}
+  - {id: T44, section: 4, title: "Calidad del empleo por gran grupo ocupacional, 2024", domains: [ocup10], indicators: [informality, adecuado, median_inc_real, median_inc_hour, hours_mean, contract_any, seguro_contrib, working_poor], years: [2024]}
+  - {id: T45, section: 4, title: "Calidad del empleo por rama de actividad, 2024", domains: [sector9], indicators: [informality, adecuado, median_inc_real, median_inc_hour, hours_mean, contract_any, seguro_contrib, working_poor], years: [2024]}
+  - {id: T46, section: 7, title: "Nacidos en otro departamento, 2018–2024", domains: [national, sex, area, dept], indicators: [mig_life], years: all}
+  - {id: T47, section: 8, title: "Desempleo abierto, oculto y tasa ampliada, 2014–2024", domains: [national, sex, area, age4], indicators: [ur, hidden_unemp, ur_ext], years: all}
+  - {id: T48, section: 8, title: "Trabajadores pobres, 2014–2024", domains: [national, sex, area, region_nat, dept], indicators: [working_poor], years: all}
+  - {id: T49, section: 8, title: "Seguro contributivo y SIS entre los ocupados, 2014–2024", domains: [national, sex, area, region_nat], indicators: [seguro_contrib, sis], years: all}
+  - {id: T50, section: 9, title: "Ingreso por hora y desigualdad del ingreso laboral, 2014–2024", domains: [national, sex, area, region_nat], indicators: [median_inc_hour, gini_inc], years: all}
   - {id: T40, section: 11, title: "Tamaños de muestra por año y departamento (personas 14+ y ocupados)", special: sample_sizes}
   - {id: T41, section: 11, title: "Concordancia de la regla de informalidad con ocupinf (INEI), 2014–2023", special: informality_agreement}
   - {id: T42, section: 11, title: "Comparación con cifras oficiales INEI", special: validation}

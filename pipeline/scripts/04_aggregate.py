@@ -1,5 +1,5 @@
 from olp.aggregate.common import load_estimates
-from olp.aggregate import index_json, headline, atlas, trends, profiles, compendium, meta, digest
+from olp.aggregate import headline, atlas, trends, profiles, compendium, meta, digest
 from olp import validate
 est = load_estimates()
 print("headline", headline.build(est))
@@ -11,5 +11,3 @@ print("validation", v.ok.mean().round(3), "ok share")
 print("compendium", len(compendium.build(est)), "tables")
 print("meta", meta.build(est))
 print("digest", digest.build(est))
-
-print("index", index_json.build())

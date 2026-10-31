@@ -5,7 +5,7 @@ import CoefPlot from '../components/charts/CoefPlot';
 import DecompBars from '../components/charts/DecompBars';
 import { loadModels, loadDecomp } from '../data/loaders';
 const M = loadModels(); const D = loadDecomp();
-const f = (c: any, n = 1) => c?.v == null ? '—' : c.v.toLocaleString('es-PE', { minimumFractionDigits: n, maximumFractionDigits: n });
+import { fmtCell as f } from '../components/charts/lib/format';
 const ms = M.models; const ox = D.oaxaca; const ss = D.shift_share.inf_2014_2024;
 ---
 <Base title="Análisis con controles" wide>
@@ -27,7 +27,7 @@ const ms = M.models; const ox = D.oaxaca; const ss = D.shift_share.inf_2014_2024
   </section>
   <section class="card" style="margin-top:20px"><h2>Shift-share por otras dimensiones</h2><div class="grid grid-3">{['sector9', 'status6', 'area'].map(g => <DecompBars client:visible data={ss.by_group_var[g]} mode="shift" title={`Por ${({ sector9: 'rama de actividad', status6: 'categoría ocupacional', area: 'área' } as any)[g]}`} />)}</div></section>
   <section class="card" style="margin-top:20px"><h2>Brechas ajustadas por submuestra</h2><div class="scroll-x"><table class="data"><thead><tr><th style="text-align:left">Modelo</th><th style="text-align:left">Submuestra</th><th>Cruda</th><th>Ajustada</th><th>n</th></tr></thead><tbody>
-    {Object.entries(ms).flatMap(([mid, m]: any) => Object.entries(m.by_subsample).flatMap(([sv, groups]: any) => Object.entries(groups).map(([k, g]: any) => <tr><td style="text-align:left">{m.label_es}</td><td style="text-align:left">{g.label}</td><td>{f(g.raw_gap)} <span class={`badge compact ${g.raw_gap.g}`} /></td><td><b>{f(g.adj_gap)}</b> <span class={`badge compact ${g.adj_gap.g}`} /></td><td class="mono">{g.adj_gap.n.toLocaleString('es-PE')}</td></tr>)))}
+    {Object.entries(ms).flatMap(([mid, m]: any) => Object.entries(m.by_subsample).flatMap(([sv, groups]: any) => Object.entries(groups).map(([k, g]: any) => <tr><td style="text-align:left">{m.label_es}</td><td style="text-align:left">{g.label}</td><td>{f(g.raw_gap)} <span class={`badge compact ${g.raw_gap.g}`} />{g.raw_gap.ns && <span class="nsmark" title="Brecha no concluyente: el intervalo de confianza de 95 % incluye la ausencia de brecha."><span aria-hidden="true">n.c.</span><span class="sr-only">brecha no concluyente</span></span>}</td><td><b>{f(g.adj_gap)}</b> <span class={`badge compact ${g.adj_gap.g}`} />{g.adj_gap.ns && <span class="nsmark" title="Brecha no concluyente: el intervalo de confianza de 95 % incluye la ausencia de brecha."><span aria-hidden="true">n.c.</span><span class="sr-only">brecha no concluyente</span></span>}</td><td class="mono">{g.adj_gap.n.toLocaleString('es-PE')}</td></tr>)))}
   </tbody></table></div></section>
-  <p class="small muted" style="margin-top:16px">{M.design.note} {M.design.se}. Los sellos de las brechas se asignan por tamaño de muestra (A ≥ 200, B ≥ 30), no por error relativo. Descarga: <a href="/data/models.json">models.json</a>, <a href="/data/decompositions.json">decompositions.json</a>.</p>
+  <p class="small muted" style="margin-top:16px">{M.design.note} {M.design.se}. Los sellos de las brechas se asignan por tamaño de muestra (A ≥ 200, B ≥ 30), no por error relativo; «n.c.» marca las brechas no concluyentes, cuyo intervalo de confianza incluye el cero. Descarga: <a href="/data/models.json">models.json</a>, <a href="/data/decompositions.json">decompositions.json</a>.</p>
 </Base>

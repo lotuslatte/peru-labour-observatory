@@ -1,13 +1,13 @@
-import { useEffect, useRef, useState } from 'preact/hooks';
+import { useEffect, useRef } from 'preact/hooks';
 import * as d3 from 'd3';
-import { cat as catColors, onThemeChange } from './lib/theme';
+import { cat as catColors } from './lib/theme';
+import { useThemeTick } from './lib/hooks';
 import { fmtUnit } from './lib/format';
 import ExportBar from './lib/ExportBar';
 type Item = { k: number | string; label: string; v: number | null; g: string; lo?: number; hi?: number; n?: number };
 interface Props { items: Item[]; title: string; unit?: string; compare?: Item[]; compareLabel?: string; baseLabel?: string; color?: number; height?: number }
 export default function BarDist({ items, title, unit = '%', compare, compareLabel = 'Nacional', baseLabel = 'Región', color = 0, height }: Props) {
-  const ref = useRef<SVGSVGElement>(null); const [tick, setTick] = useState(0);
-  useEffect(() => onThemeChange(() => setTick(t => t + 1)), []);
+  const ref = useRef<SVGSVGElement>(null); const tick = useThemeTick();
   useEffect(() => {
     const svg = d3.select(ref.current!); svg.selectAll('*').remove();
     const rh = compare ? 34 : 26; const W = 560, m = { t: 8, r: 70, b: 8, l: 190 }; const H = height ?? m.t + m.b + items.length * rh;

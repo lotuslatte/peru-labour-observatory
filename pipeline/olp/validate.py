@@ -1,6 +1,6 @@
 """Compara estimaciones con cifras oficiales INEI (official_2024.yml y official_series.yml)."""
 import pandas as pd
-from .config import load_yaml, OUT_DIR, HEADLINE_YEAR
+from .config import load_yaml, OUT_DIR, SITE_DATA_DIR
 from .aggregate.common import pick
 
 _DOMKEY = {"national": ("national", "all"), "area_1": ("area", "1"), "area_2": ("area", "2"), "lima_15M": ("lima", "15M"),
@@ -41,4 +41,12 @@ def run(est) -> pd.DataFrame:
     df["diff"] = (df.observatorio - df.official).round(2)
     df["ok"] = df["diff"].abs() <= df.tolerance
     df.to_csv(OUT_DIR / "validation.csv", index=False)
+    df.to_csv(SITE_DATA_DIR / "validation.csv", index=False)
     return df
+
+
+def unexpected(df: pd.DataFrame) -> pd.DataFrame:
+    """Filas que deben romper el pipeline: estimación ausente, o fallo no listado en validation_known.yml."""
+    known = {(k["year"], k["indicator"], k["domain"]) for k in load_yaml("validation_known.yml")["known"]}
+    listed = pd.Series([(r.year, r.indicator, r.domain) in known for r in df.itertuples()], index=df.index)
+    return df[df.observatorio.isna() | (~df.ok & ~listed)]

@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import yaml
 
@@ -7,8 +8,10 @@ ROOT_DIR = PIPE_DIR.parent
 CONFIG_DIR = PIPE_DIR / "config"
 OUT_DIR = PIPE_DIR / "out"
 SITE_DATA_DIR = ROOT_DIR / "site" / "public" / "data"
-ENAHO_DIR = Path("/home/xerox/Documents/03_data/inei/enaho/data")
-SHAPEFILE = Path("/home/xerox/Documents/03_data/gis/peru_admin_boundaries/departamentos/departamentos_peru_con_nombres.shp")
+# Input locations; override with OLP_ENAHO_DIR / OLP_SHAPEFILE / OLP_PROV_SHP on other machines.
+ENAHO_DIR = Path(os.environ.get("OLP_ENAHO_DIR", "/home/xerox/Documents/03_data/inei/enaho/data"))
+SHAPEFILE = Path(os.environ.get("OLP_SHAPEFILE", "/home/xerox/Documents/03_data/gis/peru_admin_boundaries/departamentos/departamentos_peru_con_nombres.shp"))
+PROV_SHP = Path(os.environ.get("OLP_PROV_SHP", "/home/xerox/Documents/03_data/gis/peru_admin_boundaries/provincias/PROVINCIAS_inei_geogpsperu_suyopomalia.shp"))
 
 YEARS = list(range(2014, 2025))
 HEADLINE_YEAR = 2024

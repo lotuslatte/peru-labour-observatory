@@ -3,11 +3,11 @@ import math
 from .common import *
 from .common import _r
 
-BETTER_HIGH = {"lfpr", "epr", "adecuado", "median_inc_real", "mean_inc_real", "hours_le48", "contract_any", "contract_indef", "pension", "seguro", "essalud", "formality", "native_here", "gap_inc_mig", "gap_inc"}
-BETTER_LOW = {"ur", "ur_youth", "informality", "informal_in_sector", "subemp_hours", "subemp_income", "neet", "hours_ge60", "tfnr", "gap_lfpr", "gap_ur", "gap_inf_mig", "gap_ur_mig", "pobre"}
+BETTER_HIGH = {"lfpr", "epr", "adecuado", "median_inc_real", "mean_inc_real", "hours_le48", "contract_any", "contract_indef", "pension", "seguro", "essalud", "formality", "gap_inc", "seguro_contrib", "median_inc_hour"}
+BETTER_LOW = {"ur", "ur_youth", "informality", "informal_in_sector", "subemp_hours", "subemp_income", "neet", "hours_ge60", "tfnr", "gap_lfpr", "gap_ur", "ur_ext", "hidden_unemp", "working_poor", "gini_inc"}
 
 
-def build(est, exclude_domains=("dept_sex", "dept_age4", "dept_lengua3", "dept_area", "dept_mig2")):
+def build(est, exclude_domains=("dept_sex", "dept_age4", "dept_lengua3", "dept_area")):
     e = est[est.category.isna() & ~est.domain.isin(exclude_domains) & est.grade.eq("A")]
     items = {"y1": [], "y10": []}
     cur = e[e.year == HEADLINE_YEAR].set_index(["indicator", "domain", "key"])

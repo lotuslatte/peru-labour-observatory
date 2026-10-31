@@ -40,6 +40,17 @@ indicators:
   gap_lfpr:        {type: diff, base: lfpr, group: sex, a: 1, b: 2, label_es: "Brecha de participación hombres−mujeres (pp)", label_en: "Participation gap men−women (pp)", unit: "pp"}
   gap_ur:          {type: diff, base: ur, group: sex, a: 2, b: 1, label_es: "Brecha de desempleo mujeres−hombres (pp)", label_en: "Unemployment gap women−men (pp)", unit: "pp"}
   gap_inc:         {type: ratio_median, base: median_inc_real, group: sex, a: 2, b: 1, label_es: "Ingreso mediano mujeres / hombres", label_en: "Median income women / men", unit: "ratio"}
+  # --- 2026-10: indicadores con variables que ya se cargaban
+  ur_ext:          {type: prop, num: desocupado_ext, den: pea_ext, label_es: "Tasa de desempleo ampliada (abierto + oculto)", label_en: "Extended unemployment rate (open + hidden)", unit: "%"}
+  hidden_unemp:    {type: prop, num: desocupado_oculto, den: pea_ext, label_es: "Desempleo oculto (% de la PEA ampliada)", label_en: "Hidden unemployment (% of extended labour force)", unit: "%"}
+  working_poor:    {type: prop, num: working_poor, den: ocupado, label_es: "Ocupados en hogares pobres", label_en: "Working poor (employed in poor households)", unit: "%"}
+  seguro_contrib:  {type: prop, num: seguro_contrib, den: ocupado, label_es: "Ocupados con seguro contributivo (EsSalud, EPS, privado, FF.AA./PNP)", label_en: "Employed with contributory health insurance", unit: "%"}
+  sis:             {type: prop, num: sis, den: ocupado, label_es: "Ocupados afiliados al SIS", label_en: "Employed affiliated to SIS (subsidised)", unit: "%"}
+  mig_life:        {type: prop, num: mig_life, den: pet, label_es: "Nacidos en otro departamento (desde 2018)", label_en: "Born in another department (2018+)", unit: "%"}
+  median_inc_hour: {type: median, var: inc_hour_real, den: has_income, label_es: "Ingreso laboral mediano por hora (S/ 2024)", label_en: "Median hourly labour income (2024 S/)", unit: "S/h"}
+  gini_inc:        {type: gini, var: inc_real_pos, den: has_income, label_es: "Índice de Gini del ingreso laboral (0–1)", label_en: "Gini index of labour income (0–1)", unit: "ratio"}
+  ocup_dist:       {type: dist, var: ocup10, den: ocupado, label_es: "Distribución por gran grupo ocupacional", label_en: "Occupation major group distribution", unit: "%",
+                    labels_es: {0: "Militares y policías", 1: "Directivos y gerentes", 2: "Profesionales", 3: "Técnicos", 4: "Empleados de oficina", 5: "Servicios y vendedores", 6: "Agricultores calificados", 7: "Obreros y artesanos", 8: "Operadores y conductores", 9: "Ocupaciones elementales"}}
 
 domains:
   national:  {vars: [], label_es: "Nacional"}
@@ -60,3 +71,6 @@ domains:
   dept_age4: {vars: [dept, age4], label_es: "Departamento × edad"}
   dept_lengua3: {vars: [dept, lengua3], label_es: "Departamento × lengua materna"}
   dept_area: {vars: [dept, area], label_es: "Departamento × área"}
+  # Dominios definidos sólo entre ocupados: úsense con indicadores de calidad del empleo, no con tasas de actividad o desempleo.
+  sector9:   {vars: [sector9], label_es: "Rama de actividad", labels_es: {1: "Agropecuario y pesca", 2: "Minería", 3: "Manufactura", 4: "Electricidad y agua", 5: "Construcción", 6: "Comercio", 7: "Transporte y comunicaciones", 8: "Alojamiento, restaurantes y otros servicios", 9: "Servicios profesionales, públicos y sociales"}}
+  ocup10:    {vars: [ocup10], label_es: "Gran grupo ocupacional (CNO-2015)", labels_es: {0: "Militares y policías", 1: "Directivos y gerentes", 2: "Profesionales", 3: "Técnicos", 4: "Empleados de oficina", 5: "Servicios y vendedores", 6: "Agricultores calificados", 7: "Obreros y artesanos", 8: "Operadores y conductores", 9: "Ocupaciones elementales"}}

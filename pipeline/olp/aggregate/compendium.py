@@ -3,7 +3,7 @@ from .common import *
 from ..config import load_yaml
 
 TABLES = load_yaml("compendium_tables.yml")
-COLS = ["table_id", "year", "domain", "row_key", "row_label", "indicator", "category", "col_label", "estimate", "se", "rse", "ci_lo", "ci_hi", "n", "grade", "unit"]
+COLS = ["table_id", "year", "domain", "row_key", "row_label", "indicator", "category", "col_label", "estimate", "se", "rse", "ci_lo", "ci_hi", "n", "grade", "unit", "ns"]
 
 
 def _label(indicator, category):
@@ -20,6 +20,8 @@ def table_frame(est, t) -> pd.DataFrame:
     sub["col_label"] = [_label(i, c) for i, c in zip(sub.indicator, sub.category)]
     sub["unit"] = sub.indicator.map(lambda i: IND[i].get("unit"))
     sup = sub.grade == "S"
+    # ns = 1: brecha publicada cuyo IC incluye la ausencia de brecha
+    sub["ns"] = [1 if not s and inconclusive(i, lo, hi) else "" for i, lo, hi, s in zip(sub.indicator, sub.lo, sub.hi, sup)]
     for c in ["est", "se", "rse", "lo", "hi"]:
         sub.loc[sup, c] = None
     out = sub.rename(columns={"key": "row_key", "est": "estimate", "lo": "ci_lo", "hi": "ci_hi"})

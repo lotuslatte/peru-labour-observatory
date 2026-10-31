@@ -5,6 +5,7 @@ from olp.files import enaho_file
 import pyreadstat
 
 
+@pytest.mark.needs_microdata
 @pytest.mark.parametrize("year", YEARS)
 def test_all_canonical_vars_resolve(year):
     for module in ("m02", "m03", "m04", "m05", "m34"):

@@ -7,7 +7,7 @@ import { loadAtlas, loadProfile, loadHeadline, loadModels } from '../../../data/
 export async function getStaticPaths() { return loadAtlas().regions.map(r => ({ params: { id: r.id } })); }
 const { id } = Astro.params; const p: any = loadProfile(id!); const a = loadAtlas(); const h = loadHeadline(); const M = loadModels();
 const dims = a.dims.filter(d => d.primary);
-const f = (c: any, n = 1) => c?.v == null ? '—' : c.v.toLocaleString('es-PE', { minimumFractionDigits: n, maximumFractionDigits: n });
+import { fmtCell as f } from '../../../components/charts/lib/format';
 const nat = (k: string) => h.kpis[k];
 const sub = (mid: string) => { const bs = M.models[mid]?.by_subsample?.region_nat; const key = { Costa: '1', Sierra: '2', Selva: '3', 'Lima Metropolitana': '4' }[p.region_nat as string]; return bs && key ? bs[key] : null; };
 const inf_reg = sub('inf_sex'), inc_reg = sub('inc_sex');

@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import GradeLegend from '../components/ui/GradeLegend.astro';
 import { loadDigest } from '../data/loaders';
 const dg = loadDigest();
-const f = (v: number | null, n = 1) => v == null ? '—' : v.toLocaleString('es-PE', { minimumFractionDigits: n, maximumFractionDigits: n });
+import { fmtNum as f } from '../components/charts/lib/format';
 const cls = (it: any) => it.good == null ? 'flat' : it.good ? 'good' : 'badv';
 const grp = (it: any) => it.domain_label === 'Nacional' ? 'Nacional' : `${it.domain_label}: ${it.row_label}`;
 const un = (it: any) => it.unit === '%' ? ' pp' : it.unit === 'S/' ? ' S/' : '';

@@ -9,12 +9,14 @@ import TrendLine from '../components/charts/TrendLine';
 import { loadHeadline, loadAtlas, loadTrends } from '../data/loaders';
 const h = loadHeadline(); const a = loadAtlas(); const tr = loadTrends();
 const k = h.kpis; const d = h.deltas;
-const f = (c: any, n = 1) => c?.v == null ? '—' : c.v.toLocaleString('es-PE', { minimumFractionDigits: n, maximumFractionDigits: n });
+import { fmtCell as f } from '../components/charts/lib/format';
 const depts = a.regions.filter(r => !r.parent);
 const byInf = [...depts].sort((x, y) => (x.values.formality.v ?? 0) - (y.values.formality.v ?? 0));
 const mostInf = byInf[0], leastInf = byInf[byInf.length - 1];
 const quick = [...depts].sort((x, y) => (y.values.median_inc_real.v ?? 0) - (x.values.median_inc_real.v ?? 0));
 const inf14 = h.trend.informality[0].v, inf24 = h.trend.informality.at(-1)!.v, inc14 = h.trend.median_inc_real[0].v, inc24 = h.trend.median_inc_real.at(-1)!.v;
+import { loadCompendiumIndex } from '../data/loaders';
+const nTables = loadCompendiumIndex().tables.length;
 ---
 <Base title="Inicio" wide>
   <section class="hero">
@@ -22,7 +24,7 @@ const inf14 = h.trend.informality[0].v, inf24 = h.trend.informality.at(-1)!.v, i
       <div class="eyebrow">Observatorio Laboral del Perú · ENAHO {h.year} · {h.n_persons.toLocaleString('es-PE')} entrevistas · por <a href="https://lotuslatte.github.io/" rel="author">Favio Samillan Flores</a></div>
       <h1>El Perú casi no tiene desempleo. <em>Tiene trabajo sin protección.</em></h1>
       <p class="lede">Sólo {f(k.ur)} % de la fuerza laboral busca empleo sin encontrarlo. Pero {f(k.informality)} % de quienes trabajan lo hacen sin contrato, seguro ni pensión ligados a su empleo, y apenas {f(k.adecuado)} % tiene un empleo adecuado en horas e ingresos. Este observatorio mide esa distancia, departamento por departamento y año por año, desde los microdatos públicos del INEI.</p>
-      <div class="toolbar"><a class="btn primary" href="/historias/panorama-2024/">Leer la historia 2024</a><a class="btn" href="/atlas/">Abrir el Atlas</a><a class="btn" href="/compendio/">42 tablas descargables</a></div>
+      <div class="toolbar"><a class="btn primary" href="/historias/panorama-2024/">Leer la historia 2024</a><a class="btn" href="/atlas/">Abrir el Atlas</a><a class="btn" href="/compendio/">{nTables} tablas descargables</a></div>
     </div>
     <div class="signature"><Waffle client:load informal={k.informality.v ?? 0} /></div>
   </section>

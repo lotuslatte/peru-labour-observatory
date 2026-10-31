@@ -1,14 +1,14 @@
-import { useEffect, useRef, useState } from 'preact/hooks';
+import { useEffect, useRef } from 'preact/hooks';
 import * as d3 from 'd3';
-import { cat as catColors, onThemeChange } from './lib/theme';
+import { cat as catColors } from './lib/theme';
+import { useThemeTick } from './lib/hooks';
 import { fmtUnit, decimalsFor } from './lib/format';
 import ExportBar from './lib/ExportBar';
 type Cell = { v: number | null; g: string; lo?: number; hi?: number; n?: number; label: string };
 interface Row { label: string; a: Cell; b: Cell }
 interface Props { rows: Row[]; title: string; unit: string; aLabel: string; bLabel: string }
 export default function Dumbbell({ rows, title, unit, aLabel, bLabel }: Props) {
-  const ref = useRef<SVGSVGElement>(null); const [tick, setTick] = useState(0);
-  useEffect(() => onThemeChange(() => setTick(t => t + 1)), []);
+  const ref = useRef<SVGSVGElement>(null); const tick = useThemeTick();
   useEffect(() => {
     const svg = d3.select(ref.current!); svg.selectAll('*').remove();
     const rh = 30, W = 560, m = { t: 26, r: 30, b: 8, l: 170 }; const H = m.t + m.b + rows.length * rh;
