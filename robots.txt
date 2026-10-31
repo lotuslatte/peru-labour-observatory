@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /peru-labour-observatory/embed/
+
+Sitemap: https://lotuslatte.github.io/peru-labour-observatory/sitemap-index.xml
