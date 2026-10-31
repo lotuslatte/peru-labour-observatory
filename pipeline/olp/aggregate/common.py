@@ -20,6 +20,15 @@ def _r(v, nd=1):
     return round(float(v), nd)
 
 
+def inconclusive(indicator, lo, hi) -> bool:
+    """Brecha cuyo IC 95 % incluye la ausencia de brecha (0 para diferencias, 1 para cocientes)."""
+    t = IND.get(indicator, {}).get("type")
+    if t not in ("diff", "ratio_median") or lo != lo or hi != hi:
+        return False
+    null = 1.0 if t == "ratio_median" else 0.0
+    return bool(lo <= null <= hi)
+
+
 def cell(row, nd=1) -> dict:
     """Celda estándar; suprimida si grade S."""
     if row is None:
@@ -29,6 +38,8 @@ def cell(row, nd=1) -> dict:
     c = {"v": _r(row["est"], nd), "g": row["grade"], "n": int(row["n"])}
     if row["se"] == row["se"]:
         c.update({"se": _r(row["se"], nd + 1), "rse": _r(row["rse"] * 100, 1), "lo": _r(row["lo"], nd), "hi": _r(row["hi"], nd)})
+        if inconclusive(row.get("indicator"), row["lo"], row["hi"]):
+            c["ns"] = True
     return c
 
 

@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import * as d3 from 'd3';
-import { cat as catColors, onThemeChange } from './lib/theme';
+import { cat as catColors } from './lib/theme';
+import { useThemeTick } from './lib/hooks';
 import { fmtUnit, decimalsFor } from './lib/format';
 import ExportBar from './lib/ExportBar';
 type Cell = { v: number | null; g: string; lo?: number; hi?: number; n?: number };
 interface Series { label: string; cells: Cell[] }
 interface Props { years: number[]; series: Series[]; unit: string; title: string; height?: number; notes?: Record<string, string>; yZero?: boolean; smooth?: Cell[][]; canSmooth?: boolean }
 export default function TrendLine({ years, series, unit, title, height = 300, notes = {}, yZero = false, smooth, canSmooth }: Props) {
-  const ref = useRef<SVGSVGElement>(null); const [tick, setTick] = useState(0); const [sm, setSm] = useState(false);
+  const ref = useRef<SVGSVGElement>(null); const tick = useThemeTick(); const [sm, setSm] = useState(false);
   const smoothable = !!(smooth && smooth.length === series.length);
-  useEffect(() => onThemeChange(() => setTick(t => t + 1)), []);
   useEffect(() => {
     const svg = d3.select(ref.current!); svg.selectAll('*').remove();
     const W = 720, H = height, m = { t: 24, r: 120, b: 34, l: 54 };
@@ -38,5 +38,5 @@ export default function TrendLine({ years, series, unit, title, height = 300, no
   const rows = () => series.flatMap(s => years.map((yr, k) => ({ serie: s.label, año: yr, valor: s.cells[k]?.v, ic_lo: s.cells[k]?.lo, ic_hi: s.cells[k]?.hi, n: s.cells[k]?.n, grado: s.cells[k]?.g })));
   return (<div class="chart"><div class="toolbar" style="justify-content:space-between"><span class="eyebrow">{title}</span>{smoothable && <button class={`btn ${sm ? 'active' : ''}`} onClick={() => setSm(v => !v)} title="Media móvil de 3 años con IC combinado">{sm ? 'Serie anual' : 'Suavizar (3 años)'}</button>}</div><svg ref={ref} role="img" aria-label={title} />
     <details class="data-table"><summary>Ver tabla</summary><div class="scroll-x"><table class="data"><thead><tr><th>Serie</th>{years.map(y => <th>{y}</th>)}</tr></thead><tbody>{series.map(s => <tr><td>{s.label}</td>{s.cells.map(c => <td>{c?.v == null ? '—' : fmtUnit(c.v, unit, decimalsFor(unit))}</td>)}</tr>)}</tbody></table></div></details>
-    <ExportBar svgRef={ref} rows={rows} name={title.replace(/\W+/g, '_').toLowerCase()} /></div>);
+    <ExportBar svgRef={ref} rows={rows} name={title.replace(/\W+/g, '_').toLowerCase()} table={false} /></div>);
 }

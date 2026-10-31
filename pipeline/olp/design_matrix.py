@@ -13,7 +13,7 @@ LABELS = {
     "age4": {1: "14–24", 2: "25–44", 3: "45–64", 4: "65+"}, "age5": {0: "5–14", 1: "15–29", 2: "30–44", 3: "45–64", 4: "65+"},
     "year": {}, "dept": {},
 }
-NUMERIC = {"age": "Edad", "age2": "Edad²", "hours": "Horas semanales", "log_hours": "log(horas)", "dry_years_o": "Años secos (origen)", "temp_anom_o": "Anomalía térmica (origen)", "precip_anom_o": "Anomalía de lluvia (origen)"}
+NUMERIC = {"age": "Edad", "age2": "Edad²", "hours": "Horas semanales", "log_hours": "log(horas)"}
 
 
 class Spec:

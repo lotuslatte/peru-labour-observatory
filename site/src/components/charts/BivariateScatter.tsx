@@ -1,13 +1,21 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import * as d3 from 'd3';
-import { cat as catColors, onThemeChange } from './lib/theme';
+import { cat as catColors } from './lib/theme';
+import { useThemeTick } from './lib/hooks';
 import { fmtUnit, decimalsFor } from './lib/format';
 import ExportBar from './lib/ExportBar';
+import { useAtlasData, LoadState } from './lib/hooks';
 type Region = { id: string; name: string; parent: string | null; region_nat: string; values: Record<string, any> };
 type Dim = { id: string; label_es: string; unit: string };
-export default function BivariateScatter({ regions, dims, x0 = 'informality', y0 = 'median_inc_real' }: { regions: Region[]; dims: Dim[]; x0?: string; y0?: string }) {
-  const [xd, setX] = useState(x0); const [yd, setY] = useState(y0); const ref = useRef<SVGSVGElement>(null); const [tick, setTick] = useState(0);
-  useEffect(() => onThemeChange(() => setTick(t => t + 1)), []);
+interface Props { regions?: Region[]; dims?: Dim[]; src?: string; x0?: string; y0?: string }
+export default function BivariateScatter(props: Props) {
+  const { regions, dims, error } = useAtlasData<Region, Dim>(props.regions, props.dims, props.src ?? '/data/atlas_regions.json');
+  if (!regions || !dims) return <LoadState error={error} />;
+  return <ScatterInner {...props} regions={regions} dims={dims} />;
+}
+function ScatterInner({ regions, dims, x0 = 'formality', y0 = 'median_inc_real' }: Props & { regions: Region[]; dims: Dim[] }) {
+  const has = (id: string) => dims.some(d => d.id === id);
+  const [xd, setX] = useState(has(x0) ? x0 : dims[0].id); const [yd, setY] = useState(has(y0) ? y0 : dims[1].id); const ref = useRef<SVGSVGElement>(null); const tick = useThemeTick();
   const dx = dims.find(d => d.id === xd)!, dy = dims.find(d => d.id === yd)!;
   const pts = regions.filter(r => !r.parent && r.values[xd]?.v != null && r.values[yd]?.v != null);
   useEffect(() => {
@@ -28,7 +36,9 @@ export default function BivariateScatter({ regions, dims, x0 = 'informality', y0
       const cx = x(p.values[xd].v), cy = y(p.values[yd].v);
       if (p.values[xd].lo != null) g.append('line').attr('x1', x(p.values[xd].lo)).attr('x2', x(p.values[xd].hi)).attr('y1', cy).attr('y2', cy).attr('stroke', nat[p.region_nat]).attr('opacity', .35);
       if (p.values[yd].lo != null) g.append('line').attr('y1', y(p.values[yd].lo)).attr('y2', y(p.values[yd].hi)).attr('x1', cx).attr('x2', cx).attr('stroke', nat[p.region_nat]).attr('opacity', .35);
-      g.append('circle').attr('cx', cx).attr('cy', cy).attr('r', 5).attr('fill', nat[p.region_nat]).style('cursor', 'pointer').on('click', () => location.href = `/atlas/${p.id}/`).append('title').text(`${p.name}: ${fmtUnit(p.values[xd].v, dx.unit, decimalsFor(dx.unit))} · ${fmtUnit(p.values[yd].v, dy.unit, decimalsFor(dy.unit))}`);
+      g.append('circle').attr('cx', cx).attr('cy', cy).attr('r', 5).attr('fill', nat[p.region_nat]).style('cursor', 'pointer').on('click', () => location.href = `/atlas/${p.id}/`)
+        .attr('tabindex', 0).attr('role', 'link').attr('aria-label', `${p.name}: ${dx.label_es} ${fmtUnit(p.values[xd].v, dx.unit, decimalsFor(dx.unit))}, ${dy.label_es} ${fmtUnit(p.values[yd].v, dy.unit, decimalsFor(dy.unit))}. Abrir perfil.`)
+        .on('keydown', (e: KeyboardEvent) => { if (e.key === 'Enter') location.href = `/atlas/${p.id}/`; }).append('title').text(`${p.name}: ${fmtUnit(p.values[xd].v, dx.unit, decimalsFor(dx.unit))} · ${fmtUnit(p.values[yd].v, dy.unit, decimalsFor(dy.unit))}`);
       g.append('text').attr('x', cx + 7).attr('y', cy + 3).attr('font-size', 9).attr('fill', 'var(--ink-2)').text(p.name);
     });
     const lg = svg.append('g').attr('transform', `translate(${W - m.r - 200},${m.t})`);
@@ -36,6 +46,6 @@ export default function BivariateScatter({ regions, dims, x0 = 'informality', y0
   }, [xd, yd, tick]);
   const sel = (v: string, set: (s: string) => void) => <select value={v} onChange={e => set((e.target as HTMLSelectElement).value)}>{dims.map(d => <option value={d.id}>{d.label_es}</option>)}</select>;
   const rows = () => pts.map(p => ({ departamento: p.name, region_natural: p.region_nat, [dx.label_es]: p.values[xd].v, [dy.label_es]: p.values[yd].v }));
-  return (<div class="chart"><div class="toolbar"><span class="eyebrow">Dispersión</span><label class="small muted">X {sel(xd, setX)}</label><label class="small muted">Y {sel(yd, setY)}</label></div>
+  return (<div class="chart"><div class="toolbar"><span class="eyebrow">Dispersión</span><label class="small muted">Eje X {sel(xd, setX)}</label><label class="small muted">Eje Y {sel(yd, setY)}</label></div>
     <svg ref={ref} role="img" aria-label="Diagrama de dispersión entre dos dimensiones" /><p class="small muted">Líneas punteadas = medianas departamentales (cuadrantes). Barras = IC 95 %.</p><ExportBar svgRef={ref} rows={rows} name={`dispersion_${xd}_${yd}`} /></div>);
 }

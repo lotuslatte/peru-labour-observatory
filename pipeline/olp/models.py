@@ -2,7 +2,7 @@
 import numpy as np
 import pandas as pd
 from .config import load_yaml, HEADLINE_YEAR, SITE_DATA_DIR
-from .survey import Design, as_mask, as_float
+from .survey import Design, Estimate, as_float
 from .design_matrix import Spec, LABELS
 from .decompose import oaxaca, shift_share
 from .aggregate.common import dump, _r
@@ -19,7 +19,10 @@ def prep(d: pd.DataFrame) -> pd.DataFrame:
 
 def cell_from(v, se, n, kind="diff"):
     if v != v: return {"v": None, "g": "S", "n": int(n)}
-    return {"v": _r(v, 2), "se": _r(se, 3), "lo": _r(v - 1.96 * se, 2), "hi": _r(v + 1.96 * se, 2), "n": int(n), "g": "S" if n < 30 or se != se else ("A" if n >= 200 else "B")}
+    c = {"v": _r(v, 2), "se": _r(se, 3), "lo": _r(v - 1.96 * se, 2), "hi": _r(v + 1.96 * se, 2), "n": int(n), "g": Estimate(v, se, int(n), 0.0, kind="diff").grade}
+    if c["g"] != "S" and v - 1.96 * se <= 0 <= v + 1.96 * se:
+        c["ns"] = True   # el IC incluye el cero
+    return c
 
 
 def run_model(d: pd.DataFrame, mid: str, spec: dict, year_label=None, extra_terms=None) -> dict:

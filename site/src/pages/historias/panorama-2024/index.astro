@@ -3,10 +3,10 @@ import Base from '../../../layouts/Base.astro';
 import HowToRead from '../../../components/ui/HowToRead.astro';
 import ScrollyScene from '../../../components/charts/ScrollyScene';
 import AtlasMap from '../../../components/charts/AtlasMap';
-import { loadHeadline, loadAtlas, loadTrends } from '../../../data/loaders';
+import { loadHeadline, loadAtlas, loadTrends, loadCompendiumIndex } from '../../../data/loaders';
+import { fmtCell as f } from '../../../components/charts/lib/format';
 const h = loadHeadline(); const a = loadAtlas(); const tr = loadTrends();
 const k = h.kpis; const d = h.deltas;
-const f = (c: any, n = 1) => c?.v == null ? '—' : c.v.toLocaleString('es-PE', { minimumFractionDigits: n, maximumFractionDigits: n });
 const last = (dom: string, ind: string, key: string) => tr.series[dom][ind][key].at(-1);
 const first = (dom: string, ind: string, key: string) => tr.series[dom][ind][key][0];
 const sx = (i: string, k2: string) => last('sex', i, k2), ag = (i: string, k2: string) => last('age4', i, k2), lg = (i: string, k2: string) => last('lengua3', i, k2), et = (i: string, k2: string) => last('etnia6', i, k2), ar = (i: string, k2: string) => last('area', i, k2), ed = (i: string, k2: string) => last('educ4', i, k2), rn = (i: string, k2: string) => last('region_nat', i, k2), se = (i: string, k2: string) => last('sex_educ4', i, k2);
@@ -36,6 +36,7 @@ const steps = [
   { id: 'step-decada', title: 'Una década sin salida', html: `<p>Entre 2014 y 2024 la informalidad pasó de ${f(h.trend.informality[0])} % a ${f(k.informality)} % (${dl(d.informality.d10)} pp${sig(d.informality.d10)}). Bajó lentamente hasta 2019, saltó con la pandemia de 2020 y desde entonces sólo ha regresado al punto de partida. El ingreso mediano real cambió S/ ${dl(d.median_inc_real.d10)}${sig(d.median_inc_real.d10)}: una década de crecimiento que no llegó al trabajador mediano.</p><p>La lección del observatorio es simple: el desempleo no es el termómetro del mercado laboral peruano. Lo son la informalidad, el subempleo y el ingreso mediano. Y esos tres, en diez años, casi no se movieron.</p><p class="small muted">Compendio: T34, T36. Metodología: la cifra 2024 de informalidad usa la regla del Observatorio.</p>`,
     chart: { type: 'lines', title: 'Informalidad, empleo adecuado y desempleo, 2014–2024 (%)', years: h.years, series: [{ label: 'Informalidad', values: nat('informality') }, { label: 'Empleo adecuado', values: nat('adecuado') }, { label: 'Desempleo', values: nat('ur') }], note: '2020: pandemia; 2024: informalidad estimada con la regla del Observatorio.' } },
 ];
+const nTables = loadCompendiumIndex().tables.length;
 ---
 <Base title="El empleo no es seguridad" wide>
   <div class="eyebrow" style="margin-top:28px">Historia · ENAHO 2024 · ocho capítulos</div>
@@ -44,5 +45,5 @@ const steps = [
   <HowToRead />
   <ScrollyScene client:load steps={steps} mapNames={Object.fromEntries(a.regions.map(r => [r.id, r.name]))} />
   <section class="card" style="margin-top:32px"><div class="eyebrow">Epílogo</div><h2>El mapa: dónde el trabajo protege</h2><p class="takeaway">La geografía pesa más que cualquier otra variable. Explora la formalidad y abre el perfil de cada departamento.</p><AtlasMap client:visible regions={a.regions} dims={a.dims} year={a.year} initial="formality" /></section>
-  <p style="margin-top:24px"><a class="btn primary" href="/historias/panorama-2024/informe-completo/">Ver el informe completo (42 tablas)</a> <a class="btn" href="/acerca/metodologia/">Metodología</a></p>
+  <p style="margin-top:24px"><a class="btn primary" href="/historias/panorama-2024/informe-completo/">Ver el informe completo ({nTables} tablas)</a> <a class="btn" href="/acerca/metodologia/">Metodología</a></p>
 </Base>

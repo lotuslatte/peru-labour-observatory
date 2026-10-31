@@ -40,16 +40,3 @@ def build_labour():
         card(f"{r['name']}: mercado laboral {a['year']}", "Observatorio Laboral del Perú · INEI ENAHO · sellos de confiabilidad",
              [("Informalidad", fmt({"v": None if v['formality']['v'] is None else 100 - v['formality']['v']}), "informal"), ("Desempleo", fmt(v["ur"]), "formal"), ("Empleo adecuado", fmt(v["adecuado"]), "formal"), ("Ingreso mediano", fmt(v["median_inc_real"], "S/"), "formal")], d / f"{r['id']}.png")
     return d
-
-
-def build_migration():
-    d = SITE_DATA_DIR.parent / "share"; d.mkdir(exist_ok=True)
-    h = json.load(open(SITE_DATA_DIR / "headline.json")); k = h["kpis"]
-    card("Observatorio de Migración del Perú", f"ENAHO {h['year']} · ENPOVE 2018/2022 · ENAHO-PV 2024",
-         [("Nacidos en otro dpto.", fmt(k["life_cross"]), "informal"), ("Llegaron de otro dpto. (5 años)", fmt(k["mig5_cross"], "%", 2), "informal"), ("Del extranjero (5 años)", fmt(k["mig5_intl"], "%", 2), "informal"), ("Brecha informalidad migrante", fmt(k["gap_inf_mig"], "pp"), "formal")], d / "default.png")
-    a = json.load(open(SITE_DATA_DIR / "atlas_regions.json"))
-    for r in a["regions"]:
-        v = r["values"]
-        card(f"{r['name']}: migración {a['year']}", "Observatorio de Migración del Perú · INEI ENAHO",
-             [("Saldo neto (‰, 5 años)", fmt(v["net_rate"], "pp").replace(" pp", " ‰"), "informal"), ("Inmigración reciente", fmt(v["mig5_cross"], "%", 2), "informal"), ("Nacidos en otro dpto.", fmt(v["life_cross"]), "informal"), ("Ingreso migrante/local", "—" if v["gap_inc_mig"]["v"] is None else f"{v['gap_inc_mig']['v']:.2f}", "formal")], d / f"{r['id']}.png")
-    return d

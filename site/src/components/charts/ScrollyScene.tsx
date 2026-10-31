@@ -3,19 +3,23 @@ import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
 import { cat as catColors, seq, onThemeChange } from './lib/theme';
 import { buildScene, VB, type ChartSpec, type Scene } from './lib/scene';
+import { getJson } from './lib/fetch';
+import { LoadState } from './lib/hooks';
 export interface Step { id: string; title: string; html: string; chart: ChartSpec }
 interface Props { steps: Step[]; mapNames?: Record<string, string> }
 export default function ScrollyScene({ steps, mapNames = {} }: Props) {
   const [active, setActive] = useState(0); const ref = useRef<SVGSVGElement>(null); const [tick, setTick] = useState(0);
   const needsMap = steps.some(s => s.chart.type === 'map'); const [topo, setTopo] = useState<any>(null);
   const pending = useRef<number | null>(null); const running = useRef(false);
-  useEffect(() => { if (needsMap) fetch('/data/departamentos.topo.json').then(r => r.json()).then(setTopo); return onThemeChange(() => setTick(t => t + 1)); }, []);
+  const [err, setErr] = useState(false);
+  // Si el mapa no carga, la historia sigue: se dibuja sin la capa de mapa y se avisa.
+  useEffect(() => { if (needsMap) getJson('/data/departamentos.topo.json').then(setTopo).catch(e => { console.error(e); setErr(true); }); return onThemeChange(() => setTick(t => t + 1)); }, []);
   useEffect(() => {
     const els = Array.from(document.querySelectorAll<HTMLElement>('.step'));
     const io = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) setActive(+e.target.getAttribute('data-i')!); }); }, { rootMargin: '-45% 0px -45% 0px' });
     els.forEach(el => io.observe(el)); return () => io.disconnect();
   }, []);
-  useEffect(() => { if (needsMap && !topo) return; render(active); }, [active, topo, tick]);
+  useEffect(() => { if (needsMap && !topo && !err) return; render(active); }, [active, topo, tick, err]);
 
   function render(i: number) {
     const svg = d3.select(ref.current!); svg.attr('viewBox', `0 0 ${VB.w} ${VB.h}`);
@@ -23,7 +27,7 @@ export default function ScrollyScene({ steps, mapNames = {} }: Props) {
     const cols = catColors(); const sq = seq();
     let project: ((id: string) => [number, number] | null) | undefined; let fc: any = null; let path: any = null;
     if (topo) { fc = topojson.feature(topo, topo.objects[Object.keys(topo.objects)[0]]); const proj = d3.geoMercator().fitExtent([[20, 10], [VB.w - 160, VB.h - 10]], fc); path = d3.geoPath(proj); project = id => { const f = fc.features.find((x: any) => x.properties.id === id); return f ? (path.centroid(f) as [number, number]) : null; }; }
-    let scene: Scene; try { scene = buildScene(steps[i].chart, { project, names: mapNames }); } catch (e) { console.error(e); return; }
+    let scene: Scene; try { scene = buildScene(steps[i].chart, { project, names: mapNames }); } catch (e) { console.error(e); setErr(true); return; }
     const layer = (cls: string) => { let g = svg.select<SVGGElement>(`g.${cls}`); if (g.empty()) g = svg.append('g').attr('class', cls); return g; };
     // mapa
     const gm = layer('map');
@@ -69,7 +73,7 @@ export default function ScrollyScene({ steps, mapNames = {} }: Props) {
   const st = steps[active];
   return (<div class="scrolly">
     <div class="steps">{steps.map((s, i) => <section class={`step ${i === active ? 'on' : ''}`} data-i={i} id={s.id}><div class="eyebrow">Capítulo {i + 1}</div><h2>{s.title}</h2><div dangerouslySetInnerHTML={{ __html: s.html }} /></section>)}</div>
-    <div class="sticky"><div class="card"><div class="eyebrow">{st.chart.title}</div><svg ref={ref} role="img" aria-label={st.chart.title} /><p class="small muted">{st.chart.note ?? ''}</p></div></div>
+    <div class="sticky"><div class="card"><div class="eyebrow">{st.chart.title}</div>{err && <LoadState error />}<svg ref={ref} role="img" aria-label={st.chart.title} /><p class="small muted">{st.chart.note ?? ''}</p></div></div>
     <style>{`.scrolly{display:grid;grid-template-columns:minmax(300px,5fr) minmax(320px,6fr);gap:32px;align-items:start}.steps{padding-bottom:30vh}
       .step{min-height:60vh;padding:20vh 0 0;opacity:.35;transition:opacity .3s}.step.on{opacity:1}.step h2{font-size:1.7rem}.step p{font-size:1.05rem;max-width:52ch}
       .sticky{position:sticky;top:76px}.sticky svg{width:100%;height:auto}

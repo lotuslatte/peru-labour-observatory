@@ -1,4 +1,5 @@
-"""Inventario de archivos ENAHO por módulo y año; alerta si un archivo parece parcial (trimestral)."""
+"""Inventario de archivos ENAHO por módulo y año; falla si un archivo falta o parece parcial (trimestral)."""
+import sys
 import pyreadstat, pandas as pd
 from olp.config import YEARS, OUT_DIR
 from olp.files import enaho_file
@@ -10,13 +11,14 @@ for y in YEARS:
             reader = pyreadstat.read_sav if p.suffix.lower() == ".sav" else pyreadstat.read_dta
             _, meta = reader(str(p), metadataonly=True)
             rows.append({"year": y, "module": m, "file": p.name, "rows": meta.number_rows, "cols": len(meta.column_names)})
-        except FileNotFoundError as e:
+        except FileNotFoundError:
             rows.append({"year": y, "module": m, "file": None, "rows": 0, "cols": 0})
 inv = pd.DataFrame(rows)
 inv["median_rows_module"] = inv.groupby("module")["rows"].transform("median")
-inv["flag"] = (inv["rows"] < 0.6 * inv["median_rows_module"]).map({True: "PARTIAL/MISSING", False: ""})
+inv["flag"] = (inv["file"].isna() | (inv["rows"] < 0.6 * inv["median_rows_module"])).map({True: "PARTIAL/MISSING", False: ""})
 inv.to_csv(OUT_DIR / "inventory.csv", index=False)
 print(inv.to_string())
 bad = inv[inv.flag != ""]
 if len(bad):
-    print("\nWARNING — partial or missing files:\n", bad.to_string())
+    print("\nERROR — partial or missing files:\n", bad.to_string())
+    sys.exit(1)

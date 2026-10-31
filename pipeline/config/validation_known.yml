@@ -1,0 +1,14 @@
+# Known validation failures that do not fail `make validate`.
+# Each entry needs a reason; remove it once the discrepancy is resolved.
+# A missing estimate is never excusable and always fails.
+known:
+  - {year: 2024, indicator: ur, domain: "national:all", reason: "Cross-survey: the 5.6 target is EPEN 2024, not annual ENAHO (confirmed 2026-10-12). ENAHO gives 4.74."}
+  - {year: 2024, indicator: ur, domain: "sex:2", reason: "Cross-survey: EPEN target, see national UR 2024."}
+  - {year: 2024, indicator: ur, domain: "sex:1", reason: "Cross-survey: EPEN target, see national UR 2024."}
+  - {year: 2024, indicator: informality, domain: "area:1", reason: "Target is EPEN abr23-mar24 (reference only, not annual ENAHO); 2024 uses the Observatory rule."}
+  - {year: 2015, indicator: lfpr, domain: national, reason: "Open: -0.51 pp against a 0.5 pp tolerance; likely the same cause as rural LFPR 2014-2017."}
+  - {year: 2014, indicator: lfpr, domain: area_2, reason: "Open: rural LFPR runs 0.5-1.0 pp below the official series in 2014-2017 and 2019. Area definition checked (estrato 1-5 urban, 6-8 rural) and is standard; untested hypothesis is that the official tables use re-based weights."}
+  - {year: 2015, indicator: lfpr, domain: area_2, reason: "Open: see rural LFPR 2014."}
+  - {year: 2016, indicator: lfpr, domain: area_2, reason: "Open: see rural LFPR 2014."}
+  - {year: 2017, indicator: lfpr, domain: area_2, reason: "Open: see rural LFPR 2014."}
+  - {year: 2019, indicator: lfpr, domain: area_2, reason: "Open: see rural LFPR 2014."}

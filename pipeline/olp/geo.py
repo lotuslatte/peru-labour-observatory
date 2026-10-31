@@ -1,10 +1,8 @@
-from pathlib import Path
 """Shapefile de departamentos → TopoJSON simplificado con id = ubigeo2."""
-import json
 import geopandas as gpd
-import topojson as tp
-from .config import SHAPEFILE, CONFIG_DIR, SITE_DATA_DIR
 import pandas as pd
+import topojson as tp
+from .config import SHAPEFILE, PROV_SHP, CONFIG_DIR, SITE_DATA_DIR
 
 
 def build(tolerance=0.02):
@@ -18,9 +16,6 @@ def build(tolerance=0.02):
     out = SITE_DATA_DIR / "departamentos.topo.json"
     out.write_text(topo.to_json())
     return out
-
-
-PROV_SHP = Path("/home/xerox/Documents/03_data/gis/peru_admin_boundaries/provincias/PROVINCIAS_inei_geogpsperu_suyopomalia.shp")
 
 
 def build_provinces(tolerance=0.01):

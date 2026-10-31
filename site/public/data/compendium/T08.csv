@@ -1,46 +1,46 @@
-table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit
-T08,2024,age4,1,14–24,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,2481,S,ratio
-T08,2024,age4,1,14–24,gap_lfpr,,Brecha de participación hombres−mujeres (pp),10.061,0.997,9.91,8.107,12.015,9515,A,pp
-T08,2024,age4,1,14–24,gap_ur,,Brecha de desempleo mujeres−hombres (pp),3.599,1.039,28.864,1.563,5.636,3979,B,pp
-T08,2024,age4,2,25–44,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,9200,S,ratio
-T08,2024,age4,2,25–44,gap_lfpr,,Brecha de participación hombres−mujeres (pp),19.107,0.633,3.312,17.867,20.348,12781,A,pp
-T08,2024,age4,2,25–44,gap_ur,,Brecha de desempleo mujeres−hombres (pp),1.969,0.423,21.509,1.139,2.799,11012,B,pp
-T08,2024,age4,3,45–64,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,8346,S,ratio
-T08,2024,age4,3,45–64,gap_lfpr,,Brecha de participación hombres−mujeres (pp),20.042,0.709,3.535,18.653,21.431,11689,A,pp
-T08,2024,age4,3,45–64,gap_ur,,Brecha de desempleo mujeres−hombres (pp),1.519,0.361,23.764,0.812,2.227,10125,B,pp
-T08,2024,age4,4,65 y más,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,2475,S,ratio
-T08,2024,age4,4,65 y más,gap_lfpr,,Brecha de participación hombres−mujeres (pp),22.526,1.182,5.246,20.21,24.842,6462,A,pp
-T08,2024,age4,4,65 y más,gap_ur,,Brecha de desempleo mujeres−hombres (pp),,,,,,3141,S,pp
-T08,2024,area,1,Urbano,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,16241,S,ratio
-T08,2024,area,1,Urbano,gap_lfpr,,Brecha de participación hombres−mujeres (pp),18.059,0.53,2.935,17.02,19.098,27432,A,pp
-T08,2024,area,1,Urbano,gap_ur,,Brecha de desempleo mujeres−hombres (pp),2.08,0.359,17.254,1.377,2.784,18383,B,pp
-T08,2024,area,2,Rural,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6261,S,ratio
-T08,2024,area,2,Rural,gap_lfpr,,Brecha de participación hombres−mujeres (pp),15.558,0.62,3.983,14.344,16.773,13561,A,pp
-T08,2024,area,2,Rural,gap_ur,,Brecha de desempleo mujeres−hombres (pp),1.12,0.273,24.374,0.585,1.655,9874,B,pp
-T08,2024,educ4,1,Hasta primaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,6627,S,ratio
-T08,2024,educ4,1,Hasta primaria,gap_lfpr,,Brecha de participación hombres−mujeres (pp),21.076,0.841,3.989,19.429,22.724,9600,A,pp
-T08,2024,educ4,1,Hasta primaria,gap_ur,,Brecha de desempleo mujeres−hombres (pp),,,,,,7894,S,pp
-T08,2024,educ4,2,Secundaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7839,S,ratio
-T08,2024,educ4,2,Secundaria,gap_lfpr,,Brecha de participación hombres−mujeres (pp),21.097,0.706,3.345,19.714,22.481,17429,A,pp
-T08,2024,educ4,2,Secundaria,gap_ur,,Brecha de desempleo mujeres−hombres (pp),2.479,0.522,21.047,1.456,3.502,9881,B,pp
-T08,2024,educ4,3,Superior no universitaria,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3774,S,ratio
-T08,2024,educ4,3,Superior no universitaria,gap_lfpr,,Brecha de participación hombres−mujeres (pp),15.649,1.037,6.624,13.617,17.681,5220,A,pp
-T08,2024,educ4,3,Superior no universitaria,gap_ur,,Brecha de desempleo mujeres−hombres (pp),3.539,0.679,19.178,2.209,4.869,4208,B,pp
-T08,2024,educ4,4,Universitaria y posgrado,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4254,S,ratio
-T08,2024,educ4,4,Universitaria y posgrado,gap_lfpr,,Brecha de participación hombres−mujeres (pp),8.914,1.132,12.697,6.696,11.132,6668,A,pp
-T08,2024,educ4,4,Universitaria y posgrado,gap_ur,,Brecha de desempleo mujeres−hombres (pp),,,,,,4759,S,pp
-T08,2024,national,all,Nacional,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,22502,S,ratio
-T08,2024,national,all,Nacional,gap_lfpr,,Brecha de participación hombres−mujeres (pp),17.846,0.451,2.526,16.962,18.73,40993,A,pp
-T08,2024,national,all,Nacional,gap_ur,,Brecha de desempleo mujeres−hombres (pp),1.972,0.295,14.981,1.393,2.551,28257,A,pp
-T08,2024,region_nat,1,Costa,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7405,S,ratio
-T08,2024,region_nat,1,Costa,gap_lfpr,,Brecha de participación hombres−mujeres (pp),20.294,0.711,3.506,18.899,21.688,12783,A,pp
-T08,2024,region_nat,1,Costa,gap_ur,,Brecha de desempleo mujeres−hombres (pp),2.174,0.416,19.143,1.358,2.989,8349,B,pp
-T08,2024,region_nat,2,Sierra,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,7560,S,ratio
-T08,2024,region_nat,2,Sierra,gap_lfpr,,Brecha de participación hombres−mujeres (pp),12.958,0.719,5.547,11.549,14.367,13785,A,pp
-T08,2024,region_nat,2,Sierra,gap_ur,,Brecha de desempleo mujeres−hombres (pp),2.315,0.468,20.231,1.397,3.233,10690,B,pp
-T08,2024,region_nat,3,Selva,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,4533,S,ratio
-T08,2024,region_nat,3,Selva,gap_lfpr,,Brecha de participación hombres−mujeres (pp),20.749,0.815,3.926,19.153,22.346,9090,A,pp
-T08,2024,region_nat,3,Selva,gap_ur,,Brecha de desempleo mujeres−hombres (pp),1.378,0.408,29.62,0.578,2.179,5962,B,pp
-T08,2024,region_nat,4,Lima Metropolitana,gap_inc,,Ingreso mediano mujeres / hombres,,,,,,3004,S,ratio
-T08,2024,region_nat,4,Lima Metropolitana,gap_lfpr,,Brecha de participación hombres−mujeres (pp),18.775,1.008,5.367,16.8,20.75,5335,A,pp
-T08,2024,region_nat,4,Lima Metropolitana,gap_ur,,Brecha de desempleo mujeres−hombres (pp),,,,,,3256,S,pp
+table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit,ns
+T08,2024,age4,1,14–24,gap_inc,,Ingreso mediano mujeres / hombres,0.894,0.039,4.352,0.818,0.97,2481,A,ratio,
+T08,2024,age4,1,14–24,gap_lfpr,,Brecha de participación hombres−mujeres (pp),10.061,0.997,9.91,8.107,12.015,9515,A,pp,
+T08,2024,age4,1,14–24,gap_ur,,Brecha de desempleo mujeres−hombres (pp),3.599,1.039,28.864,1.563,5.636,3979,A,pp,
+T08,2024,age4,2,25–44,gap_inc,,Ingreso mediano mujeres / hombres,0.734,0.017,2.37,0.7,0.768,9200,A,ratio,
+T08,2024,age4,2,25–44,gap_lfpr,,Brecha de participación hombres−mujeres (pp),19.107,0.633,3.312,17.867,20.348,12781,A,pp,
+T08,2024,age4,2,25–44,gap_ur,,Brecha de desempleo mujeres−hombres (pp),1.969,0.423,21.509,1.139,2.799,11012,A,pp,
+T08,2024,age4,3,45–64,gap_inc,,Ingreso mediano mujeres / hombres,0.688,0.016,2.375,0.656,0.72,8346,A,ratio,
+T08,2024,age4,3,45–64,gap_lfpr,,Brecha de participación hombres−mujeres (pp),20.042,0.709,3.535,18.653,21.431,11689,A,pp,
+T08,2024,age4,3,45–64,gap_ur,,Brecha de desempleo mujeres−hombres (pp),1.519,0.361,23.764,0.812,2.227,10125,A,pp,
+T08,2024,age4,4,65 y más,gap_inc,,Ingreso mediano mujeres / hombres,0.488,0.029,6.011,0.43,0.545,2475,A,ratio,
+T08,2024,age4,4,65 y más,gap_lfpr,,Brecha de participación hombres−mujeres (pp),22.526,1.182,5.246,20.21,24.842,6462,A,pp,
+T08,2024,age4,4,65 y más,gap_ur,,Brecha de desempleo mujeres−hombres (pp),-0.049,0.824,1679.503,-1.665,1.567,3141,A,pp,1
+T08,2024,area,1,Urbano,gap_inc,,Ingreso mediano mujeres / hombres,0.727,0.009,1.181,0.71,0.744,16241,A,ratio,
+T08,2024,area,1,Urbano,gap_lfpr,,Brecha de participación hombres−mujeres (pp),18.059,0.53,2.935,17.02,19.098,27432,A,pp,
+T08,2024,area,1,Urbano,gap_ur,,Brecha de desempleo mujeres−hombres (pp),2.08,0.359,17.254,1.377,2.784,18383,A,pp,
+T08,2024,area,2,Rural,gap_inc,,Ingreso mediano mujeres / hombres,0.52,0.014,2.635,0.493,0.546,6261,A,ratio,
+T08,2024,area,2,Rural,gap_lfpr,,Brecha de participación hombres−mujeres (pp),15.558,0.62,3.983,14.344,16.773,13561,A,pp,
+T08,2024,area,2,Rural,gap_ur,,Brecha de desempleo mujeres−hombres (pp),1.12,0.273,24.374,0.585,1.655,9874,A,pp,
+T08,2024,educ4,1,Hasta primaria,gap_inc,,Ingreso mediano mujeres / hombres,0.564,0.016,2.767,0.534,0.595,6627,A,ratio,
+T08,2024,educ4,1,Hasta primaria,gap_lfpr,,Brecha de participación hombres−mujeres (pp),21.076,0.841,3.989,19.429,22.724,9600,A,pp,
+T08,2024,educ4,1,Hasta primaria,gap_ur,,Brecha de desempleo mujeres−hombres (pp),0.987,0.419,42.46,0.166,1.808,7894,A,pp,
+T08,2024,educ4,2,Secundaria,gap_inc,,Ingreso mediano mujeres / hombres,0.664,0.016,2.479,0.632,0.696,7839,A,ratio,
+T08,2024,educ4,2,Secundaria,gap_lfpr,,Brecha de participación hombres−mujeres (pp),21.097,0.706,3.345,19.714,22.481,17429,A,pp,
+T08,2024,educ4,2,Secundaria,gap_ur,,Brecha de desempleo mujeres−hombres (pp),2.479,0.522,21.047,1.456,3.502,9881,A,pp,
+T08,2024,educ4,3,Superior no universitaria,gap_inc,,Ingreso mediano mujeres / hombres,0.729,0.016,2.229,0.697,0.761,3774,A,ratio,
+T08,2024,educ4,3,Superior no universitaria,gap_lfpr,,Brecha de participación hombres−mujeres (pp),15.649,1.037,6.624,13.617,17.681,5220,A,pp,
+T08,2024,educ4,3,Superior no universitaria,gap_ur,,Brecha de desempleo mujeres−hombres (pp),3.539,0.679,19.178,2.209,4.869,4208,A,pp,
+T08,2024,educ4,4,Universitaria y posgrado,gap_inc,,Ingreso mediano mujeres / hombres,0.839,0.032,3.833,0.776,0.902,4254,A,ratio,
+T08,2024,educ4,4,Universitaria y posgrado,gap_lfpr,,Brecha de participación hombres−mujeres (pp),8.914,1.132,12.697,6.696,11.132,6668,A,pp,
+T08,2024,educ4,4,Universitaria y posgrado,gap_ur,,Brecha de desempleo mujeres−hombres (pp),1.339,0.741,55.336,-0.113,2.791,4759,A,pp,1
+T08,2024,national,all,Nacional,gap_inc,,Ingreso mediano mujeres / hombres,0.73,0.006,0.788,0.719,0.741,22502,A,ratio,
+T08,2024,national,all,Nacional,gap_lfpr,,Brecha de participación hombres−mujeres (pp),17.846,0.451,2.526,16.962,18.73,40993,A,pp,
+T08,2024,national,all,Nacional,gap_ur,,Brecha de desempleo mujeres−hombres (pp),1.972,0.295,14.981,1.393,2.551,28257,A,pp,
+T08,2024,region_nat,1,Costa,gap_inc,,Ingreso mediano mujeres / hombres,0.66,0.015,2.23,0.632,0.689,7405,A,ratio,
+T08,2024,region_nat,1,Costa,gap_lfpr,,Brecha de participación hombres−mujeres (pp),20.294,0.711,3.506,18.899,21.688,12783,A,pp,
+T08,2024,region_nat,1,Costa,gap_ur,,Brecha de desempleo mujeres−hombres (pp),2.174,0.416,19.143,1.358,2.989,8349,A,pp,
+T08,2024,region_nat,2,Sierra,gap_inc,,Ingreso mediano mujeres / hombres,0.637,0.02,3.183,0.597,0.677,7560,A,ratio,
+T08,2024,region_nat,2,Sierra,gap_lfpr,,Brecha de participación hombres−mujeres (pp),12.958,0.719,5.547,11.549,14.367,13785,A,pp,
+T08,2024,region_nat,2,Sierra,gap_ur,,Brecha de desempleo mujeres−hombres (pp),2.315,0.468,20.231,1.397,3.233,10690,A,pp,
+T08,2024,region_nat,3,Selva,gap_inc,,Ingreso mediano mujeres / hombres,0.734,0.024,3.226,0.687,0.78,4533,A,ratio,
+T08,2024,region_nat,3,Selva,gap_lfpr,,Brecha de participación hombres−mujeres (pp),20.749,0.815,3.926,19.153,22.346,9090,A,pp,
+T08,2024,region_nat,3,Selva,gap_ur,,Brecha de desempleo mujeres−hombres (pp),1.378,0.408,29.62,0.578,2.179,5962,A,pp,
+T08,2024,region_nat,4,Lima Metropolitana,gap_inc,,Ingreso mediano mujeres / hombres,0.793,0.018,2.286,0.757,0.828,3004,A,ratio,
+T08,2024,region_nat,4,Lima Metropolitana,gap_lfpr,,Brecha de participación hombres−mujeres (pp),18.775,1.008,5.367,16.8,20.75,5335,A,pp,
+T08,2024,region_nat,4,Lima Metropolitana,gap_ur,,Brecha de desempleo mujeres−hombres (pp),1.499,0.711,47.426,0.106,2.893,3256,A,pp,

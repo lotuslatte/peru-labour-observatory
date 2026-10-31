@@ -1,12 +1,12 @@
-import { useEffect, useRef, useState } from 'preact/hooks';
+import { useEffect, useRef } from 'preact/hooks';
 import * as d3 from 'd3';
-import { cat as catColors, onThemeChange } from './lib/theme';
+import { cat as catColors } from './lib/theme';
+import { useThemeTick } from './lib/hooks';
 import { fmtNum } from './lib/format';
 import ExportBar from './lib/ExportBar';
 // mode 'oaxaca': cascada gap → explicado por variable → no explicado.  mode 'shift': composición vs tasas por grupo.
 export default function DecompBars({ data, mode, scale = 100, unit = 'pp', title }: { data: any; mode: 'oaxaca' | 'shift'; scale?: number; unit?: string; title?: string }) {
-  const ref = useRef<SVGSVGElement>(null); const [tick, setTick] = useState(0);
-  useEffect(() => onThemeChange(() => setTick(t => t + 1)), []);
+  const ref = useRef<SVGSVGElement>(null); const tick = useThemeTick();
   useEffect(() => {
     const svg = d3.select(ref.current!); svg.selectAll('*').remove(); const cols = catColors();
     if (mode === 'oaxaca') {

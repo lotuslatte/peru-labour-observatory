@@ -14,3 +14,8 @@
 - {term: "Migración de toda la vida", def: "Persona cuya madre vivía en otro departamento cuando nació (pregunta disponible desde 2018)."}
 - {term: "Saldo migratorio neto", def: "Inmigrantes menos emigrantes de un departamento, por cada mil habitantes."}
 - {term: "Factor de expansión", def: "Peso que convierte cada persona entrevistada en el número de personas que representa (fac500a, facpob07, factor07)."}
+- {term: "Desempleo oculto", def: "Personas sin empleo que querrían trabajar y están disponibles, pero no buscaron trabajo. INEI las cuenta como inactivas; la tasa ampliada las suma al desempleo abierto."}
+- {term: "Trabajadores pobres", def: "Ocupados que viven en un hogar bajo la línea de pobreza monetaria: tener empleo no saca de la pobreza."}
+- {term: "Seguro contributivo", def: "Seguro de salud que se financia con aportes ligados al empleo o al bolsillo (EsSalud, EPS, privado, FF.AA./PNP), a diferencia del SIS, que es subsidiado."}
+- {term: "Índice de Gini", def: "Medida de desigualdad entre 0 (todos ganan lo mismo) y 1 (una persona concentra todo el ingreso). Aquí se calcula sobre el ingreso laboral de los ocupados con ingreso."}
+- {term: "Brecha no concluyente", def: "Brecha cuyo intervalo de confianza de 95 % incluye la ausencia de brecha: con estos datos no se puede afirmar que exista. Se marca «n.c.»."}

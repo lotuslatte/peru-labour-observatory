@@ -1,18 +1,25 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import * as d3 from 'd3';
-import { cat as catColors, onThemeChange } from './lib/theme';
+import { cat as catColors } from './lib/theme';
+import { useThemeTick } from './lib/hooks';
 import { fmtUnit, decimalsFor } from './lib/format';
 import ExportBar from './lib/ExportBar';
+import { useAtlasData, LoadState, NsMark } from './lib/hooks';
 type Region = { id: string; name: string; parent: string | null; values: Record<string, any>; pct: Record<string, number | null> };
 type Dim = { id: string; label_es: string; unit: string; primary: boolean };
-export default function RadarComparator({ regions, dims, a: a0, b: b0 }: { regions: Region[]; dims: Dim[]; a: string; b?: string }) {
+interface Props { regions?: Region[]; dims?: Dim[]; src?: string; a: string; b?: string }
+export default function RadarComparator(props: Props) {
+  const { regions, dims, error } = useAtlasData<Region, Dim>(props.regions, props.dims, props.src ?? '/data/atlas_regions.json');
+  if (!regions || !dims) return <LoadState error={error} />;
+  return <RadarInner {...props} regions={regions} dims={dims} />;
+}
+function RadarInner({ regions, dims, a: a0, b: b0 }: Props & { regions: Region[]; dims: Dim[] }) {
   const qs = typeof window !== 'undefined' ? new URLSearchParams(location.search) : null;
   const [a, setA] = useState(qs?.get('a') ?? a0); const [b, setB] = useState(qs?.get('b') ?? b0 ?? (a0 === '15' ? '08' : '15'));
   useEffect(() => { if (typeof window === 'undefined') return; const u = new URL(location.href); u.searchParams.set('a', a); u.searchParams.set('b', b); history.replaceState(null, '', u.toString()); }, [a, b]);
-  const ref = useRef<SVGSVGElement>(null); const [tick, setTick] = useState(0);
+  const ref = useRef<SVGSVGElement>(null); const tick = useThemeTick();
   const prim = dims.filter(d => d.primary);
   const byId = Object.fromEntries(regions.map(r => [r.id, r]));
-  useEffect(() => onThemeChange(() => setTick(t => t + 1)), []);
   useEffect(() => {
     const svg = d3.select(ref.current!); svg.selectAll('*').remove();
     const W = 520, H = 420, cx = W / 2, cy = H / 2 + 10, R = 150; svg.attr('viewBox', `0 0 ${W} ${H}`);
@@ -33,12 +40,12 @@ export default function RadarComparator({ regions, dims, a: a0, b: b0 }: { regio
   }, [a, b, tick]);
   const ra = byId[a], rb = byId[b];
   const rows = () => prim.map(d => ({ dimension: d.label_es, [ra?.name ?? a]: ra?.values[d.id]?.v, [`${ra?.name}_pct`]: ra?.pct[d.id], [rb?.name ?? b]: rb?.values[d.id]?.v, [`${rb?.name}_pct`]: rb?.pct[d.id] }));
-  const sel = (v: string, set: (s: string) => void) => <select value={v} onChange={e => set((e.target as HTMLSelectElement).value)}>{regions.filter(r => !r.parent).map(r => <option value={r.id}>{r.name}</option>)}</select>;
-  return (<div class="chart"><div class="toolbar"><span class="eyebrow">Comparador</span>{sel(a, setA)}<span class="muted">vs</span>{sel(b, setB)}<button class="btn" onClick={() => navigator.clipboard?.writeText(location.href)} title="Copiar enlace con esta comparación">Copiar enlace</button></div>
+  const sel = (v: string, set: (s: string) => void, id: string) => <select id={id} value={v} onChange={e => set((e.target as HTMLSelectElement).value)}>{regions.filter(r => !r.parent).map(r => <option value={r.id}>{r.name}</option>)}</select>;
+  return (<div class="chart"><div class="toolbar"><span class="eyebrow">Comparador</span><label class="sr-only" for="radar-a">Primer departamento</label>{sel(a, setA, 'radar-a')}<span class="muted">vs</span><label class="sr-only" for="radar-b">Segundo departamento</label>{sel(b, setB, 'radar-b')}<button class="btn" onClick={() => navigator.clipboard?.writeText(location.href)} title="Copiar enlace con esta comparación">Copiar enlace</button></div>
     <svg ref={ref} role="img" aria-label="Radar de seis dimensiones" />
-    <div class="scroll-x"><table class="data"><thead><tr><th>Dimensión</th><th>{ra?.name}</th><th>pct</th><th>{rb?.name}</th><th>pct</th><th>Diferencia</th></tr></thead><tbody>
+    <div class="scroll-x"><table class="data"><thead><tr><th scope="col">Dimensión</th><th>{ra?.name}</th><th>pct</th><th>{rb?.name}</th><th>pct</th><th>Diferencia</th></tr></thead><tbody>
       {prim.map(d => { const va = ra?.values[d.id], vb = rb?.values[d.id]; const diff = va?.v != null && vb?.v != null ? va.v - vb.v : null; const sig = va?.se != null && vb?.se != null && diff != null ? Math.abs(diff) / Math.sqrt(va.se ** 2 + vb.se ** 2) > 1.96 : false;
-        return <tr><td>{d.label_es}</td><td>{fmtUnit(va?.v, d.unit, decimalsFor(d.unit))} <span class={`badge compact ${va?.g}`}></span></td><td class="mono">{ra?.pct[d.id]}</td><td>{fmtUnit(vb?.v, d.unit, decimalsFor(d.unit))} <span class={`badge compact ${vb?.g}`}></span></td><td class="mono">{rb?.pct[d.id]}</td><td class="mono">{diff == null ? '—' : (diff > 0 ? '+' : '') + fmtUnit(diff, d.unit === 'S/' ? 'S/' : 'pp', decimalsFor(d.unit))}{sig ? ' *' : ''}</td></tr>; })}
+        return <tr><td>{d.label_es}</td><td>{fmtUnit(va?.v, d.unit, decimalsFor(d.unit))} <span class={`badge compact ${va?.g}`}></span>{va?.ns && <NsMark compact />}</td><td class="mono">{ra?.pct[d.id]}</td><td>{fmtUnit(vb?.v, d.unit, decimalsFor(d.unit))} <span class={`badge compact ${vb?.g}`}></span>{vb?.ns && <NsMark compact />}</td><td class="mono">{rb?.pct[d.id]}</td><td class="mono">{diff == null ? '—' : (diff > 0 ? '+' : '') + fmtUnit(diff, d.unit === 'S/' ? 'S/' : 'pp', decimalsFor(d.unit))}{sig ? ' *' : ''}</td></tr>; })}
     </tbody></table></div><p class="small muted">* diferencia significativa al 95 % (prueba z con errores estándar de diseño). Percentil entre los 25 departamentos; 100 = mejor posición.</p>
-    <ExportBar svgRef={ref} rows={rows} name={`radar_${a}_${b}`} /></div>);
+    <ExportBar svgRef={ref} rows={rows} name={`radar_${a}_${b}`} table={false} /></div>);
 }
