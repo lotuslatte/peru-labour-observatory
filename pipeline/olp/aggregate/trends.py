@@ -15,5 +15,6 @@ def build(est):
     obj = {"years": YEARS, "series": s, "smooth": add_smooth(s),
            "labels": {dom: {str(k): v for k, v in (DOM[dom].get("labels_es") or recode_labels(DOM[dom]["recode"])).items()} for dom in ["sex", "area", "region_nat", "lengua3", "age4", "educ4", "etnia6"]},
            "notes": {"2020": "ENAHO 2020: levantamiento parcialmente telefónico por la pandemia; comparar con cautela.",
-                     "2024": "ENAHO 2024: INEI no publica la variable ocupinf; la informalidad se calcula con la regla del Observatorio (ver Metodología)."}}
+                     "2024": "ENAHO 2024: INEI no publica la variable ocupinf; la informalidad se calcula con la regla del Observatorio (ver Metodología)."},
+           "breaks": BREAKS}
     return dump(obj, "trends.json")

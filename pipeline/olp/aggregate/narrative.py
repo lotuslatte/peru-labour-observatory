@@ -5,12 +5,15 @@ from .common import *
 Z = 1.959964
 
 
-def delta(a, b):
-    """a - b con SE combinada (muestras independientes) y significancia."""
+def delta(a, b, brk=None):
+    """a - b con SE combinada (muestras independientes) y significancia; con quiebre de método nunca es significativa."""
     if a is None or b is None or a["grade"] == "S" or b["grade"] == "S":
         return None
     d = float(a["est"] - b["est"]); se = math.sqrt(float(a["se"]) ** 2 + float(b["se"]) ** 2) if a["se"] == a["se"] and b["se"] == b["se"] else float("nan")
-    return {"d": round(d, 2), "se": round(se, 3) if se == se else None, "sig": bool(se == se and abs(d) > Z * se)}
+    out = {"d": round(d, 2), "se": round(se, 3) if se == se else None, "sig": bool(se == se and abs(d) > Z * se)}
+    if brk:
+        out.update(sig=False, **{"break": brk})
+    return out
 
 
 def fmt(v, unit):
@@ -42,8 +45,8 @@ def profile_summary(est, rid, dom, name, rank, pct, dims) -> list[str]:
         if len(best) >= 2 and len(worst) >= 2: s.append(f"Entre los 25 departamentos, {name} ocupa sus mejores posiciones en {lab[best[0][0]]} (puesto {best[0][1]}) y {lab[best[1][0]]} (puesto {best[1][1]}), y las peores en {lab[worst[0][0]]} (puesto {worst[0][1]}) y {lab[worst[1][0]]} (puesto {worst[1][1]}).")
     # trend 2014→2024
     inf14 = pick(est, "informality", dom, rid, 2014); inc14 = pick(est, "median_inc_real", dom, rid, 2014)
-    dl = delta(inf, inf14); di = delta(inc, inc14)
-    if dl: s.append(f"Desde 2014 la informalidad {'subió' if dl['d'] > 0 else 'bajó'} {abs(dl['d']):.1f} pp" + (" (cambio significativo)" if dl["sig"] else " (cambio no significativo)") + (f" y el ingreso mediano real {'creció' if di['d'] > 0 else 'cayó'} {abs(di['d']):,.0f} soles de 2024" + (" (significativo)." if di["sig"] else " (no significativo).") if di else "."))
+    dl = delta(inf, inf14, crossed_break("informality", 2014, HEADLINE_YEAR)); di = delta(inc, inc14)
+    if dl: s.append(f"Desde 2014 la informalidad {'subió' if dl['d'] > 0 else 'bajó'} {abs(dl['d']):.1f} pp" + (" (quiebre de método: no comparable)" if dl.get("break") else " (cambio significativo)" if dl["sig"] else " (cambio no significativo)") + (f" y el ingreso mediano real {'creció' if di['d'] > 0 else 'cayó'} {abs(di['d']):,.0f} soles de 2024" + (" (significativo)." if di["sig"] else " (no significativo).") if di else "."))
     # gender gap
     g = pick(est, "gap_lfpr", dom, rid)
     if g is not None and g["grade"] != "S":
@@ -55,5 +58,5 @@ def kpi_deltas(est, ind, dom="national", key="all"):
     cur = pick(est, ind, dom, key, HEADLINE_YEAR)
     out = {}
     for lab, y in (("d1", HEADLINE_YEAR - 1), ("d10", 2014)):
-        out[lab] = delta(cur, pick(est, ind, dom, key, y))
+        out[lab] = delta(cur, pick(est, ind, dom, key, y), crossed_break(ind, y, HEADLINE_YEAR))
     return out

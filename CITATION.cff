@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use these data, please cite them as below."
+title: "Observatorio Laboral del Perú"
+type: dataset
+authors:
+  - family-names: "Samillan Flores"
+    given-names: "Favio"
+url: "https://lotuslatte.github.io/peru-labour-observatory/"
+repository-code: "https://github.com/lotuslatte/peru-labour-observatory"
+license: CC-BY-4.0
+keywords:
+  - Peru
+  - labour market
+  - informality
+  - ENAHO

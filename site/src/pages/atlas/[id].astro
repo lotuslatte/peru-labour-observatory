@@ -26,7 +26,7 @@ const iLabels: Record<string, string> = { inc_p10: 'p10', inc_p25: 'p25', median
   <div class="grid grid-3">
     {dims.map(d => <KpiTile label={d.label_es} cell={p.dims[d.id]} unit={d.unit === '%' ? '%' : d.unit === 'pp' ? ' pp' : ''} decimals={d.unit === 'S/' ? 0 : 1} note={p.rank?.[d.id] ? `Puesto ${p.rank[d.id]} de 25 · percentil ${p.pct[d.id]}` : undefined} kind={d.id === 'gap_lfpr' ? 'informal' : 'formal'} />)}
   </div>
-  <GradeLegend /><EmbedSnippet path="/atlas/formality/" />
+  <GradeLegend /><EmbedSnippet options={dims.map(d => ({ label: d.label_es, path: `/atlas/${d.id}/` }))} />
   <section class="grid grid-2" style="margin-top:24px">
     <div class="card"><h2>Categoría ocupacional</h2><p class="takeaway">Quiénes son los ocupados: cuanto mayor la suma de independientes y familiares no remunerados, más frágil el empleo.</p><BarDist client:visible items={p.status_dist} title="Distribución de los ocupados" /></div>
     <div class="card"><h2>Rama de actividad</h2><p class="takeaway">La estructura productiva explica buena parte de la informalidad: agro y comercio concentran el empleo desprotegido.</p><BarDist client:visible items={p.sector_dist} title="Distribución de los ocupados por rama" color={1} /></div>
