@@ -1,5 +1,5 @@
 import json
-from olp.config import SITE_DATA_DIR
+from olp.config import SITE_DATA_DIR, YEARS
 
 
 def _cell_ok(c):
@@ -24,4 +24,4 @@ def test_atlas_and_profiles():
         for d in a["dims"]:
             _cell_ok(r["values"][d["id"]])
         p = json.load(open(SITE_DATA_DIR / "profiles" / f"{r['id']}.json"))
-        assert p["id"] == r["id"] and len(p["trend"]["lfpr"]) == 11
+        assert p["id"] == r["id"] and len(p["trend"]["lfpr"]) == len(YEARS)

@@ -8,6 +8,15 @@ year,indicator,domain,official,observatorio,tolerance,source,diff,ok
 2024,informality,area:1,65.6,67.84,2.0,INEI EPEN abr23-mar24,2.24,False
 2024,informality,sex:2,73.6,75.58,2.0,INEI EPEN abr23-mar24,1.98,True
 2024,informality,sex:1,69.2,71.18,2.0,INEI EPEN abr23-mar24,1.98,True
+2025,ur,national:all,4.9,4.65,0.5,"INEI EPEN 2025 (referencial, no ENAHO anual)",-0.25,True
+2025,ur,sex:2,5.7,5.51,0.5,"INEI EPEN 2025 (referencial, no ENAHO anual)",-0.19,True
+2025,ur,sex:1,4.2,3.96,0.5,"INEI EPEN 2025 (referencial, no ENAHO anual)",-0.24,True
+2025,ur,age4:1,10.7,10.28,0.5,"INEI EPEN 2025 (referencial, no ENAHO anual)",-0.42,True
+2025,informality,national:all,70.2,72.63,2.0,"INEI EPEN 2025 (referencial, no ENAHO anual)",2.43,False
+2025,informality,area:2,94.8,94.1,2.0,"INEI EPEN 2025 (referencial, no ENAHO anual)",-0.7,True
+2025,informality,area:1,64.5,67.24,2.0,"INEI EPEN 2025 (referencial, no ENAHO anual)",2.74,False
+2025,informality,sex:2,72.7,74.87,2.0,"INEI EPEN 2025 (referencial, no ENAHO anual)",2.17,False
+2025,informality,sex:1,68.2,70.88,2.0,"INEI EPEN 2025 (referencial, no ENAHO anual)",2.68,False
 2014,lfpr,national,72.3,72.01,0.5,"INEI, Indicadores de empleo ENAHO (tablas 2007–2021)",-0.29,True
 2015,lfpr,national,71.6,71.09,0.5,"INEI, Indicadores de empleo ENAHO (tablas 2007–2021)",-0.51,False
 2016,lfpr,national,72.2,71.75,0.5,"INEI, Indicadores de empleo ENAHO (tablas 2007–2021)",-0.45,True

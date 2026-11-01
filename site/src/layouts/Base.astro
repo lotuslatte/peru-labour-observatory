@@ -1,11 +1,12 @@
 ---
+import { YEAR, PREV, SPAN } from '../data/release';
 import '../styles/global.css';
 import '../styles/print.css';
 import Nav from '../components/ui/Nav.astro';
 import CommandPalette from '../components/charts/CommandPalette';
 import { loadAtlas } from '../data/loaders';
 interface Props { title: string; description?: string; wide?: boolean; image?: string }
-const { title, description = 'Observatorio abierto del mercado laboral peruano a partir de los microdatos de la ENAHO (INEI), 2014–2024.', wide = false, image = '/share/default.png' } = Astro.props;
+const { title, description = 'Observatorio abierto del mercado laboral peruano a partir de los microdatos de la ENAHO (INEI), ' + SPAN + '.', wide = false, image = '/share/default.png' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://example.org').toString();
 const ogImage = new URL(image, Astro.site ?? 'https://example.org').toString();
 const regions = loadAtlas().regions.map(r => ({ id: r.id, name: r.name }));
@@ -38,7 +39,7 @@ const regions = loadAtlas().regions.map(r => ({ id: r.id, name: r.name }));
     </main>
     <footer class="wrap footer">
       <div>
-        <strong>Observatorio Laboral del Perú</strong> · Fuente: INEI – Encuesta Nacional de Hogares (ENAHO) 2014–2024, módulo 500.
+        <strong>Observatorio Laboral del Perú</strong> · Fuente: INEI – Encuesta Nacional de Hogares (ENAHO) {SPAN}, módulo 500.
         Estimaciones con factor <code>fac500a</code> y errores estándar de diseño (linealización de Taylor). Licencia <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a>.
       </div>
       <div class="credit">Creado por <a href="https://lotuslatte.github.io/" rel="author">Favio Samillan Flores</a> · economista (PUCP) · <a href="https://www.linkedin.com/in/favio-samillan-flores-367054295/" rel="me">LinkedIn</a></div>

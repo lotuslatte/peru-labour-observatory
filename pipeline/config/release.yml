@@ -1,0 +1,8 @@
+# Single source of truth for the data release. To add a year: add its survey code and RMV here,
+# run scripts/00b_update_ipc.py, add config/official/<year>.yml, and run `make pipeline`.
+first_year: 2014
+headline_year: 2025
+# ENAHO annual survey codes on the INEI microdata portal.
+survey_codes: {2014: 440, 2015: 498, 2016: 546, 2017: 603, 2018: 634, 2019: 687, 2020: 737, 2021: 759, 2022: 784, 2023: 906, 2024: 966, 2025: 1031}
+# Minimum wage (S/ per month, in force most of the year). 2025: D.S. 006-2024-TR, from 2025-01-01.
+rmv: {2014: 750, 2015: 750, 2016: 850, 2017: 850, 2018: 930, 2019: 930, 2020: 930, 2021: 930, 2022: 1025, 2023: 1025, 2024: 1025, 2025: 1130}

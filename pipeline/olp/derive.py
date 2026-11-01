@@ -1,13 +1,10 @@
 """Banderas derivadas a nivel persona (INEI: PET 14+, PEA = ocupados + desocupados abiertos)."""
 import numpy as np
 import pandas as pd
-from .config import CONFIG_DIR, YOUTH
+from .config import CONFIG_DIR, YOUTH, RMV, deflators
 from .informality import informal
 
-_IPC = pd.read_csv(CONFIG_DIR / "ipc_lima_2014_2024.csv", comment="#").set_index("year")["deflator_to_2024"]
-# Remuneración mínima vital (S/ mensual, vigente la mayor parte del año) — proxy transparente del IMR de INEI
-RMV = {2014: 750, 2015: 750, 2016: 850, 2017: 850, 2018: 930, 2019: 930, 2020: 930, 2021: 930,
-       2022: 1025, 2023: 1025, 2024: 1025}
+_IPC = deflators()
 SECTOR9 = {  # CIIU rev4 secciones -> 9 sectores
     "A": 1, "B": 2, "C": 3, "D": 4, "E": 4, "F": 5, "G": 6, "H": 7, "J": 7,
     "I": 8, "K": 9, "L": 9, "M": 9, "N": 9, "O": 9, "P": 9, "Q": 9, "R": 8, "S": 8, "T": 8, "U": 9,
@@ -45,7 +42,7 @@ def derive(df: pd.DataFrame) -> pd.DataFrame:
     d["youth"] = d["age"].between(*YOUTH).astype("Int8")
     d["age4"] = pd.cut(d["age"], [13, 24, 44, 64, 200], labels=[1, 2, 3, 4]).astype("Int8")
     # informality
-    # Informalidad: flag oficial INEI (ocupinf) cuando existe (2014–2023); regla del Observatorio cuando no (2024).
+    # Informalidad: flag oficial INEI (ocupinf) cuando existe (2014–2023); regla del Observatorio cuando no (desde 2024).
     d["informal_rule"] = informal(d)
     if d["ocupinf_inei"].notna().any():
         d["informal"] = d["ocupinf_inei"].map({1: 1, 2: 0}).astype("Int8").where(occ)
@@ -68,7 +65,7 @@ def derive(df: pd.DataFrame) -> pd.DataFrame:
     d["hours_le48"] = (d["hours"] <= 48).astype("Int8").where(occ)
     d["hours_ge60"] = (d["hours"] >= 60).astype("Int8").where(occ)
     d["subemp_hours"] = ((d["hours"] < 35) & d["wants_more"].eq(1) & d["avail_more"].eq(1)).astype("Int8").where(occ)
-    # income (monthly, real 2024 soles)
+    # income (monthly, real soles of the headline year)
     # Ingreso proveniente del trabajo (definición INEI, reproduce sus tablas oficiales): monetario + especie + autoconsumo + extraordinarios
     INC_VARS = ["inc_main_annual", "inc_main_inkind", "inc_self_annual", "inc_self_autoconsumo",
                 "inc_sec_annual", "inc_sec_inkind", "inc_sec_self", "inc_sec_autoconsumo", "inc_extra_annual"]

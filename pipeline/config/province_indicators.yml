@@ -1,5 +1,5 @@
 # Indicadores publicados a nivel provincial (frame agrupado 2022–2024). required: la construcción falla si <150 provincias con sello A/B.
-pool_years: [2022, 2023, 2024]
+pool_years: [__PREV2__, __PREV__, __YEAR__]
 indicators:
   - {id: informality, required: true}
   - {id: lfpr, required: true}

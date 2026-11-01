@@ -1,0 +1,16 @@
+# INEI official figures for 2025. All come from EPEN, not annual ENAHO: they are reference values,
+# and a difference from the Observatory is not a calculation error.
+# Source: INEI, "Perú: Comportamiento de los indicadores del mercado laboral a nivel nacional y 27 ciudades",
+# cuarto trimestre 2025 (published 2026-02-15), annual 2025 tables 1.21 and 1.26A.
+year: 2025
+tolerance_pp: 0.5
+targets:
+  - {indicator: ur, domain: national, value: 4.9, source: "INEI EPEN 2025 (referencial, no ENAHO anual)"}
+  - {indicator: ur, domain: sex, key: "2", value: 5.7, source: "INEI EPEN 2025 (referencial, no ENAHO anual)"}
+  - {indicator: ur, domain: sex, key: "1", value: 4.2, source: "INEI EPEN 2025 (referencial, no ENAHO anual)"}
+  - {indicator: ur, domain: age4, key: "14-24", value: 10.7, source: "INEI EPEN 2025 (referencial, no ENAHO anual)"}
+  - {indicator: informality, domain: national, value: 70.2, source: "INEI EPEN 2025 (referencial, no ENAHO anual)", tolerance_pp: 2.0}
+  - {indicator: informality, domain: area, key: rural, value: 94.8, source: "INEI EPEN 2025 (referencial, no ENAHO anual)", tolerance_pp: 2.0}
+  - {indicator: informality, domain: area, key: urbano, value: 64.5, source: "INEI EPEN 2025 (referencial, no ENAHO anual)", tolerance_pp: 2.0}
+  - {indicator: informality, domain: sex, key: "2", value: 72.7, source: "INEI EPEN 2025 (referencial, no ENAHO anual)", tolerance_pp: 2.0}
+  - {indicator: informality, domain: sex, key: "1", value: 68.2, source: "INEI EPEN 2025 (referencial, no ENAHO anual)", tolerance_pp: 2.0}

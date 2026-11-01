@@ -3,7 +3,7 @@
 Sitio: https://lotuslatte.github.io/peru-labour-observatory/
 
 Observatorio abierto del mercado laboral peruano construido a partir de los microdatos de la
-Encuesta Nacional de Hogares (ENAHO, INEI), módulo 500 "Empleo e ingresos", 2014–2024.
+Encuesta Nacional de Hogares (ENAHO, INEI), módulo 500 "Empleo e ingresos", desde 2014.
 Réplica peruana de https://indialabourobservatory.com/.
 
 - `pipeline/` — Python: carga, armonización, indicadores con errores estándar de diseño (linealización de Taylor),

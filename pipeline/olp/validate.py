@@ -1,6 +1,6 @@
-"""Compara estimaciones con cifras oficiales INEI (official_2024.yml y official_series.yml)."""
+"""Compara estimaciones con cifras oficiales INEI (official/<año>.yml y official_series.yml)."""
 import pandas as pd
-from .config import load_yaml, OUT_DIR, SITE_DATA_DIR
+from .config import load_yaml, deflators, CONFIG_DIR, HEADLINE_YEAR, OUT_DIR, SITE_DATA_DIR
 from .aggregate.common import pick
 
 _DOMKEY = {"national": ("national", "all"), "area_1": ("area", "1"), "area_2": ("area", "2"), "lima_15M": ("lima", "15M"),
@@ -9,18 +9,19 @@ _DOMKEY = {"national": ("national", "all"), "area_1": ("area", "1"), "area_2": (
 
 def run(est) -> pd.DataFrame:
     rows = []
-    o24 = load_yaml("official_2024.yml")
-    for t in o24["targets"]:
-        dom = t["domain"]
-        key = "all" if dom == "national" else str(t["key"])
-        if dom == "area":
-            key = {"urbano": "1", "rural": "2"}[t["key"]]
-        if dom == "age4":
-            key = {"14-24": "1"}[t["key"]]
-        r = pick(est, t["indicator"], dom, key, o24["year"])
-        tol = t.get("tolerance_pp", o24["tolerance_pp"])
-        rows.append({"year": o24["year"], "indicator": t["indicator"], "domain": f"{dom}:{key}", "official": t["value"],
-                     "observatorio": None if r is None else round(float(r["est"]), 2), "tolerance": tol, "source": t["source"]})
+    for path in sorted((CONFIG_DIR / "official").glob("*.yml")):
+        o = load_yaml(f"official/{path.name}")
+        for t in o["targets"]:
+            dom = t["domain"]
+            key = "all" if dom == "national" else str(t["key"])
+            if dom == "area":
+                key = {"urbano": "1", "rural": "2"}[t["key"]]
+            if dom == "age4":
+                key = {"14-24": "1"}[t["key"]]
+            r = pick(est, t["indicator"], dom, key, o["year"])
+            tol = t.get("tolerance_pp", o["tolerance_pp"])
+            rows.append({"year": o["year"], "indicator": t["indicator"], "domain": f"{dom}:{key}", "official": t["value"],
+                         "observatorio": None if r is None else round(float(r["est"]), 2), "tolerance": tol, "source": t["source"]})
     ser = load_yaml("official_series.yml")
     for ind, doms in ser.items():
         for dk, yearvals in doms.items():
@@ -28,7 +29,7 @@ def run(est) -> pd.DataFrame:
             for y, v in yearvals.items():
                 if ind == "mean_inc_nominal":
                     r = pick(est, "mean_inc_real", dom, key, y)
-                    ipc = pd.read_csv(OUT_DIR.parent / "config" / "ipc_lima_2014_2024.csv", comment="#").set_index("year")["deflator_to_2024"]
+                    ipc = deflators()
                     obs = None if r is None else round(float(r["est"]) / float(ipc.loc[y]), 1)
                     tol = 0.05 * v
                 else:
@@ -50,3 +51,8 @@ def unexpected(df: pd.DataFrame) -> pd.DataFrame:
     known = {(k["year"], k["indicator"], k["domain"]) for k in load_yaml("validation_known.yml")["known"]}
     listed = pd.Series([(r.year, r.indicator, r.domain) in known for r in df.itertuples()], index=df.index)
     return df[df.observatorio.isna() | (~df.ok & ~listed)]
+
+
+def has_headline_targets(df: pd.DataFrame) -> bool:
+    """False when the latest year would be published without any official comparison."""
+    return bool((df.year == HEADLINE_YEAR).any())

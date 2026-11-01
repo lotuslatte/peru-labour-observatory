@@ -1,4 +1,5 @@
 ---
+import { YEAR, PREV, SPAN } from '../../data/release';
 import Base from '../../layouts/Base.astro';
 import KpiTile from '../../components/ui/KpiTile.astro';
 import GradeLegend from '../../components/ui/GradeLegend.astro';
@@ -32,20 +33,20 @@ const iLabels: Record<string, string> = { inc_p10: 'p10', inc_p25: 'p25', median
     <div class="card"><h2>Rama de actividad</h2><p class="takeaway">La estructura productiva explica buena parte de la informalidad: agro y comercio concentran el empleo desprotegido.</p><BarDist client:visible items={p.sector_dist} title="Distribución de los ocupados por rama" color={1} /></div>
   </section>
   <section class="grid grid-2" style="margin-top:24px">
-    <div class="card"><h2>Ingreso laboral mensual (S/ 2024)</h2>
+    <div class="card"><h2>Ingreso laboral mensual (S/ {YEAR})</h2>
       <div class="grid grid-3">{Object.keys(iLabels).map(q => <KpiTile label={iLabels[q]} cell={p.inc_pct[q]} unit="" decimals={0} />)}</div>
-      <p class="small muted">Ingreso monetario mensual de la ocupación principal y secundaria (dependiente e independiente), deflactado a soles de 2024 con el IPC de Lima Metropolitana (BCRP).</p></div>
+      <p class="small muted">Ingreso monetario mensual de la ocupación principal y secundaria (dependiente e independiente), deflactado a soles de {YEAR} con el IPC de Lima Metropolitana.</p></div>
     <div class="card"><h2>Calidad del empleo</h2>
       <div class="scroll-x"><table class="data"><tbody>
         {Object.entries(p.quality).map(([k, c]: any) => <tr><td>{qLabels[k] ?? k}</td><td>{fmt(c, k === 'hours_mean' ? 'h' : '%')}</td><td><span class={`badge ${c.g}`}></span></td></tr>)}
       </tbody></table></div></div>
   </section>
   {!p.parent && <section class="grid grid-2" style="margin-top:24px">
-    <div class="card"><h2>Brechas por sexo</h2><p class="takeaway">Barras sombreadas = IC 95 %. Cuando los puntos están dentro del intervalo del otro, la diferencia no es concluyente.</p><Dumbbell client:visible rows={pctOnly(dumb('sex', '1', '2'))} title="Hombres vs mujeres" unit="%" aLabel="Hombres" bLabel="Mujeres" /><Dumbbell client:visible rows={incOnly(dumb('sex', '1', '2'))} title="Ingreso mediano (S/ 2024)" unit="S/" aLabel="Hombres" bLabel="Mujeres" /></div>
+    <div class="card"><h2>Brechas por sexo</h2><p class="takeaway">Barras sombreadas = IC 95 %. Cuando los puntos están dentro del intervalo del otro, la diferencia no es concluyente.</p><Dumbbell client:visible rows={pctOnly(dumb('sex', '1', '2'))} title="Hombres vs mujeres" unit="%" aLabel="Hombres" bLabel="Mujeres" /><Dumbbell client:visible rows={incOnly(dumb('sex', '1', '2'))} title={`Ingreso mediano (S/ ${YEAR})`} unit="S/" aLabel="Hombres" bLabel="Mujeres" /></div>
     <div class="card"><h2>Brechas por lengua materna y área</h2><Dumbbell client:visible rows={pctOnly(dumb('lengua3', '2', '1'))} title="Castellano vs lengua indígena u originaria" unit="%" aLabel="Castellano" bLabel="Lengua indígena" /><Dumbbell client:visible rows={pctOnly(dumb('area', '1', '2'))} title="Urbano vs rural" unit="%" aLabel="Urbano" bLabel="Rural" /></div>
   </section>}
   <section class="grid grid-2" style="margin-top:24px">
-    <div class="card"><h2>Tendencia 2014–2024</h2><TrendLine client:visible years={h.years} unit="%" title={`${p.name}: actividad, informalidad y desempleo`} series={[{ label: 'Actividad', cells: p.trend.lfpr }, { label: 'Informalidad', cells: p.trend.informality }, { label: 'Desempleo', cells: p.trend.ur }]} notes={{ '2020': 'Pandemia' }} yZero /><TrendLine client:visible years={h.years} unit="S/" title="Ingreso laboral mediano real (S/ 2024)" series={[{ label: p.name, cells: p.trend.median_inc_real }, { label: 'Nacional', cells: h.trend.median_inc_real }]} height={240} /></div>
+    <div class="card"><h2>Tendencia {SPAN}</h2><TrendLine client:visible years={h.years} unit="%" title={`${p.name}: actividad, informalidad y desempleo`} series={[{ label: 'Actividad', cells: p.trend.lfpr }, { label: 'Informalidad', cells: p.trend.informality }, { label: 'Desempleo', cells: p.trend.ur }]} notes={{ '2020': 'Pandemia' }} yZero /><TrendLine client:visible years={h.years} unit="S/" title={`Ingreso laboral mediano real (S/ ${YEAR})`} series={[{ label: p.name, cells: p.trend.median_inc_real }, { label: 'Nacional', cells: h.trend.median_inc_real }]} height={240} /></div>
     <div class="card"><h2>Comparar con otro departamento</h2>{!p.parent ? <RadarComparator client:visible a={p.id} /> : <p class="muted">El radar compara los 25 departamentos; Lima Metropolitana y Lima Región aparecen en la matriz del Atlas.</p>}</div>
   </section>
   <p class="small muted" style="margin-top:20px">Fuente: INEI – ENAHO {p.year}, módulo 500, factor fac500a. Errores estándar por linealización de Taylor (PSU = conglomerado; estratos = departamento × estrato). Descarga: <a href="/compendio/">compendio T17–T20</a>.</p>

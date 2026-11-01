@@ -13,5 +13,5 @@ const counts = Object.fromEntries(p.dims.map((d: any) => [d.id, p.regions.filter
   <p class="lede">Agrupando tres años de ENAHO cada provincia tiene muestra suficiente para la mayoría de indicadores. Los contornos gruesos son departamentos; las celdas sin sello se muestran en gris. El desempleo no se publica a este nivel: la proporción es demasiado pequeña para medirla con precisión provincial.</p>
   <div class="grid grid-4" style="margin-bottom:14px">{p.dims.map((d: any) => <div class="card" style="padding:10px 12px"><div class="eyebrow">{d.label_es}</div><div class="small">{counts[d.id]} de {p.n_regions} provincias publicables</div></div>)}</div>
   <section class="card"><GradeLegend compact /><AtlasMap client:load src="/data/atlas_provincias.json" year={`${p.years[0]}–${p.years.at(-1)}`} level="prov" initial={p.dims[0].id} /></section>
-  <p class="small muted" style="margin-top:14px">{p.note} Descarga: <a href="/data/atlas_provincias.json">atlas_provincias.json</a>.</p>
+  <p class="small muted" style="margin-top:14px">{p.note} La informalidad agrupa años medidos con dos métodos: <code>ocupinf</code> del INEI hasta 2023 y la regla del Observatorio desde 2024. Descarga: <a href="/data/atlas_provincias.json">atlas_provincias.json</a>.</p>
 </Base>
