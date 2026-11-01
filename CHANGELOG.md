@@ -11,6 +11,9 @@ Data and method changes, newest first. Data versions use the `YYYY.N` form.
 - `config/series_breaks.yml` declares method breaks. Comparisons across a break are flagged as not comparable and never reported as significant.
 - `LICENSE`, `CITATION.cff` and this changelog.
 
+### Changed
+- Site redesign: the home page shows six headline figures, each indicator has its own page with trend, map, groups and data tabs, and `/explorar/` builds a query with its own CSV. The menu now has four items; Atlas, Compendio, Análisis and Novedades moved to the footer.
+
 ### Fixed
 - Embed snippets pointed to a URL without the site base and returned 404.
 - Atlas embed snippets now offer every dimension.

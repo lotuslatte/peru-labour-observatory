@@ -1,0 +1,27 @@
+import {fmt,esc,findBreak,tip,showTip,lineChart,csvRows,copyText,download} from './olp.js';
+const D=JSON.parse(document.getElementById('olp-data').textContent);const id=D.id,u=D.unit,b=findBreak(D.breaks,id);
+const TABS=[['tendencia','Tendencia'],...(D.regions?[['mapa','Mapa']]:[]),...(Object.keys(D.domains).length?[['quienes','Quiénes']]:[]),['datos','Datos']];
+let dom=Object.keys(D.domains)[0];const elT=document.getElementById('tabs'),el=document.getElementById('tab');
+const small=()=>innerWidth<620;
+function tendencia(){el.innerHTML=`${b?`<p class="r-break">${esc(b.label_es)}</p>`:''}<div id="ch"></div>`;lineChart(el.querySelector('#ch'),[{label:D.name,cells:D.national,color:'--cat-1'}],D.years,u,b,{band:true,w:small()?380:920,h:small()?280:380,aria:D.name+' por año'});}
+function mapa(){const rows=D.regions,vals=rows.map(r=>r.c.v).filter(v=>v!=null).sort((x,y)=>x-y),q=[1,2,3,4,5].map(k=>vals[Math.floor(k*vals.length/6)]),bin=v=>q.filter(t=>v>=t).length+1;
+  const sorted=rows.filter(r=>r.c.v!=null).sort((x,y)=>y.c.v-x.c.v),li=a=>a.map(r=>`<li><span>${esc(r.name)}</span><span>${fmt(r.c.v,u)}</span></li>`).join('');
+  el.innerHTML=`<div class="r-map"><div><svg viewBox="${D.map.box}" role="img" aria-label="Mapa por departamento">${D.map.paths.map(p=>{const r=rows.find(x=>x.id===p.id);return `<path d="${p.d}" data-id="${p.id}" fill="${r&&r.c.v!=null?`var(--seq-${bin(r.c.v)})`:'var(--panel-2)'}"/>`;}).join('')}</svg><div class="r-scale"><span>${fmt(vals[0],u)}</span>&nbsp;${[1,2,3,4,5,6].map(i=>`<i style="background:var(--seq-${i})"></i>`).join('')}&nbsp;<span>${fmt(vals.at(-1),u)}</span></div></div>
+<div><p class="r-rank-t">Más alto</p><ul class="r-rank">${li(sorted.slice(0,5))}</ul><p class="r-rank-t">Más bajo</p><ul class="r-rank">${li(sorted.slice(-5))}</ul></div></div>
+<details class="r-details"><summary>Ver los ${rows.length} departamentos</summary><ul class="r-rank">${li(sorted)}</ul></details>`;
+  el.querySelectorAll('path').forEach(p=>{const r=rows.find(x=>x.id===p.dataset.id);if(!r)return;p.onpointermove=e=>showTip(e,`<b>${esc(r.name)}</b><br>${r.c.v==null?'Sin dato':esc(fmt(r.c.v,u))}${r.c.lo!=null?`<br>IC ${esc(fmt(r.c.lo,u))} a ${esc(fmt(r.c.hi,u))}`:''}`);p.onpointerleave=()=>tip().hidden=true;});}
+function quienes(){const s=D.domains[dom],rows=Object.entries(s).map(([k,c])=>({l:D.labels[dom][k],c})).sort((x,y)=>(y.c.v??-1)-(x.c.v??-1)),ok=rows.filter(r=>r.c.v!=null),hi=Math.max(...ok.map(r=>r.c.hi??r.c.v)),P=small(),W=P?380:920,LW=P?135:250,RH=P?40:46,FS=P?13:15,MX=P?20:26,H=rows.length*RH+8,X=v=>LW+v/hi*(W-LW-(P?72:90));
+  let g=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Valores por grupo">`;
+  rows.forEach((r,i)=>{const y=i*RH+26;g+=`<text x="0" y="${y+5}" style="fill:var(--ink-2);font-size:${FS}px">${esc(r.l.length>MX?r.l.slice(0,MX-1)+'…':r.l)}</text>`;
+   if(r.c.v==null){g+=`<text x="${LW}" y="${y+5}" style="font-size:14px">Muestra insuficiente</text>`;return;}
+   g+=`<line x1="${LW}" x2="${X(r.c.v)}" y1="${y}" y2="${y}" stroke="var(--line)" stroke-width="2"/><line x1="${X(r.c.lo)}" x2="${X(r.c.hi)}" y1="${y}" y2="${y}" stroke="var(--informal)" stroke-width="5" opacity=".3"/><circle cx="${X(r.c.v)}" cy="${y}" r="7" fill="var(--informal)"/><text x="${X(r.c.hi)+14}" y="${y+5}" style="fill:var(--ink);font-size:${FS}px">${esc(fmt(r.c.v,u))}${r.c.g==='B'?' (B)':''}</text>`;});
+  el.innerHTML=`<div class="r-chips">${Object.keys(D.domains).map(k=>`<button aria-pressed="${k===dom}" data-d="${k}">${D.domLabels[k]}</button>`).join('')}</div>${g}</svg><p class="r-src">${D.year}. La barra clara es el intervalo de confianza de 95%. (B) marca una estimación menos precisa.</p>`;
+  el.querySelectorAll('.r-chips button').forEach(x=>x.onclick=()=>{dom=x.dataset.d;quienes();});}
+function datos(){const rows=[['anio','valor','error_estandar','ic95_inf','ic95_sup','n','sello'],...D.years.map((y,i)=>{const c=D.national[i];return [y,c.v,c.se,c.lo,c.hi,c.n,c.g];})];
+  el.innerHTML=`<div class="r-scroll"><table class="r-table"><thead><tr><th>Año</th><th>Valor</th><th>Error est.</th><th>IC 95%</th><th>n</th><th>Sello</th></tr></thead><tbody>${D.years.map((y,i)=>{const c=D.national[i];return `<tr><td>${y}</td><td>${fmt(c.v,u)}</td><td>${c.se??''}</td><td>${c.v==null?'':fmt(c.lo,u)+' a '+fmt(c.hi,u)}</td><td>${c.n.toLocaleString('en-US')}</td><td>${c.g}</td></tr>`;}).join('')}</tbody></table></div>
+<div class="r-actions"><button class="r-btn" id="csv">Descargar CSV</button><button class="r-btn" id="cite">Copiar cita</button></div><p class="r-src">Por grupo o departamento, usa <a href="/explorar/?i=${id}">Explorar</a>. Todos los archivos están en <a href="/datos/">Datos</a>.</p>`;
+  el.querySelector('#csv').onclick=()=>download(`olp_${id}.csv`,csvRows(rows));
+  el.querySelector('#cite').onclick=e=>copyText(e.target,`Samillan Flores, F. Observatorio Laboral del Perú. ${D.name}, ${D.years[0]}–${D.year}. Datos: INEI, ENAHO. ${location.origin}${location.pathname}`,'Cita copiada');}
+const VIEW={tendencia,mapa,quienes,datos};
+function show(t){if(!VIEW[t]||!TABS.some(x=>x[0]===t))t='tendencia';elT.innerHTML=TABS.map(x=>`<button role="tab" aria-selected="${x[0]===t}" data-t="${x[0]}">${x[1]}</button>`).join('');elT.querySelectorAll('button').forEach(x=>x.onclick=()=>{history.replaceState(null,'','#'+x.dataset.t);show(x.dataset.t);});tip().hidden=true;VIEW[t]();}
+show(location.hash.slice(1));

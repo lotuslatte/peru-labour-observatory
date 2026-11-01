@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/redesign.css';
+---
+<Base title="Explorar" description="Elige indicador, grupo y años, y descarga exactamente esa selección.">
+  <div class="r-page">
+    <div class="r-q" id="q"></div>
+    <div id="res"><p class="r-src">Cargando datos…</p></div>
+    <div class="r-try" id="try"></div>
+    <noscript><p class="r-src">Esta página necesita JavaScript. Los mismos datos están en <a href="/datos/">Datos</a>.</p></noscript>
+  </div>
+  <script src="../scripts/explorar.js"></script>
+</Base>

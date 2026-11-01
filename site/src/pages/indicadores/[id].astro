@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import '../../styles/redesign.css';
+import { YEAR, SPAN } from '../../data/release';
+import { loadTrends, loadAtlas } from '../../data/loaders';
+import { INDICATORS, DOMAINS, unitOf, fmtU, slim, peruMap } from '../../data/ui';
+export function getStaticPaths() { return INDICATORS.map(i => ({ params: { id: i.id }, props: { ind: i } })); }
+const { ind } = Astro.props; const id = ind.id;
+const tr = loadTrends(); const u = unitOf(id); const national = tr.series.national[id].map(slim); const c = national.at(-1);
+const domains: Record<string, any> = {};
+for (const d of Object.keys(DOMAINS)) { const g = tr.series[d][id]; if (g && Object.values(g).some((cs: any) => cs.at(-1).v != null)) domains[d] = Object.fromEntries(Object.entries(g).map(([k, cs]: any) => [k, cs.at(-1) && slim(cs.at(-1))])); }
+const hasDept = Object.values(tr.series.dept).some((x: any) => x[id]);
+const regions = loadAtlas().regions.filter(r => r.id.length === 2).map(r => ({ id: r.id, name: r.name, c: slim(tr.series.dept[r.id][id]?.at(-1) ?? { g: 'S' }) }));
+const data = { id, name: ind.name, unit: u, year: YEAR, years: tr.years, breaks: tr.breaks, national, domains, domLabels: DOMAINS, labels: tr.labels, regions: hasDept ? regions : null, map: hasDept ? peruMap() : null };
+const say = ind.say?.(c.v, x => fmtU(x, u));
+---
+<Base title={ind.name} description={ind.def}>
+  <div class="r-page">
+    <a class="r-back" href="/indicadores/">Todos los indicadores</a>
+    <section class="r-head">
+      <h1>{ind.name}</h1>
+      <div class="r-num">{fmtU(c.v, u)}</div>
+      {say && <p class="r-say">{say}</p>}
+      <p class="r-src">ENAHO {YEAR}. IC 95%: {fmtU(c.lo, u)} a {fmtU(c.hi, u)}.</p>
+    </section>
+    <div class="r-tabs" role="tablist" id="tabs"></div>
+    <div id="tab"></div>
+    <details class="r-details"><summary>Definición y método</summary><p>{ind.def}</p><p>Fuente: INEI, ENAHO {SPAN}, módulo 500, factor fac500a. Error estándar por linealización de Taylor con el diseño muestral. Detalle en <a href="/acerca/metodologia/">Metodología</a>.</p></details>
+    <script type="application/json" id="olp-data" set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />
+  </div>
+  <script src="../../scripts/ficha.js"></script>
+</Base>
