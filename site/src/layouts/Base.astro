@@ -5,6 +5,7 @@ import '../styles/print.css';
 import Nav from '../components/ui/Nav.astro';
 import CommandPalette from '../components/charts/CommandPalette';
 import { loadAtlas } from '../data/loaders';
+import { INDICATORS } from '../data/ui';
 interface Props { title: string; description?: string; wide?: boolean; image?: string }
 const { title, description = 'Observatorio abierto del mercado laboral peruano a partir de los microdatos de la ENAHO (INEI), ' + SPAN + '.', wide = false, image = '/share/default.png' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://example.org').toString();
@@ -43,9 +44,9 @@ const regions = loadAtlas().regions.map(r => ({ id: r.id, name: r.name }));
         Estimaciones con factor <code>fac500a</code> y errores estándar de diseño (linealización de Taylor). Licencia <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a>.
       </div>
       <div class="credit">Creado por <a href="https://lotuslatte.github.io/" rel="author">Favio Samillan Flores</a> · economista (PUCP) · <a href="https://www.linkedin.com/in/favio-samillan-flores-367054295/" rel="me">LinkedIn</a></div>
-      <div class="muted small">Código y datos reproducibles · <a href="/acerca/metodologia/">Metodología</a> · <a href="/acerca/validacion/">Validación</a> · <a href="/glosario/">Glosario</a> · <a href="/preguntas/">Preguntas frecuentes</a> · <a href="/datos/">Descargas</a> · <a href="/acerca/">Acerca de</a></div>
+      <div class="muted small"><a href="/atlas/">Atlas</a> · <a href="/compendio/">Compendio</a> · <a href="/analisis/">Análisis</a> · <a href="/novedades/">Novedades</a> · <a href="/acerca/metodologia/">Metodología</a> · <a href="/acerca/validacion/">Validación</a> · <a href="/glosario/">Glosario</a> · <a href="/preguntas/">Preguntas frecuentes</a> · <a href="/acerca/">Acerca de</a> · <a href="https://github.com/lotuslatte/peru-labour-observatory">Código en GitHub</a></div>
     </footer>
-    <CommandPalette client:idle regions={regions} />
+    <CommandPalette client:idle regions={regions} indicators={INDICATORS.map(i => ({ id: i.id, name: i.name }))} />
     <style>
       .credit { font-family: var(--font-serif); font-size: 1.05rem; } .credit a { color: var(--informal); }
       .footer { margin-top: 64px; padding: 28px 20px 48px; border-top: 1px solid var(--line); display: grid; gap: 8px; font-size: .9rem; color: var(--ink-2); }

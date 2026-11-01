@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import '../../styles/redesign.css';
+import { YEAR } from '../../data/release';
+import { loadTrends } from '../../data/loaders';
+import { INDICATORS, unitOf, fmtU } from '../../data/ui';
+const tr = loadTrends();
+const groups = [...new Set(INDICATORS.map(i => i.group))];
+---
+<Base title="Indicadores">
+  <div class="r-page r-list">
+    <section class="r-hero"><h1>Indicadores</h1><p class="r-src">Cada indicador tiene su ficha con tendencia, grupos y datos. Valores de {YEAR}. Las demás medidas están en el <a href="/compendio/">compendio de tablas</a>.</p></section>
+    {groups.map(g => <section><h2>{g}</h2><ul>{INDICATORS.filter(i => i.group === g).map(i => <li><a href={`/indicadores/${i.id}/`}><span>{i.name}</span><span>{fmtU(tr.series.national[i.id].at(-1).v, unitOf(i.id))}</span></a></li>)}</ul></section>)}
+  </div>
+</Base>

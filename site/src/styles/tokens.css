@@ -7,7 +7,7 @@
   --grade-a: #0f6157; --grade-a-soft: #dcefeb; --grade-b: #855510; --grade-b-soft: #fbeed6; --grade-s: #5f6278; --grade-s-soft: #eeeee8;
   --seq-1: #e6f1ee; --seq-2: #bfdcd5; --seq-3: #8fc2b7; --seq-4: #5aa093; --seq-5: #2c7d70; --seq-6: #0f5148;
   --cat-1: #a8244f; --cat-2: #167a6e; --cat-3: #b7791f; --cat-4: #2f5d9e; --cat-5: #7b4fa6; --cat-6: #6f7288; --cat-7: #d98c5f; --cat-8: #3aa3a0; --cat-9: #8a6d4b;
-  --shadow: 0 1px 0 rgba(26, 28, 46, .05), 0 10px 28px rgba(26, 28, 46, .07);
+  --shadow: none;
   --radius: 10px;
   --font-serif: "Fraunces", "Newsreader", Georgia, serif;
   --font-sans: "IBM Plex Sans", "Plus Jakarta Sans", system-ui, -apple-system, Helvetica, Arial, sans-serif;
@@ -24,7 +24,7 @@
     --grade-a: #4fc0ad; --grade-a-soft: #143430; --grade-b: #e2b04a; --grade-b-soft: #3a2f14; --grade-s: #a9acc0; --grade-s-soft: #262941;
     --seq-1: #1a2a29; --seq-2: #1f463f; --seq-3: #266459; --seq-4: #348677; --seq-5: #52ab99; --seq-6: #8fd6c6;
     --cat-1: #e2567f; --cat-2: #4fc0ad; --cat-3: #e2b04a; --cat-4: #6f95d6; --cat-5: #b08ae0; --cat-6: #9295ab; --cat-7: #f0a883; --cat-8: #63d3cf; --cat-9: #c4a882;
-    --shadow: 0 1px 0 rgba(0, 0, 0, .4), 0 12px 32px rgba(0, 0, 0, .45);
+    --shadow: none;
     color-scheme: dark;
   }
 }
@@ -36,6 +36,6 @@
   --grade-a: #4fc0ad; --grade-a-soft: #143430; --grade-b: #e2b04a; --grade-b-soft: #3a2f14; --grade-s: #a9acc0; --grade-s-soft: #262941;
   --seq-1: #1a2a29; --seq-2: #1f463f; --seq-3: #266459; --seq-4: #348677; --seq-5: #52ab99; --seq-6: #8fd6c6;
   --cat-1: #e2567f; --cat-2: #4fc0ad; --cat-3: #e2b04a; --cat-4: #6f95d6; --cat-5: #b08ae0; --cat-6: #9295ab; --cat-7: #f0a883; --cat-8: #63d3cf; --cat-9: #c4a882;
-  --shadow: 0 1px 0 rgba(0, 0, 0, .4), 0 12px 32px rgba(0, 0, 0, .45);
+  --shadow: none;
   color-scheme: dark;
 }

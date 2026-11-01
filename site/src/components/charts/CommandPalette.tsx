@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'preact/hooks';
 interface Item { label: string; href: string; group: string }
-export default function CommandPalette({ regions }: { regions: { id: string; name: string }[] }) {
+export default function CommandPalette({ regions, indicators = [] }: { regions: { id: string; name: string }[]; indicators?: { id: string; name: string }[] }) {
   const [open, setOpen] = useState(false); const [q, setQ] = useState(''); const [i, setI] = useState(0);
   const input = useRef<HTMLInputElement>(null); const box = useRef<HTMLDivElement>(null); const opener = useRef<HTMLElement | null>(null);
   const items: Item[] = [
@@ -11,6 +11,8 @@ export default function CommandPalette({ regions }: { regions: { id: string; nam
     { label: 'Glosario', href: '/glosario/', group: 'Páginas' }, { label: 'Preguntas frecuentes', href: '/preguntas/', group: 'Páginas' },
     { label: 'Metodología', href: '/acerca/metodologia/', group: 'Páginas' }, { label: 'Escuela de encuestas', href: '/acerca/escuela-de-encuestas/', group: 'Páginas' },
     { label: 'Descargar datos', href: '/datos/', group: 'Páginas' }, { label: 'Acerca del Observatorio', href: '/acerca/', group: 'Páginas' },
+    { label: 'Indicadores', href: '/indicadores/', group: 'Páginas' }, { label: 'Explorar los datos', href: '/explorar/', group: 'Páginas' },
+    ...indicators.map(r => ({ label: r.name, href: `/indicadores/${r.id}/`, group: 'Indicadores' })),
     ...regions.map(r => ({ label: r.name, href: `/atlas/${r.id}/`, group: 'Departamentos' })),
   ];
   const norm = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
