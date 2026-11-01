@@ -20,6 +20,7 @@ Data and method changes, newest first. Data versions use the `YYYY.N` form.
 - Lima CPI now comes from the deflators INEI publishes with ENAHO (i00, dpto 15). The series matches BCRP PN38705PM for 2014 to 2024.
 - The informality shift-share now covers 2014 to 2023, the last years both measured with `ocupinf`, instead of crossing the 2024 break.
 - Provincial estimates pool 2023 to 2025. Informality in that pool mixes `ocupinf` (2023) and the Observatory rule.
+- ENAHO informality runs 2.2 to 2.7 pp above EPEN in 2024 and 2025. The Observatory rule does not explain this: in 2014 to 2023 it runs 0.2 to 1.9 pp below `ocupinf`, 0.2 pp in 2023.
 - The story moved to `/historias/panorama/`; the old URL redirects.
 - Informal employment: INEI stopped publishing `ocupinf` from 2024. Values from 2024 use the Observatory rule, so 2023 to 2024 and 2014 to 2024 changes are not comparable.
 
