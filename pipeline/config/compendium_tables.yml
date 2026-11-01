@@ -9,56 +9,56 @@ sections:
   7: "Migración"
   8: "Calidad del empleo"
   9: "Ingresos"
-  10: "Tendencias 2014–2024"
+  10: "Tendencias 2014–__YEAR__"
   11: "Metodología y validación"
 tables:
-  - {id: T01, section: 1, title: "Indicadores titulares del mercado laboral, 2024", domains: [national], indicators: [lfpr, epr, ur, ur_youth, informality, subemp_hours, adecuado, neet, median_inc_real, mean_inc_real], years: [2024]}
-  - {id: T02, section: 1, title: "Indicadores titulares por sexo, 2024", domains: [sex], indicators: [lfpr, epr, ur, informality, subemp_hours, adecuado, neet, median_inc_real], years: [2024]}
-  - {id: T03, section: 1, title: "Indicadores titulares por área de residencia, 2024", domains: [area, sex_area], indicators: [lfpr, epr, ur, informality, adecuado, median_inc_real], years: [2024]}
-  - {id: T04, section: 1, title: "Indicadores titulares por región natural, 2024", domains: [region_nat], indicators: [lfpr, epr, ur, informality, adecuado, median_inc_real], years: [2024]}
-  - {id: T05, section: 2, title: "Participación y empleo por sexo y grupo de edad, 2024", domains: [age4, sex_age4], indicators: [lfpr, epr, ur], years: [2024]}
-  - {id: T06, section: 2, title: "Informalidad y calidad del empleo por sexo y edad, 2024", domains: [age4, sex_age4], indicators: [informality, subemp_hours, adecuado, hours_mean], years: [2024]}
-  - {id: T07, section: 2, title: "Ingresos laborales por sexo y edad, 2024 (S/ 2024)", domains: [age4, sex_age4], indicators: [median_inc_real, mean_inc_real, inc_p25, inc_p75], years: [2024]}
-  - {id: T08, section: 2, title: "Brechas de género, 2024", domains: [national, area, region_nat, age4, educ4], indicators: [gap_lfpr, gap_ur, gap_inc], years: [2024]}
-  - {id: T09, section: 3, title: "Participación, empleo y desempleo por nivel educativo, 2024", domains: [educ4, sex_educ4], indicators: [lfpr, epr, ur], years: [2024]}
-  - {id: T10, section: 3, title: "Informalidad y empleo adecuado por nivel educativo, 2024", domains: [educ4, sex_educ4], indicators: [informality, adecuado, contract_any], years: [2024]}
-  - {id: T11, section: 3, title: "Ingresos laborales por nivel educativo, 2024 (S/ 2024)", domains: [educ4, sex_educ4], indicators: [median_inc_real, mean_inc_real, inc_p90], years: [2024]}
-  - {id: T12, section: 3, title: "Composición educativa de los ocupados, 2024", domains: [national, sex, area, region_nat], indicators: [educ_dist], years: [2024]}
-  - {id: T13, section: 4, title: "Distribución de los ocupados por categoría ocupacional, 2024", domains: [national, sex, area, region_nat], indicators: [status_dist], years: [2024]}
-  - {id: T14, section: 4, title: "Distribución de los ocupados por rama de actividad, 2024", domains: [national, sex, area, region_nat], indicators: [sector_dist], years: [2024]}
-  - {id: T15, section: 4, title: "Independientes, familiares no remunerados y tamaño de empresa, 2024", domains: [national, sex, area, region_nat, educ4], indicators: [self_emp, tfnr, firm_small, secondary_job], years: [2024]}
-  - {id: T16, section: 4, title: "Empleo en el sector informal y empleo informal, 2024", domains: [national, sex, area, region_nat], indicators: [informal_in_sector, informality, formality], years: [2024]}
-  - {id: T17, section: 5, title: "Dimensiones del Atlas por departamento, 2024", domains: [dept, lima], indicators: [lfpr, ur, formality, adecuado, median_inc_real, gap_lfpr], years: [2024]}
-  - {id: T18, section: 5, title: "Indicadores por departamento y sexo, 2024", domains: [dept_sex], indicators: [lfpr, ur, informality, median_inc_real], years: [2024]}
-  - {id: T19, section: 5, title: "Distribución de ingresos laborales por departamento, 2024 (S/ 2024)", domains: [dept, lima], indicators: [inc_p10, inc_p25, median_inc_real, inc_p75, inc_p90, mean_inc_real], years: [2024]}
-  - {id: T20, section: 5, title: "Calidad del empleo por departamento, 2024", domains: [dept, lima], indicators: [subemp_hours, hours_le48, contract_any, pension, seguro, neet], years: [2024]}
-  - {id: T21, section: 6, title: "Indicadores por lengua materna, 2024", domains: [lengua3], indicators: [lfpr, epr, ur, informality, adecuado, median_inc_real, neet], years: [2024]}
-  - {id: T22, section: 6, title: "Indicadores por autoidentificación étnica, 2024", domains: [etnia6], indicators: [lfpr, epr, ur, informality, adecuado, median_inc_real, neet], years: [2024]}
-  - {id: T23, section: 6, title: "Categoría ocupacional por lengua materna y etnicidad, 2024", domains: [lengua3, etnia6], indicators: [status_dist], years: [2024]}
-  - {id: T24, section: 6, title: "Rama de actividad por lengua materna y etnicidad, 2024", domains: [lengua3, etnia6], indicators: [sector_dist], years: [2024]}
-  - {id: T25, section: 6, title: "Lengua materna por departamento, 2024", domains: [dept_lengua3], indicators: [lfpr, informality, median_inc_real], years: [2024]}
-  - {id: T26, section: 7, title: "Indicadores por condición migratoria (residencia hace 5 años), 2024", domains: [mig2], indicators: [lfpr, epr, ur, informality, adecuado, median_inc_real, contract_any], years: [2024]}
-  - {id: T27, section: 7, title: "Categoría ocupacional y rama por condición migratoria, 2024", domains: [mig2], indicators: [status_dist, sector_dist], years: [2024]}
-  - {id: T28, section: 8, title: "Subempleo y empleo adecuado, 2024", domains: [national, sex, area, region_nat, age4, educ4], indicators: [subemp_hours, subemp_income, adecuado], years: [2024]}
-  - {id: T29, section: 8, title: "Horas de trabajo, 2024", domains: [national, sex, area, region_nat, age4], indicators: [hours_mean, hours_lt35, hours_le48, hours_ge60], years: [2024]}
-  - {id: T30, section: 8, title: "Contratos de los asalariados, 2024", domains: [national, sex, area, region_nat, age4, educ4], indicators: [contract_any, contract_indef], years: [2024]}
-  - {id: T31, section: 8, title: "Seguro de salud y afiliación a pensiones de los ocupados, 2024", domains: [national, sex, area, region_nat, age4, educ4], indicators: [seguro, essalud, pension], years: [2024]}
-  - {id: T32, section: 8, title: "Tamaño de la unidad productiva y ocupación secundaria, 2024", domains: [national, sex, area, region_nat], indicators: [firm_small, secondary_job], years: [2024]}
-  - {id: T33, section: 9, title: "Percentiles del ingreso laboral mensual, 2024 (S/ 2024)", domains: [national, sex, area, region_nat, age4, educ4], indicators: [inc_p10, inc_p25, median_inc_real, inc_p75, inc_p90, mean_inc_real], years: [2024]}
-  - {id: T34, section: 9, title: "Ingreso laboral mediano real, 2014–2024 (S/ 2024)", domains: [national, sex, area, region_nat], indicators: [median_inc_real], years: all}
-  - {id: T35, section: 9, title: "Razón de ingresos mujeres/hombres, 2014–2024", domains: [national, area, region_nat, educ4], indicators: [gap_inc], years: all}
-  - {id: T36, section: 10, title: "Indicadores nacionales, 2014–2024", domains: [national], indicators: [lfpr, epr, ur, informality, subemp_hours, adecuado, neet, median_inc_real], years: all}
-  - {id: T37, section: 10, title: "Indicadores por sexo, 2014–2024", domains: [sex], indicators: [lfpr, ur, informality, median_inc_real, neet], years: all}
-  - {id: T38, section: 10, title: "Indicadores por departamento, 2014–2024", domains: [dept, lima], indicators: [lfpr, ur, informality, median_inc_real], years: all}
-  - {id: T39, section: 10, title: "Indicadores por lengua materna y área, 2014–2024", domains: [lengua3, area], indicators: [lfpr, ur, informality, median_inc_real], years: all}
-  - {id: T43, section: 4, title: "Ocupados por gran grupo ocupacional, 2024", domains: [national, sex, area, region_nat], indicators: [ocup_dist], years: [2024]}
-  - {id: T44, section: 4, title: "Calidad del empleo por gran grupo ocupacional, 2024", domains: [ocup10], indicators: [informality, adecuado, median_inc_real, median_inc_hour, hours_mean, contract_any, seguro_contrib, working_poor], years: [2024]}
-  - {id: T45, section: 4, title: "Calidad del empleo por rama de actividad, 2024", domains: [sector9], indicators: [informality, adecuado, median_inc_real, median_inc_hour, hours_mean, contract_any, seguro_contrib, working_poor], years: [2024]}
-  - {id: T46, section: 7, title: "Nacidos en otro departamento, 2018–2024", domains: [national, sex, area, dept], indicators: [mig_life], years: all}
-  - {id: T47, section: 8, title: "Desempleo abierto, oculto y tasa ampliada, 2014–2024", domains: [national, sex, area, age4], indicators: [ur, hidden_unemp, ur_ext], years: all}
-  - {id: T48, section: 8, title: "Trabajadores pobres, 2014–2024", domains: [national, sex, area, region_nat, dept], indicators: [working_poor], years: all}
-  - {id: T49, section: 8, title: "Seguro contributivo y SIS entre los ocupados, 2014–2024", domains: [national, sex, area, region_nat], indicators: [seguro_contrib, sis], years: all}
-  - {id: T50, section: 9, title: "Ingreso por hora y desigualdad del ingreso laboral, 2014–2024", domains: [national, sex, area, region_nat], indicators: [median_inc_hour, gini_inc], years: all}
+  - {id: T01, section: 1, title: "Indicadores titulares del mercado laboral, __YEAR__", domains: [national], indicators: [lfpr, epr, ur, ur_youth, informality, subemp_hours, adecuado, neet, median_inc_real, mean_inc_real], years: [2024]}
+  - {id: T02, section: 1, title: "Indicadores titulares por sexo, __YEAR__", domains: [sex], indicators: [lfpr, epr, ur, informality, subemp_hours, adecuado, neet, median_inc_real], years: [2024]}
+  - {id: T03, section: 1, title: "Indicadores titulares por área de residencia, __YEAR__", domains: [area, sex_area], indicators: [lfpr, epr, ur, informality, adecuado, median_inc_real], years: [2024]}
+  - {id: T04, section: 1, title: "Indicadores titulares por región natural, __YEAR__", domains: [region_nat], indicators: [lfpr, epr, ur, informality, adecuado, median_inc_real], years: [2024]}
+  - {id: T05, section: 2, title: "Participación y empleo por sexo y grupo de edad, __YEAR__", domains: [age4, sex_age4], indicators: [lfpr, epr, ur], years: [2024]}
+  - {id: T06, section: 2, title: "Informalidad y calidad del empleo por sexo y edad, __YEAR__", domains: [age4, sex_age4], indicators: [informality, subemp_hours, adecuado, hours_mean], years: [2024]}
+  - {id: T07, section: 2, title: "Ingresos laborales por sexo y edad, __YEAR__ (S/ __YEAR__)", domains: [age4, sex_age4], indicators: [median_inc_real, mean_inc_real, inc_p25, inc_p75], years: [2024]}
+  - {id: T08, section: 2, title: "Brechas de género, __YEAR__", domains: [national, area, region_nat, age4, educ4], indicators: [gap_lfpr, gap_ur, gap_inc], years: [2024]}
+  - {id: T09, section: 3, title: "Participación, empleo y desempleo por nivel educativo, __YEAR__", domains: [educ4, sex_educ4], indicators: [lfpr, epr, ur], years: [2024]}
+  - {id: T10, section: 3, title: "Informalidad y empleo adecuado por nivel educativo, __YEAR__", domains: [educ4, sex_educ4], indicators: [informality, adecuado, contract_any], years: [2024]}
+  - {id: T11, section: 3, title: "Ingresos laborales por nivel educativo, __YEAR__ (S/ __YEAR__)", domains: [educ4, sex_educ4], indicators: [median_inc_real, mean_inc_real, inc_p90], years: [2024]}
+  - {id: T12, section: 3, title: "Composición educativa de los ocupados, __YEAR__", domains: [national, sex, area, region_nat], indicators: [educ_dist], years: [2024]}
+  - {id: T13, section: 4, title: "Distribución de los ocupados por categoría ocupacional, __YEAR__", domains: [national, sex, area, region_nat], indicators: [status_dist], years: [2024]}
+  - {id: T14, section: 4, title: "Distribución de los ocupados por rama de actividad, __YEAR__", domains: [national, sex, area, region_nat], indicators: [sector_dist], years: [2024]}
+  - {id: T15, section: 4, title: "Independientes, familiares no remunerados y tamaño de empresa, __YEAR__", domains: [national, sex, area, region_nat, educ4], indicators: [self_emp, tfnr, firm_small, secondary_job], years: [2024]}
+  - {id: T16, section: 4, title: "Empleo en el sector informal y empleo informal, __YEAR__", domains: [national, sex, area, region_nat], indicators: [informal_in_sector, informality, formality], years: [2024]}
+  - {id: T17, section: 5, title: "Dimensiones del Atlas por departamento, __YEAR__", domains: [dept, lima], indicators: [lfpr, ur, formality, adecuado, median_inc_real, gap_lfpr], years: [2024]}
+  - {id: T18, section: 5, title: "Indicadores por departamento y sexo, __YEAR__", domains: [dept_sex], indicators: [lfpr, ur, informality, median_inc_real], years: [2024]}
+  - {id: T19, section: 5, title: "Distribución de ingresos laborales por departamento, __YEAR__ (S/ __YEAR__)", domains: [dept, lima], indicators: [inc_p10, inc_p25, median_inc_real, inc_p75, inc_p90, mean_inc_real], years: [2024]}
+  - {id: T20, section: 5, title: "Calidad del empleo por departamento, __YEAR__", domains: [dept, lima], indicators: [subemp_hours, hours_le48, contract_any, pension, seguro, neet], years: [2024]}
+  - {id: T21, section: 6, title: "Indicadores por lengua materna, __YEAR__", domains: [lengua3], indicators: [lfpr, epr, ur, informality, adecuado, median_inc_real, neet], years: [2024]}
+  - {id: T22, section: 6, title: "Indicadores por autoidentificación étnica, __YEAR__", domains: [etnia6], indicators: [lfpr, epr, ur, informality, adecuado, median_inc_real, neet], years: [2024]}
+  - {id: T23, section: 6, title: "Categoría ocupacional por lengua materna y etnicidad, __YEAR__", domains: [lengua3, etnia6], indicators: [status_dist], years: [2024]}
+  - {id: T24, section: 6, title: "Rama de actividad por lengua materna y etnicidad, __YEAR__", domains: [lengua3, etnia6], indicators: [sector_dist], years: [2024]}
+  - {id: T25, section: 6, title: "Lengua materna por departamento, __YEAR__", domains: [dept_lengua3], indicators: [lfpr, informality, median_inc_real], years: [2024]}
+  - {id: T26, section: 7, title: "Indicadores por condición migratoria (residencia hace 5 años), __YEAR__", domains: [mig2], indicators: [lfpr, epr, ur, informality, adecuado, median_inc_real, contract_any], years: [2024]}
+  - {id: T27, section: 7, title: "Categoría ocupacional y rama por condición migratoria, __YEAR__", domains: [mig2], indicators: [status_dist, sector_dist], years: [2024]}
+  - {id: T28, section: 8, title: "Subempleo y empleo adecuado, __YEAR__", domains: [national, sex, area, region_nat, age4, educ4], indicators: [subemp_hours, subemp_income, adecuado], years: [2024]}
+  - {id: T29, section: 8, title: "Horas de trabajo, __YEAR__", domains: [national, sex, area, region_nat, age4], indicators: [hours_mean, hours_lt35, hours_le48, hours_ge60], years: [2024]}
+  - {id: T30, section: 8, title: "Contratos de los asalariados, __YEAR__", domains: [national, sex, area, region_nat, age4, educ4], indicators: [contract_any, contract_indef], years: [2024]}
+  - {id: T31, section: 8, title: "Seguro de salud y afiliación a pensiones de los ocupados, __YEAR__", domains: [national, sex, area, region_nat, age4, educ4], indicators: [seguro, essalud, pension], years: [2024]}
+  - {id: T32, section: 8, title: "Tamaño de la unidad productiva y ocupación secundaria, __YEAR__", domains: [national, sex, area, region_nat], indicators: [firm_small, secondary_job], years: [2024]}
+  - {id: T33, section: 9, title: "Percentiles del ingreso laboral mensual, __YEAR__ (S/ __YEAR__)", domains: [national, sex, area, region_nat, age4, educ4], indicators: [inc_p10, inc_p25, median_inc_real, inc_p75, inc_p90, mean_inc_real], years: [2024]}
+  - {id: T34, section: 9, title: "Ingreso laboral mediano real, 2014–__YEAR__ (S/ __YEAR__)", domains: [national, sex, area, region_nat], indicators: [median_inc_real], years: all}
+  - {id: T35, section: 9, title: "Razón de ingresos mujeres/hombres, 2014–__YEAR__", domains: [national, area, region_nat, educ4], indicators: [gap_inc], years: all}
+  - {id: T36, section: 10, title: "Indicadores nacionales, 2014–__YEAR__", domains: [national], indicators: [lfpr, epr, ur, informality, subemp_hours, adecuado, neet, median_inc_real], years: all}
+  - {id: T37, section: 10, title: "Indicadores por sexo, 2014–__YEAR__", domains: [sex], indicators: [lfpr, ur, informality, median_inc_real, neet], years: all}
+  - {id: T38, section: 10, title: "Indicadores por departamento, 2014–__YEAR__", domains: [dept, lima], indicators: [lfpr, ur, informality, median_inc_real], years: all}
+  - {id: T39, section: 10, title: "Indicadores por lengua materna y área, 2014–__YEAR__", domains: [lengua3, area], indicators: [lfpr, ur, informality, median_inc_real], years: all}
+  - {id: T43, section: 4, title: "Ocupados por gran grupo ocupacional, __YEAR__", domains: [national, sex, area, region_nat], indicators: [ocup_dist], years: [2024]}
+  - {id: T44, section: 4, title: "Calidad del empleo por gran grupo ocupacional, __YEAR__", domains: [ocup10], indicators: [informality, adecuado, median_inc_real, median_inc_hour, hours_mean, contract_any, seguro_contrib, working_poor], years: [2024]}
+  - {id: T45, section: 4, title: "Calidad del empleo por rama de actividad, __YEAR__", domains: [sector9], indicators: [informality, adecuado, median_inc_real, median_inc_hour, hours_mean, contract_any, seguro_contrib, working_poor], years: [2024]}
+  - {id: T46, section: 7, title: "Nacidos en otro departamento, 2018–__YEAR__", domains: [national, sex, area, dept], indicators: [mig_life], years: all}
+  - {id: T47, section: 8, title: "Desempleo abierto, oculto y tasa ampliada, 2014–__YEAR__", domains: [national, sex, area, age4], indicators: [ur, hidden_unemp, ur_ext], years: all}
+  - {id: T48, section: 8, title: "Trabajadores pobres, 2014–__YEAR__", domains: [national, sex, area, region_nat, dept], indicators: [working_poor], years: all}
+  - {id: T49, section: 8, title: "Seguro contributivo y SIS entre los ocupados, 2014–__YEAR__", domains: [national, sex, area, region_nat], indicators: [seguro_contrib, sis], years: all}
+  - {id: T50, section: 9, title: "Ingreso por hora y desigualdad del ingreso laboral, 2014–__YEAR__", domains: [national, sex, area, region_nat], indicators: [median_inc_hour, gini_inc], years: all}
   - {id: T40, section: 11, title: "Tamaños de muestra por año y departamento (personas 14+ y ocupados)", special: sample_sizes}
   - {id: T41, section: 11, title: "Concordancia de la regla de informalidad con ocupinf (INEI), 2014–2023", special: informality_agreement}
   - {id: T42, section: 11, title: "Comparación con cifras oficiales INEI", special: validation}

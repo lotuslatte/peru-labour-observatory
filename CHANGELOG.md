@@ -5,6 +5,8 @@ Data and method changes, newest first. Data versions use the `YYYY.N` form.
 ## Unreleased
 
 ### Added
+- ENAHO 2025 (INEI survey 1031): headline year, 12 months, 25 departments.
+- `config/release.yml` as the single source for years, survey codes and minimum wage. `config/official/<year>.yml` holds targets by year, and validation fails if the latest year has none.
 - Nine indicators, two domains and eight compendium tables already defined in the configuration are now published.
 - `config/series_breaks.yml` declares method breaks. Comparisons across a break are flagged as not comparable and never reported as significant.
 - `LICENSE`, `CITATION.cff` and this changelog.
@@ -14,6 +16,11 @@ Data and method changes, newest first. Data versions use the `YYYY.N` form.
 - Atlas embed snippets now offer every dimension.
 
 ### Method
+- Real income is now in soles of the latest year (2025), rebased every release. Earlier real values rise by the 2024 to 2025 Lima CPI change (1.5%); nominal income and rates do not change.
+- Lima CPI now comes from the deflators INEI publishes with ENAHO (i00, dpto 15). The series matches BCRP PN38705PM for 2014 to 2024.
+- The informality shift-share now covers 2014 to 2023, the last years both measured with `ocupinf`, instead of crossing the 2024 break.
+- Provincial estimates pool 2023 to 2025. Informality in that pool mixes `ocupinf` (2023) and the Observatory rule.
+- The story moved to `/historias/panorama/`; the old URL redirects.
 - Informal employment: INEI stopped publishing `ocupinf` from 2024. Values from 2024 use the Observatory rule, so 2023 to 2024 and 2014 to 2024 changes are not comparable.
 
 ## 2026-10-31

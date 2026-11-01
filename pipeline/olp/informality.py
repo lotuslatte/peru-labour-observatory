@@ -1,5 +1,5 @@
 """Regla de empleo informal (definición INEI/OIT) reconstruida a partir de p507/p510a1/p510b/seguro/pensión,
-validada contra `ocupinf` (2014–2023). Se aplica a 2024, donde INEI no incluye `ocupinf` en el archivo."""
+validada contra `ocupinf` (2014–2023). Se aplica desde 2024, cuando INEI dejó de incluir `ocupinf` en el archivo."""
 import numpy as np
 import pandas as pd
 

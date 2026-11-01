@@ -1,4 +1,5 @@
 ---
+import { YEAR, PREV, SPAN } from '../../../data/release';
 import Base from '../../../layouts/Base.astro';
 import KpiTile from '../../../components/ui/KpiTile.astro';
 import PrintBar from '../../../components/ui/PrintBar.astro';
@@ -28,7 +29,7 @@ const top = p.status_dist?.slice().sort((x: any, y: any) => (y.v ?? 0) - (x.v ??
         <li>Jóvenes 15–29 que ni estudian ni trabajan: {f(p.quality?.ur_youth)} % de desempleo juvenil; NiNi nacional {f(nat('neet'))} %.</li>
       </ul></div>
     </section>
-    <section class="card" style="margin-top:14px"><h3>Serie 2014–2024</h3><div class="grid grid-3">{['lfpr', 'informality', 'median_inc_real'].map(k => <div><div class="eyebrow">{({ lfpr: 'Actividad', informality: 'Informalidad', median_inc_real: 'Ingreso mediano (S/ 2024)' } as any)[k]}</div><Sparkline cells={p.trend[k]} w={220} h={48} color={k === 'informality' ? 'var(--informal)' : 'var(--formal)'} /><div class="small mono">{f(p.trend[k][0], k === 'median_inc_real' ? 0 : 1)} → {f(p.trend[k].at(-1), k === 'median_inc_real' ? 0 : 1)}</div></div>)}</div></section>
+    <section class="card" style="margin-top:14px"><h3>Serie {SPAN}</h3><div class="grid grid-3">{['lfpr', 'informality', 'median_inc_real'].map(k => <div><div class="eyebrow">{({ lfpr: 'Actividad', informality: 'Informalidad', median_inc_real: `Ingreso mediano (S/ ${YEAR})` } as any)[k]}</div><Sparkline cells={p.trend[k]} w={220} h={48} color={k === 'informality' ? 'var(--informal)' : 'var(--formal)'} /><div class="small mono">{f(p.trend[k][0], k === 'median_inc_real' ? 0 : 1)} → {f(p.trend[k].at(-1), k === 'median_inc_real' ? 0 : 1)}</div></div>)}</div></section>
     <footer class="small muted" style="margin-top:12px">Fuente: INEI – ENAHO {p.year}. Estimaciones del Observatorio Laboral del Perú (Favio Samillan Flores) con errores estándar de diseño; sellos: Sólido / Cautela / Suprimido. Datos: observatorio → /datos/. Perfil completo: /atlas/{p.id}/. CC BY 4.0.</footer>
   </article>
 </Base>

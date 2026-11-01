@@ -46,7 +46,7 @@ def profile_summary(est, rid, dom, name, rank, pct, dims) -> list[str]:
     # trend 2014→2024
     inf14 = pick(est, "informality", dom, rid, 2014); inc14 = pick(est, "median_inc_real", dom, rid, 2014)
     dl = delta(inf, inf14, crossed_break("informality", 2014, HEADLINE_YEAR)); di = delta(inc, inc14)
-    if dl: s.append(f"Desde 2014 la informalidad {'subió' if dl['d'] > 0 else 'bajó'} {abs(dl['d']):.1f} pp" + (" (quiebre de método: no comparable)" if dl.get("break") else " (cambio significativo)" if dl["sig"] else " (cambio no significativo)") + (f" y el ingreso mediano real {'creció' if di['d'] > 0 else 'cayó'} {abs(di['d']):,.0f} soles de 2024" + (" (significativo)." if di["sig"] else " (no significativo).") if di else "."))
+    if dl: s.append(f"Desde 2014 la informalidad {'subió' if dl['d'] > 0 else 'bajó'} {abs(dl['d']):.1f} pp" + (" (quiebre de método: no comparable)" if dl.get("break") else " (cambio significativo)" if dl["sig"] else " (cambio no significativo)") + (f" y el ingreso mediano real {'creció' if di['d'] > 0 else 'cayó'} {abs(di['d']):,.0f} soles de {HEADLINE_YEAR}" + (" (significativo)." if di["sig"] else " (no significativo).") if di else "."))
     # gender gap
     g = pick(est, "gap_lfpr", dom, rid)
     if g is not None and g["grade"] != "S":

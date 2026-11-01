@@ -25,3 +25,11 @@ def test_delta_without_break_keeps_significance():
     out = delta(cell(73.0), cell(70.0))
     assert out["sig"] is True
     assert "break" not in out
+
+
+def test_headline_year_requires_validation_targets():
+    import pandas as pd
+    from olp.config import HEADLINE_YEAR
+    from olp.validate import has_headline_targets
+    assert has_headline_targets(pd.DataFrame({"year": [HEADLINE_YEAR]}))
+    assert not has_headline_targets(pd.DataFrame({"year": [HEADLINE_YEAR - 1]}))

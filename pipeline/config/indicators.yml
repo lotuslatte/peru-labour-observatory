@@ -12,12 +12,12 @@ indicators:
   subemp_income:   {type: prop, num: subemp_income, den: ocupado, label_es: "Subempleo por ingresos (aprox. RMV)", label_en: "Income-related underemployment (approx.)", unit: "%"}
   adecuado:        {type: prop, num: adecuado, den: ocupado, label_es: "Empleo adecuado (aprox.)", label_en: "Adequate employment (approx.)", unit: "%"}
   neet:            {type: prop, num: neet, den: youth, label_es: "Jóvenes 15–29 que ni estudian ni trabajan", label_en: "NEET rate (15–29)", unit: "%"}
-  median_inc_real: {type: median, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral mensual mediano (S/ 2024)", label_en: "Median monthly labour income (2024 S/)", unit: "S/"}
-  mean_inc_real:   {type: mean, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral mensual promedio (S/ 2024)", label_en: "Mean monthly labour income (2024 S/)", unit: "S/"}
-  inc_p10:         {type: quantile, q: 0.10, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral p10 (S/ 2024)", label_en: "Labour income p10", unit: "S/"}
-  inc_p25:         {type: quantile, q: 0.25, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral p25 (S/ 2024)", label_en: "Labour income p25", unit: "S/"}
-  inc_p75:         {type: quantile, q: 0.75, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral p75 (S/ 2024)", label_en: "Labour income p75", unit: "S/"}
-  inc_p90:         {type: quantile, q: 0.90, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral p90 (S/ 2024)", label_en: "Labour income p90", unit: "S/"}
+  median_inc_real: {type: median, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral mensual mediano (S/ __YEAR__)", label_en: "Median monthly labour income (__YEAR__ S/)", unit: "S/"}
+  mean_inc_real:   {type: mean, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral mensual promedio (S/ __YEAR__)", label_en: "Mean monthly labour income (__YEAR__ S/)", unit: "S/"}
+  inc_p10:         {type: quantile, q: 0.10, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral p10 (S/ __YEAR__)", label_en: "Labour income p10", unit: "S/"}
+  inc_p25:         {type: quantile, q: 0.25, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral p25 (S/ __YEAR__)", label_en: "Labour income p25", unit: "S/"}
+  inc_p75:         {type: quantile, q: 0.75, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral p75 (S/ __YEAR__)", label_en: "Labour income p75", unit: "S/"}
+  inc_p90:         {type: quantile, q: 0.90, var: inc_real_pos, den: has_income, label_es: "Ingreso laboral p90 (S/ __YEAR__)", label_en: "Labour income p90", unit: "S/"}
   hours_mean:      {type: mean, var: hours, den: ocupado, label_es: "Horas semanales promedio", label_en: "Mean weekly hours", unit: "h"}
   hours_lt35:      {type: prop, num: hours_lt35, den: ocupado, label_es: "Ocupados con menos de 35 h", label_en: "Employed <35 h/week", unit: "%"}
   hours_le48:      {type: prop, num: hours_le48, den: ocupado, label_es: "Ocupados con 48 h o menos", label_en: "Employed ≤48 h/week", unit: "%"}
@@ -47,7 +47,7 @@ indicators:
   seguro_contrib:  {type: prop, num: seguro_contrib, den: ocupado, label_es: "Ocupados con seguro contributivo (EsSalud, EPS, privado, FF.AA./PNP)", label_en: "Employed with contributory health insurance", unit: "%"}
   sis:             {type: prop, num: sis, den: ocupado, label_es: "Ocupados afiliados al SIS", label_en: "Employed affiliated to SIS (subsidised)", unit: "%"}
   mig_life:        {type: prop, num: mig_life, den: pet, label_es: "Nacidos en otro departamento (desde 2018)", label_en: "Born in another department (2018+)", unit: "%"}
-  median_inc_hour: {type: median, var: inc_hour_real, den: has_income, label_es: "Ingreso laboral mediano por hora (S/ 2024)", label_en: "Median hourly labour income (2024 S/)", unit: "S/h"}
+  median_inc_hour: {type: median, var: inc_hour_real, den: has_income, label_es: "Ingreso laboral mediano por hora (S/ __YEAR__)", label_en: "Median hourly labour income (__YEAR__ S/)", unit: "S/h"}
   gini_inc:        {type: gini, var: inc_real_pos, den: has_income, label_es: "Índice de Gini del ingreso laboral (0–1)", label_en: "Gini index of labour income (0–1)", unit: "ratio"}
   ocup_dist:       {type: dist, var: ocup10, den: ocupado, label_es: "Distribución por gran grupo ocupacional", label_en: "Occupation major group distribution", unit: "%",
                     labels_es: {0: "Militares y policías", 1: "Directivos y gerentes", 2: "Profesionales", 3: "Técnicos", 4: "Empleados de oficina", 5: "Servicios y vendedores", 6: "Agricultores calificados", 7: "Obreros y artesanos", 8: "Operadores y conductores", 9: "Ocupaciones elementales"}}

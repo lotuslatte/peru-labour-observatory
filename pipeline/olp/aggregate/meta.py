@@ -1,12 +1,13 @@
 from datetime import date
 import pandas as pd
+from ..config import deflators
 from .common import *
 from ..config import load_yaml, RSE_A, RSE_B, MIN_N
 from ..informality import DEFAULT
 
 
 def build(est):
-    ipc = pd.read_csv(CONFIG_DIR / "ipc_lima_2014_2024.csv", comment="#")
+    ipc = deflators().rename("deflator").rename_axis("year").reset_index()
     agree = OUT_DIR / "informality_agreement.csv"
     ag = {}
     if agree.exists():

@@ -4,7 +4,7 @@ primary:
   - {id: ur,              label_es: "Desempleo",              label_en: "Unemployment rate",           unit: "%",   higher_better: false}
   - {id: formality,       label_es: "Formalidad del empleo",  label_en: "Formal employment share",     unit: "%",   higher_better: true}
   - {id: adecuado,        label_es: "Empleo adecuado",        label_en: "Adequate employment",         unit: "%",   higher_better: true}
-  - {id: median_inc_real, label_es: "Ingreso laboral mediano (S/ 2024)", label_en: "Median labour income (2024 soles)", unit: "S/", higher_better: true}
+  - {id: median_inc_real, label_es: "Ingreso laboral mediano (S/ __YEAR__)", label_en: "Median labour income (__YEAR__ soles)", unit: "S/", higher_better: true}
   - {id: gap_lfpr,        label_es: "Brecha de participación (H−M, pp)", label_en: "Participation gap (M−W, pp)", unit: "pp", higher_better: false}
 secondary:
   - {id: neet,          label_es: "Jóvenes que ni estudian ni trabajan (15–29)", label_en: "NEET 15–29", unit: "%", higher_better: false}

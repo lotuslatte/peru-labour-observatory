@@ -6,7 +6,7 @@ import DecompBars from '../components/charts/DecompBars';
 import { loadModels, loadDecomp } from '../data/loaders';
 const M = loadModels(); const D = loadDecomp();
 import { fmtCell as f } from '../components/charts/lib/format';
-const ms = M.models; const ox = D.oaxaca; const ss = D.shift_share.inf_2014_2024;
+const ms = M.models; const ox = D.oaxaca; const ss = D.shift_share.inf_change;
 ---
 <Base title="Análisis con controles" wide>
   <div class="eyebrow" style="margin-top:28px">Para investigadores y policymakers · modelos descriptivos</div>
@@ -22,8 +22,8 @@ const ms = M.models; const ox = D.oaxaca; const ss = D.shift_share.inf_2014_2024
     <div class="card"><h2>Participación: la brecha resiste a los controles</h2><p class="takeaway">{f(ms.lfpr_sex.raw_gap)} pp cruda, <b>{f(ms.lfpr_sex.adj_gap)} pp</b> ajustada. La educación y la edad no cierran la brecha de entrada al mercado laboral.</p><CoefPlot client:visible model={ms.lfpr_sex} /></div>
   </section>
   <section class="grid grid-2" style="margin-top:20px">
-    <div class="card"><h2>Descomposición de la brecha de ingreso</h2><p class="takeaway">De la brecha total de {f({ v: ox.inc_sex_2024.gap.v * 100 }, 1)} log-puntos, sólo {f({ v: ox.inc_sex_2024.explained.v * 100 }, 1)} se explican por diferencias en horas, rama, educación y categoría; <b>{f({ v: ox.inc_sex_2024.unexplained.v * 100 }, 1)}</b> corresponden a retornos distintos a las mismas características.</p><DecompBars client:visible data={ox.inc_sex_2024} mode="oaxaca" unit="log-pp" /></div>
-    <div class="card"><h2>Diez años de informalidad: mejor composición, peores tasas</h2><p class="takeaway">Entre 2014 y 2024 la informalidad subió {f({ v: ss.by_group_var.educ4.total.v * 100 }, 1)} pp. La mayor educación de la fuerza laboral <b>habría reducido</b> la informalidad en {f({ v: -ss.by_group_var.educ4.composition.v * 100 }, 1)} pp; pero dentro de cada nivel educativo la informalidad <b>subió</b> {f({ v: ss.by_group_var.educ4.rate.v * 100 }, 1)} pp. El país educó a su fuerza laboral y el mercado no la formalizó.</p><DecompBars client:visible data={ss.by_group_var.educ4} mode="shift" /></div>
+    <div class="card"><h2>Descomposición de la brecha de ingreso</h2><p class="takeaway">De la brecha total de {f({ v: ox.inc_sex.gap.v * 100 }, 1)} log-puntos, sólo {f({ v: ox.inc_sex.explained.v * 100 }, 1)} se explican por diferencias en horas, rama, educación y categoría; <b>{f({ v: ox.inc_sex.unexplained.v * 100 }, 1)}</b> corresponden a retornos distintos a las mismas características.</p><DecompBars client:visible data={ox.inc_sex} mode="oaxaca" unit="log-pp" /></div>
+    <div class="card"><h2>Diez años de informalidad: mejor composición, peores tasas</h2><p class="takeaway">Entre 2014 y 2023, los últimos años comparables con la variable ocupinf del INEI, la informalidad subió {f({ v: ss.by_group_var.educ4.total.v * 100 }, 1)} pp. La mayor educación de la fuerza laboral <b>habría reducido</b> la informalidad en {f({ v: -ss.by_group_var.educ4.composition.v * 100 }, 1)} pp; pero dentro de cada nivel educativo la informalidad <b>subió</b> {f({ v: ss.by_group_var.educ4.rate.v * 100 }, 1)} pp. El país educó a su fuerza laboral y el mercado no la formalizó.</p><DecompBars client:visible data={ss.by_group_var.educ4} mode="shift" /></div>
   </section>
   <section class="card" style="margin-top:20px"><h2>Shift-share por otras dimensiones</h2><div class="grid grid-3">{['sector9', 'status6', 'area'].map(g => <DecompBars client:visible data={ss.by_group_var[g]} mode="shift" title={`Por ${({ sector9: 'rama de actividad', status6: 'categoría ocupacional', area: 'área' } as any)[g]}`} />)}</div></section>
   <section class="card" style="margin-top:20px"><h2>Brechas ajustadas por submuestra</h2><div class="scroll-x"><table class="data"><thead><tr><th style="text-align:left">Modelo</th><th style="text-align:left">Submuestra</th><th>Cruda</th><th>Ajustada</th><th>n</th></tr></thead><tbody>
