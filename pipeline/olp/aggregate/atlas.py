@@ -29,6 +29,6 @@ def region_rows(est, year=HEADLINE_YEAR):
 
 def build(est):
     obj = {"year": HEADLINE_YEAR, "n_regions": 25,
-           "dims": [{**d, "primary": d in ATLAS["primary"]} for d in DIMS],
+           "dims": [{**d, "primary": d in ATLAS["primary"], "national": cell(pick(est, d["id"], "national"), nd_for(d["id"]))} for d in DIMS],
            "regions": region_rows(est)}
     return dump(obj, "atlas_regions.json")

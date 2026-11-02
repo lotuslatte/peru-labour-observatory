@@ -67,6 +67,8 @@ const ag = Object.entries(m.informality_rule.agreement);
 
     <h2 id="limitaciones">Limitaciones</h2>
     <ul><li>La ENAHO no tiene un estado de actividad de referencia anual (equivalente al UPSS indio): todos los indicadores usan la semana de referencia.</li><li>Sin deflactor espacial: los ingresos reales se expresan en soles de Lima {YEAR}.</li><li>Los pseudo-estratos aproximan el diseño real de INEI; los errores estándar pueden diferir ligeramente de los oficiales.</li><li>Departamentos pequeños (Madre de Dios, Tumbes, Moquegua) producen muchas celdas suprimidas en cruces.</li></ul>
+    <h2>Análisis territorial</h2>
+    <p>Las vistas de <a href="/atlas/provincias/">Provincias</a> usan solo celdas publicadas. Un territorio difiere del país si su intervalo de 95% excluye el valor nacional del mismo periodo; no se ajusta por comparaciones múltiples, y con 196 provincias unas 10 pueden salir distintas por azar. Las tipologías son un k-medias sobre seis indicadores estandarizados y describen perfiles parecidos, sin afirmar que existan tipos naturales. El agrupamiento espacial usa el I de Moran global y local, con contigüidad de frontera, 9,999 permutaciones y corrección de falsos descubrimientos. La población viene del censo 2017. Todo es descriptivo y a nivel de provincia: no permite conclusiones sobre personas ni sobre causas.</p>
     <p><a href="/datos/">Descargar todos los datos</a> · <a href="/acerca/escuela-de-encuestas/">Escuela de encuestas</a></p>
   </div>
 </Base>
