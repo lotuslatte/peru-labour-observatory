@@ -15,6 +15,8 @@ Data and method changes, newest first. Data versions use the `YYYY.N` form.
 - Site redesign: the home page shows six headline figures, each indicator has its own page with trend, map, groups and data tabs, and `/explorar/` builds a query with its own CSV. The menu now has four items; Atlas, Compendio, Análisis and Novedades moved to the footer.
 
 ### Fixed
+- Indicator maps: department borders now match. They were thinned ring by ring and left gaps; `departamentos.topo.json` is rebuilt from the shapefile with shared borders, and the map adds a Lima and Callao inset.
+- `/datos/` explains the cell format in a table and no longer scrolls sideways on phones.
 - Embed snippets pointed to a URL without the site base and returned 404.
 - Atlas embed snippets now offer every dimension.
 
