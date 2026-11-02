@@ -41,7 +41,9 @@ def build_provinces(tolerance=0.01):
     g = g[["id", "name", "geometry"]].dissolve(by="id", aggfunc="first").reset_index()
     if g.crs and g.crs.to_epsg() != 4326:
         g = g.to_crs(4326)
-    topo = tp.Topology(g, prequantize=1e5, topology=True, toposimplify=tolerance)
+    g["geometry"] = shapely.coverage_simplify(g.geometry.make_valid().values, tolerance)
+    g["geometry"] = g.geometry.map(_clockwise)
+    topo = tp.Topology(g, prequantize=1e5, topology=True, toposimplify=False)
     (SITE_DATA_DIR / "provincias.topo.json").write_text(topo.to_json())
     names = pd.DataFrame({"ubigeo4": g["id"], "name": g["name"], "dept": g["id"].str[:2]})
     names.to_csv(CONFIG_DIR / "prov_names.csv", index=False)

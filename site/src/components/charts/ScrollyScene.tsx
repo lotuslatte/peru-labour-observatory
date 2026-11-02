@@ -39,7 +39,7 @@ export default function ScrollyScene({ steps, mapNames = {} }: Props) {
     const axE = ax.enter().append('g').attr('class', 'axis').attr('opacity', 0); const axAll = axE.merge(ax as any);
     axAll.transition().duration(D).attr('opacity', 1);
     axAll.each(function (a) { const g = d3.select(this); const t = g.selectAll<SVGTextElement, any>('text').data(a.ticks, (d: any) => d.label); t.exit().remove();
-      t.enter().append('text').attr('font-size', 10).attr('fill', 'var(--muted)').attr('text-anchor', a.orient === 'x' ? 'middle' : 'end').merge(t as any).text(d => d.label).transition().duration(D).attr('x', d => a.orient === 'x' ? d.pos : a.at - 6).attr('y', d => a.orient === 'x' ? a.at + 14 : d.pos + 3);
+      t.enter().append('text').attr('font-size', 12).attr('fill', 'var(--muted)').attr('text-anchor', a.orient === 'x' ? 'middle' : 'end').merge(t as any).text(d => d.label).transition().duration(D).attr('x', d => a.orient === 'x' ? d.pos : a.at - 6).attr('y', d => a.orient === 'x' ? a.at + 14 : d.pos + 3);
       const l = g.selectAll<SVGLineElement, any>('line').data(a.orient === 'y' ? a.ticks : [], (d: any) => d.label); l.exit().remove(); l.enter().append('line').attr('stroke', 'var(--line)').merge(l as any).transition().duration(D).attr('x1', a.at).attr('x2', VB.w - 110).attr('y1', d => d.pos).attr('y2', d => d.pos); });
     // líneas
     const gl = layer('lines'); const ln = gl.selectAll<SVGPathElement, any>('path').data(scene.lines, (d: any) => d.key); const lineGen = d3.line<[number, number]>().x(p => p[0]).y(p => p[1]);
@@ -53,18 +53,18 @@ export default function ScrollyScene({ steps, mapNames = {} }: Props) {
     // etiquetas
     const gt = layer('labels'); const tx = gt.selectAll<SVGTextElement, any>('text.lab').data(scene.marks.filter(m => m.label), (d: any) => d.key);
     tx.exit().transition().duration(D / 2).attr('opacity', 0).remove();
-    tx.enter().append('text').attr('class', 'lab').attr('font-size', 11).attr('fill', 'var(--ink)').attr('opacity', 0).attr('x', d => d.labelX ?? d.x).attr('y', d => d.labelY ?? d.y).merge(tx as any).text(d => (d.label ?? '').length > 34 ? d.label!.slice(0, 32) + '…' : d.label!)
+    tx.enter().append('text').attr('class', 'lab').attr('font-size', 12).attr('fill', 'var(--ink)').attr('opacity', 0).attr('x', d => d.labelX ?? d.x).attr('y', d => d.labelY ?? d.y).merge(tx as any).text(d => (d.label ?? '').length > 34 ? d.label!.slice(0, 32) + '…' : d.label!)
       .attr('text-anchor', d => d.anchor ?? 'start').transition().duration(D).ease(ease).attr('opacity', 1).attr('x', d => d.labelX ?? d.x).attr('y', d => d.labelY ?? d.y);
     const vx = gt.selectAll<SVGTextElement, any>('text.val').data(scene.marks.filter(m => m.value), (d: any) => d.key);
     vx.exit().transition().duration(D / 2).attr('opacity', 0).remove();
-    vx.enter().append('text').attr('class', 'val').attr('font-size', d => scene.layout === 'kpis' ? 26 : 10.5).attr('font-family', d => scene.layout === 'kpis' ? 'var(--font-serif)' : 'var(--font-mono)').attr('fill', 'var(--ink-2)').attr('opacity', 0).merge(vx as any).text(d => d.value!)
-      .attr('font-size', scene.layout === 'kpis' ? 26 : 10.5).attr('text-anchor', scene.layout === 'kpis' ? 'middle' : 'start').attr('fill', scene.layout === 'kpis' ? 'var(--bg)' : 'var(--ink-2)')
+    vx.enter().append('text').attr('class', 'val').attr('font-size', d => scene.layout === 'kpis' ? 26 : 12).attr('font-family', d => scene.layout === 'kpis' ? 'var(--font-serif)' : 'var(--font-mono)').attr('fill', 'var(--ink-2)').attr('opacity', 0).merge(vx as any).text(d => d.value!)
+      .attr('font-size', scene.layout === 'kpis' ? 26 : 12).attr('text-anchor', scene.layout === 'kpis' ? 'middle' : 'start').attr('fill', scene.layout === 'kpis' ? 'var(--bg)' : 'var(--ink-2)')
       .transition().duration(D).ease(ease).attr('opacity', 1).attr('x', d => scene.layout === 'kpis' ? d.x + d.w / 2 : d.x + d.w + 6).attr('y', d => scene.layout === 'kpis' ? d.y + d.h / 2 + 9 : d.y + d.h / 2 + 4);
     // anotaciones
     const gn = layer('annot'); const an = gn.selectAll<SVGGElement, any>('g.a').data(scene.annotations, (d: any) => d.text);
     an.exit().transition().duration(D / 3).attr('opacity', 0).remove();
     const anE = an.enter().append('g').attr('class', 'a').attr('opacity', 0);
-    anE.append('line').attr('stroke', 'var(--ink)').attr('stroke-width', 1); anE.append('text').attr('font-size', 11.5).attr('font-family', 'var(--font-serif)').attr('font-style', 'italic').attr('fill', 'var(--ink)');
+    anE.append('line').attr('stroke', 'var(--ink)').attr('stroke-width', 1); anE.append('text').attr('font-size', 12).attr('font-family', 'var(--font-serif)').attr('font-style', 'italic').attr('fill', 'var(--ink)');
     const anAll = anE.merge(an as any);
     anAll.select('line').attr('x1', d => d.x).attr('y1', d => d.y).attr('x2', d => d.x + (d.dx ?? 40)).attr('y2', d => d.y + (d.dy ?? -30));
     anAll.select('text').attr('x', d => d.x + (d.dx ?? 40) + 4).attr('y', d => d.y + (d.dy ?? -30) - 3).text(d => d.text);

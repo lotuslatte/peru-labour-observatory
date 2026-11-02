@@ -23,10 +23,10 @@ function ScatterInner({ regions, dims, x0 = 'formality', y0 = 'median_inc_real' 
     const W = 640, H = 420, m = { t: 20, r: 20, b: 44, l: 60 }; svg.attr('viewBox', `0 0 ${W} ${H}`);
     const x = d3.scaleLinear().domain(d3.extent(pts, p => p.values[xd].v) as [number, number]).nice().range([m.l, W - m.r]);
     const y = d3.scaleLinear().domain(d3.extent(pts, p => p.values[yd].v) as [number, number]).nice().range([H - m.b, m.t]);
-    svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(6) as any).call(g => { g.select('.domain').attr('stroke', 'var(--line)'); g.selectAll('text').attr('fill', 'var(--muted)').attr('font-size', 10); });
-    svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickSize(-(W - m.l - m.r)) as any).call(g => { g.select('.domain').remove(); g.selectAll('line').attr('stroke', 'var(--line)'); g.selectAll('text').attr('fill', 'var(--muted)').attr('font-size', 10); });
-    svg.append('text').attr('x', W / 2).attr('y', H - 8).attr('text-anchor', 'middle').attr('font-size', 11).attr('fill', 'var(--muted)').text(dx.label_es);
-    svg.append('text').attr('transform', `translate(14,${H / 2}) rotate(-90)`).attr('text-anchor', 'middle').attr('font-size', 11).attr('fill', 'var(--muted)').text(dy.label_es);
+    svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(6) as any).call(g => { g.select('.domain').attr('stroke', 'var(--line)'); g.selectAll('text').attr('fill', 'var(--muted)').attr('font-size', 12); });
+    svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickSize(-(W - m.l - m.r)) as any).call(g => { g.select('.domain').remove(); g.selectAll('line').attr('stroke', 'var(--line)'); g.selectAll('text').attr('fill', 'var(--muted)').attr('font-size', 12); });
+    svg.append('text').attr('x', W / 2).attr('y', H - 8).attr('text-anchor', 'middle').attr('font-size', 12).attr('fill', 'var(--muted)').text(dx.label_es);
+    svg.append('text').attr('transform', `translate(14,${H / 2}) rotate(-90)`).attr('text-anchor', 'middle').attr('font-size', 12).attr('fill', 'var(--muted)').text(dy.label_es);
     const mx = d3.median(pts, p => p.values[xd].v)!, my = d3.median(pts, p => p.values[yd].v)!;
     svg.append('line').attr('x1', x(mx)).attr('x2', x(mx)).attr('y1', m.t).attr('y2', H - m.b).attr('stroke', 'var(--muted)').attr('stroke-dasharray', '4,3');
     svg.append('line').attr('y1', y(my)).attr('y2', y(my)).attr('x1', m.l).attr('x2', W - m.r).attr('stroke', 'var(--muted)').attr('stroke-dasharray', '4,3');
@@ -39,10 +39,10 @@ function ScatterInner({ regions, dims, x0 = 'formality', y0 = 'median_inc_real' 
       g.append('circle').attr('cx', cx).attr('cy', cy).attr('r', 5).attr('fill', nat[p.region_nat]).style('cursor', 'pointer').on('click', () => location.href = `/atlas/${p.id}/`)
         .attr('tabindex', 0).attr('role', 'link').attr('aria-label', `${p.name}: ${dx.label_es} ${fmtUnit(p.values[xd].v, dx.unit, decimalsFor(dx.unit))}, ${dy.label_es} ${fmtUnit(p.values[yd].v, dy.unit, decimalsFor(dy.unit))}. Abrir perfil.`)
         .on('keydown', (e: KeyboardEvent) => { if (e.key === 'Enter') location.href = `/atlas/${p.id}/`; }).append('title').text(`${p.name}: ${fmtUnit(p.values[xd].v, dx.unit, decimalsFor(dx.unit))} · ${fmtUnit(p.values[yd].v, dy.unit, decimalsFor(dy.unit))}`);
-      g.append('text').attr('x', cx + 7).attr('y', cy + 3).attr('font-size', 9).attr('fill', 'var(--ink-2)').text(p.name);
+      g.append('text').attr('x', cx + 7).attr('y', cy + 3).attr('font-size', 12).attr('fill', 'var(--ink-2)').text(p.name);
     });
     const lg = svg.append('g').attr('transform', `translate(${W - m.r - 200},${m.t})`);
-    Object.entries(nat).forEach(([k, c], i) => { lg.append('circle').attr('cx', i * 66).attr('cy', 0).attr('r', 5).attr('fill', c); lg.append('text').attr('x', i * 66 + 9).attr('y', 3.5).attr('font-size', 10).attr('fill', 'var(--muted)').text(k); });
+    Object.entries(nat).forEach(([k, c], i) => { lg.append('circle').attr('cx', i * 66).attr('cy', 0).attr('r', 5).attr('fill', c); lg.append('text').attr('x', i * 66 + 9).attr('y', 3.5).attr('font-size', 12).attr('fill', 'var(--muted)').text(k); });
   }, [xd, yd, tick]);
   const sel = (v: string, set: (s: string) => void) => <select value={v} onChange={e => set((e.target as HTMLSelectElement).value)}>{dims.map(d => <option value={d.id}>{d.label_es}</option>)}</select>;
   const rows = () => pts.map(p => ({ departamento: p.name, region_natural: p.region_nat, [dx.label_es]: p.values[xd].v, [dy.label_es]: p.values[yd].v }));

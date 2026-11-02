@@ -42,6 +42,8 @@ class Estimate:
         r = self.rse
         if r != r:
             return "S"
+        if self.se == 0:  # all sampled units alike: zero SE does not prove precision
+            return "B"
         return "A" if r < RSE_A else ("B" if r < RSE_B else "S")
 
     def ci(self):

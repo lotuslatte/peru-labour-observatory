@@ -1,5 +1,5 @@
 import numpy as np, pandas as pd
-from olp.survey import Design
+from olp.survey import Design, Estimate
 
 
 def toy():
@@ -39,3 +39,8 @@ def test_diff_zero_for_identical_groups():
     y = d.y.to_numpy(float); x = np.ones(len(d)); m = np.ones(len(d), bool)
     e = D.diff(y, x, m, m)
     assert abs(e.est) < 1e-12 and e.se < 1e-12
+
+
+def test_zero_se_is_not_grade_a():
+    assert Estimate(est=1.0, se=0.0, n=131, N=1000.0).grade == "B"
+    assert Estimate(est=0.5, se=0.01, n=131, N=1000.0).grade == "A"

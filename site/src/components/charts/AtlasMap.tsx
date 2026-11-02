@@ -36,11 +36,11 @@ function AtlasMapInner({ regions, dims, initial, mode: mode0 = 'map', compact = 
     return onThemeChange(() => setTick(t => t + 1));
   }, []);
   const d = dims.find(x => x.id === dim)!;
-  const depts = useMemo(() => regions.filter(r => !r.parent), [regions]);
+  // Provinces all have a parent, so only the departmental atlas drops sub-regions.
+  const depts = useMemo(() => level === 'prov' ? regions : regions.filter(r => !r.parent), [regions, level]);
   const vals = depts.map(r => r.values[dim]?.v).filter((v): v is number => v != null);
   const color = useMemo(() => {
-    const cols = seq(); const dom = d3.extent(vals) as [number, number];
-    const s = d3.scaleQuantize<string>().domain(d.higher_better ? dom : [dom[1], dom[0]]).range(cols);
+    const s = d3.scaleQuantile<string>().domain(vals).range(seq());   // skewed rates need quantiles; dark always means higher
     return (v: number | null) => v == null ? 'var(--panel-2)' : s(v);
   }, [dim, tick, topo]);
   const byId = useMemo(() => Object.fromEntries(regions.map(r => [r.id, r])), [regions]);
@@ -65,13 +65,13 @@ function AtlasMapInner({ regions, dims, initial, mode: mode0 = 'map', compact = 
     if (level === 'prov' && outline) { const ok = Object.keys(outline.objects)[0]; const ofc: any = topojson.feature(outline, outline.objects[ok]);
       svg.append('g').selectAll('path').data(ofc.features).join('path').attr('d', path as any).attr('fill', 'none').attr('stroke', 'var(--ink)').attr('stroke-width', .7).attr('opacity', .6).attr('pointer-events', 'none'); }
     // legend
-    const cols = seq(); const dom = d3.extent(vals) as [number, number];
-    const lg = svg.append('g').attr('transform', `translate(20,${H - 30})`);
-    const lw = 180, bw = lw / cols.length;
-    const ordered = d.higher_better ? cols : [...cols].reverse();
-    lg.selectAll('rect').data(ordered).join('rect').attr('x', (_c, i) => i * bw).attr('width', bw).attr('height', 10).attr('fill', c => c);
-    lg.append('text').attr('y', 24).attr('font-size', 10).attr('fill', 'var(--muted)').text(fmtUnit(dom[0], d.unit, decimalsFor(d.unit)));
-    lg.append('text').attr('x', lw).attr('y', 24).attr('text-anchor', 'end').attr('font-size', 10).attr('fill', 'var(--muted)').text(fmtUnit(dom[1], d.unit, decimalsFor(d.unit)));
+    const cols = seq(); const cuts = d3.scaleQuantile<string>().domain(vals).range(cols).quantiles();
+    const edges = [d3.min(vals), ...cuts, d3.max(vals)];
+    const lg = svg.append('g').attr('transform', `translate(10,${H - 44})`);
+    const bw = 54, short = (v?: number) => fmtUnit(v ?? null, d.unit, decimalsFor(d.unit)).replace(' %', '').replace('S/ ', '');
+    lg.selectAll('rect').data(cols).join('rect').attr('x', (_c, i) => i * bw).attr('width', bw - 2).attr('height', 10).attr('fill', c => c);
+    edges.forEach((v, i) => { if (i % 2 === 0 || i === edges.length - 1) lg.append('text').attr('x', i * bw).attr('y', 26).attr('text-anchor', i === 0 ? 'start' : i === edges.length - 1 ? 'end' : 'middle').attr('font-size', 12).attr('fill', 'var(--muted)').text(short(v)); });
+    if (d.higher_better != null) lg.append('text').attr('y', -7).attr('font-size', 12).attr('fill', 'var(--muted)').text(`Más oscuro: valor más alto. ${d.higher_better ? 'Más alto es mejor.' : 'Más bajo es mejor.'}`);
   }, [topo, outline, dim, mode, tick]);
 
   // MATRIX (heatmap of all dims × regions, sorted by selected dim)
@@ -85,18 +85,18 @@ function AtlasMapInner({ regions, dims, initial, mode: mode0 = 'map', compact = 
     const g = svg.append('g');
     dims.forEach((dd, j) => {
       g.append('text').attr('x', left + j * cw + cw / 2).attr('y', top - 8).attr('text-anchor', 'start').attr('transform', `rotate(-35 ${left + j * cw + cw / 2} ${top - 8})`)
-        .attr('font-size', 10).attr('fill', dd.id === dim ? 'var(--accent)' : 'var(--muted)').style('cursor', 'pointer').text(dd.label_es.length > 26 ? dd.label_es.slice(0, 24) + '…' : dd.label_es).on('click', () => setDim(dd.id))
+        .attr('font-size', 12).attr('fill', dd.id === dim ? 'var(--accent)' : 'var(--muted)').style('cursor', 'pointer').text(dd.label_es.length > 26 ? dd.label_es.slice(0, 24) + '…' : dd.label_es).on('click', () => setDim(dd.id))
         .attr('tabindex', 0).attr('role', 'button').attr('aria-label', `Ordenar por ${dd.label_es}`).on('keydown', (e: KeyboardEvent) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setDim(dd.id); } });
     });
     rows.forEach((r, i) => {
-      g.append('text').attr('x', left - 8).attr('y', top + i * rh + rh / 2 + 4).attr('text-anchor', 'end').attr('font-size', 11).attr('fill', 'var(--ink)').style('cursor', 'pointer').text(r.name).on('click', () => location.href = `/atlas/${r.id}/`)
+      g.append('text').attr('x', left - 8).attr('y', top + i * rh + rh / 2 + 4).attr('text-anchor', 'end').attr('font-size', 12).attr('fill', 'var(--ink)').style('cursor', 'pointer').text(r.name).on('click', () => location.href = `/atlas/${r.id}/`)
         .attr('tabindex', 0).attr('role', 'link').attr('aria-label', `Perfil de ${r.name}`).on('keydown', (e: KeyboardEvent) => { if (e.key === 'Enter') location.href = `/atlas/${r.id}/`; });
       dims.forEach((dd, j) => {
         const c = r.values[dd.id]; const p = r.pct[dd.id];
         const fill = c?.v == null ? 'var(--panel-2)' : p == null ? 'var(--panel-2)' : cols[Math.min(cols.length - 1, Math.floor(p / 100 * cols.length))];
         g.append('rect').attr('x', left + j * cw + 1).attr('y', top + i * rh + 1).attr('width', cw - 2).attr('height', rh - 2).attr('rx', 3).attr('fill', fill)
           .append('title').text(`${r.name} · ${dd.label_es}: ${fmtUnit(c?.v, dd.unit, decimalsFor(dd.unit))} (${c?.g})`);
-        g.append('text').attr('x', left + j * cw + cw / 2).attr('y', top + i * rh + rh / 2 + 4).attr('text-anchor', 'middle').attr('font-size', 10)
+        g.append('text').attr('x', left + j * cw + cw / 2).attr('y', top + i * rh + rh / 2 + 4).attr('text-anchor', 'middle').attr('font-size', 12)
           .attr('fill', p != null && p > 55 ? 'var(--bg)' : 'var(--ink)').attr('font-family', 'var(--font-mono)')
           .text(c?.v == null ? '—' : scaleMode === 'pct' ? `${p}` : fmtUnit(c.v, dd.unit, decimalsFor(dd.unit)).replace(' %', '').replace('S/ ', ''));
       });

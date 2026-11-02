@@ -1,6 +1,6 @@
 const FALLBACK: Record<string, string> = {  // = tokens.css (tema claro), para el render en servidor
-  '--seq-1': '#e6f1ee', '--seq-2': '#bfdcd5', '--seq-3': '#8fc2b7', '--seq-4': '#5aa093', '--seq-5': '#2c7d70', '--seq-6': '#0f5148',
-  '--cat-1': '#a8244f', '--cat-2': '#167a6e', '--cat-3': '#b7791f', '--cat-4': '#2f5d9e', '--cat-5': '#7b4fa6', '--cat-6': '#6f7288', '--cat-7': '#d98c5f', '--cat-8': '#3aa3a0', '--cat-9': '#8a6d4b',
+  '--seq-1': '#d4e4f3', '--seq-2': '#a8cae8', '--seq-3': '#74a8d8', '--seq-4': '#4286c2', '--seq-5': '#1f5f9e', '--seq-6': '#0d3766',
+  '--cat-1': '#c2521f', '--cat-2': '#2266b3', '--cat-3': '#8d3f9e', '--cat-4': '#c49000', '--cat-5': '#12a085', '--cat-6': '#6b7280', '--cat-7': '#d98c5f', '--cat-8': '#3a9fc4', '--cat-9': '#a0601a',
 };
 const isBrowser = typeof window !== 'undefined' && typeof getComputedStyle === 'function';
 export const cssVar = (name: string) => isBrowser ? (getComputedStyle(document.documentElement).getPropertyValue(name).trim() || FALLBACK[name] || '') : (FALLBACK[name] || '');
