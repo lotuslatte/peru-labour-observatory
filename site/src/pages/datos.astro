@@ -32,8 +32,8 @@ const grades = [['A', 'RSE menor que 15%. Se publica.'], ['B', 'RSE de 15% a 30%
     </tbody></table></div>
     <p class="small muted">El Excel trae los cortes principales ({M.xlsx_rows.toLocaleString('en-US')} filas) y la hoja de diccionario; los cruces por departamento y sexo, edad, lengua o área están en los demás formatos.</p>
   </div>
-  <div class="card"><h2>Cargar en una línea</h2>
-    <h3>Stata 14 o posterior</h3><pre class="mono small scroll-x">{`use "${BASE}/observatorio_laboral.dta", clear`}</pre>
+  <div class="card"><h2>Cargar desde tu programa</h2>
+    <h3>Stata 14 o posterior</h3><pre class="mono small scroll-x">{`shell curl -LO ${BASE}/observatorio_laboral.dta\nuse observatorio_laboral.dta, clear`}</pre>
     <h3>R</h3><pre class="mono small scroll-x">{`d <- read.csv("${BASE}/por_indicador/informality.csv")`}</pre>
     <h3>Python</h3><pre class="mono small scroll-x">{`import pandas as pd\nd = pd.read_csv("${BASE}/estimates.csv.gz", dtype={"key": str})`}</pre>
     <p class="small muted">Las rutas de <code>/data/latest/</code> siempre apuntan a la última versión. Para que un resultado sea reproducible, usa los archivos fijos de la <a href="https://github.com/lotuslatte/peru-labour-observatory/releases">versión publicada</a>.</p>
