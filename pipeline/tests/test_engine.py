@@ -90,3 +90,11 @@ def test_gini_known_values():
     assert D2.gini(y, m).est == pytest.approx(0.5)                                      # la mitad gana todo
     g = D.gini(d.inc_real_pos.fillna(1).to_numpy(float), m)
     assert 0 < g.est < 1 and 0 < g.se < 0.05 and g.grade == "A"
+
+
+def test_ciiu_codes_keep_their_leading_zero():
+    import pandas as pd
+    from olp.derive import ciiu4_section, SECTOR9
+    codes = pd.Series([111.0, 510.0, 1410.0, 3510.0, 4711.0, 8510.0])
+    assert ciiu4_section(codes).tolist() == ["A", "B", "C", "D", "G", "P"]
+    assert SECTOR9["A"] == 1 and SECTOR9["B"] == 2

@@ -4,6 +4,9 @@ Data and method changes, newest first. Data versions use the `YYYY.N` form.
 
 ## Unreleased
 
+### Data release
+- Version 2026.1 is the first numbered release: `/data/latest/` holds every estimate in CSV, Parquet, Stata and Excel, one file per indicator and per breakdown, a codebook and a manifest with SHA-256 hashes. Fixed copies are attached to the GitHub Release.
+
 ### Added
 - `/atlas/provincias/` rebuilt with tabs for map, relation, gaps and typologies, a province search and a zoom by department. Maps gain a comparison with Peru in which a territory differs only if its 95% interval excludes the national value.
 - `territorios.json`: gaps within departments, four province groups by k-means and spatial autocorrelation, built only from public cells plus 2017 census population.
@@ -28,6 +31,7 @@ Data and method changes, newest first. Data versions use the `YYYY.N` form.
 - Atlas embed snippets now offer every dimension.
 
 ### Method
+- Industry corrected. CIIU codes arrive as numbers without their leading zero, so class 0111 was read as division 11 and agriculture and mining were counted as manufacturing. In 2025 agriculture and fishing is now 23.3% of employment, mining 1.3% and manufacturing 9.4%, against 32.7% for manufacturing before. Everything by industry changes, and so do models that control for it: the adjusted informality gap by sex moves from 4.7 to 5.0 pp, the adjusted income gap from -31.7% to -30.8%, and the indigenous-language informality gap from 3.5 to 3.1 pp. Headline indicators do not change.
 - Province groups are a descriptive partition: silhouette 0.25, resampling stability 0.74 (adjusted Rand index), and 0.74 when informality is left out. Moran's I runs 0.22 to 0.36, and few local clusters survive the 5% false discovery correction.
 - A cell with a standard error of exactly 0 can no longer get grade A, since identical sampled units do not prove precision. Only Moho (Puno), informality 100.0, changes from A to B. `atlas_provincias.json` adds the national value of the same 2023 to 2025 pool.
 - Real income is now in soles of the latest year (2025), rebased every release. Earlier real values rise by the 2024 to 2025 Lima CPI change (1.5%); nominal income and rates do not change.

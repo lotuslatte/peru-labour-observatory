@@ -16,7 +16,7 @@ SECTOR9_LABELS = {1: "Agropecuario y pesca", 2: "Minería", 3: "Manufactura", 4:
 
 def ciiu4_section(code: pd.Series) -> pd.Series:
     c = pd.to_numeric(code, errors="coerce")
-    div = (c // 100).where(c >= 1000, c // 10)  # 4-digit -> division (first two digits)
+    div = c // 100  # numeric codes lose the leading zero: 111 is class 0111, division 01
     div = div.where(div.notna(), np.nan)
     bins = [(1, 3, "A"), (5, 9, "B"), (10, 33, "C"), (35, 35, "D"), (36, 39, "E"), (41, 43, "F"), (45, 47, "G"),
             (49, 53, "H"), (55, 56, "I"), (58, 63, "J"), (64, 66, "K"), (68, 68, "L"), (69, 75, "M"), (77, 82, "N"),

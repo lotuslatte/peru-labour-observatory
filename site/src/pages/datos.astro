@@ -1,16 +1,58 @@
 ---
 import { YEAR, PREV, SPAN } from '../data/release';
+import fs from 'node:fs';
+import path from 'node:path';
 import Base from '../layouts/Base.astro';
 import { loadCompendiumIndex, loadHeadline } from '../data/loaders';
 const idx = loadCompendiumIndex(); const h = loadHeadline();
 const files = [['headline.json', `Indicadores titulares ${YEAR} y series nacionales`], ['atlas_regions.json', 'Atlas: 25 departamentos + Lima Metropolitana / Lima Región × 12 dimensiones'], ['trends.json', `Series ${SPAN} por sexo, área, región natural, lengua, edad, educación, etnicidad y departamento`], ['departamentos.topo.json', 'Límites departamentales (TopoJSON, INEI)'], ['territorios.json', 'Provincias: brechas por departamento, tipologías, agrupamiento espacial y población censal'], ['compendium_index.json', 'Índice del compendio'], ['meta.json', 'Metadatos: definiciones, regla de informalidad, IPC, umbrales']];
+const M = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'public/data/latest/metadata.json'), 'utf8'));
+const manifest = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'public/data/latest/manifest.json'), 'utf8')).files;
+const BASE = 'https://lotuslatte.github.io/peru-labour-observatory/data/latest';
+const size = (f: string) => { const b = manifest.find((x: any) => x.path === f)?.bytes ?? 0; return b > 1048576 ? `${(b / 1048576).toFixed(1)} MB` : `${Math.ceil(b / 1024)} KB`; };
+const main = [['observatorio_laboral.dta', 'Stata, con etiquetas de variables y valores'], ['estimates.csv.gz', 'CSV comprimido en formato largo, para cualquier programa'], ['estimates.parquet', 'Parquet para Python, R o DuckDB'], ['observatorio_laboral.xlsx', 'Excel con hoja de diccionario']];
+const byInd = manifest.map((x: any) => x.path).filter((f: string) => f.startsWith('por_indicador/'));
+const byDom = manifest.map((x: any) => x.path).filter((f: string) => f.startsWith('por_dominio/'));
+const bib = `@misc{observatorio_laboral_peru,
+  author = {Samillan Flores, Favio},
+  title = {Observatorio Laboral del Per\\'u},
+  year = {${new Date().getFullYear()}},
+  note = {Versi\\'on ${M.data_version}. A partir de INEI, ENAHO ${SPAN}},
+  url = {https://lotuslatte.github.io/peru-labour-observatory/}
+}`;
 const cell = [['v', 'Estimación', '4.7'], ['se', 'Error estándar', '0.14'], ['rse', 'Error estándar relativo, en %', '2.9'], ['lo, hi', 'Límites del intervalo de confianza de 95%', '4.5, 5.0'], ['n', 'Personas en la muestra', '61,429'], ['g', 'Sello de calidad', 'A']];
 const grades = [['A', 'RSE menor que 15%. Se publica.'], ['B', 'RSE de 15% a 30%. Se publica; conviene leerla con cautela.'], ['S', 'RSE de 30% o más, o n menor que 30. Se suprime: v queda vacío (null).']];
 ---
 <Base title="Datos">
-  <h1 style="margin-top:32px">Datos abiertos del Observatorio</h1>
-  <p class="lede">Todo lo que muestra el sitio está precalculado en archivos JSON y CSV reproducibles desde los microdatos públicos de INEI. Cita: Observatorio Laboral del Perú (2026), a partir de INEI – ENAHO {SPAN}.</p>
-  <div class="card"><h2>Contratos JSON</h2><table class="data"><tbody>{files.map(([f, d]) => <tr><td><a href={`/data/${f}`} download class="mono">{f}</a></td><td style="text-align:left;white-space:normal">{d}</td></tr>)}</tbody></table></div>
+  <h1 style="margin-top:32px">Datos abiertos</h1>
+  <p class="lede">Versión {M.data_version}: {M.rows.toLocaleString('en-US')} estimaciones, 2014–{YEAR}, con error estándar, intervalo de 95%, n y sello. Las celdas con sello S quedan vacías. Licencia CC BY 4.0.</p>
+  <div class="card"><h2>Archivo completo</h2>
+    <div class="scroll-x"><table class="data wrap"><thead><tr><th>Archivo</th><th style="text-align:left">Para qué</th><th style="text-align:left">Tamaño</th></tr></thead><tbody>
+      {main.map(([f, d]) => <tr><td><a href={`/data/latest/${f}`} download class="mono">{f}</a></td><td>{d}</td><td>{size(f)}</td></tr>)}
+    </tbody></table></div>
+    <p class="small muted">El Excel trae los cortes principales ({M.xlsx_rows.toLocaleString('en-US')} filas) y la hoja de diccionario; los cruces por departamento y sexo, edad, lengua o área están en los demás formatos.</p>
+  </div>
+  <div class="card"><h2>Cargar en una línea</h2>
+    <h3>Stata 14 o posterior</h3><pre class="mono small scroll-x">{`use "${BASE}/observatorio_laboral.dta", clear`}</pre>
+    <h3>R</h3><pre class="mono small scroll-x">{`d <- read.csv("${BASE}/por_indicador/informality.csv")`}</pre>
+    <h3>Python</h3><pre class="mono small scroll-x">{`import pandas as pd\nd = pd.read_csv("${BASE}/estimates.csv.gz", dtype={"key": str})`}</pre>
+    <p class="small muted">Las rutas de <code>/data/latest/</code> siempre apuntan a la última versión. Para que un resultado sea reproducible, usa los archivos fijos de la <a href="https://github.com/lotuslatte/peru-labour-observatory/releases">versión publicada</a>.</p>
+  </div>
+  <details class="more"><summary>Un archivo por indicador ({byInd.length})</summary><div class="grid grid-3">{byInd.map(f => <a class="mono small" href={`/data/latest/${f}`} download>{f.split('/')[1]}</a>)}</div></details>
+  <details class="more"><summary>Un archivo por desagregación ({byDom.length})</summary><div class="grid grid-3">{byDom.map(f => <a class="mono small" href={`/data/latest/${f}`} download>{f.split('/')[1]}</a>)}</div></details>
+  <div class="card"><h2>Diccionario y verificación</h2><ul class="small">
+    <li><a href="/data/latest/codebook.csv" download><code>codebook.csv</code></a>: indicadores, desagregaciones, columnas y notas de método.</li>
+    <li><a href="/data/dictionary.csv" download><code>dictionary.csv</code></a>: definición de cada indicador y sus variables de la ENAHO.</li>
+    <li><a href="/data/latest/metadata.json"><code>metadata.json</code></a>: versión, cobertura y columnas, para leer por programa.</li>
+    <li><a href="/data/latest/manifest.json"><code>manifest.json</code></a>: tamaño y SHA-256 de cada archivo.</li>
+    <li><a href="/data/index.json"><code>index.json</code></a>: índice de los JSON del sitio.</li>
+  </ul></div>
+  <div class="card"><h2>Citar</h2>
+    <p class="small">Samillan Flores, F. ({new Date().getFullYear()}). Observatorio Laboral del Perú, versión {M.data_version}. A partir de INEI, ENAHO {SPAN}. https://lotuslatte.github.io/peru-labour-observatory/</p>
+    <pre class="mono small scroll-x">{bib}</pre>
+    <p class="small muted">Cambios de datos y de método en el <a href="https://github.com/lotuslatte/peru-labour-observatory/blob/main/CHANGELOG.md">registro de cambios</a>.</p>
+  </div>
+  <details class="more"><summary>Archivos JSON del sitio</summary><table class="data"><tbody>{files.map(([f, d]) => <tr><td><a href={`/data/${f}`} download class="mono">{f}</a></td><td style="text-align:left;white-space:normal">{d}</td></tr>)}</tbody></table></details>
   <details class="more" style="margin-top:16px"><summary>Perfiles departamentales</summary><p class="small">27 archivos <code>profiles/&lt;id&gt;.json</code> (25 departamentos, 15M, 15R).</p><div class="grid grid-4">{['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','15M','15R'].map(id => <a class="btn mono" href={`/data/profiles/${id}.json`} download>{id}.json</a>)}</div></details>
   <details class="more"><summary>Compendio (CSV tidy)</summary><p class="small">Columnas: table_id, year, domain, row_key, row_label, indicator, category, col_label, estimate, se, rse, ci_lo, ci_hi, n, grade, unit.</p><ul class="small">{idx.tables.map((t: any) => <li><a href={`/data/${t.file}`} download class="mono">{t.id}</a> {t.title}</li>)}</ul></details>
   <div class="card" style="margin-top:16px"><h2>Formato de celda</h2>
