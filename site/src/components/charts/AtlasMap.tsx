@@ -22,6 +22,7 @@ function AtlasMapInner({ regions, dims, initial, mode: mode0 = 'map', compact = 
   const [mode, setMode] = useState<'map' | 'matrix'>(mode0);
   const [scaleMode, setScaleMode] = useState<'abs' | 'pct'>('abs');
   const [whiskers, setWhiskers] = useState(false);
+  const [versus, setVersus] = useState(false);
   const [hover, setHover] = useState<Region | null>(null);
   const [topo, setTopo] = useState<any>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -43,6 +44,9 @@ function AtlasMapInner({ regions, dims, initial, mode: mode0 = 'map', compact = 
     const s = d3.scaleQuantile<string>().domain(vals).range(seq());   // skewed rates need quantiles; dark always means higher
     return (v: number | null) => v == null ? 'var(--panel-2)' : s(v);
   }, [dim, tick, topo]);
+  // Different from Peru only when the 95% interval excludes the national value.
+  const nat = (d as any).national?.v as number | undefined;
+  const fillFor = (r?: Region) => { const c = r?.values[dim]; if (!versus || nat == null) return color(c?.v ?? null); if (c?.v == null) return 'var(--panel-2)'; return c.lo != null && c.lo > nat ? 'var(--div-7)' : c.hi != null && c.hi < nat ? 'var(--div-1)' : 'var(--div-4)'; };
   const byId = useMemo(() => Object.fromEntries(regions.map(r => [r.id, r])), [regions]);
 
   // MAP
@@ -55,7 +59,7 @@ function AtlasMapInner({ regions, dims, initial, mode: mode0 = 'map', compact = 
     const proj = d3.geoMercator().fitExtent([[10, 10], [W - 10, H - 10]], fc);
     const path = d3.geoPath(proj);
     svg.append('g').selectAll('path').data(fc.features).join('path')
-      .attr('d', path as any).attr('fill', (f: any) => color(byId[f.properties.id]?.values[dim]?.v ?? null))
+      .attr('d', path as any).attr('fill', (f: any) => fillFor(byId[f.properties.id]))
       .attr('stroke', 'var(--bg)').attr('stroke-width', .8).style('cursor', 'pointer')
       .on('mousemove', (e: MouseEvent, f: any) => { place(e.clientX + 12, e.clientY + 12); setHover(byId[f.properties.id]); })
       .on('mouseleave', () => setHover(null))
@@ -65,6 +69,7 @@ function AtlasMapInner({ regions, dims, initial, mode: mode0 = 'map', compact = 
     if (level === 'prov' && outline) { const ok = Object.keys(outline.objects)[0]; const ofc: any = topojson.feature(outline, outline.objects[ok]);
       svg.append('g').selectAll('path').data(ofc.features).join('path').attr('d', path as any).attr('fill', 'none').attr('stroke', 'var(--ink)').attr('stroke-width', .7).attr('opacity', .6).attr('pointer-events', 'none'); }
     // legend
+    if (versus && nat != null) { const lg = svg.append('g').attr('transform', `translate(10,${H - 60})`); [['--div-7', 'Por encima de Perú'], ['--div-4', 'Sin diferencia clara'], ['--div-1', 'Por debajo de Perú']].forEach(([c, l], i) => { lg.append('rect').attr('y', i * 18).attr('width', 12).attr('height', 12).attr('fill', `var(${c})`); lg.append('text').attr('x', 18).attr('y', i * 18 + 11).attr('font-size', 12).attr('fill', 'var(--muted)').text(l); }); return; }
     const cols = seq(); const cuts = d3.scaleQuantile<string>().domain(vals).range(cols).quantiles();
     const edges = [d3.min(vals), ...cuts, d3.max(vals)];
     const lg = svg.append('g').attr('transform', `translate(10,${H - 44})`);
@@ -72,7 +77,7 @@ function AtlasMapInner({ regions, dims, initial, mode: mode0 = 'map', compact = 
     lg.selectAll('rect').data(cols).join('rect').attr('x', (_c, i) => i * bw).attr('width', bw - 2).attr('height', 10).attr('fill', c => c);
     edges.forEach((v, i) => { if (i % 2 === 0 || i === edges.length - 1) lg.append('text').attr('x', i * bw).attr('y', 26).attr('text-anchor', i === 0 ? 'start' : i === edges.length - 1 ? 'end' : 'middle').attr('font-size', 12).attr('fill', 'var(--muted)').text(short(v)); });
     if (d.higher_better != null) lg.append('text').attr('y', -7).attr('font-size', 12).attr('fill', 'var(--muted)').text(`Más oscuro: valor más alto. ${d.higher_better ? 'Más alto es mejor.' : 'Más bajo es mejor.'}`);
-  }, [topo, outline, dim, mode, tick]);
+  }, [topo, outline, dim, mode, tick, versus]);
 
   // MATRIX (heatmap of all dims × regions, sorted by selected dim)
   useEffect(() => {
@@ -116,6 +121,7 @@ function AtlasMapInner({ regions, dims, initial, mode: mode0 = 'map', compact = 
         {showModeToggle && <span class="seg"><button class={`btn ${mode === 'map' ? 'active' : ''}`} onClick={() => setMode('map')}>Mapa</button><button class={`btn ${mode === 'matrix' ? 'active' : ''}`} onClick={() => setMode('matrix')}>Matriz</button></span>}
         {mode === 'matrix' && <span class="seg"><button class={`btn ${scaleMode === 'abs' ? 'active' : ''}`} onClick={() => setScaleMode('abs')}>Valor</button><button class={`btn ${scaleMode === 'pct' ? 'active' : ''}`} onClick={() => setScaleMode('pct')}>Percentil</button></span>}
         {mode === 'map' && !compact && <label class="small muted"><input type="checkbox" checked={whiskers} onChange={e => setWhiskers((e.target as HTMLInputElement).checked)} /> IC 95 %</label>}
+        {mode === 'map' && !compact && nat != null && <label class="small muted"><input type="checkbox" checked={versus} onChange={e => setVersus((e.target as HTMLInputElement).checked)} /> Frente al Perú</label>}
       </div>
       <div class={`layout ${compact ? 'compact' : ''}`}>
         <div class="chart">{mapErr && mode === 'map' && <LoadState error />}<svg ref={svgRef} role="img" aria-label={`${title ?? d.label_es} por departamento, ${year}`} /></div>

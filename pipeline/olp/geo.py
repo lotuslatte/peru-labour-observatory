@@ -38,6 +38,9 @@ def build_provinces(tolerance=0.01):
     nmc = next(cols[c] for c in cols if c in ("provincia", "nombprov", "nom_prov", "nombre"))
     g["id"] = g[idc].astype(str).str.replace(r"\.0$", "", regex=True).str.zfill(4).str[:4]
     g["name"] = g[nmc].astype(str).str.title()
+    # The shapefile drops accents; official spellings live in config.
+    fixes = pd.read_csv(CONFIG_DIR / "prov_name_fixes.csv", dtype=str).set_index("id").name
+    g["name"] = g["id"].map(fixes).fillna(g["name"])
     g = g[["id", "name", "geometry"]].dissolve(by="id", aggfunc="first").reset_index()
     if g.crs and g.crs.to_epsg() != 4326:
         g = g.to_crs(4326)
