@@ -14,10 +14,12 @@ Data and method changes, newest first. Data versions use the `YYYY.N` form.
 - `LICENSE`, `CITATION.cff` and this changelog.
 
 ### Changed
+- Atlas, Compendio, Análisis, Datos, Novedades and department pages now share the open editorial layout. Compendio is a searchable list whose tables open on demand; detail on the other pages moved into expandable sections. URLs and downloads stay the same.
 - New palette for the whole site: warm paper, night-blue text, terracotta accent and a blue map scale, checked for color-blind separation. On maps, darker now always means a higher value, and classes are quantiles with their cuts in the legend.
 - Site redesign: the home page shows six headline figures, each indicator has its own page with trend, map, groups and data tabs, and `/explorar/` builds a query with its own CSV. The menu now has four items; Atlas, Compendio, Análisis and Novedades moved to the footer.
 
 ### Fixed
+- Department summaries now write figures as S/1,177 and 82.2%, and no longer call an eight-sentence list «cinco frases».
 - The province map drew all 196 provinces in one color with an empty legend. It now colors them and rebuilds `provincias.topo.json` with shared borders.
 - Sideways scroll on `/acerca/metodologia/`, `/analisis/` and `/atlas/provincias/`; site and chart text is now at least 12 px.
 - Indicator maps: department borders now match. They were thinned ring by ring and left gaps; `departamentos.topo.json` is rebuilt from the shapefile with shared borders, and the map adds a Lima and Callao inset.

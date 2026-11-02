@@ -23,7 +23,7 @@ const iLabels: Record<string, string> = { inc_p10: 'p10', inc_p25: 'p25', median
 <Base title={`${p.name} · perfil laboral`} wide image={`/share/${p.id}.png`}>
   <div class="eyebrow" style="margin-top:28px"><a href="/atlas/">Atlas</a> › {p.region_nat} · ENAHO {p.year} · n = {p.n.toLocaleString('es-PE')} personas 14+ · {(p.pet_weighted / 1e6).toFixed(2)} M representadas</div>
   <div class="toolbar" style="justify-content:space-between"><h1 style="margin:0">{p.name}</h1><span><a class="btn primary" href={`/atlas/${p.id}/resumen/`}>Resumen de una página (PDF)</a></span></div>
-  {p.summary?.length > 0 && <div class="card summary"><div class="eyebrow">En cinco frases · generado desde las estimaciones</div><ol>{p.summary.map((t: string) => <li>{t}</li>)}</ol></div>}
+  {p.summary?.length > 0 && <div class="card summary"><div class="eyebrow">Resumen generado desde las estimaciones</div><ol>{p.summary.map((t: string) => <li>{t}</li>)}</ol></div>}
   <div class="grid grid-3">
     {dims.map(d => <KpiTile label={d.label_es} cell={p.dims[d.id]} unit={d.unit === '%' ? '%' : d.unit === 'pp' ? ' pp' : ''} decimals={d.unit === 'S/' ? 0 : 1} note={p.rank?.[d.id] ? `Puesto ${p.rank[d.id]} de 25 · percentil ${p.pct[d.id]}` : undefined} kind={d.id === 'gap_lfpr' ? 'informal' : 'formal'} />)}
   </div>
