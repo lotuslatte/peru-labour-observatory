@@ -12,15 +12,19 @@ Data and method changes, newest first. Data versions use the `YYYY.N` form.
 - `LICENSE`, `CITATION.cff` and this changelog.
 
 ### Changed
+- New palette for the whole site: warm paper, night-blue text, terracotta accent and a blue map scale, checked for color-blind separation. On maps, darker now always means a higher value, and classes are quantiles with their cuts in the legend.
 - Site redesign: the home page shows six headline figures, each indicator has its own page with trend, map, groups and data tabs, and `/explorar/` builds a query with its own CSV. The menu now has four items; Atlas, Compendio, Análisis and Novedades moved to the footer.
 
 ### Fixed
+- The province map drew all 196 provinces in one color with an empty legend. It now colors them and rebuilds `provincias.topo.json` with shared borders.
+- Sideways scroll on `/acerca/metodologia/`, `/analisis/` and `/atlas/provincias/`; site and chart text is now at least 12 px.
 - Indicator maps: department borders now match. They were thinned ring by ring and left gaps; `departamentos.topo.json` is rebuilt from the shapefile with shared borders, and the map adds a Lima and Callao inset.
 - `/datos/` explains the cell format in a table and no longer scrolls sideways on phones.
 - Embed snippets pointed to a URL without the site base and returned 404.
 - Atlas embed snippets now offer every dimension.
 
 ### Method
+- A cell with a standard error of exactly 0 can no longer get grade A, since identical sampled units do not prove precision. Only Moho (Puno), informality 100.0, changes from A to B. `atlas_provincias.json` adds the national value of the same 2023 to 2025 pool.
 - Real income is now in soles of the latest year (2025), rebased every release. Earlier real values rise by the 2024 to 2025 Lima CPI change (1.5%); nominal income and rates do not change.
 - Lima CPI now comes from the deflators INEI publishes with ENAHO (i00, dpto 15). The series matches BCRP PN38705PM for 2014 to 2024.
 - The informality shift-share now covers 2014 to 2023, the last years both measured with `ocupinf`, instead of crossing the 2024 break.

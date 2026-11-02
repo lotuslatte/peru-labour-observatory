@@ -4,7 +4,7 @@ import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from ..config import SITE_DATA_DIR, ROOT_DIR
 
-INK, MUTED, INF, FOR, BG = "#1a1c2e", "#6f7288", "#a8244f", "#167a6e", "#f7f7f4"
+INK, MUTED, INF, FOR, BG = "#14233b", "#5a6474", "#b0461a", "#1f5f9e", "#faf6ef"
 
 
 def card(title, subtitle, kpis, out, credit="Observatorio · Favio Samillan Flores · INEI ENAHO"):
@@ -18,7 +18,7 @@ def card(title, subtitle, kpis, out, credit="Observatorio · Favio Samillan Flor
         x = 0.05 + i * w
         fig.text(x, 0.42, val, fontsize=40, weight="bold", color=INF if kind == "informal" else FOR, ha="left", va="center", family="serif")
         fig.text(x, 0.28, "\n".join(textwrap.wrap(lab, 22)), fontsize=12, color=INK, ha="left", va="top")
-    ax.plot([0.05, 0.95], [0.12, 0.12], color="#dedfd8", lw=1)
+    ax.plot([0.05, 0.95], [0.12, 0.12], color="#e4dccd", lw=1)
     fig.text(0.05, 0.06, credit, fontsize=11, color=MUTED, ha="left", va="center")
     fig.savefig(out, facecolor=BG); plt.close(fig)
 

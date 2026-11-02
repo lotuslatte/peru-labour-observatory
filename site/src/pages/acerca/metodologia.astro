@@ -15,7 +15,7 @@ const ag = Object.entries(m.informality_rule.agreement);
     <ol><li><strong>Toda cifra es una estimación</strong> a partir de ~86 000 entrevistas anuales; nunca un conteo. Por eso lleva un intervalo de confianza.</li>
     <li><strong>El sello</strong> resume la precisión: <span class="badge A"></span> error relativo menor a 15 % (se puede citar sin más); <span class="badge B"></span> entre 15 y 30 % (citar con el intervalo); <span class="badge S"></span> mayor a 30 % o menos de 30 casos (no se publica).</li>
     <li><strong>Comparar</strong> dos cifras exige mirar los intervalos o la prueba de diferencia: en el sitio, las diferencias marcadas con ▲/▼ o * superan el error de muestreo; ≈ significa que no.</li>
-    <li><strong>Los colores</strong> tienen significado fijo: carmín = informal/desprotegido; jade = formal/protegido.</li>
+    <li><strong>Los colores</strong> tienen significado fijo: terracota = informal/desprotegido; azul = formal/protegido; en los mapas, el tono más oscuro siempre indica un valor más alto.</li>
     <li><strong>{YEAR}</strong> es el año titular; 2014–{PREV} forman la serie. 2020 se anota como año de pandemia.</li></ol>
 
     <h2 id="datos">Datos</h2>
@@ -24,7 +24,7 @@ const ag = Object.entries(m.informality_rule.agreement);
     <p class="small muted">2020: levantamiento parcialmente telefónico por la pandemia; las series se muestran con esa anotación.</p>
 
     <h2 id="definitions">Definiciones</h2>
-    <table class="data"><thead><tr><th>Indicador</th><th style="text-align:left">Definición</th></tr></thead><tbody>
+    <table class="data wrap"><thead><tr><th>Indicador</th><th style="text-align:left">Definición</th></tr></thead><tbody>
       <tr><td>Tasa de actividad</td><td style="text-align:left">PEA / PET. PEA = ocupados + desocupados abiertos (<code>ocu500 ∈ {'{1,2}'}</code>). Los "desocupados ocultos" se tratan como inactivos, como hace INEI.</td></tr>
       <tr><td>Ratio empleo-población</td><td style="text-align:left">Ocupados / PET.</td></tr>
       <tr><td>Tasa de desempleo</td><td style="text-align:left">Desocupados abiertos / PEA. Nota: la cifra de desempleo 2024 que INEI difunde en prensa (5,6 %) proviene de la EPEN, una encuesta distinta; la serie ENAHO es sistemáticamente ~1 pp menor.</td></tr>
@@ -60,7 +60,7 @@ const ag = Object.entries(m.informality_rule.agreement);
 
     <h2 id="uncertainty">Incertidumbre y grados de confiabilidad</h2>
     <p>Errores estándar por linealización de Taylor con PSU = conglomerado (<code>conglome</code>) y pseudo-estratos = departamento × estrato de tamaño de centro poblado; los estratos con un solo PSU se centran en la media global (equivalente a <code>singleunit(centered)</code> en Stata). Medianas y percentiles con intervalos de Woodruff. Las diferencias (brechas) usan la covarianza de diseño; el cociente de ingresos medianos mujeres/hombres usa 100 réplicas bootstrap de Rao–Wu. Cada celda de nivel recibe un grado según su error estándar relativo (RSE). Las brechas y los componentes de las descomposiciones se califican por tamaño de muestra (A con 200 o más observaciones en el grupo menor, B con 30 a 199), porque una brecha cercana a cero tiene un RSE enorme sin ser imprecisa: léalas siempre con su intervalo.</p>
-    <table class="data"><tbody><tr><td><span class="badge A">A</span></td><td style="text-align:left">{m.grades.A}: publicable.</td></tr><tr><td><span class="badge B">B</span></td><td style="text-align:left">{m.grades.B}: usar con cautela.</td></tr><tr><td><span class="badge S">S</span></td><td style="text-align:left">{m.grades.S}: suprimido (se muestra "—").</td></tr></tbody></table>
+    <table class="data wrap"><tbody><tr><td><span class="badge A">A</span></td><td style="text-align:left">{m.grades.A}: publicable.</td></tr><tr><td><span class="badge B">B</span></td><td style="text-align:left">{m.grades.B}: usar con cautela.</td></tr><tr><td><span class="badge S">S</span></td><td style="text-align:left">{m.grades.S}: suprimido (se muestra "—").</td></tr></tbody></table>
 
     <h2 id="validacion">Validación</h2>
     <p>Los titulares se comparan con las tablas oficiales "Indicadores de empleo – ENAHO" de INEI (2007–2021): tasa de actividad nacional, urbana, rural y de Lima Metropolitana dentro de ±0,5 pp en 30 de 32 celdas; tasa de empleo informal dentro de ±0,2 pp en todas. La tabla T42 del compendio reproduce la comparación completa.</p>

@@ -29,7 +29,7 @@ function RadarInner({ regions, dims, a: a0, b: b0 }: Props & { regions: Region[]
     prim.forEach((d, i) => {
       svg.append('line').attr('x1', cx).attr('y1', cy).attr('x2', cx + Math.cos(ang(i)) * R).attr('y2', cy + Math.sin(ang(i)) * R).attr('stroke', 'var(--line)');
       const lx = cx + Math.cos(ang(i)) * (R + 22), ly = cy + Math.sin(ang(i)) * (R + 22);
-      svg.append('text').attr('x', lx).attr('y', ly).attr('text-anchor', Math.abs(Math.cos(ang(i))) < .2 ? 'middle' : Math.cos(ang(i)) > 0 ? 'start' : 'end').attr('font-size', 10).attr('fill', 'var(--muted)').text(d.label_es.split(' (')[0]);
+      svg.append('text').attr('x', lx).attr('y', ly).attr('text-anchor', Math.abs(Math.cos(ang(i))) < .2 ? 'middle' : Math.cos(ang(i)) > 0 ? 'start' : 'end').attr('font-size', 12).attr('fill', 'var(--muted)').text(d.label_es.split(' (')[0]);
     });
     [[a, cols[0]], [b, cols[1]]].forEach(([id, col]) => {
       const r = byId[id]; if (!r) return;

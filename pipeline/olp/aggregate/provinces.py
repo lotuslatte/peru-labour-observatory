@@ -17,6 +17,8 @@ def run(derive):
     DOM["prov"] = {"vars": ["prov"], "label_es": "Provincia"}
     inds = [i["id"] for i in CFG["indicators"]]
     est = run_year(d, years[-1], domains=["prov"], indicators=inds)
+    # National value of the same pooled frame, the reference for province comparisons.
+    run_year(d, years[-1], domains=["national"], indicators=inds).to_parquet(OUT_DIR / "estimates_prov_national.parquet", index=False)
     # n_psu por provincia para la regla extra de sello A
     npsu = d.groupby("prov")["psu"].nunique()
     est["n_psu"] = est.key.map(npsu)
@@ -49,5 +51,8 @@ def build(est_prov, dims_ids, names: pd.DataFrame):
         order = (arr if hb else -arr).argsort().argsort()
         pct = {rid: int(round(100 * rk / max(len(arr) - 1, 1))) for (rid, _), rk in zip(vs, order)}
         for r in rows: r.setdefault("pct", {})[ind] = pct.get(r["id"])
+    nat = pd.read_parquet(OUT_DIR / "estimates_prov_national.parquet")
+    nat = nat[nat.category.isna()].set_index("indicator")
+    national = {ind: cell(nat.loc[ind], nd_for(ind)) for ind in dims_ids if ind in nat.index}
     dims = [{"id": i, "label_es": IND[i]["label_es"], "label_en": IND[i].get("label_en", ""), "unit": IND[i].get("unit"), "higher_better": IND[i].get("unit") != "pp" and i not in ("informality", "ur", "neet", "subemp_hours", "gap_lfpr"), "primary": i in dims_ids[:6]} for i in dims_ids]
-    return dump({"years": CFG["pool_years"], "level": "provincia", "n_regions": len(rows), "dims": dims, "regions": rows, "note": f"Frame agrupado {CFG['pool_years'][0]}–{CFG['pool_years'][-1]} (pesos divididos entre {len(CFG['pool_years'])}); sello A exige además ≥{CFG['min_psu_for_A']} conglomerados."}, "atlas_provincias.json")
+    return dump({"years": CFG["pool_years"], "level": "provincia", "n_regions": len(rows), "national": national, "dims": dims, "regions": rows, "note": f"Frame agrupado {CFG['pool_years'][0]}–{CFG['pool_years'][-1]} (pesos divididos entre {len(CFG['pool_years'])}); sello A exige además ≥{CFG['min_psu_for_A']} conglomerados."}, "atlas_provincias.json")

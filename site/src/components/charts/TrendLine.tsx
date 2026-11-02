@@ -17,8 +17,8 @@ export default function TrendLine({ years, series, unit, title, height = 300, no
     const x = d3.scalePoint<number>().domain(years).range([m.l, W - m.r]);
     const all = series.flatMap(s => s.cells.flatMap(c => [c.v, c.lo, c.hi]).filter((v): v is number => v != null));
     const y = d3.scaleLinear().domain([yZero ? 0 : (d3.min(all) ?? 0) * 0.95, (d3.max(all) ?? 1) * 1.04]).nice().range([H - m.b, m.t]);
-    svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).tickFormat(d => String(d)) as any).call(g => g.select('.domain').attr('stroke', 'var(--line)')).selectAll('text').attr('fill', 'var(--muted)').attr('font-size', 10);
-    svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickSize(-(W - m.l - m.r)) as any).call(g => { g.select('.domain').remove(); g.selectAll('line').attr('stroke', 'var(--line)'); g.selectAll('text').attr('fill', 'var(--muted)').attr('font-size', 10); });
+    svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).tickFormat(d => String(d)) as any).call(g => g.select('.domain').attr('stroke', 'var(--line)')).selectAll('text').attr('fill', 'var(--muted)').attr('font-size', 12);
+    svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickSize(-(W - m.l - m.r)) as any).call(g => { g.select('.domain').remove(); g.selectAll('line').attr('stroke', 'var(--line)'); g.selectAll('text').attr('fill', 'var(--muted)').attr('font-size', 12); });
     const cols = catColors();
     Object.keys(notes).forEach(yr => { const xx = x(+yr); if (xx != null) svg.append('line').attr('x1', xx).attr('x2', xx).attr('y1', m.t).attr('y2', H - m.b).attr('stroke', 'var(--muted)').attr('stroke-dasharray', '3,3').attr('opacity', .6).append('title').text(notes[yr]); });
     series.forEach((s, i) => {
@@ -32,7 +32,7 @@ export default function TrendLine({ years, series, unit, title, height = 300, no
         svg.append('path').datum(sp).attr('d', line).attr('fill', 'none').attr('stroke', cols[i % cols.length]).attr('stroke-width', 3); }
       svg.append('g').selectAll('circle').data(pts).join('circle').attr('cx', p => x(p.yr)!).attr('cy', p => y(p.c.v)).attr('r', 3).attr('fill', cols[i % cols.length]).append('title').text(p => `${s.label} ${p.yr}: ${fmtUnit(p.c.v, unit, decimalsFor(unit))} [${p.c.g}]`);
       const last = pts[pts.length - 1];
-      if (last) svg.append('text').attr('x', x(last.yr)! + 8).attr('y', y(last.c.v) + 4).attr('font-size', 11).attr('fill', cols[i % cols.length]).text(`${s.label} ${fmtUnit(last.c.v, unit, decimalsFor(unit))}`);
+      if (last) svg.append('text').attr('x', x(last.yr)! + 8).attr('y', y(last.c.v) + 4).attr('font-size', 12).attr('fill', cols[i % cols.length]).text(`${s.label} ${fmtUnit(last.c.v, unit, decimalsFor(unit))}`);
     });
   }, [years, series, tick, sm]);
   const rows = () => series.flatMap(s => years.map((yr, k) => ({ serie: s.label, año: yr, valor: s.cells[k]?.v, ic_lo: s.cells[k]?.lo, ic_hi: s.cells[k]?.hi, n: s.cells[k]?.n, grado: s.cells[k]?.g })));
