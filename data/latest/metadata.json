@@ -1,0 +1,218 @@
+{
+ "data_version": "2026.1",
+ "headline_year": 2025,
+ "years": [
+  2014,
+  2025
+ ],
+ "license": "CC-BY-4.0",
+ "source": "INEI, ENAHO",
+ "rows": 311724,
+ "suppressed_rows": 69911,
+ "xlsx_rows": 47264,
+ "columns": {
+  "period": "Reference period: one year, or the pooled years for provinces",
+  "year": "Survey year; for pooled provinces, the last year",
+  "indicator": "Indicator id",
+  "indicator_label": "Indicator name",
+  "unit": "Unit: %, pp, S/ or h",
+  "domain": "Breakdown id",
+  "domain_label": "Breakdown name",
+  "key": "Group code within the breakdown",
+  "key_label": "Group name",
+  "category": "Category code in distribution indicators",
+  "category_label": "Category name",
+  "estimate": "Weighted estimate",
+  "se": "Design-based standard error",
+  "rse_pct": "Relative standard error, %",
+  "ci_lo": "Lower limit of the 95% interval",
+  "ci_hi": "Upper limit of the 95% interval",
+  "n": "Unweighted sample count",
+  "population": "Expanded population of the group",
+  "grade": "A reliable, B caution, S suppressed",
+  "inconclusive": "1 when a gap's 95% interval includes no gap",
+  "method_note": "Method caveat for this value"
+ },
+ "indicators": {
+  "lfpr": {
+   "label": "Tasa de actividad (PEA/PET, 14+)",
+   "unit": "%"
+  },
+  "epr": {
+   "label": "Ratio empleo-población",
+   "unit": "%"
+  },
+  "ur": {
+   "label": "Tasa de desempleo",
+   "unit": "%"
+  },
+  "ur_youth": {
+   "label": "Tasa de desempleo juvenil (15–29)",
+   "unit": "%"
+  },
+  "informality": {
+   "label": "Tasa de empleo informal",
+   "unit": "%"
+  },
+  "formality": {
+   "label": "Tasa de empleo formal",
+   "unit": "%"
+  },
+  "informal_in_sector": {
+   "label": "Empleo en el sector informal",
+   "unit": "%"
+  },
+  "subemp_hours": {
+   "label": "Subempleo por horas",
+   "unit": "%"
+  },
+  "subemp_income": {
+   "label": "Subempleo por ingresos (aprox. RMV)",
+   "unit": "%"
+  },
+  "adecuado": {
+   "label": "Empleo adecuado (aprox.)",
+   "unit": "%"
+  },
+  "neet": {
+   "label": "Jóvenes 15–29 que ni estudian ni trabajan",
+   "unit": "%"
+  },
+  "median_inc_real": {
+   "label": "Ingreso laboral mensual mediano (S/ 2025)",
+   "unit": "S/"
+  },
+  "mean_inc_real": {
+   "label": "Ingreso laboral mensual promedio (S/ 2025)",
+   "unit": "S/"
+  },
+  "inc_p10": {
+   "label": "Ingreso laboral p10 (S/ 2025)",
+   "unit": "S/"
+  },
+  "inc_p25": {
+   "label": "Ingreso laboral p25 (S/ 2025)",
+   "unit": "S/"
+  },
+  "inc_p75": {
+   "label": "Ingreso laboral p75 (S/ 2025)",
+   "unit": "S/"
+  },
+  "inc_p90": {
+   "label": "Ingreso laboral p90 (S/ 2025)",
+   "unit": "S/"
+  },
+  "hours_mean": {
+   "label": "Horas semanales promedio",
+   "unit": "h"
+  },
+  "hours_lt35": {
+   "label": "Ocupados con menos de 35 h",
+   "unit": "%"
+  },
+  "hours_le48": {
+   "label": "Ocupados con 48 h o menos",
+   "unit": "%"
+  },
+  "hours_ge60": {
+   "label": "Ocupados con 60 h o más",
+   "unit": "%"
+  },
+  "contract_any": {
+   "label": "Asalariados con contrato",
+   "unit": "%"
+  },
+  "contract_indef": {
+   "label": "Asalariados con contrato indefinido",
+   "unit": "%"
+  },
+  "pension": {
+   "label": "Ocupados afiliados a un sistema de pensiones",
+   "unit": "%"
+  },
+  "seguro": {
+   "label": "Ocupados con seguro de salud",
+   "unit": "%"
+  },
+  "essalud": {
+   "label": "Ocupados afiliados a EsSalud",
+   "unit": "%"
+  },
+  "firm_small": {
+   "label": "Ocupados en unidades de hasta 20 trabajadores",
+   "unit": "%"
+  },
+  "self_emp": {
+   "label": "Trabajadores independientes",
+   "unit": "%"
+  },
+  "tfnr": {
+   "label": "Trabajadores familiares no remunerados",
+   "unit": "%"
+  },
+  "secondary_job": {
+   "label": "Ocupados con ocupación secundaria",
+   "unit": "%"
+  },
+  "status_dist": {
+   "label": "Distribución por categoría ocupacional",
+   "unit": "%"
+  },
+  "sector_dist": {
+   "label": "Distribución por rama de actividad",
+   "unit": "%"
+  },
+  "educ_dist": {
+   "label": "Ocupados por nivel educativo",
+   "unit": "%"
+  },
+  "gap_lfpr": {
+   "label": "Brecha de participación hombres−mujeres (pp)",
+   "unit": "pp"
+  },
+  "gap_ur": {
+   "label": "Brecha de desempleo mujeres−hombres (pp)",
+   "unit": "pp"
+  },
+  "gap_inc": {
+   "label": "Ingreso mediano mujeres / hombres",
+   "unit": "ratio"
+  },
+  "ur_ext": {
+   "label": "Tasa de desempleo ampliada (abierto + oculto)",
+   "unit": "%"
+  },
+  "hidden_unemp": {
+   "label": "Desempleo oculto (% de la PEA ampliada)",
+   "unit": "%"
+  },
+  "working_poor": {
+   "label": "Ocupados en hogares pobres",
+   "unit": "%"
+  },
+  "seguro_contrib": {
+   "label": "Ocupados con seguro contributivo (EsSalud, EPS, privado, FF.AA./PNP)",
+   "unit": "%"
+  },
+  "sis": {
+   "label": "Ocupados afiliados al SIS",
+   "unit": "%"
+  },
+  "mig_life": {
+   "label": "Nacidos en otro departamento (desde 2018)",
+   "unit": "%"
+  },
+  "median_inc_hour": {
+   "label": "Ingreso laboral mediano por hora (S/ 2025)",
+   "unit": "S/h"
+  },
+  "gini_inc": {
+   "label": "Índice de Gini del ingreso laboral (0–1)",
+   "unit": "ratio"
+  },
+  "ocup_dist": {
+   "label": "Distribución por gran grupo ocupacional",
+   "unit": "%"
+  }
+ }
+}
