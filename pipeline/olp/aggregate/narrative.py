@@ -18,9 +18,9 @@ def delta(a, b, brk=None):
 
 def fmt(v, unit):
     if v is None: return "—"
-    if unit == "S/": return f"S/ {v:,.0f}".replace(",", " ")
+    if unit == "S/": return f"S/{v:,.0f}"
     if unit == "pp": return f"{v:+.1f} pp"
-    return f"{v:.1f} %"
+    return f"{v:.1f}%"
 
 
 def profile_summary(est, rid, dom, name, rank, pct, dims) -> list[str]:

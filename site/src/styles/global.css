@@ -61,3 +61,15 @@ table.data thead th .th-sort { font: inherit; color: inherit; text-transform: in
 svg [tabindex]:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
 @media (max-width: 720px) { table.data { display: block; overflow-x: auto; position: relative; } }
 code, .prose code, .code { font-size: max(.8em, 12px); }
+/* Editorial pass for the data pages: same open layout as the redesigned pages. */
+.card { background: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 26px 0 18px; }
+.grid { gap: 8px 44px; } .eyebrow { font-family: var(--font-sans); font-size: .9rem; letter-spacing: 0; text-transform: none; }
+h1 { font-weight: 400; } h2 { font-size: clamp(1.3rem, 2vw, 1.6rem); } h1 em, h2 em { color: inherit; }
+.lede { font-family: var(--font-sans); font-size: 1.1rem; }
+.takeaway { font-family: var(--font-sans); font-size: 1rem; border-left: 0; padding: 0; } .takeaway b { color: inherit; }
+.kpi { background: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 14px 0; } .kpi.informal { border-top-color: var(--line); }
+.howto { background: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 18px 0; } .howto .k { font-family: var(--font-sans); text-transform: none; letter-spacing: 0; font-weight: 600; }
+.more { border-top: 1px solid var(--line); padding-block: 14px; } .more > summary { cursor: pointer; font-weight: 500; } .more[open] > summary { margin-bottom: 14px; }
+.c-find { width: 100%; max-width: 460px; margin-block: 8px 20px; background: var(--paper); color: var(--ink); border: 1px solid var(--rule); }
+.c-sec[hidden], .c-tab[hidden] { display: none; } .c-tab { border-top: 1px solid var(--line); } .c-tab > summary { cursor: pointer; padding: 10px 0; display: flex; gap: 12px; align-items: baseline; list-style-position: outside; } .c-tab > summary .id { color: var(--muted); font-size: .85rem; flex: none; min-width: 3.4em; } .c-tab > summary a { margin-left: auto; font-size: .85rem; flex: none; }
+.c-tab[open] { padding-bottom: 18px; }
