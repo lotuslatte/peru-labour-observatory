@@ -8,6 +8,8 @@ from ..config import load_yaml
 def build():
     files = []
     for root, _, fns in os.walk(SITE_DATA_DIR):
+        if "latest" in root:  # bulk files carry their own manifest.json
+            continue
         for fn in sorted(fns):
             p = os.path.join(root, fn)
             if fn in ("index.json",): continue

@@ -1,11 +1,11 @@
 table_id,year,domain,row_key,row_label,indicator,category,col_label,estimate,se,rse,ci_lo,ci_hi,n,grade,unit,ns
 T44,2024,ocup10,0,Militares y policías,adecuado,,Empleo adecuado (aprox.),99.637,0.359,0.361,98.933,100.341,219,A,%,
-T44,2024,ocup10,0,Militares y policías,contract_any,,Asalariados con contrato,100.0,0.0,0.0,100.0,100.0,219,A,%,
+T44,2024,ocup10,0,Militares y policías,contract_any,,Asalariados con contrato,100.0,0.0,0.0,100.0,100.0,219,B,%,
 T44,2024,ocup10,0,Militares y policías,hours_mean,,Horas semanales promedio,62.957,2.529,4.017,58.001,67.914,219,A,h,
 T44,2024,ocup10,0,Militares y policías,informality,,Tasa de empleo informal,,,,,,219,S,%,
 T44,2024,ocup10,0,Militares y policías,median_inc_hour,,Ingreso laboral mediano por hora (S/ 2025),13.918,0.768,5.519,12.803,15.814,219,A,S/h,
 T44,2024,ocup10,0,Militares y policías,median_inc_real,,Ingreso laboral mensual mediano (S/ 2025),3618.599,125.066,3.456,3387.599,3877.85,219,A,S/,
-T44,2024,ocup10,0,Militares y policías,seguro_contrib,,"Ocupados con seguro contributivo (EsSalud, EPS, privado, FF.AA./PNP)",100.0,0.0,0.0,100.0,100.0,219,A,%,
+T44,2024,ocup10,0,Militares y policías,seguro_contrib,,"Ocupados con seguro contributivo (EsSalud, EPS, privado, FF.AA./PNP)",100.0,0.0,0.0,100.0,100.0,219,B,%,
 T44,2024,ocup10,0,Militares y policías,working_poor,,Ocupados en hogares pobres,,,,,,219,S,%,
 T44,2024,ocup10,1,Directivos y gerentes,adecuado,,Empleo adecuado (aprox.),96.69,1.651,1.707,93.455,99.926,241,A,%,
 T44,2024,ocup10,1,Directivos y gerentes,contract_any,,Asalariados con contrato,99.961,0.039,0.039,99.884,100.038,222,A,%,

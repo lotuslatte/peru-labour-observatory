@@ -1,5 +1,6 @@
 pipeline/out/
 *.parquet
+site/public/data/latest/
 __pycache__/
 .pytest_cache/
 site/node_modules/
