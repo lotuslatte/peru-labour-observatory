@@ -1,18 +1,30 @@
 """Shapefile de departamentos → TopoJSON simplificado con id = ubigeo2."""
 import geopandas as gpd
 import pandas as pd
+import shapely
 import topojson as tp
+from shapely.geometry.polygon import orient
 from .config import SHAPEFILE, PROV_SHP, CONFIG_DIR, SITE_DATA_DIR
 
 
-def build(tolerance=0.02):
+def _clockwise(geom):
+    """d3 reads clockwise exterior rings as the inside of a shape."""
+    if geom.geom_type == "Polygon":
+        return orient(geom, -1)
+    return shapely.MultiPolygon([orient(p, -1) for p in geom.geoms])
+
+
+def build(tolerance=0.01):
     g = gpd.read_file(SHAPEFILE)[["departamen", "region_nat", "geometry"]]
     cw = pd.read_csv(CONFIG_DIR / "dept_crosswalk.csv", dtype=str)
     cw = cw[cw.name_shapefile.notna() & (cw.name_shapefile != "")]
     g = g.merge(cw[["ubigeo2", "name", "name_shapefile"]], left_on="departamen", right_on="name_shapefile", how="left")
     assert g.ubigeo2.notna().all(), g[g.ubigeo2.isna()].departamen.tolist()
     g = g[["ubigeo2", "name", "region_nat", "geometry"]].rename(columns={"ubigeo2": "id"})
-    topo = tp.Topology(g, prequantize=1e5, topology=True, toposimplify=tolerance)
+    # Simplify the coverage as a whole so neighbours keep one shared border.
+    g["geometry"] = shapely.coverage_simplify(g.geometry.make_valid().values, tolerance)
+    g["geometry"] = g.geometry.map(_clockwise)
+    topo = tp.Topology(g, prequantize=1e5, topology=True, toposimplify=False)
     out = SITE_DATA_DIR / "departamentos.topo.json"
     out.write_text(topo.to_json())
     return out
