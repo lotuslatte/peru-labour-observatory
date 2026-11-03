@@ -57,3 +57,23 @@
 .r-pn { font-family: var(--font-serif); font-size: 2.6rem; line-height: 1.1; margin: 8px 0; }
 .r-group { margin-bottom: 18px; } .r-group .r-rank-t { display: flex; align-items: center; gap: 8px; } .r-group i { flex: none; width: 14px; height: 14px; border-radius: 3px; }
 @media (max-width: 720px) { .r-map .r-inset-t { font-size: 20px; } }
+/* Indicator page: method, comparability by year, download and citation. */
+.r-kicker { color: var(--muted); font-size: .9rem; margin: 0 0 6px; }
+.r-doc { margin-top: 56px; border-top: 1px solid var(--ink); padding-top: 18px; max-width: 920px; }
+.r-doc h2 { font-size: 1.45rem; font-weight: 400; margin: 0 0 12px; } .r-doc h3 { font-size: 1rem; font-weight: 600; margin: 26px 0 8px; }
+.r-doc > p { max-width: 65ch; color: var(--ink-2); }
+.r-measure, .r-rules { display: grid; grid-template-columns: minmax(130px, 220px) 1fr; gap: 6px 22px; margin: 14px 0 0; }
+.r-measure dt, .r-rules dt { color: var(--muted); } .r-measure dd, .r-rules dd { margin: 0; max-width: 62ch; }
+.r-rules dt, .r-rules dd { padding-block: 6px; border-bottom: 1px solid var(--line); }
+.r-vars td:last-child, .r-vars th:last-child { text-align: left; white-space: normal; min-width: 220px; } .r-vars td:nth-child(2), .r-vars th:nth-child(2) { text-align: left; }
+.r-comp { list-style: none; padding: 0; margin: 14px 0 10px; display: grid; grid-template-columns: repeat(auto-fill, minmax(68px, 1fr)); gap: 4px; }
+.r-comp li { padding: 8px 6px; border-radius: 4px; background: var(--seq-2); color: var(--ink); display: grid; gap: 2px; }
+.r-comp .y { font-variant-numeric: tabular-nums; font-weight: 600; font-size: .92rem; } .r-comp .s { font-size: .75rem; line-height: 1.2; }
+.r-comp .is-note, .r-comp-key .is-note::before { background: var(--seq-1); box-shadow: inset 0 -3px 0 var(--warn); }
+.r-comp .is-break, .r-comp-key .is-break::before { background: var(--informal); color: var(--bg); }
+.r-comp .is-nd, .r-comp-key .is-nd::before { background: repeating-linear-gradient(135deg, var(--panel-2) 0 5px, var(--bg) 5px 10px); color: var(--muted); }
+.r-comp-key { list-style: none; padding: 0; margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .85rem; color: var(--muted); }
+.r-comp-key li { display: flex; align-items: center; gap: 6px; } .r-comp-key li::before { content: ""; width: 14px; height: 14px; border-radius: 3px; background: var(--seq-2); }
+.r-cite { font-family: var(--font-serif); font-size: 1.05rem; max-width: 65ch; }
+.r-bib { font-family: var(--font-mono); font-size: .8rem; background: var(--panel-2); padding: 12px 14px; border-radius: 6px; overflow-x: auto; }
+@media (max-width: 620px) { .r-measure, .r-rules { grid-template-columns: 1fr; gap: 2px; } .r-rules dt { border-bottom: 0; padding-bottom: 0; } }

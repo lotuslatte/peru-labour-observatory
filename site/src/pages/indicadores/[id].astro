@@ -1,31 +1,98 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import Base from '../../layouts/Base.astro';
 import '../../styles/redesign.css';
-import { YEAR, SPAN } from '../../data/release';
-import { loadTrends, loadAtlas } from '../../data/loaders';
-import { INDICATORS, DOMAINS, unitOf, fmtU, slim, peruMap } from '../../data/ui';
-export function getStaticPaths() { return INDICATORS.map(i => ({ params: { id: i.id }, props: { ind: i } })); }
-const { ind } = Astro.props; const id = ind.id;
-const tr = loadTrends(); const u = unitOf(id); const national = tr.series.national[id].map(slim); const c = national.at(-1);
-const domains: Record<string, any> = {};
-for (const d of Object.keys(DOMAINS)) { const g = tr.series[d][id]; if (g && Object.values(g).some((cs: any) => cs.at(-1).v != null)) domains[d] = Object.fromEntries(Object.entries(g).map(([k, cs]: any) => [k, cs.at(-1) && slim(cs.at(-1))])); }
-const hasDept = Object.values(tr.series.dept).some((x: any) => x[id]);
-const regions = loadAtlas().regions.filter(r => r.id.length === 2).map(r => ({ id: r.id, name: r.name, c: slim(tr.series.dept[r.id][id]?.at(-1) ?? { g: 'S' }) }));
-const data = { id, name: ind.name, unit: u, year: YEAR, years: tr.years, breaks: tr.breaks, national, domains, domLabels: DOMAINS, labels: tr.labels, regions: hasDept ? regions : null, map: hasDept ? peruMap() : null };
-const say = ind.say?.(c.v, x => fmtU(x, u));
+import { SPAN } from '../../data/release';
+import { loadAtlas } from '../../data/loaders';
+import { INDICATORS, fmtU, slim, peruMap } from '../../data/ui';
+
+// Every indicator gets a page. Documentation, comparability and estimates come from fichas/<id>.json.
+const DATA = path.resolve(process.cwd(), 'public/data');
+const readJson = (rel: string) => JSON.parse(fs.readFileSync(path.join(DATA, rel), 'utf8'));
+export function getStaticPaths() {
+  const idx = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'public/data/fichas/index.json'), 'utf8'));
+  return idx.indicators.map((d: any) => ({ params: { id: d.id } }));
+}
+const { id } = Astro.params as { id: string };
+const f = readJson(`fichas/${id}.json`);
+const version = readJson('latest/metadata.json').data_version;
+const brks = readJson('trends.json').breaks.filter((b: any) => b.indicators.includes(id));
+const u = f.unit; const isDist = f.type === 'dist';
+const ui = INDICATORS.find(i => i.id === id);
+const last = isDist ? null : f.national.at(-1);
+const say = last?.v != null ? ui?.say?.(last.v, x => fmtU(x, u)) : undefined;
+const regions = !isDist && f.dept ? loadAtlas().regions.filter(r => r.id.length === 2).map(r => ({ id: r.id, name: r.name, c: slim(f.dept[r.id] ?? { g: 'S' }) })) : null;
+const data = {
+  id, name: f.name, unit: u, type: f.type, year: f.year, years: f.years, breaks: brks,
+  national: isDist ? f.national.map((c: any) => ({ ...c, cells: c.cells.map(slim) })) : f.national.map(slim),
+  domains: isDist ? {} : Object.fromEntries(Object.entries(f.domains).filter(([, d]: any) => d.groups.some((g: any) => g.v != null && g.g !== 'S'))
+    .map(([k, d]: any) => [k, { label: d.label, groups: d.groups.map((g: any) => ({ label: g.label, ...slim(g) })) }])),
+  regions, map: regions ? peruMap() : null, explore: !!ui,
+};
+const SITE = 'https://lotuslatte.github.io/peru-labour-observatory';
+const year = new Date().getFullYear();
+const citeText = `Samillan Flores, F. (${year}). ${f.name}, ${SPAN}. Observatorio Laboral del Perú, versión ${version}. A partir de INEI, ENAHO. ${SITE}/indicadores/${id}/`;
+const tex = (s: string) => s.replace(/[áéíóú]/g, c => `{\\'${'aeiou'['áéíóú'.indexOf(c)]}}`).replace(/ñ/g, '{\\~n}');
+const citeBib = `@misc{olp_${id},
+  author = {Samillan Flores, Favio},
+  title = {${tex(f.name)}, ${SPAN.replace('–', '--')}},
+  howpublished = {Observatorio Laboral del Per{\\'u}, versi{\\'o}n ${version}},
+  year = {${year}},
+  note = {A partir de INEI, ENAHO},
+  url = {${SITE}/indicadores/${id}/}
+}`;
+const STATUS: Record<string, string> = { ok: 'Comparable', note: 'Comparable con nota', break: 'Cambio de método', nd: 'Sin dato' };
+const comp = f.comparability;
+const sources = [...new Set(comp.map((c: any) => c.source).filter(Boolean))];
+const notes = comp.filter((c: any) => c.notes.length && c.status !== 'nd');
+const nd = comp.filter((c: any) => c.status === 'nd').map((c: any) => c.year);
+const head = isDist ? null : `ENAHO ${f.year}. IC 95%: ${fmtU(last.lo, u)} a ${fmtU(last.hi, u)}.`;
 ---
-<Base title={ind.name} description={ind.def}>
+<Base title={f.name} description={f.def}>
   <div class="r-page">
     <a class="r-back" href="/indicadores/">Todos los indicadores</a>
     <section class="r-head">
-      <h1>{ind.name}</h1>
-      <div class="r-num">{fmtU(c.v, u)}</div>
+      <p class="r-kicker">{f.group}</p>
+      <h1>{f.name}</h1>
+      {!isDist && last.v != null && <div class="r-num">{fmtU(last.v, u)}</div>}
       {say && <p class="r-say">{say}</p>}
-      <p class="r-src">ENAHO {YEAR}. IC 95%: {fmtU(c.lo, u)} a {fmtU(c.hi, u)}.</p>
+      {isDist ? <p class="r-src">{f.def} ENAHO {f.year}.</p> : last.v != null && <p class="r-src">{head}</p>}
     </section>
     <div class="r-tabs" role="tablist" id="tabs"></div>
     <div id="tab"></div>
-    <details class="r-details"><summary>Definición y método</summary><p>{ind.def}</p><p>Fuente: INEI, ENAHO {SPAN}, módulo 500, factor fac500a. Error estándar por linealización de Taylor con el diseño muestral. Detalle en <a href="/acerca/metodologia/">Metodología</a>.</p></details>
+
+    <section class="r-doc" id="metodo">
+      <h2>Cómo se mide</h2>
+      <p>{f.def}</p>
+      <dl class="r-measure">{f.measure.map(([k, v]: string[]) => <><dt>{k}</dt><dd>{v.charAt(0).toUpperCase() + v.slice(1)}</dd></>)}</dl>
+      <h3>Reglas</h3>
+      <dl class="r-rules">{f.rules.map((r: any) => <><dt>{r.label.charAt(0).toUpperCase() + r.label.slice(1)}</dt><dd>{r.rule}</dd></>)}</dl>
+      <h3>Variables de la ENAHO</h3>
+      <div class="r-scroll"><table class="r-table r-vars"><thead><tr><th>Variable</th><th>Módulo</th><th>Nota</th></tr></thead><tbody>
+        {f.vars.map((v: any) => <tr><td><code>{v.enaho}</code></td><td>{v.module_name}</td><td>{v.note}</td></tr>)}
+      </tbody></table></div>
+      <p class="r-src">Factor de expansión <code>fac500a</code>. Error estándar por linealización de Taylor con conglomerados y estratos del diseño muestral. Sello A si el error relativo es menor que 15%, B de 15% a 30%; con 30% o más, o menos de 30 casos, la cifra no se publica. Detalle en <a href="/acerca/metodologia/">Metodología</a>.</p>
+    </section>
+
+    <section class="r-doc" id="comparabilidad">
+      <h2>Comparabilidad por año</h2>
+      <ol class="r-comp" aria-label="Comparabilidad de la serie por año">
+        {comp.map((c: any) => <li class={`is-${c.status}`} title={[STATUS[c.status], c.source, ...c.notes].filter(Boolean).join('. ')}><span class="y">{c.year}</span><span class="s">{STATUS[c.status]}</span></li>)}
+      </ol>
+      <ul class="r-comp-key"><li class="is-ok">Comparable</li><li class="is-note">Comparable con nota</li><li class="is-break">Cambio de método: no se compara con los años previos</li><li class="is-nd">Sin dato</li></ul>
+      {sources.length > 1 && <p>Fuente de la serie: {brks.map((b: any) => `${b.before_es} hasta ${b.year - 1}; ${b.after_es} desde ${b.year}.`).join(' ')}</p>}
+      {notes.map((c: any) => <p><strong>{c.year}.</strong> {c.notes.join(' ')}</p>)}
+      {nd.length > 0 && <p>Sin estimación en {nd.length === 1 ? nd[0] : `${nd[0]}–${nd.at(-1)}`}.</p>}
+    </section>
+
+    <section class="r-doc" id="descargar">
+      <h2>Descargar y citar</h2>
+      <p>Todas las estimaciones de este indicador, para cada año y desagregación, con error estándar, intervalo de 95%, n y sello: <a href={`/data/latest/${f.file}`} download><code>{f.file.split('/')[1]}</code></a>. Las celdas con sello S quedan vacías. El paquete completo y las versiones fijas están en <a href="/datos/">Datos</a>.</p>
+      <p class="r-cite" id="cite-text">{citeText}</p>
+      <pre class="r-bib" id="cite-bib">{citeBib}</pre>
+      <div class="r-actions"><button class="r-btn" data-copy="cite-text">Copiar cita</button><button class="r-btn" data-copy="cite-bib">Copiar BibTeX</button></div>
+    </section>
     <script type="application/json" id="olp-data" set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />
   </div>
   <script src="../../scripts/ficha.js"></script>
