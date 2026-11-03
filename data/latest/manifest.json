@@ -1,105 +1,105 @@
 {
- "data_version": "2026.1",
+ "data_version": "2026.2",
  "files": [
   {
    "path": "codebook.csv",
-   "bytes": 4697,
-   "sha256": "e003ed7d85509ae60554184c981aaf4adb0b2e18cb19d7da1a815bd1be9b6ca6"
+   "bytes": 5129,
+   "sha256": "e2097a75b06e89cb9e1d82bca82fbc1e3f4d152bfcd26feb75f118bb90ca34ca"
   },
   {
    "path": "estimates.csv.gz",
-   "bytes": 6683478,
-   "sha256": "c8598c693aa1e2cf070288ef961411b36f1bbb164faa711bf8672b46570a02b1"
+   "bytes": 6684061,
+   "sha256": "baff3573ac28cb0060ce2a67e82bd883ef2958c5185540fcab7201a9d944cb27"
   },
   {
    "path": "estimates.parquet",
-   "bytes": 5336698,
-   "sha256": "ff7cb57391e73380d5baa64c1a5f53fb678f13245cd841f2592def53bd241d37"
+   "bytes": 5336795,
+   "sha256": "a54f9b87c916ec47cf2cfad95b84571d863df14b7d2a5f9e2eb0577a28149e8d"
   },
   {
    "path": "metadata.json",
    "bytes": 5073,
-   "sha256": "9f0efff674f89c31a928ca020b11a911f7d803e1d5bc4fdebbef9a80fe2d8c49"
+   "sha256": "3c729ff586c614762936c01b0e2f58e5c99267fdfb8a38393ba82cd1b7f8002c"
   },
   {
    "path": "observatorio_laboral.dta",
-   "bytes": 25288213,
-   "sha256": "6678317c139e0a78bba55502062f081c3d46643de8d2a3a1328ebe50f630e04e"
+   "bytes": 25288247,
+   "sha256": "a1f4a69fc50baedbaf2d488c57fa3d35e50eb98d47524a62d8e0f1ddf912d250"
   },
   {
    "path": "observatorio_laboral.xlsx",
-   "bytes": 4823698,
-   "sha256": "c4df7035fded8cf2f39b254cec0f5659976c2abd7dad338ab901e0285af9b3c9"
+   "bytes": 4824061,
+   "sha256": "9ac266d314f4e48c98fd81873d144d28f89b89457ff183dc0553b2895c3d44c9"
   },
   {
    "path": "por_dominio/age4.csv.gz",
-   "bytes": 75231,
-   "sha256": "ccc9e4892aca3f25f139b9b83a10e96ae9b1fff0ced18ad62c01e89b28171480"
+   "bytes": 75239,
+   "sha256": "28db66b28556dcc13568c86fa329830ee2d184672c2795c4b5efa220b0e1efcb"
   },
   {
    "path": "por_dominio/area.csv.gz",
-   "bytes": 37092,
-   "sha256": "056208fde8a9a203359f1225fb77fad01d503b92022f26d78c98234637a5f2d6"
+   "bytes": 37109,
+   "sha256": "d3f74c3dbc4428c5f48593ca0d108f38d2920fbd83a33cc3024b95794e743dad"
   },
   {
    "path": "por_dominio/dept.csv.gz",
-   "bytes": 502528,
-   "sha256": "6965561e54eaed83d8a3a4014d993bbf4abd35ce947b2e3531038cac73a3af2e"
+   "bytes": 502573,
+   "sha256": "1451ec6a95fd841637df55d625f4c172670f5a2fcc709682dfdcb27ed20bcfbc"
   },
   {
    "path": "por_dominio/dept_age4.csv.gz",
-   "bytes": 1806881,
-   "sha256": "1160e0269d27079034d22e56676392eac1a7575320b59ec682903a0b70f00bb6"
+   "bytes": 1807125,
+   "sha256": "fb4d491f668179d62c38befecedfc2a6410a68a988c934b3fdd1d62f761f7bc1"
   },
   {
    "path": "por_dominio/dept_area.csv.gz",
-   "bytes": 944706,
-   "sha256": "6e6ed75b9e3955611cb6e224ce52db52806cf2cb57707a1e4d573b0d83a6cbbc"
+   "bytes": 944828,
+   "sha256": "ca90a720c56d7fdd543cd0eacc6f304fe19c0b52b80efd095c54c3c295848346"
   },
   {
    "path": "por_dominio/dept_lengua3.csv.gz",
-   "bytes": 1051502,
-   "sha256": "7baeb1a75d93f696f3bb965249dc20ee8040a5ee98a9b8a875b279ce4df74941"
+   "bytes": 1051610,
+   "sha256": "279381b35c77cdce83c0d53c65b2750d2b91f76273aad83ff08914fdcdec954e"
   },
   {
    "path": "por_dominio/dept_sex.csv.gz",
-   "bytes": 941483,
-   "sha256": "4f1ae72e19837d9c7bca9c556819210d56cd5a8a9bceae7b9d81547da828105a"
+   "bytes": 941580,
+   "sha256": "553c1e57c2aee7f2f3b81bdd5f5e95cc1db53159838124926279a665b5924727"
   },
   {
    "path": "por_dominio/educ4.csv.gz",
-   "bytes": 74024,
-   "sha256": "68e428c436039d8436895d3210bef0bdbc5b3e5f77f8e3fc03a481be14620800"
+   "bytes": 74036,
+   "sha256": "05affaa6115c3ebf2415f0dbbde9e82cafbaefe41a918ffa263927f407131f73"
   },
   {
    "path": "por_dominio/etnia6.csv.gz",
-   "bytes": 117103,
-   "sha256": "b6b2b980a6d9f1f84fefd01c5d012af3a17a507ea3e4d8eba8960f0ccb8c6907"
+   "bytes": 117135,
+   "sha256": "f1bfc00e0d37218e01253e8a0e65da9aaaf7cf798ac8b54e091b796ff30ee8d6"
   },
   {
    "path": "por_dominio/lengua3.csv.gz",
-   "bytes": 53872,
-   "sha256": "a51b04186dd379242741b1a7a2852f6d37ba0e501d4a88b309692301aba28aa3"
+   "bytes": 53895,
+   "sha256": "0194bda2841c4d9488c2438b9a0ad4cc738b7e3ca1fe72bcea198305e612a5da"
   },
   {
    "path": "por_dominio/lima.csv.gz",
-   "bytes": 38613,
-   "sha256": "23e660e67e672f53ff3eb3f5fb321005ddba28f374441eb3d1aa067553a6a03a"
+   "bytes": 38628,
+   "sha256": "36522c4d8ec226f94a41fc99eca75ec4c6df99989e626f2ce9f31f57540aaf5f"
   },
   {
    "path": "por_dominio/mig2.csv.gz",
-   "bytes": 38589,
-   "sha256": "7e9d5ec38acea3feca3f20839af22f50fa31d349774d9453781bea250d2e083b"
+   "bytes": 38603,
+   "sha256": "decac3397d814b523c784896ea06a2938303bfe33574d307ebc4a29f3574361a"
   },
   {
    "path": "por_dominio/national.csv.gz",
-   "bytes": 19306,
-   "sha256": "ec0da6c80bccdfd65565f487362f4234fbcb1228d6a29b904437b9e3e399568f"
+   "bytes": 19317,
+   "sha256": "95f237d5bf22d308fa4166e866cec1b78072348626f87ce743ad2f35a552f417"
   },
   {
    "path": "por_dominio/ocup10.csv.gz",
-   "bytes": 146957,
-   "sha256": "1e7a8d80a70504abf974ddde7f43e33554e335111ffb0150245ecd8c3602da76"
+   "bytes": 146977,
+   "sha256": "f0e47418956dc815f8858020b1806d2591aa85204cf0c7a0ba0a3be7fa36225b"
   },
   {
    "path": "por_dominio/prov.csv.gz",
@@ -108,33 +108,33 @@
   },
   {
    "path": "por_dominio/region_nat.csv.gz",
-   "bytes": 77088,
-   "sha256": "61607253a428acd159143f0da2924f1225595669ee23dbfca105cd39d7d938e1"
+   "bytes": 77101,
+   "sha256": "8a5c16fe9da1ef6d6954965ff0a310d9ca271331a2bc253e85efb1794dbf22a4"
   },
   {
    "path": "por_dominio/sector9.csv.gz",
-   "bytes": 140021,
-   "sha256": "3d8ed87a71000b7f313c01c649cc93c14e6050663620909c3b316efd0dbaa015"
+   "bytes": 140037,
+   "sha256": "fef89fcf29f903bffc9864061fb5dd6660b4f77a1476bc8a1d186ac837e786b5"
   },
   {
    "path": "por_dominio/sex.csv.gz",
-   "bytes": 36018,
-   "sha256": "480990c89b04d5396ed581fc3944c0f73e18ffe157e754a3538b65fa46d9146a"
+   "bytes": 36035,
+   "sha256": "9086c09427e7ffac752f145cb9fa02b11cc55f653a7beec5263045d8b6797b4f"
   },
   {
    "path": "por_dominio/sex_age4.csv.gz",
-   "bytes": 146181,
-   "sha256": "5f9c372d88851ff4febdbaa5e3268393c262646710459054674809b8e4f6b224"
+   "bytes": 146201,
+   "sha256": "c934eeabad44463de82cc9d87913f773c8d57a166ebb96ccdd7f72812ec0c01f"
   },
   {
    "path": "por_dominio/sex_area.csv.gz",
-   "bytes": 73476,
-   "sha256": "c6a6606a568893ee60129ce1f0e08d325a0bd52cb8d41c1a5878d627d7a9d9b4"
+   "bytes": 73488,
+   "sha256": "a28b152f6670e931fc00feaf087c93c032fc1abe4fbe1a24a21ada74b6234c90"
   },
   {
    "path": "por_dominio/sex_educ4.csv.gz",
-   "bytes": 143776,
-   "sha256": "26dbaf4a64820f69e6ba109077d7add17ddfbe3193b71b7af7604dfd9ef5fd02"
+   "bytes": 143798,
+   "sha256": "2484352168f5d1b8c19128ed36e5a46f08a39fa92a311a1db62f1d0dbbcbcfb2"
   },
   {
    "path": "por_indicador/adecuado.csv",
@@ -243,8 +243,8 @@
   },
   {
    "path": "por_indicador/informal_in_sector.csv",
-   "bytes": 737820,
-   "sha256": "55db9e5098fc8e0f088ba8505027b53781354ab6ca4cc75afbd8a891976ed121"
+   "bytes": 756195,
+   "sha256": "601a379f2c0daf86e935305d30fb337b24e486401814ec48c956be1f045235f4"
   },
   {
    "path": "por_indicador/informality.csv",
