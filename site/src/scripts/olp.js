@@ -1,5 +1,5 @@
 // Shared helpers for the indicator pages and the explorer: formatting, line chart, CSV.
-const UNITS={'%':v=>v.toFixed(1)+'%','S/':v=>'S/'+Math.round(v).toLocaleString('en-US'),'pp':v=>v.toFixed(1)+' pp','h':v=>v.toFixed(1)+' h'};
+const UNITS={'%':v=>v.toFixed(1)+'%','S/':v=>'S/'+Math.round(v).toLocaleString('en-US'),'pp':v=>v.toFixed(1)+' pp','h':v=>v.toFixed(1)+' h','S/h':v=>'S/'+v.toFixed(2),'ratio':v=>v.toFixed(2)};
 const fmt=(v,u)=>v==null?'':UNITS[u](v);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const CATS=['--cat-1','--cat-2','--cat-4','--cat-3','--cat-5','--cat-9'];

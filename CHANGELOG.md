@@ -2,7 +2,18 @@
 
 Data and method changes, newest first. Data versions use the `YYYY.N` form.
 
-## Unreleased
+## 2026.2 (2026-11-03)
+
+### Data release
+- Version 2026.2. Estimates are unchanged; `method_note` now marks the informal sector break from 2024 onward.
+
+### Method
+- The informal sector series (`informal_in_sector`) has a declared break in 2024. Up to 2023 it uses INEI's `emplpsec`; INEI stopped publishing it in 2024, and since then the series uses the Observatory rule (informal employment in a unit without RUC). Applied to 2021–2023, the rule gives about 1 point less than `emplpsec`, with 98% agreement, so about half of the 2023–2024 drop (58.8% to 56.9%) comes from the change of method. Bulk files mark 2024 onward with `method_note = informal_sector_rule_2024`, and comparisons across 2024 are no longer reported as significant.
+
+### Added
+- Every indicator (45) has its own page at `/indicadores/<id>/` with numerator and denominator, the rules that build each variable, the ENAHO variables and modules used, a year-by-year comparability strip with the source of the series, a link to its CSV and a citation in text and BibTeX. Distribution indicators show their categories by year. Documentation lives in `config/indicator_docs.yml`; `fichas/<id>.json` is generated from it.
+
+## 2026.1 (2026-11-01)
 
 ### Data release
 - Version 2026.1 is the first numbered release: `/data/latest/` holds every estimate in CSV, Parquet, Stata and Excel, one file per indicator and per breakdown, a codebook and a manifest with SHA-256 hashes. Fixed copies are attached to the GitHub Release.

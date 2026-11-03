@@ -1,0 +1,101 @@
+# Plain-language documentation for every indicator page (/indicadores/<id>/).
+# `derived` describes each person-level variable built in olp/derive.py: a noun phrase (`label`),
+# the rule in words, the canonical source variables (`vars`, resolved to ENAHO names and modules
+# through variables.yml) and the derived variables it builds on (`uses`).
+# `indicators` adds a short name, a group and a definition to each entry of indicators.yml.
+# Numerator, denominator, variables and year-by-year comparability are generated from these
+# entries, indicators.yml and series_breaks.yml; do not repeat them here.
+# Site text is Spanish.
+
+derived:
+  pet:          {label: "personas de 14 años a más", rule: "Todas las personas del módulo 500, que entrevista a quienes tienen 14 años a más.", vars: [age]}
+  pea:          {label: "población económicamente activa", rule: "ocu500 igual a 1 (ocupado) o 2 (desocupado abierto).", vars: [ocu500]}
+  ocupado:      {label: "ocupados", rule: "ocu500 igual a 1.", vars: [ocu500]}
+  desocupado:   {label: "desocupados abiertos", rule: "ocu500 igual a 2: no trabajaron y buscaron trabajo.", vars: [ocu500]}
+  desocupado_oculto: {label: "desocupados ocultos", rule: "ocu500 igual a 3: no trabajaron, no buscaron y están disponibles.", vars: [ocu500]}
+  desocupado_ext: {label: "desocupados abiertos y ocultos", rule: "ocu500 igual a 2 o 3.", vars: [ocu500]}
+  pea_ext:      {label: "población activa ampliada (incluye desocupados ocultos)", rule: "ocu500 igual a 1, 2 o 3.", vars: [ocu500]}
+  youth:        {label: "jóvenes de 15 a 29 años", rule: "Edad de 15 a 29 años.", vars: [age]}
+  informal:     {label: "ocupados en empleo informal", rule: "2014–2023: ocupinf del INEI igual a 1. Desde 2024, regla del Observatorio: independientes y empleadores de unidades sin RUC; asalariados en unidades sin RUC, sin seguro ligado al trabajo ni pensión, o con locación de servicios o sin contrato; y todos los trabajadores familiares no remunerados.", vars: [ocupinf_inei, cat_ocup, sunat_reg, contract, pension_none, ins_essalud, ins_eps, ins_priv, ins_ffaa], uses: [ocupado]}
+  formal:       {label: "ocupados en empleo formal", rule: "Ocupados que no están en empleo informal.", uses: [informal]}
+  informal_in_sector: {label: "ocupados en el sector informal", rule: "2014–2023: emplpsec del INEI igual a 1. Desde 2024: empleo informal en una unidad sin RUC.", vars: [emplpsec_inei, sunat_reg], uses: [informal]}
+  hours:        {label: "horas semanales normales en todas las ocupaciones", rule: "Si la semana pasada fue normal, horas de la ocupación principal más la secundaria; si no, horas normales declaradas (i520, o p520 si falta).", vars: [hours_lastweek_main, hours_sec, normal_hours, hours_usual, hours_usual_raw], uses: [ocupado]}
+  hours_lt35:   {label: "ocupados con menos de 35 horas", rule: "Horas semanales menores que 35.", uses: [hours]}
+  hours_le48:   {label: "ocupados con 48 horas o menos", rule: "Horas semanales de 48 o menos.", uses: [hours]}
+  hours_ge60:   {label: "ocupados con 60 horas o más", rule: "Horas semanales de 60 o más.", uses: [hours]}
+  subemp_hours: {label: "ocupados subempleados por horas", rule: "Menos de 35 horas, quieren trabajar más horas y están disponibles para hacerlo.", vars: [wants_more, avail_more], uses: [hours]}
+  inc_real_pos: {label: "ingreso laboral mensual", rule: "Suma anual de ingreso monetario, en especie, autoconsumo y extraordinario de la ocupación principal y la secundaria, entre 12, en soles del año titular de Lima (deflactores del INEI). Solo ingresos mayores que cero.", vars: [inc_main_annual, inc_main_inkind, inc_self_annual, inc_self_autoconsumo, inc_sec_annual, inc_sec_inkind, inc_sec_self, inc_sec_autoconsumo, inc_extra_annual], uses: [ocupado]}
+  has_income:   {label: "ocupados con ingreso laboral", rule: "Ocupados con ingreso laboral mayor que cero.", uses: [inc_real_pos]}
+  inc_hour_real: {label: "ingreso laboral por hora", rule: "Ingreso mensual entre horas semanales por 52/12.", uses: [inc_real_pos, hours]}
+  subemp_income: {label: "ocupados subempleados por ingresos", rule: "No subempleados por horas, con ingreso mensual nominal menor que la remuneración mínima del año; excluye trabajadores familiares no remunerados.", vars: [cat_ocup], uses: [subemp_hours, inc_real_pos]}
+  adecuado:     {label: "ocupados con empleo adecuado", rule: "Ni subempleados por horas ni por ingresos.", uses: [subemp_hours, subemp_income]}
+  wage_worker:  {label: "asalariados", rule: "Categoría ocupacional empleado, obrero o trabajador del hogar (p507 igual a 3, 4 o 6).", vars: [cat_ocup], uses: [ocupado]}
+  self_emp:     {label: "trabajadores independientes", rule: "p507 igual a 2.", vars: [cat_ocup], uses: [ocupado]}
+  tfnr:         {label: "trabajadores familiares no remunerados", rule: "p507 igual a 5.", vars: [cat_ocup], uses: [ocupado]}
+  contract_any: {label: "asalariados con contrato", rule: "Cualquier tipo de contrato (p511a distinto de 7, sin contrato).", vars: [contract], uses: [wage_worker]}
+  contract_indef: {label: "asalariados con contrato indefinido", rule: "p511a igual a 1.", vars: [contract], uses: [wage_worker]}
+  pension:      {label: "ocupados afiliados a un sistema de pensiones", rule: "p558a5 distinto de 5 (no afiliado).", vars: [pension_none], uses: [ocupado]}
+  seguro:       {label: "ocupados con seguro de salud", rule: "Afiliados a cualquier seguro de salud (p4191 a p4198).", vars: [ins_essalud, ins_priv, ins_eps, ins_ffaa, ins_sis, ins_univ, ins_other1, ins_other], uses: [ocupado]}
+  essalud:      {label: "ocupados afiliados a EsSalud", rule: "p4191 igual a 1.", vars: [ins_essalud], uses: [ocupado]}
+  seguro_contrib: {label: "ocupados con seguro contributivo", rule: "Afiliados a EsSalud, EPS, seguro privado o de FF.AA. y PNP.", vars: [ins_essalud, ins_eps, ins_priv, ins_ffaa], uses: [ocupado]}
+  sis:          {label: "ocupados afiliados al SIS", rule: "p4195 igual a 1.", vars: [ins_sis], uses: [ocupado]}
+  working_poor: {label: "ocupados en hogares pobres", rule: "Hogar en pobreza monetaria extrema o no extrema según la sumaria (pobreza igual a 1 o 2).", vars: [pobreza], uses: [ocupado]}
+  ocup10:       {label: "gran grupo ocupacional", rule: "Primer dígito del código CNO-2015 de la ocupación principal.", vars: [ciuo], uses: [ocupado]}
+  firm_small:   {label: "ocupados en unidades de hasta 20 trabajadores", rule: "p512a igual a 1.", vars: [firm_size], uses: [ocupado]}
+  secondary_job: {label: "ocupados con una ocupación secundaria", rule: "Declaran categoría ocupacional en la ocupación secundaria (p517).", vars: [cat_ocup_sec], uses: [ocupado]}
+  sector9:      {label: "rama de actividad", rule: "Sección CIIU revisión 4 de la ocupación principal, agrupada en 9 ramas.", vars: [ciiu4], uses: [ocupado]}
+  status6:      {label: "categoría ocupacional", rule: "p507, con «otro» unido a trabajador del hogar.", vars: [cat_ocup], uses: [ocupado]}
+  educ4:        {label: "nivel educativo", rule: "Último nivel aprobado (p301a del módulo 300) en 4 grupos.", vars: [educ_raw], uses: [ocupado]}
+  neet:         {label: "jóvenes que ni estudian ni trabajan", rule: "Jóvenes de 15 a 29 años no ocupados que no asisten a un centro de estudios (p307).", vars: [attends], uses: [youth, ocupado]}
+  mig_life:     {label: "personas nacidas en otro departamento", rule: "Nacieron fuera del distrito (p401g1 igual a 2) y el departamento de nacimiento difiere del actual. La pregunta existe desde 2018.", vars: [birth_same, birth_ubigeo, ubigeo]}
+
+indicators:
+  lfpr:            {name: "Actividad", group: "Participación", def: "Población económicamente activa entre la población en edad de trabajar, de 14 años a más."}
+  epr:             {name: "Ocupación sobre población", group: "Participación", def: "Ocupados entre la población de 14 años a más."}
+  ur:              {name: "Desempleo", group: "Participación", def: "Desocupados entre la población económicamente activa de 14 años a más."}
+  ur_ext:          {name: "Desempleo ampliado", group: "Participación", def: "Desocupados abiertos y ocultos entre la población activa ampliada, que suma a quienes no buscaron trabajo pero están disponibles."}
+  hidden_unemp:    {name: "Desempleo oculto", group: "Participación", def: "Desocupados ocultos (no buscaron trabajo, están disponibles) entre la población activa ampliada."}
+  gap_lfpr:        {name: "Brecha de actividad", group: "Participación", def: "Tasa de actividad de hombres menos tasa de actividad de mujeres, en puntos porcentuales."}
+  gap_ur:          {name: "Brecha de desempleo", group: "Participación", def: "Tasa de desempleo de mujeres menos tasa de desempleo de hombres, en puntos porcentuales."}
+  ur_youth:        {name: "Desempleo juvenil", group: "Jóvenes", def: "Desocupados entre la población económicamente activa de 15 a 29 años."}
+  neet:            {name: "Jóvenes que ni estudian ni trabajan", group: "Jóvenes", def: "Personas de 15 a 29 años que no estudian ni trabajan entre el total de ese grupo de edad."}
+  informality:     {name: "Empleo informal", group: "Calidad del empleo", def: "Ocupados en empleo informal entre el total de ocupados de 14 años a más. De 2014 a 2023 usa la variable ocupinf del INEI. Desde 2024 el INEI no la publica y se usa la regla del Observatorio."}
+  formality:       {name: "Empleo formal", group: "Calidad del empleo", def: "Ocupados en empleo formal entre el total de ocupados. Es el complemento del empleo informal."}
+  informal_in_sector: {name: "Sector informal", group: "Calidad del empleo", def: "Ocupados que trabajan en unidades productivas informales (sin RUC) entre el total de ocupados. Mide la unidad, no el puesto: un asalariado sin protección en una empresa registrada está en empleo informal pero no en el sector informal."}
+  adecuado:        {name: "Empleo adecuado", group: "Calidad del empleo", def: "Ocupados sin subempleo por horas ni por ingresos entre el total de ocupados. Es una aproximación del Observatorio."}
+  subemp_hours:    {name: "Subempleo por horas", group: "Calidad del empleo", def: "Ocupados con menos de 35 horas que quieren y pueden trabajar más, entre el total de ocupados."}
+  subemp_income:   {name: "Subempleo por ingresos", group: "Calidad del empleo", def: "Ocupados que no están subempleados por horas y ganan menos que la remuneración mínima vital del año, entre el total de ocupados. El INEI usa un ingreso mínimo referencial por hogar; esta es una aproximación con la remuneración mínima."}
+  contract_any:    {name: "Asalariados con contrato", group: "Calidad del empleo", def: "Asalariados con cualquier tipo de contrato entre el total de asalariados."}
+  contract_indef:  {name: "Contrato indefinido", group: "Calidad del empleo", def: "Asalariados con contrato a plazo indefinido entre el total de asalariados."}
+  pension:         {name: "Afiliación a pensiones", group: "Protección", def: "Ocupados afiliados a un sistema de pensiones entre el total de ocupados."}
+  seguro:          {name: "Seguro de salud", group: "Protección", def: "Ocupados con algún seguro de salud entre el total de ocupados."}
+  essalud:         {name: "Afiliación a EsSalud", group: "Protección", def: "Ocupados afiliados a EsSalud entre el total de ocupados."}
+  seguro_contrib:  {name: "Seguro contributivo", group: "Protección", def: "Ocupados con un seguro de salud que se paga con aportes (EsSalud, EPS, privado o de FF.AA. y PNP) entre el total de ocupados."}
+  sis:             {name: "Afiliación al SIS", group: "Protección", def: "Ocupados afiliados al Seguro Integral de Salud, que es subsidiado, entre el total de ocupados."}
+  median_inc_real: {name: "Ingreso mediano", group: "Ingresos y horas", def: "Mediana del ingreso laboral mensual de los ocupados con ingreso, en soles de __YEAR__ de Lima."}
+  mean_inc_real:   {name: "Ingreso promedio", group: "Ingresos y horas", def: "Promedio del ingreso laboral mensual de los ocupados con ingreso, en soles de __YEAR__ de Lima."}
+  median_inc_hour: {name: "Ingreso mediano por hora", group: "Ingresos y horas", def: "Mediana del ingreso laboral por hora de los ocupados con ingreso y horas declaradas, en soles de __YEAR__ de Lima."}
+  inc_p10:         {name: "Ingreso del percentil 10", group: "Ingresos y horas", def: "Ingreso laboral mensual por debajo del cual está el 10% de los ocupados con ingreso."}
+  inc_p25:         {name: "Ingreso del percentil 25", group: "Ingresos y horas", def: "Ingreso laboral mensual por debajo del cual está el 25% de los ocupados con ingreso."}
+  inc_p75:         {name: "Ingreso del percentil 75", group: "Ingresos y horas", def: "Ingreso laboral mensual por debajo del cual está el 75% de los ocupados con ingreso."}
+  inc_p90:         {name: "Ingreso del percentil 90", group: "Ingresos y horas", def: "Ingreso laboral mensual por debajo del cual está el 90% de los ocupados con ingreso."}
+  gini_inc:        {name: "Desigualdad del ingreso laboral", group: "Ingresos y horas", def: "Índice de Gini del ingreso laboral mensual entre ocupados con ingreso, de 0 (igualdad) a 1. Es del ingreso laboral de las personas, no del ingreso del hogar, y no se compara con el Gini oficial de pobreza."}
+  gap_inc:         {name: "Brecha de ingreso", group: "Ingresos y horas", def: "Ingreso mediano de las mujeres entre el ingreso mediano de los hombres. Un valor de 0.70 significa que la mediana de ellas es 70% de la de ellos."}
+  hours_mean:      {name: "Horas por semana", group: "Ingresos y horas", def: "Promedio de horas semanales normales trabajadas por los ocupados en todas sus ocupaciones."}
+  hours_lt35:      {name: "Menos de 35 horas", group: "Ingresos y horas", def: "Ocupados que trabajan menos de 35 horas semanales entre el total de ocupados."}
+  hours_le48:      {name: "Ocupados con 48 horas o menos", group: "Ingresos y horas", def: "Ocupados que trabajan 48 horas semanales o menos entre el total de ocupados."}
+  hours_ge60:      {name: "60 horas o más", group: "Ingresos y horas", def: "Ocupados que trabajan 60 horas semanales o más entre el total de ocupados."}
+  self_emp:        {name: "Trabajo independiente", group: "Tipo de trabajo", def: "Trabajadores independientes entre el total de ocupados."}
+  tfnr:            {name: "Trabajo familiar no remunerado", group: "Tipo de trabajo", def: "Trabajadores familiares no remunerados entre el total de ocupados."}
+  firm_small:      {name: "Unidades pequeñas", group: "Tipo de trabajo", def: "Ocupados en unidades productivas de hasta 20 trabajadores entre el total de ocupados."}
+  secondary_job:   {name: "Segunda ocupación", group: "Tipo de trabajo", def: "Ocupados que además tienen una ocupación secundaria entre el total de ocupados."}
+  status_dist:     {name: "Categoría ocupacional", group: "Tipo de trabajo", def: "Reparto de los ocupados entre empleadores, independientes, empleados, obreros, trabajadores familiares no remunerados y trabajadores del hogar."}
+  sector_dist:     {name: "Rama de actividad", group: "Tipo de trabajo", def: "Reparto de los ocupados entre 9 ramas de actividad, según la sección CIIU de su ocupación principal."}
+  ocup_dist:       {name: "Grupo ocupacional", group: "Tipo de trabajo", def: "Reparto de los ocupados entre los 10 grandes grupos de la Clasificación Nacional de Ocupaciones 2015."}
+  educ_dist:       {name: "Educación de los ocupados", group: "Tipo de trabajo", def: "Reparto de los ocupados por el último nivel educativo aprobado."}
+  working_poor:    {name: "Trabajadores pobres", group: "Hogar y migración", def: "Ocupados que viven en hogares en pobreza monetaria, extrema o no extrema, entre el total de ocupados."}
+  mig_life:        {name: "Migración de toda la vida", group: "Hogar y migración", def: "Personas de 14 años a más nacidas en un departamento distinto del que viven, entre el total de ese grupo. La ENAHO pregunta el lugar de nacimiento desde 2018."}
+
+# Notes attached to a survey year for every indicator.
+year_notes:
+  2020: "Levantamiento en parte telefónico por la pandemia; comparar con cautela."

@@ -3,7 +3,7 @@
 first_year: 2014
 headline_year: 2025
 # Data release, YYYY.N. Raise it and add a CHANGELOG entry whenever published data change.
-data_version: "2026.1"
+data_version: "2026.2"
 # ENAHO annual survey codes on the INEI microdata portal.
 survey_codes: {2014: 440, 2015: 498, 2016: 546, 2017: 603, 2018: 634, 2019: 687, 2020: 737, 2021: 759, 2022: 784, 2023: 906, 2024: 966, 2025: 1031}
 # Minimum wage (S/ per month, in force most of the year). 2025: D.S. 006-2024-TR, from 2025-01-01.

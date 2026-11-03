@@ -1,15 +1,15 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import Base from '../../layouts/Base.astro';
 import '../../styles/redesign.css';
-import { YEAR } from '../../data/release';
-import { loadTrends } from '../../data/loaders';
-import { INDICATORS, unitOf, fmtU } from '../../data/ui';
-const tr = loadTrends();
-const groups = [...new Set(INDICATORS.map(i => i.group))];
+import { fmtU } from '../../data/ui';
+const idx = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'public/data/fichas/index.json'), 'utf8'));
+const value = (d: any) => d.latest?.v != null ? fmtU(d.latest.v, d.unit) : d.type === 'dist' ? 'Reparto' : 'Sin dato';
 ---
 <Base title="Indicadores">
   <div class="r-page r-list">
-    <section class="r-hero"><h1>Indicadores</h1><p class="r-src">Cada indicador tiene su ficha con tendencia, grupos y datos. Valores de {YEAR}. Las demás medidas están en el <a href="/compendio/">compendio de tablas</a>.</p></section>
-    {groups.map(g => <section><h2>{g}</h2><ul>{INDICATORS.filter(i => i.group === g).map(i => <li><a href={`/indicadores/${i.id}/`}><span>{i.name}</span><span>{fmtU(tr.series.national[i.id].at(-1).v, unitOf(i.id))}</span></a></li>)}</ul></section>)}
+    <section class="r-hero"><h1>Indicadores</h1><p class="r-src">{idx.indicators.length} indicadores, cada uno con su ficha: tendencia, grupos, cómo se mide, comparabilidad por año, descarga y cita. Valores de {idx.year}. Las tablas cruzadas están en el <a href="/compendio/">compendio</a>.</p></section>
+    {idx.groups.map((g: string) => <section><h2>{g}</h2><ul>{idx.indicators.filter((d: any) => d.group === g).map((d: any) => <li><a href={`/indicadores/${d.id}/`}><span>{d.name}</span><span>{value(d)}</span></a></li>)}</ul></section>)}
   </div>
 </Base>

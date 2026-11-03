@@ -73,14 +73,14 @@ modules:
       res5_ubigeo: {src: p401g}
       birth_same: {src: p401g1, optional: true, note: "2018+"}
       birth_ubigeo: {src: p401g2, optional: true}
-      ins_essalud: {src: p4191}
-      ins_priv:    {src: p4192}
-      ins_eps:     {src: p4193}
-      ins_ffaa:    {src: p4194}
-      ins_sis:     {src: p4195}
-      ins_univ:    {src: p4196}
-      ins_other1:  {src: p4197}
-      ins_other:   {src: p4198}
+      ins_essalud: {src: p4191, note: "1 = afiliado a EsSalud"}
+      ins_priv:    {src: p4192, note: "1 = afiliado a seguro privado de salud"}
+      ins_eps:     {src: p4193, note: "1 = afiliado a entidad prestadora de salud (EPS)"}
+      ins_ffaa:    {src: p4194, note: "1 = afiliado a seguro de FF.AA. o PNP"}
+      ins_sis:     {src: p4195, note: "1 = afiliado a Seguro Integral de Salud (SIS)"}
+      ins_univ:    {src: p4196, note: "1 = afiliado a seguro universitario"}
+      ins_other1:  {src: p4197, note: "1 = afiliado a seguro escolar privado"}
+      ins_other:   {src: p4198, note: "1 = afiliado a otro seguro"}
   m34:
     weight: factor07
     vars:

@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use these data, please cite them as below."
 title: "Observatorio Laboral del Perú"
 type: dataset
-version: "2026.1"
+version: "2026.2"
 authors:
   - family-names: "Samillan Flores"
     given-names: "Favio"
