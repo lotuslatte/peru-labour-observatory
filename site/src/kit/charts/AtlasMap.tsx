@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from 'preact/hooks';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
-import { seq, onThemeChange } from './lib/theme';
+import { seq, div, onThemeChange } from './lib/theme';
 import { fmtUnit, decimalsFor } from './lib/format';
 import ExportBar from './lib/ExportBar';
 import { getJson } from './lib/fetch';
@@ -41,8 +41,15 @@ function AtlasMapInner({ regions, dims, initial, mode: mode0 = 'map', compact = 
   const depts = useMemo(() => level === 'prov' ? regions : regions.filter(r => !r.parent), [regions, level]);
   const vals = depts.map(r => r.values[dim]?.v).filter((v): v is number => v != null);
   const color = useMemo(() => {
-    const s = d3.scaleQuantile<string>().domain(vals).range(seq());   // skewed rates need quantiles; dark always means higher
-    return (v: number | null) => v == null ? 'var(--panel-2)' : s(v);
+    // Signed measures (net migration) get two hues around zero; the rest one hue where dark always means higher.
+    const neg = vals.filter(v => v < 0).sort(d3.ascending), pos = vals.filter(v => v >= 0).sort(d3.ascending);
+    if (neg.length && pos.length) {
+      const dv = div(), q = (a: number[], p: number) => d3.quantileSorted(a, p)!;
+      const t = d3.scaleThreshold<number, string>().domain([q(neg, 1 / 3), q(neg, 2 / 3), 0, q(pos, 1 / 3), q(pos, 2 / 3)]).range([dv[6], dv[5], dv[4], dv[2], dv[1], dv[0]]);
+      return (v: number | null) => v == null ? 'var(--nodata)' : t(v);
+    }
+    const s = d3.scaleQuantile<string>().domain(vals).range(seq());   // skewed rates need quantiles
+    return (v: number | null) => v == null ? 'var(--nodata)' : s(v);
   }, [dim, tick, topo]);
   // Different from Peru only when the 95% interval excludes the national value.
   const nat = (d as any).national?.v as number | undefined;
@@ -69,14 +76,17 @@ function AtlasMapInner({ regions, dims, initial, mode: mode0 = 'map', compact = 
     if (level === 'prov' && outline) { const ok = Object.keys(outline.objects)[0]; const ofc: any = topojson.feature(outline, outline.objects[ok]);
       svg.append('g').selectAll('path').data(ofc.features).join('path').attr('d', path as any).attr('fill', 'none').attr('stroke', 'var(--ink)').attr('stroke-width', .7).attr('opacity', .6).attr('pointer-events', 'none'); }
     // legend
-    if (versus && nat != null) { const lg = svg.append('g').attr('transform', `translate(10,${H - 60})`); [['--div-7', 'Por encima de Perú'], ['--div-4', 'Sin diferencia clara'], ['--div-1', 'Por debajo de Perú']].forEach(([c, l], i) => { lg.append('rect').attr('y', i * 18).attr('width', 12).attr('height', 12).attr('fill', `var(${c})`); lg.append('text').attr('x', 18).attr('y', i * 18 + 11).attr('font-size', 12).attr('fill', 'var(--muted)').text(l); }); return; }
-    const cols = seq(); const cuts = d3.scaleQuantile<string>().domain(vals).range(cols).quantiles();
+    if (versus && nat != null) { const lg = svg.append('g').attr('transform', `translate(10,${H - 60})`); [['--div-7', 'Por encima de Perú'], ['--div-4', 'Sin diferencia clara'], ['--div-1', 'Por debajo de Perú']].forEach(([c, l], i) => { lg.append('rect').attr('y', i * 18).attr('width', 12).attr('height', 12).attr('fill', `var(${c})`); lg.append('text').attr('x', 18).attr('y', i * 18 + 11).attr('font-size', 13).attr('fill', 'var(--muted)').text(l); }); return; }
+    const negs = vals.filter(v => v < 0).sort(d3.ascending), poss = vals.filter(v => v >= 0).sort(d3.ascending), signed = negs.length > 0 && poss.length > 0;
+    const dv = div(), qs = (a: number[], p: number) => d3.quantileSorted(a, p)!;
+    const cols = signed ? [dv[6], dv[5], dv[4], dv[2], dv[1], dv[0]] : seq();
+    const cuts = signed ? [qs(negs, 1 / 3), qs(negs, 2 / 3), 0, qs(poss, 1 / 3), qs(poss, 2 / 3)] : d3.scaleQuantile<string>().domain(vals).range(cols).quantiles();
     const edges = [d3.min(vals), ...cuts, d3.max(vals)];
     const lg = svg.append('g').attr('transform', `translate(10,${H - 44})`);
-    const bw = 54, short = (v?: number) => fmtUnit(v ?? null, d.unit, decimalsFor(d.unit)).replace(' %', '').replace('S/ ', '');
+    const bw = 54, short = (v?: number) => fmtUnit(v ?? null, d.unit, decimalsFor(d.unit)).replace('%', '').replace('S/', '');
     lg.selectAll('rect').data(cols).join('rect').attr('x', (_c, i) => i * bw).attr('width', bw - 2).attr('height', 10).attr('fill', c => c);
-    edges.forEach((v, i) => { if (i % 2 === 0 || i === edges.length - 1) lg.append('text').attr('x', i * bw).attr('y', 26).attr('text-anchor', i === 0 ? 'start' : i === edges.length - 1 ? 'end' : 'middle').attr('font-size', 12).attr('fill', 'var(--muted)').text(short(v)); });
-    if (d.higher_better != null) lg.append('text').attr('y', -7).attr('font-size', 12).attr('fill', 'var(--muted)').text(`Más oscuro: valor más alto. ${d.higher_better ? 'Más alto es mejor.' : 'Más bajo es mejor.'}`);
+    edges.forEach((v, i) => { if (i % 2 === 0 || i === edges.length - 1) lg.append('text').attr('x', i * bw).attr('y', 26).attr('text-anchor', i === 0 ? 'start' : i === edges.length - 1 ? 'end' : 'middle').attr('font-size', 13).attr('fill', 'var(--muted)').text(short(v)); });
+    lg.append('text').attr('y', -7).attr('font-size', 13).attr('fill', 'var(--muted)').text(signed ? 'Un color para los valores negativos y otro para los positivos.' : 'Más oscuro: valor más alto.');
   }, [topo, outline, dim, mode, tick, versus]);
 
   // MATRIX (heatmap of all dims × regions, sorted by selected dim)
@@ -90,20 +100,20 @@ function AtlasMapInner({ regions, dims, initial, mode: mode0 = 'map', compact = 
     const g = svg.append('g');
     dims.forEach((dd, j) => {
       g.append('text').attr('x', left + j * cw + cw / 2).attr('y', top - 8).attr('text-anchor', 'start').attr('transform', `rotate(-35 ${left + j * cw + cw / 2} ${top - 8})`)
-        .attr('font-size', 12).attr('fill', dd.id === dim ? 'var(--accent)' : 'var(--muted)').style('cursor', 'pointer').text(dd.label_es.length > 26 ? dd.label_es.slice(0, 24) + '…' : dd.label_es).on('click', () => setDim(dd.id))
+        .attr('font-size', 13).attr('fill', dd.id === dim ? 'var(--accent)' : 'var(--muted)').style('cursor', 'pointer').text(dd.label_es.length > 26 ? dd.label_es.slice(0, 24) + '…' : dd.label_es).on('click', () => setDim(dd.id))
         .attr('tabindex', 0).attr('role', 'button').attr('aria-label', `Ordenar por ${dd.label_es}`).on('keydown', (e: KeyboardEvent) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setDim(dd.id); } });
     });
     rows.forEach((r, i) => {
-      g.append('text').attr('x', left - 8).attr('y', top + i * rh + rh / 2 + 4).attr('text-anchor', 'end').attr('font-size', 12).attr('fill', 'var(--ink)').style('cursor', 'pointer').text(r.name).on('click', () => location.href = `/atlas/${r.id}/`)
+      g.append('text').attr('x', left - 8).attr('y', top + i * rh + rh / 2 + 4).attr('text-anchor', 'end').attr('font-size', 13).attr('fill', 'var(--ink)').style('cursor', 'pointer').text(r.name).on('click', () => location.href = `/atlas/${r.id}/`)
         .attr('tabindex', 0).attr('role', 'link').attr('aria-label', `Perfil de ${r.name}`).on('keydown', (e: KeyboardEvent) => { if (e.key === 'Enter') location.href = `/atlas/${r.id}/`; });
       dims.forEach((dd, j) => {
         const c = r.values[dd.id]; const p = r.pct[dd.id];
         const fill = c?.v == null ? 'var(--panel-2)' : p == null ? 'var(--panel-2)' : cols[Math.min(cols.length - 1, Math.floor(p / 100 * cols.length))];
         g.append('rect').attr('x', left + j * cw + 1).attr('y', top + i * rh + 1).attr('width', cw - 2).attr('height', rh - 2).attr('rx', 3).attr('fill', fill)
           .append('title').text(`${r.name} · ${dd.label_es}: ${fmtUnit(c?.v, dd.unit, decimalsFor(dd.unit))} (${c?.g})`);
-        g.append('text').attr('x', left + j * cw + cw / 2).attr('y', top + i * rh + rh / 2 + 4).attr('text-anchor', 'middle').attr('font-size', 12)
+        g.append('text').attr('x', left + j * cw + cw / 2).attr('y', top + i * rh + rh / 2 + 4).attr('text-anchor', 'middle').attr('font-size', 13)
           .attr('fill', p != null && p > 55 ? 'var(--bg)' : 'var(--ink)').attr('font-family', 'var(--font-mono)')
-          .text(c?.v == null ? '—' : scaleMode === 'pct' ? `${p}` : fmtUnit(c.v, dd.unit, decimalsFor(dd.unit)).replace(' %', '').replace('S/ ', ''));
+          .text(c?.v == null ? '—' : scaleMode === 'pct' ? `${p}` : fmtUnit(c.v, dd.unit, decimalsFor(dd.unit)).replace('%', '').replace('S/', ''));
       });
     });
   }, [dim, mode, scaleMode, tick]);

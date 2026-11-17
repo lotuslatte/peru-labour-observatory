@@ -1,6 +1,4 @@
 // Plain-language names and definitions for the indicators with a public annual series.
-import { feature, mesh } from 'topojson-client';
-import { geoMercator, geoPath } from 'd3';
 // The six signals on the home page come first, in display order.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -39,17 +37,5 @@ export { fmtUnit as fmtU } from '../kit/charts/lib/format';
 export const DOMAINS: Record<string, string> = { sex: 'Sexo', area: 'Área', region_nat: 'Región natural', age4: 'Edad', educ4: 'Educación', lengua3: 'Lengua', etnia6: 'Etnia' };
 // Suppressed cells never reach the page with a value.
 export const slim = (c: any) => c.g === 'S' || c.v == null ? { v: null, g: 'S', n: c.n ?? 0 } : { v: c.v, g: c.g, n: c.n, se: c.se, lo: c.lo, hi: c.hi };
-/** Department outlines as SVG paths, decoded from the public topology. */
-// Drawn from the shared-border topology. Never thin individual rings: neighbours stop matching.
-export function peruMap() {
-  const W = 560, H = 640, I = { x: 16, y: 452, s: 150 };
-  const t = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'public/data/departamentos.topo.json'), 'utf8'));
-  const fc: any = feature(t, t.objects.data);
-  const main = geoPath(geoMercator().fitExtent([[10, 10], [W - 10, H - 10]], fc)).digits(1);
-  const metro = { type: 'MultiPoint', coordinates: [[-77.35, -12.42], [-76.55, -11.72]] };
-  const zoom = geoPath(geoMercator().fitExtent([[I.x, I.y], [I.x + I.s, I.y + I.s]], metro as any)).digits(1);
-  const paths = fc.features.map((f: any) => ({ id: f.properties.id, d: main(f) }));
-  const inset = fc.features.filter((f: any) => ['07', '15'].includes(f.properties.id)).map((f: any) => ({ id: f.properties.id, d: zoom(f) }));
-  const edge: any = mesh(t, t.objects.data, (a: any, b: any) => a === b);
-  return { box: `0 0 ${W} ${H}`, paths, inset, I, outline: main(edge), insetOutline: zoom(edge) };
-}
+// Department outlines projected at build time (shared with the migration observatory).
+export { peruMap } from '../kit/data/peruMap';
