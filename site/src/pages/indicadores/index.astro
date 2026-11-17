@@ -2,7 +2,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Base from '../../layouts/Base.astro';
-import '../../styles/redesign.css';
 import { fmtU } from '../../data/ui';
 const idx = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'public/data/fichas/index.json'), 'utf8'));
 const value = (d: any) => d.latest?.v != null ? fmtU(d.latest.v, d.unit) : d.type === 'dist' ? 'Reparto' : 'Sin dato';

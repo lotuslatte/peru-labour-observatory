@@ -2,10 +2,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Base from '../../layouts/Base.astro';
-import '../../styles/redesign.css';
 import { SPAN } from '../../data/release';
 import { loadAtlas } from '../../data/loaders';
-import { INDICATORS, fmtU, slim, peruMap } from '../../data/ui';
+import { INDICATORS, ALL_INDICATORS, slim, peruMap } from '../../data/ui';
+import { hasSeries } from '../../data/series';
+import { fmtUnit } from '../../kit/charts/lib/format';
+import IndicatorViews from '../../kit/charts/IndicatorViews';
 
 // Every indicator gets a page. Documentation, comparability and estimates come from fichas/<id>.json.
 const DATA = path.resolve(process.cwd(), 'public/data');
@@ -21,15 +23,18 @@ const brks = readJson('trends.json').breaks.filter((b: any) => b.indicators.incl
 const u = f.unit; const isDist = f.type === 'dist';
 const ui = INDICATORS.find(i => i.id === id);
 const last = isDist ? null : f.national.at(-1);
-const say = last?.v != null ? ui?.say?.(last.v, x => fmtU(x, u)) : undefined;
+const say = last?.v != null ? ui?.say?.(last.v, x => fmtUnit(x, u)) : undefined;
 const regions = !isDist && f.dept ? loadAtlas().regions.filter(r => r.id.length === 2).map(r => ({ id: r.id, name: r.name, c: slim(f.dept[r.id] ?? { g: 'S' }) })) : null;
 const data = {
   id, name: f.name, unit: u, type: f.type, year: f.year, years: f.years, breaks: brks,
   national: isDist ? f.national.map((c: any) => ({ ...c, cells: c.cells.map(slim) })) : f.national.map(slim),
   domains: isDist ? {} : Object.fromEntries(Object.entries(f.domains).filter(([, d]: any) => d.groups.some((g: any) => g.v != null && g.g !== 'S'))
     .map(([k, d]: any) => [k, { label: d.label, groups: d.groups.map((g: any) => ({ label: g.label, ...slim(g) })) }])),
-  regions, map: regions ? peruMap() : null, explore: !!ui,
+  regions, map: regions ? peruMap() : null,
 };
+const seriesSrc = !isDist && hasSeries(f.file) ? `/data/series/${id}.json` : undefined;
+const pos = ALL_INDICATORS.findIndex(i => i.id === id);
+const prevInd = ALL_INDICATORS[pos - 1], nextInd = ALL_INDICATORS[pos + 1];
 const SITE = 'https://lotuslatte.github.io/peru-labour-observatory';
 const year = new Date().getFullYear();
 const citeText = `Samillan Flores, F. (${year}). ${f.name}, ${SPAN}. Observatorio Laboral del Perú, versión ${version}. A partir de INEI, ENAHO. ${SITE}/indicadores/${id}/`;
@@ -47,7 +52,7 @@ const comp = f.comparability;
 const sources = [...new Set(comp.map((c: any) => c.source).filter(Boolean))];
 const notes = comp.filter((c: any) => c.notes.length && c.status !== 'nd');
 const nd = comp.filter((c: any) => c.status === 'nd').map((c: any) => c.year);
-const head = isDist ? null : `ENAHO ${f.year}. IC 95%: ${fmtU(last.lo, u)} a ${fmtU(last.hi, u)}.`;
+const head = isDist ? null : `ENAHO ${f.year}. IC 95%: ${fmtUnit(last.lo, u)} a ${fmtUnit(last.hi, u)}.`;
 ---
 <Base title={f.name} description={f.def}>
   <div class="r-page">
@@ -55,12 +60,12 @@ const head = isDist ? null : `ENAHO ${f.year}. IC 95%: ${fmtU(last.lo, u)} a ${f
     <section class="r-head">
       <p class="r-kicker">{f.group}</p>
       <h1>{f.name}</h1>
-      {!isDist && last.v != null && <div class="r-num">{fmtU(last.v, u)}</div>}
+      {!isDist && last.v != null && <div class="r-num">{fmtUnit(last.v, u)}</div>}
       {say && <p class="r-say">{say}</p>}
       {isDist ? <p class="r-src">{f.def} ENAHO {f.year}.</p> : last.v != null && <p class="r-src">{head}</p>}
     </section>
-    <div class="r-tabs" role="tablist" id="tabs"></div>
-    <div id="tab"></div>
+    <IndicatorViews client:load data={data} seriesSrc={seriesSrc} filePrefix="olp" />
+    <noscript><p class="r-src">Los gráficos necesitan JavaScript. Las cifras completas están en «Descargar y citar».</p></noscript>
 
     <section class="r-doc" id="metodo">
       <h2>Cómo se mide</h2>
@@ -93,7 +98,13 @@ const head = isDist ? null : `ENAHO ${f.year}. IC 95%: ${fmtU(last.lo, u)} a ${f
       <pre class="r-bib" id="cite-bib">{citeBib}</pre>
       <div class="r-actions"><button class="r-btn" data-copy="cite-text">Copiar cita</button><button class="r-btn" data-copy="cite-bib">Copiar BibTeX</button></div>
     </section>
-    <script type="application/json" id="olp-data" set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />
+    <nav class="r-pn-nav" aria-label="Otros indicadores">
+      {prevInd ? <a href={`/indicadores/${prevInd.id}/`}><span class="muted small">Anterior</span>{prevInd.name}</a> : <span />}
+      {nextInd && <a class="next" href={`/indicadores/${nextInd.id}/`}><span class="muted small">Siguiente</span>{nextInd.name}</a>}
+    </nav>
   </div>
-  <script src="../../scripts/ficha.js"></script>
+  <script>
+    import { copyText } from '../../kit/charts/lib/export';
+    document.querySelectorAll<HTMLElement>('[data-copy]').forEach(b => b.addEventListener('click', () => copyText(b, document.getElementById(b.dataset.copy!)!.textContent ?? '')));
+  </script>
 </Base>

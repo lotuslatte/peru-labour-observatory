@@ -1,56 +1,32 @@
 ---
-import { YEAR, PREV, SPAN } from '../data/release';
+import { SPAN } from '../data/release';
 import '../styles/global.css';
-import '../styles/print.css';
-import Nav from '../components/ui/Nav.astro';
-import CommandPalette from '../components/charts/CommandPalette';
-import { loadAtlas } from '../data/loaders';
-import { INDICATORS } from '../data/ui';
-interface Props { title: string; description?: string; wide?: boolean; image?: string }
-const { title, description = 'Observatorio abierto del mercado laboral peruano a partir de los microdatos de la ENAHO (INEI), ' + SPAN + '.', wide = false, image = '/share/default.png' } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://example.org').toString();
-const ogImage = new URL(image, Astro.site ?? 'https://example.org').toString();
-const regions = loadAtlas().regions.map(r => ({ id: r.id, name: r.name }));
+import Head from '../kit/ui/Head.astro';
+import Nav from '../kit/ui/Nav.astro';
+import Footer from '../kit/ui/Footer.astro';
+import CommandPalette from '../kit/ui/CommandPalette';
+import { SITE_NAME, NAV, FOOTER } from '../data/site';
+interface Props { title: string; description?: string; wide?: boolean; image?: string; jsonLd?: object }
+const { title, description = 'Observatorio abierto del mercado laboral peruano a partir de los microdatos de la ENAHO (INEI), ' + SPAN + '.', wide = false, image, jsonLd } = Astro.props;
 ---
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} · Observatorio Laboral del Perú</title>
-    <meta name="description" content={description} />
-    <meta name="author" content="Favio Samillan Flores" />
-    <meta property="og:type" content="website" /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:url" content={canonical} /><meta property="og:image" content={ogImage} /><meta property="og:locale" content="es_PE" />
-    <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content={ogImage} />
-    <link rel="canonical" href={canonical} />
-    <link rel="author" href="https://lotuslatte.github.io/" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Fuentes sin bloquear el primer render: se cargan como hoja "print" y se activan al llegar. -->
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..100;1,9..144,400..700,0..100&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,0..100;1,9..144,400..700,0..100&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
-    <script is:inline>
-      (function(){try{var t=localStorage.getItem('olp-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
-    </script>
+    <Head title={title} siteName={SITE_NAME} description={description} image={image} author="Favio Samillan Flores" authorUrl="https://lotuslatte.github.io/" jsonLd={jsonLd} />
   </head>
   <body>
     <a class="sr-only skip" href="#main">Saltar al contenido</a>
-    <Nav />
+    <Nav name={SITE_NAME} items={NAV} />
     <main id="main" class={wide ? 'wrap wrap-wide' : 'wrap'}>
       <slot />
     </main>
-    <footer class="wrap footer">
-      <div>
-        <strong>Observatorio Laboral del Perú</strong> · Fuente: INEI – Encuesta Nacional de Hogares (ENAHO) {SPAN}, módulo 500.
-        Estimaciones con factor <code>fac500a</code> y errores estándar de diseño (linealización de Taylor). Licencia <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a>.
-      </div>
-      <div class="credit">Creado por <a href="https://lotuslatte.github.io/" rel="author">Favio Samillan Flores</a> · economista (PUCP) · <a href="https://www.linkedin.com/in/favio-samillan-flores-367054295/" rel="me">LinkedIn</a></div>
-      <div class="muted small"><a href="/atlas/">Atlas</a> · <a href="/compendio/">Compendio</a> · <a href="/analisis/">Análisis</a> · <a href="/novedades/">Novedades</a> · <a href="/acerca/metodologia/">Metodología</a> · <a href="/acerca/validacion/">Validación</a> · <a href="/glosario/">Glosario</a> · <a href="/preguntas/">Preguntas frecuentes</a> · <a href="/acerca/">Acerca de</a> · <a href="https://github.com/lotuslatte/peru-labour-observatory">Código en GitHub</a></div>
-    </footer>
-    <CommandPalette client:idle regions={regions} indicators={INDICATORS.map(i => ({ id: i.id, name: i.name }))} />
-    <style>
-      .credit { font-family: var(--font-serif); font-size: 1.05rem; } .credit a { color: var(--informal); }
-      .footer { margin-top: 64px; padding: 28px 20px 48px; border-top: 1px solid var(--line); display: grid; gap: 8px; font-size: .9rem; color: var(--ink-2); }
-      .wrap-wide { max-width: 1380px; }
-    </style>
+    <Footer name={SITE_NAME} columns={FOOTER}>
+      <Fragment slot="source">
+        Fuente: INEI, Encuesta Nacional de Hogares (ENAHO) {SPAN}, módulo 500. Estimaciones con factor <code>fac500a</code> y errores estándar de diseño (linealización de Taylor). Licencia <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a>.
+      </Fragment>
+      <Fragment slot="credit">
+        Creado por <a href="https://lotuslatte.github.io/" rel="author">Favio Samillan Flores</a>, economista (PUCP). <a href="https://www.linkedin.com/in/favio-samillan-flores-367054295/" rel="me">LinkedIn</a> · <a href="https://github.com/lotuslatte/peru-labour-observatory">Código en GitHub</a>
+      </Fragment>
+    </Footer>
+    <CommandPalette client:idle src="/data/search.json" />
   </body>
 </html>

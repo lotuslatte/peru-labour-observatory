@@ -7,7 +7,7 @@ import path from 'node:path';
 import { YEAR } from './release';
 export interface UiInd { id: string; name: string; what?: string; group: string; def: string; say?: (v: number, f: (x: number) => string) => string }
 // Names, groups and definitions come from the pipeline (fichas/index.json); only the home-page wording lives here.
-const DOCS: Record<string, { name: string; group: string; def: string }> = Object.fromEntries(JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'public/data/fichas/index.json'), 'utf8')).indicators.map((d: any) => [d.id, d]));
+const DOCS: Record<string, { id: string; name: string; group: string; def: string; unit: string; type: string; latest: any }> = Object.fromEntries(JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'public/data/fichas/index.json'), 'utf8')).indicators.map((d: any) => [d.id, d]));
 const LOCAL: { id: string; what?: string; say?: UiInd['say'] }[] = [
   { id: 'informality', what: 'de quienes trabajan, sin protección laboral', say: v => `De cada 100 personas ocupadas, ${Math.round(v)} tienen un empleo informal.` },
   { id: 'ur', what: 'de la fuerza laboral busca y no encuentra', say: v => `Cerca de ${Math.round(v)} de cada 100 personas que trabajan o buscan trabajo no encuentran empleo.` },
@@ -30,6 +30,8 @@ const LOCAL: { id: string; what?: string; say?: UiInd['say'] }[] = [
 ];
 export const INDICATORS: UiInd[] = LOCAL.map(l => ({ ...l, name: DOCS[l.id].name, group: DOCS[l.id].group, def: DOCS[l.id].def }));
 export const SIX = INDICATORS.filter(i => i.what);
+// Every indicator with a page, in the pipeline's order and with its unit and latest national cell.
+export const ALL_INDICATORS: { id: string; name: string; group: string; def: string; unit: string; type: string; latest: any }[] = Object.values(DOCS) as any;
 export const UNITS: Record<string, string> = { median_inc_real: 'S/', mean_inc_real: 'S/', gap_lfpr: 'pp', hours_mean: 'h' };
 export const unitOf = (id: string) => UNITS[id] ?? '%';
 export const fmtU = (v: number, u: string) => u === '%' ? v.toFixed(1) + '%' : u === 'S/' ? 'S/' + Math.round(v).toLocaleString('en-US') : u === 'S/h' ? 'S/' + v.toFixed(2) + ' por hora' : u === 'ratio' ? v.toFixed(2) : `${v.toFixed(1)} ${u}`;

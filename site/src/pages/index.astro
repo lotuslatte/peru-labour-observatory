@@ -1,41 +1,131 @@
 ---
-import { YEAR, PREV } from '../data/release';
+import fs from 'node:fs';
+import path from 'node:path';
+import { YEAR, PREV, SPAN } from '../data/release';
 import Base from '../layouts/Base.astro';
-import '../styles/redesign.css';
-import { loadHeadline, loadTrends } from '../data/loaders';
-import { SIX, unitOf, fmtU } from '../data/ui';
-const h = loadHeadline(); const tr = loadTrends();
+import MapPicker from '../kit/charts/MapPicker';
+import { loadHeadline, loadTrends, loadAtlas, loadDigest, loadMeta } from '../data/loaders';
+import { SIX, ALL_INDICATORS, unitOf, slim, peruMap } from '../data/ui';
+import { fmtUnit, fmtInt } from '../kit/charts/lib/format';
+import { SITE_NAME } from '../data/site';
+
+const h = loadHeadline(); const tr = loadTrends(); const dg = loadDigest();
 const years: number[] = tr.years;
+const DATA = path.resolve(process.cwd(), 'public/data');
+const ficha = (id: string) => JSON.parse(fs.readFileSync(path.join(DATA, `fichas/${id}.json`), 'utf8'));
+const version: string = JSON.parse(fs.readFileSync(path.join(DATA, 'latest/metadata.json'), 'utf8')).data_version;
+
+// Sparkline points, cut at missing years and at the method break.
 function spark(id: string) {
   const cells = tr.series.national[id]; const brk = tr.breaks.find((b: any) => b.indicators.includes(id));
   const vs = cells.filter((c: any) => c.v != null).map((c: any) => c.v), lo = Math.min(...vs), hi = Math.max(...vs);
   const X = (i: number) => 2 + i / (years.length - 1) * 196, Y = (v: number) => 32 - (v - lo) / ((hi - lo) || 1) * 28;
-  const pts = cells.map((c: any, i: number) => c.v == null ? null : [X(i), Y(c.v), years[i]]);
   const groups: string[] = []; let cur: string[] = [];
-  pts.forEach((p: any) => { if (!p) { if (cur.length) groups.push(cur.join(' ')); cur = []; return; } if (brk && p[2] === brk.year && cur.length) { groups.push(cur.join(' ')); cur = []; } cur.push(`${p[0]},${p[1]}`); });
+  cells.forEach((c: any, i: number) => {
+    if (c.v == null) { if (cur.length) groups.push(cur.join(' ')); cur = []; return; }
+    if (brk && years[i] === brk.year && cur.length) { groups.push(cur.join(' ')); cur = []; }
+    cur.push(`${X(i)},${Y(c.v)}`);
+  });
   if (cur.length) groups.push(cur.join(' '));
   return { groups, end: [X(years.length - 1), Y(cells.at(-1).v)] };
 }
 function change(id: string) {
   const d = h.deltas[id].d1, u = unitOf(id);
-  return d.sig ? `${d.d > 0 ? 'Sube' : 'Baja'} ${fmtU(Math.abs(d.d), u === 'S/' ? 'S/' : 'pp')} frente a ${PREV}` : `Sin cambio significativo frente a ${PREV}`;
+  return d?.sig ? `${d.d > 0 ? 'Sube' : 'Baja'} ${fmtUnit(Math.abs(d.d), u === 'S/' ? 'S/' : 'pp')} frente a ${PREV}` : `Sin cambio significativo frente a ${PREV}`;
 }
+
+const lead = SIX[0]; // informality
+const leadValue = tr.series.national[lead.id].at(-1);
+const signals = SIX.slice(1);
+
+// Map layers: the six signals by department, latest year.
+const depts = loadAtlas().regions.filter(r => r.id.length === 2);
+const layers = SIX.filter(i => ALL_INDICATORS.find(a => a.id === i.id)?.type !== 'diff').map(i => {
+  const f = ficha(i.id);
+  return { id: i.id, name: i.name, unit: f.unit, href: `/indicadores/${i.id}/#mapa`, rows: depts.map(r => ({ id: r.id, name: r.name, c: slim(f.dept?.[r.id] ?? { g: 'S' }) })) };
+}).filter(l => l.rows.some(r => r.c.v != null));
+
+// The national changes with the strongest evidence, one per indicator.
+const seen = new Set<string>();
+const changes = dg.y1.filter((it: any) => it.domain === 'national' && !seen.has(it.indicator) && seen.add(it.indicator)).slice(0, 5);
+const nInd = ALL_INDICATORS.length;
+const shortName = (id: string, fallback: string) => ALL_INDICATORS.find(a => a.id === id)?.name ?? fallback;
+const jsonLd = { '@context': 'https://schema.org', '@type': 'Dataset', name: `${SITE_NAME}, ${SPAN}`, description: 'Indicadores del mercado laboral peruano estimados con los microdatos de la ENAHO (INEI), con error estándar, intervalo de confianza y sello de calidad.', license: 'https://creativecommons.org/licenses/by/4.0/', creator: { '@type': 'Person', name: 'Favio Samillan Flores' }, temporalCoverage: `2014/${YEAR}`, spatialCoverage: 'Perú', version, isAccessibleForFree: true };
 ---
-<Base title="Inicio">
-  <div class="r-page">
-    <section class="r-hero">
-      <h1>Trabajo en el Perú, {YEAR}</h1>
-      <p class="r-src">ENAHO {YEAR} del INEI. {h.n_persons.toLocaleString('en-US')} personas de 14 años a más, en todo el país. Por <a href="https://lotuslatte.github.io/" rel="author">Favio Samillan Flores</a>.</p>
-    </section>
-    <section class="r-signals">
-      {SIX.map(i => { const s = spark(i.id); return (
-        <a class:list={['r-signal', { hot: i.id === 'informality' }]} href={`/indicadores/${i.id}/`}>
-          <span class="num">{fmtU(tr.series.national[i.id].at(-1).v, unitOf(i.id))}</span>
+<Base title={SITE_NAME} jsonLd={jsonLd}>
+  <section class="home-hero">
+    <div>
+      <p class="eyebrow">Trabajo en el Perú, {YEAR}</p>
+      <div class="big">{fmtUnit(leadValue.v, unitOf(lead.id))}</div>
+      <h1>de quienes trabajan en el Perú tienen un empleo informal.</h1>
+      <p class="r-src">ENAHO {YEAR} del INEI, {fmtInt(h.n_persons)} personas de 14 años a más. IC 95%: {fmtUnit(leadValue.lo, '%')} a {fmtUnit(leadValue.hi, '%')}. <a href={`/indicadores/${lead.id}/`}>Ver el indicador</a>.</p>
+      <button class="find" type="button" data-open-palette>
+        <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.75" fill="none" stroke="currentColor" stroke-width="1.6" /><path d="M13 13l4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+        <span>Buscar un indicador o un lugar</span><kbd>Ctrl K</kbd>
+      </button>
+    </div>
+    <MapPicker client:load map={peruMap()} layers={layers} year={YEAR} />
+  </section>
+
+  <section class="home-sec">
+    <h2>Cinco señales más</h2>
+    <div class="r-signals">
+      {signals.map(i => { const s = spark(i.id); return (
+        <a class="r-signal" href={`/indicadores/${i.id}/`}>
+          <span class="num">{fmtUnit(tr.series.national[i.id].at(-1).v, unitOf(i.id))}</span>
           <span class="name">{i.name}</span><span class="what">{i.what}</span>
-          <svg viewBox="0 0 200 36" aria-hidden="true">{s.groups.map(g => <polyline fill="none" stroke="var(--muted)" stroke-width="1.6" points={g} />)}<circle cx={s.end[0]} cy={s.end[1]} r="3" fill="var(--informal)" /></svg>
+          <svg viewBox="0 0 200 36" aria-hidden="true">{s.groups.map(g => <polyline fill="none" stroke="var(--ink)" stroke-width="1.5" points={g} />)}<circle cx={s.end[0]} cy={s.end[1]} r="3.2" fill="var(--accent)" /></svg>
           <span class="chg">{change(i.id)}</span>
         </a>); })}
-    </section>
-    <div class="r-more"><a href="/indicadores/">Ver todos los indicadores</a><a href="/explorar/">Armar una consulta</a><a href="/atlas/provincias/">Ver las provincias</a><a href="/historias/panorama/">Leer la historia {YEAR}</a></div>
-  </div>
+      <a class="r-signal all" href="/indicadores/"><span class="num">{nInd}</span><span class="name">Todos los indicadores</span><span class="what">cada uno con tendencia, mapa, grupos, método y descarga</span></a>
+    </div>
+  </section>
+
+  <section class="home-sec">
+    <h2>Qué cambió entre {PREV} y {YEAR}</h2>
+    <div class="home-cols">
+      <ul class="changes">
+        {changes.map((it: any) => <li>
+          <a class="what" href={`/indicadores/${it.indicator}/`}>{shortName(it.indicator, it.label)}</a>
+          <span class="who">{fmtUnit(it.v0, it.unit)} en {PREV}, {fmtUnit(it.v1, it.unit)} en {YEAR}</span>
+          <span class="d">{it.d > 0 ? '+' : '−'}{fmtUnit(Math.abs(it.d), it.unit === '%' ? 'pp' : it.unit)}</span>
+        </li>)}
+      </ul>
+      <div>
+        <p>De {fmtInt(dg.n_tested.y1)} comparaciones posibles, {dg.y1.length} cambiaron más de lo que explica el error muestral. Estas son las nacionales con evidencia más fuerte.</p>
+        <p><a href="/novedades/">Ver todos los cambios</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-sec">
+    <h2>Cómo usar el observatorio</h2>
+    <div class="home-cols">
+      <div>
+        <h3>Cada cifra trae su precisión</h3>
+        <p>Toda estimación se publica con su intervalo de confianza de 95% y un sello.</p>
+        <dl class="seals">
+          <div><dt><span class="badge A"></span></dt><dd>Error relativo menor que 15%.</dd></div>
+          <div><dt><span class="badge B"></span></dt><dd>Entre 15% y 30%: leer con cautela.</dd></div>
+          <div><dt><span class="badge S"></span></dt><dd>30% o más, o menos de 30 casos: no se publica.</dd></div>
+        </dl>
+        <p style="margin-top:12px"><a href="/acerca/metodologia/">Metodología</a></p>
+      </div>
+      <div>
+        <h3>Por territorio</h3>
+        <p>Perfiles de los 25 departamentos, Lima Metropolitana y Lima Región, y un atlas de 196 provincias.</p>
+        <p><a href="/atlas/">Departamentos</a> · <a href="/atlas/provincias/">Provincias</a></p>
+        <h3 style="margin-top:24px">Arma tu consulta</h3>
+        <p>Elige un indicador, un grupo y un departamento, y comparte el enlace.</p>
+        <p><a href="/explorar/">Explorar</a></p>
+      </div>
+      <div>
+        <h3>Datos abiertos, versión {version}</h3>
+        <p>Todas las estimaciones en CSV, Parquet, Stata y Excel, con diccionario y sumas de verificación. Licencia CC BY 4.0.</p>
+        <p><a href="/datos/">Descargar y citar</a> · <a href="/compendio/">Compendio de tablas</a></p>
+        <h3 style="margin-top:24px">Para leer</h3>
+        <p><a href="/historias/panorama/">Panorama laboral {YEAR}</a> · <a href="/analisis/">Análisis con controles</a></p>
+      </div>
+    </div>
+  </section>
 </Base>
