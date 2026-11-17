@@ -1,15 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
 import HowToRead from '../components/ui/HowToRead.astro';
-import CoefPlot from '../components/charts/CoefPlot';
-import DecompBars from '../components/charts/DecompBars';
+import CoefPlot from '../kit/charts/CoefPlot';
+import DecompBars from '../kit/charts/DecompBars';
 import { loadModels, loadDecomp } from '../data/loaders';
 const M = loadModels(); const D = loadDecomp();
-import { fmtCell as f } from '../components/charts/lib/format';
+import { fmtCell as f } from '../kit/charts/lib/format';
 const ms = M.models; const ox = D.oaxaca; const ss = D.shift_share.inf_change;
 ---
 <Base title="Análisis con controles" wide>
-  <h1 style="margin-top:32px">Las brechas, con y sin controles</h1>
+  <h1>Las brechas, con y sin controles</h1>
   <p class="lede">Un promedio compara grupos distintos en edad, educación, región y rama. Aquí cada brecha se muestra cruda y ajustada por esas diferencias (modelo lineal de probabilidad con pesos de encuesta y errores estándar de diseño), y se descompone en la parte que explican las características y la que no.</p>
   <HowToRead />
   <section class="grid grid-2">

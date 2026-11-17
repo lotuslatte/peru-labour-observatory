@@ -34,7 +34,8 @@ export const SIX = INDICATORS.filter(i => i.what);
 export const ALL_INDICATORS: { id: string; name: string; group: string; def: string; unit: string; type: string; latest: any }[] = Object.values(DOCS) as any;
 export const UNITS: Record<string, string> = { median_inc_real: 'S/', mean_inc_real: 'S/', gap_lfpr: 'pp', hours_mean: 'h' };
 export const unitOf = (id: string) => UNITS[id] ?? '%';
-export const fmtU = (v: number, u: string) => u === '%' ? v.toFixed(1) + '%' : u === 'S/' ? 'S/' + Math.round(v).toLocaleString('en-US') : u === 'S/h' ? 'S/' + v.toFixed(2) + ' por hora' : u === 'ratio' ? v.toFixed(2) : `${v.toFixed(1)} ${u}`;
+// One number format for the whole site (kit).
+export { fmtUnit as fmtU } from '../kit/charts/lib/format';
 export const DOMAINS: Record<string, string> = { sex: 'Sexo', area: 'Área', region_nat: 'Región natural', age4: 'Edad', educ4: 'Educación', lengua3: 'Lengua', etnia6: 'Etnia' };
 // Suppressed cells never reach the page with a value.
 export const slim = (c: any) => c.g === 'S' || c.v == null ? { v: null, g: 'S', n: c.n ?? 0 } : { v: c.v, g: c.g, n: c.n, se: c.se, lo: c.lo, hi: c.hi };

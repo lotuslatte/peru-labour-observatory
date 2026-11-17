@@ -2,10 +2,10 @@
 import { YEAR, PREV, SPAN } from '../../../data/release';
 import Base from '../../../layouts/Base.astro';
 import HowToRead from '../../../components/ui/HowToRead.astro';
-import ScrollyScene from '../../../components/charts/ScrollyScene';
-import AtlasMap from '../../../components/charts/AtlasMap';
+import ScrollyScene from '../../../kit/charts/ScrollyScene';
+import AtlasMap from '../../../kit/charts/AtlasMap';
 import { loadHeadline, loadAtlas, loadTrends, loadCompendiumIndex } from '../../../data/loaders';
-import { fmtCell as f } from '../../../components/charts/lib/format';
+import { fmtCell as f } from '../../../kit/charts/lib/format';
 const h = loadHeadline(); const a = loadAtlas(); const tr = loadTrends();
 const k = h.kpis; const d = h.deltas;
 const last = (dom: string, ind: string, key: string) => tr.series[dom][ind][key].at(-1);
@@ -45,6 +45,6 @@ const nTables = loadCompendiumIndex().tables.length;
   <p class="lede">Un recorrido por el mercado laboral peruano, de los titulares que tranquilizan a las brechas que los promedios esconden. Cada cifra lleva su tabla del compendio.</p>
   <HowToRead />
   <ScrollyScene client:load steps={steps} mapNames={Object.fromEntries(a.regions.map(r => [r.id, r.name]))} />
-  <section class="card" style="margin-top:32px"><div class="eyebrow">Epílogo</div><h2>El mapa: dónde el trabajo protege</h2><p class="takeaway">La geografía pesa más que cualquier otra variable. Explora la formalidad y abre el perfil de cada departamento.</p><AtlasMap client:visible regions={a.regions} dims={a.dims} year={a.year} initial="formality" /></section>
+  <section class="card"><div class="eyebrow">Epílogo</div><h2>El mapa: dónde el trabajo protege</h2><p class="takeaway">La geografía pesa más que cualquier otra variable. Explora la formalidad y abre el perfil de cada departamento.</p><AtlasMap client:visible regions={a.regions} dims={a.dims} year={a.year} initial="formality" /></section>
   <p style="margin-top:24px"><a class="btn primary" href="/historias/panorama/informe-completo/">Ver el informe completo ({nTables} tablas)</a> <a class="btn" href="/acerca/metodologia/">Metodología</a></p>
 </Base>

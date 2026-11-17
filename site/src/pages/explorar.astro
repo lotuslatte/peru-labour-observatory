@@ -1,12 +1,28 @@
 ---
 import Base from '../layouts/Base.astro';
+import Explorer from '../kit/charts/Explorer';
+import { loadAtlas, loadTrends } from '../data/loaders';
+import { ALL_INDICATORS } from '../data/ui';
+import fs from 'node:fs';
+import path from 'node:path';
+import { hasSeries } from '../data/series';
+
+// Every indicator with an annual series by group can be queried here.
+const DATA = path.resolve(process.cwd(), 'public/data');
+const fileOf = (id: string) => JSON.parse(fs.readFileSync(path.join(DATA, `fichas/${id}.json`), 'utf8')).file;
+const indicators = ALL_INDICATORS.filter(i => i.type !== 'dist' && hasSeries(fileOf(i.id))).map(i => ({ id: i.id, name: i.name, unit: i.unit }));
+const tr = loadTrends();
+const regions = loadAtlas().regions.filter(r => r.id.length === 2).map(r => ({ id: r.id, name: r.name }));
+const examples: [string, object][] = [
+  ['Ingreso mediano por educación', { ind: 'median_inc_real', g: 'educ4' }],
+  ['Desempleo juvenil por sexo', { ind: 'ur_youth', g: 'sex' }],
+  ['Empleo informal en Cusco', { ind: 'informality', g: 'dept', dept: '08' }],
+  ['Seguro de salud por lengua', { ind: 'seguro', g: 'lengua3' }],
+];
 ---
 <Base title="Explorar" description="Elige indicador, grupo y años, y descarga exactamente esa selección.">
   <div class="r-page">
-    <div class="r-q" id="q"></div>
-    <div id="res"><p class="r-src">Cargando datos…</p></div>
-    <div class="r-try" id="try"></div>
+    <Explorer client:load indicators={indicators} regions={regions} years={tr.years} breaks={tr.breaks} seriesBase="/data/series/" examples={examples} start={{ ind: 'informality', g: 'sex', dept: '08' }} filePrefix="olp" />
     <noscript><p class="r-src">Esta página necesita JavaScript. Los mismos datos están en <a href="/datos/">Datos</a>.</p></noscript>
   </div>
-  <script src="../scripts/explorar.js"></script>
 </Base>

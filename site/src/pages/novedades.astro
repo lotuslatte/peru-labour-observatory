@@ -3,13 +3,13 @@ import Base from '../layouts/Base.astro';
 import GradeLegend from '../components/ui/GradeLegend.astro';
 import { loadDigest } from '../data/loaders';
 const dg = loadDigest();
-import { fmtNum as f } from '../components/charts/lib/format';
+import { fmtNum as f } from '../kit/charts/lib/format';
 const cls = (it: any) => it.good == null ? 'flat' : it.good ? 'good' : 'badv';
 const grp = (it: any) => it.domain_label === 'Nacional' ? 'Nacional' : `${it.domain_label}: ${it.row_label}`;
 const un = (it: any) => it.unit === '%' ? ' pp' : it.unit === 'S/' ? ' S/' : '';
 ---
 <Base title="Qué cambió" wide>
-  <h1 style="margin-top:32px">Qué cambió de verdad</h1>
+  <h1>Qué cambió de verdad</h1>
   <p class="lede">De los cientos de indicadores y desagregaciones que publica el observatorio, sólo una minoría cambió más de lo que explica el error muestral. Esta página los ordena por la fuerza de la evidencia (z), primero frente a {dg.year - 1} y luego frente a 2014. Azul: mejora; terracota: deterioro; gris: sin dirección normativa.</p>
   <GradeLegend compact />
   <section class="card"><h2>{dg.year - 1} a {dg.year}: {dg.y1.length} cambios significativos de {dg.n_tested.y1.toLocaleString('es-PE')} celdas comparables</h2>

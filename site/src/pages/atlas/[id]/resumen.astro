@@ -3,12 +3,12 @@ import { YEAR, PREV, SPAN } from '../../../data/release';
 import Base from '../../../layouts/Base.astro';
 import KpiTile from '../../../components/ui/KpiTile.astro';
 import PrintBar from '../../../components/ui/PrintBar.astro';
-import Sparkline from '../../../components/charts/Sparkline';
+import Sparkline from '../../../kit/charts/Sparkline';
 import { loadAtlas, loadProfile, loadHeadline, loadModels } from '../../../data/loaders';
 export async function getStaticPaths() { return loadAtlas().regions.map(r => ({ params: { id: r.id } })); }
 const { id } = Astro.params; const p: any = loadProfile(id!); const a = loadAtlas(); const h = loadHeadline(); const M = loadModels();
 const dims = a.dims.filter(d => d.primary);
-import { fmtCell as f } from '../../../components/charts/lib/format';
+import { fmtCell as f } from '../../../kit/charts/lib/format';
 const nat = (k: string) => h.kpis[k];
 const sub = (mid: string) => { const bs = M.models[mid]?.by_subsample?.region_nat; const key = { Costa: '1', Sierra: '2', Selva: '3', 'Lima Metropolitana': '4' }[p.region_nat as string]; return bs && key ? bs[key] : null; };
 const inf_reg = sub('inf_sex'), inc_reg = sub('inc_sex');

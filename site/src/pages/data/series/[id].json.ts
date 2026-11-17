@@ -4,6 +4,7 @@ import type { APIRoute } from 'astro';
 import fs from 'node:fs';
 import path from 'node:path';
 import { loadSeries, hasSeries } from '../../../data/series';
+import { slim } from '../../../data/ui';
 
 const DATA = path.resolve(process.cwd(), 'public/data');
 const ficha = (id: string) => JSON.parse(fs.readFileSync(path.join(DATA, `fichas/${id}.json`), 'utf8'));
@@ -15,5 +16,5 @@ export function getStaticPaths() {
 
 export const GET: APIRoute = ({ params }) => {
   const f = ficha(params.id!);
-  return new Response(JSON.stringify(loadSeries(f.id, f.file, f.years)), { headers: { 'Content-Type': 'application/json' } });
+  return new Response(JSON.stringify(loadSeries(f.id, f.file, f.years, f.name, f.national.map(slim))), { headers: { 'Content-Type': 'application/json' } });
 };

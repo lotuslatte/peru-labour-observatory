@@ -5,7 +5,7 @@ import path from 'node:path';
 
 export interface SCell { v: number | null; g: string; n: number; se?: number; lo?: number; hi?: number }
 export interface SeriesFile {
-  id: string; unit: string; years: number[];
+  id: string; name: string; unit: string; years: number[]; national: SCell[];
   domains: Record<string, { label: string; groups: { key: string; label: string; cells: SCell[] }[] }>;
   dept: Record<string, { name: string; cells: SCell[] }>;
 }
@@ -34,10 +34,10 @@ const EMPTY: SCell = { v: null, g: 'S', n: 0 };
 export function hasSeries(file: string) { return fs.existsSync(path.join(DATA, 'latest', file)); }
 
 /** Build the series of an indicator. `file` is the ficha's `file` field (por_indicador/<id>.csv). */
-export function loadSeries(id: string, file: string, years: number[]): SeriesFile {
+export function loadSeries(id: string, file: string, years: number[], name = '', national: SCell[] = []): SeriesFile {
   const [head, ...rows] = parseCsv(fs.readFileSync(path.join(DATA, 'latest', file), 'utf8'));
   const col = Object.fromEntries(head.map((h, i) => [h, i]));
-  const out: SeriesFile = { id, unit: '', years, domains: {}, dept: {} };
+  const out: SeriesFile = { id, name, unit: '', years, national, domains: {}, dept: {} };
   const slot = () => years.map(() => ({ ...EMPTY }));
   for (const r of rows) {
     const domain = r[col.domain]; if (domain !== 'dept' && !SERIES_DOMAINS.includes(domain)) continue;

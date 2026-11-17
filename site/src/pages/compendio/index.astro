@@ -1,12 +1,12 @@
 ---
 import Base from '../../layouts/Base.astro';
-import CompendiumTable from '../../components/charts/CompendiumTable';
+import CompendiumTable from '../../kit/charts/CompendiumTable';
 import { loadCompendiumIndex } from '../../data/loaders';
 const idx = loadCompendiumIndex();
 const bySection = Object.entries(idx.sections).map(([n, title]) => ({ n: +n, title, tables: idx.tables.filter((t: any) => t.section === +n) }));
 ---
 <Base title="Compendio estadístico" wide>
-  <h1 style="margin-top:32px">Compendio estadístico</h1>
+  <h1>Compendio estadístico</h1>
   <p class="lede">{idx.tables.length} tablas con estimación, error estándar, intervalo de 95%, n y sello. Abre una tabla para verla o descarga su CSV, listo para R, Stata o Python.</p>
   <input id="c-find" class="c-find" type="search" placeholder="Buscar tabla, por ejemplo: rama, lengua, ingreso" aria-label="Buscar en el compendio" />
   <p id="c-none" class="muted" hidden>Ninguna tabla coincide con esa búsqueda.</p>

@@ -22,7 +22,7 @@ function RadarInner({ regions, dims, a: a0, b: b0 }: Props & { regions: Region[]
   const byId = Object.fromEntries(regions.map(r => [r.id, r]));
   useEffect(() => {
     const svg = d3.select(ref.current!); svg.selectAll('*').remove();
-    const W = 520, H = 420, cx = W / 2, cy = H / 2 + 10, R = 150; svg.attr('viewBox', `0 0 ${W} ${H}`);
+    const W = 720, H = 420, cx = W / 2, cy = H / 2 + 10, R = 150; svg.attr('viewBox', `0 0 ${W} ${H}`);
     const ang = (i: number) => (Math.PI * 2 * i) / prim.length - Math.PI / 2;
     const cols = catColors();
     [25, 50, 75, 100].forEach(p => svg.append('polygon').attr('points', prim.map((_d, i) => `${cx + Math.cos(ang(i)) * R * p / 100},${cy + Math.sin(ang(i)) * R * p / 100}`).join(' ')).attr('fill', 'none').attr('stroke', 'var(--line)'));
