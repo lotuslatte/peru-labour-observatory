@@ -1,6 +1,6 @@
 PY ?= /home/xerox/.venvs/research/bin/python
 export PYTHONPATH=pipeline
-.PHONY: pipeline check person informality engine models province aggregate geo territory cards bulk index validate test site dev
+.PHONY: pipeline check person informality engine models province aggregate geo territory cards bulk index validate recipes test site dev
 pipeline: check person informality engine models province aggregate geo territory cards bulk index validate
 check:        ; $(PY) pipeline/scripts/00_check_inputs.py
 person:       ; $(PY) pipeline/scripts/01_build_person.py $(YEARS)
@@ -14,6 +14,8 @@ territory:    ; $(PY) pipeline/scripts/06b_territory.py
 cards:        ; $(PY) pipeline/scripts/07_cards.py
 bulk:         ; $(PY) pipeline/scripts/08b_bulk.py
 index:        ; $(PY) pipeline/scripts/08_index.py
+# Runs every recipe in Stata, R and Python against the published figures (needs the three programs), then exports the verified ones.
+recipes:      ; $(PY) pipeline/scripts/09_check_recipes.py && $(PY) pipeline/scripts/08c_recipes.py
 validate:     ; $(PY) pipeline/scripts/05_validate.py
 test:         ; $(PY) -m pytest -q pipeline/tests
 site:         ; cd site && npm install && npm run build

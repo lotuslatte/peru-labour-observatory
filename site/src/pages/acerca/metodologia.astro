@@ -13,7 +13,7 @@ const ag = Object.entries(m.informality_rule.agreement);
 
     <h2 id="lectura">Guía de lectura en 60 segundos</h2>
     <ol><li><strong>Toda cifra es una estimación</strong> a partir de ~86 000 entrevistas anuales; nunca un conteo. Por eso lleva un intervalo de confianza.</li>
-    <li><strong>El sello</strong> resume la precisión: <span class="badge A"></span> error relativo menor a 15 % (se puede citar sin más); <span class="badge B"></span> entre 15 y 30 % (citar con el intervalo); <span class="badge S"></span> mayor a 30 % o menos de 30 casos (no se publica).</li>
+    <li><strong>El sello</strong> resume la precisión: <span class="badge A"></span> error relativo menor a 15% (se puede citar sin más); <span class="badge B"></span> entre 15 y 30% (citar con el intervalo); <span class="badge S"></span> mayor a 30% o menos de 30 casos (no se publica).</li>
     <li><strong>Comparar</strong> dos cifras exige mirar los intervalos o la prueba de diferencia: en el sitio, las diferencias marcadas con ▲/▼ o * superan el error de muestreo; ≈ significa que no.</li>
     <li><strong>Los colores</strong> tienen significado fijo: terracota = informal/desprotegido; azul = formal/protegido; en los mapas, el tono más oscuro siempre indica un valor más alto.</li>
     <li><strong>{YEAR}</strong> es el año titular; 2014–{PREV} forman la serie. 2020 se anota como año de pandemia.</li></ol>
@@ -27,7 +27,7 @@ const ag = Object.entries(m.informality_rule.agreement);
     <table class="data wrap"><thead><tr><th>Indicador</th><th style="text-align:left">Definición</th></tr></thead><tbody>
       <tr><td>Tasa de actividad</td><td style="text-align:left">PEA / PET. PEA = ocupados + desocupados abiertos (<code>ocu500 ∈ {'{1,2}'}</code>). Los "desocupados ocultos" se tratan como inactivos, como hace INEI.</td></tr>
       <tr><td>Ratio empleo-población</td><td style="text-align:left">Ocupados / PET.</td></tr>
-      <tr><td>Tasa de desempleo</td><td style="text-align:left">Desocupados abiertos / PEA. Nota: la cifra de desempleo 2024 que INEI difunde en prensa (5,6 %) proviene de la EPEN, una encuesta distinta; la serie ENAHO es sistemáticamente ~1 pp menor.</td></tr>
+      <tr><td>Tasa de desempleo</td><td style="text-align:left">Desocupados abiertos / PEA. Nota: la cifra de desempleo 2024 que INEI difunde en prensa (5,6%) proviene de la EPEN, una encuesta distinta; la serie ENAHO es sistemáticamente ~1 pp menor.</td></tr>
       <tr><td>Empleo informal</td><td style="text-align:left">Definición INEI/OIT: (i) empleadores e independientes cuya unidad productiva pertenece al sector informal; (ii) asalariados sin protección; (iii) trabajadores familiares no remunerados. 2014–2023: variable oficial <code>ocupinf</code> de INEI. Desde 2024: INEI no incluye <code>ocupinf</code> en el archivo; se aplica la regla del Observatorio (abajo).</td></tr>
       <tr><td>Empleo en el sector informal</td><td style="text-align:left">Variable <code>emplpsec == 1</code> (2014–2023); desde 2024: informal en unidad sin RUC.</td></tr>
       <tr><td>Subempleo por horas</td><td style="text-align:left">Ocupados con menos de 35 horas semanales normales (<code>p513t + p518</code> si la semana fue normal; <code>i520</code> en caso contrario) que desean y están disponibles para trabajar más horas (<code>p521 = p521a = 1</code>).</td></tr>
@@ -54,7 +54,7 @@ const ag = Object.entries(m.informality_rule.agreement);
     <h2 id="informalidad">Regla de informalidad (desde 2024)</h2>
     <p>Sector informal: unidad productiva no registrada en SUNAT (<code>p510a1 = 3</code>). Asalariados informales: {m.informality_rule.wage}. Trabajadores familiares no remunerados: siempre informales. La regla se ajustó buscando la máxima concordancia con <code>ocupinf</code> en 2023 y se valida en cada año disponible:</p>
     <table class="data"><thead><tr><th>Año</th><th>Concordancia ponderada</th><th>Tasa según regla</th><th>Tasa INEI (ocupinf)</th></tr></thead><tbody>
-      {ag.map(([y, r]: any) => <tr><td>{y}</td><td>{(r.agree_w * 100).toFixed(2)} %</td><td>{r.rate_rule.toFixed(1)} %</td><td>{r.rate_inei.toFixed(1)} %</td></tr>)}
+      {ag.map(([y, r]: any) => <tr><td>{y}</td><td>{(r.agree_w * 100).toFixed(2)}%</td><td>{r.rate_rule.toFixed(1)}%</td><td>{r.rate_inei.toFixed(1)}%</td></tr>)}
     </tbody></table>
     <p>La regla subestima la tasa INEI entre 0,2 y 1,5 pp (INEI utiliza información sobre quién financia el seguro de salud que no está en los archivos públicos). Por eso la informalidad desde 2024 debe leerse con ese sesgo conocido y así se anota en las series.</p>
 

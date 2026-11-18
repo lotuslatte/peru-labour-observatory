@@ -52,9 +52,14 @@ const comp = f.comparability;
 const sources = [...new Set(comp.map((c: any) => c.source).filter(Boolean))];
 const notes = comp.filter((c: any) => c.notes.length && c.status !== 'nd');
 const nd = comp.filter((c: any) => c.status === 'nd').map((c: any) => c.year);
+const recipeFile = path.join(DATA, `recipes/${id}.json`);
+const recipe: { year: number; code: Record<string, string> } | null = fs.existsSync(recipeFile) ? JSON.parse(fs.readFileSync(recipeFile, 'utf8')) : null;
+const LANGS: [string, string, string][] = [['stata', 'Stata', 'do'], ['r', 'R', 'R'], ['python', 'Python', 'py']];
+const langs = recipe ? LANGS.filter(([k]) => recipe.code[k]) : [];
+const shareImage = fs.existsSync(path.resolve(process.cwd(), `public/share/ind/${id}.png`)) ? `/share/ind/${id}.png` : undefined;
 const head = isDist ? null : `ENAHO ${f.year}. IC 95%: ${fmtUnit(last.lo, u)} a ${fmtUnit(last.hi, u)}.`;
 ---
-<Base title={f.name} description={f.def}>
+<Base title={f.name} description={f.def} image={shareImage}>
   <div class="r-page">
     <a class="r-back" href="/indicadores/">Todos los indicadores</a>
     <section class="r-head">
@@ -91,6 +96,17 @@ const head = isDist ? null : `ENAHO ${f.year}. IC 95%: ${fmtUnit(last.lo, u)} a 
       {nd.length > 0 && <p>Sin estimación en {nd.length === 1 ? nd[0] : `${nd[0]}–${nd.at(-1)}`}.</p>}
     </section>
 
+    {recipe && langs.length > 0 && <section class="r-doc recipe" id="reproducir">
+      <h2>Reproducir esta cifra</h2>
+      <p>Código completo para obtener el valor nacional de {recipe.year} a partir de los microdatos de la ENAHO que publica el INEI. Cada receta carga los módulos, construye las variables, declara el diseño muestral y estima. Las versiones que se muestran se ejecutaron sobre los microdatos y devuelven la cifra publicada.</p>
+      <div class="recipe-tabs" role="tablist" aria-label="Lenguaje">
+        {langs.map(([k, label], i) => <button class="r-btn" role="tab" id={`rt-${k}`} aria-selected={i === 0 ? 'true' : 'false'} aria-controls={`rc-${k}`} tabindex={i === 0 ? 0 : -1} data-lang={k}>{label}</button>)}
+      </div>
+      {langs.map(([k, , ext], i) => <pre id={`rc-${k}`} role="tabpanel" aria-labelledby={`rt-${k}`} tabindex="0" hidden={i !== 0} data-file={`${id}.${ext}`}><code>{recipe.code[k]}</code></pre>)}
+      <div class="r-actions"><button class="r-btn" data-recipe="copy">Copiar código</button><button class="r-btn" data-recipe="save">Descargar archivo</button></div>
+      <p class="r-src">Los microdatos se descargan del <a href="https://proyectos.inei.gob.pe/microdatos/" rel="noopener">portal de microdatos del INEI</a> (módulos de Empleo e Ingresos, Educación, Salud y Sumaria del año {recipe.year}).</p>
+    </section>}
+
     <section class="r-doc" id="descargar">
       <h2>Descargar y citar</h2>
       <p>Todas las estimaciones de este indicador, para cada año y desagregación, con error estándar, intervalo de 95%, n y sello: <a href={`/data/latest/${f.file}`} download><code>{f.file.split('/')[1]}</code></a>. Las celdas con sello S quedan vacías. El paquete completo y las versiones fijas están en <a href="/datos/">Datos</a>.</p>
@@ -105,6 +121,17 @@ const head = isDist ? null : `ENAHO ${f.year}. IC 95%: ${fmtUnit(last.lo, u)} a 
   </div>
   <script>
     import { copyText } from '../../kit/charts/lib/export';
+    const tabs = [...document.querySelectorAll<HTMLElement>('.recipe-tabs [role="tab"]')];
+    const panel = () => document.querySelector<HTMLElement>('.recipe pre:not([hidden])')!;
+    const pick = (t: HTMLElement) => tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')!)!.hidden = !on; });
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => pick(t));
+      t.addEventListener('keydown', e => { const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!d) return; const n = tabs[(i + d + tabs.length) % tabs.length]; pick(n); n.focus(); });
+    });
+    document.querySelector<HTMLElement>('[data-recipe="copy"]')?.addEventListener('click', e => copyText(e.currentTarget as HTMLElement, panel().textContent ?? ''));
+    document.querySelector<HTMLElement>('[data-recipe="save"]')?.addEventListener('click', () => {
+      const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([panel().textContent ?? ''], { type: 'text/plain;charset=utf-8' })); a.download = panel().dataset.file!; a.click(); URL.revokeObjectURL(a.href);
+    });
     document.querySelectorAll<HTMLElement>('[data-copy]').forEach(b => b.addEventListener('click', () => copyText(b, document.getElementById(b.dataset.copy!)!.textContent ?? '')));
   </script>
 </Base>

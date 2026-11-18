@@ -22,11 +22,11 @@ const top = p.status_dist?.slice().sort((x: any, y: any) => (y.v ?? 0) - (x.v ??
     <section class="grid grid-2" style="margin-top:14px">
       <div class="card"><h3>Qué dicen los datos</h3><ol style="padding-left:18px;margin:0">{p.summary?.slice(1).map((t: string) => <li>{t}</li>)}</ol></div>
       <div class="card"><h3>Para la decisión</h3><ul style="padding-left:18px;margin:0">
-        <li>Categorías dominantes: {top.map((t: any) => `${t.label} (${f(t)} %)`).join(', ')}.</li>
-        <li>Empleo adecuado {f(p.dims.adecuado)} % (nacional {f(nat('adecuado'))} %): {(p.dims.adecuado.v ?? 0) < (nat('adecuado').v ?? 0) ? 'la calidad del empleo está por debajo del promedio; prioridad en formalización y productividad.' : 'calidad del empleo por encima del promedio; prioridad en sostener la formalidad.'}</li>
+        <li>Categorías dominantes: {top.map((t: any) => `${t.label} (${f(t)}%)`).join(', ')}.</li>
+        <li>Empleo adecuado {f(p.dims.adecuado)}% (nacional {f(nat('adecuado'))}%): {(p.dims.adecuado.v ?? 0) < (nat('adecuado').v ?? 0) ? 'la calidad del empleo está por debajo del promedio; prioridad en formalización y productividad.' : 'calidad del empleo por encima del promedio; prioridad en sostener la formalidad.'}</li>
         {inf_reg && <li>En la región {p.region_nat}, la brecha de informalidad mujer−hombre ajustada por controles es {f(inf_reg.adj_gap)} pp (cruda {f(inf_reg.raw_gap)}).</li>}
-        {inc_reg && <li>Brecha de ingreso mujer−hombre ajustada en {p.region_nat}: {f(inc_reg.adj_gap)} % (cruda {f(inc_reg.raw_gap)} %).</li>}
-        <li>Jóvenes 15–29 que ni estudian ni trabajan: {f(p.quality?.ur_youth)} % de desempleo juvenil; NiNi nacional {f(nat('neet'))} %.</li>
+        {inc_reg && <li>Brecha de ingreso mujer−hombre ajustada en {p.region_nat}: {f(inc_reg.adj_gap)}% (cruda {f(inc_reg.raw_gap)}%).</li>}
+        <li>Jóvenes 15–29 que ni estudian ni trabajan: {f(p.quality?.ur_youth)}% de desempleo juvenil; NiNi nacional {f(nat('neet'))}%.</li>
       </ul></div>
     </section>
     <section class="card" style="margin-top:14px"><h3>Serie {SPAN}</h3><div class="grid grid-3">{['lfpr', 'informality', 'median_inc_real'].map(k => <div><div class="eyebrow">{({ lfpr: 'Actividad', informality: 'Informalidad', median_inc_real: `Ingreso mediano (S/ ${YEAR})` } as any)[k]}</div><Sparkline cells={p.trend[k]} w={220} h={48} color={k === 'informality' ? 'var(--informal)' : 'var(--formal)'} /><div class="small mono">{f(p.trend[k][0], k === 'median_inc_real' ? 0 : 1)} → {f(p.trend[k].at(-1), k === 'median_inc_real' ? 0 : 1)}</div></div>)}</div></section>

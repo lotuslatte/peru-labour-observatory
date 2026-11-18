@@ -1,0 +1,231 @@
+# Code for each derived variable in Stata, R and Python, written against the raw ENAHO names
+# (lowercase) of the headline year. olp/recipes.py assembles one self-contained recipe per indicator:
+# load module 500 (plus 300, 400 or sumaria when a variable needs them), build the variables below in
+# dependency order (the `uses` chain of indicator_docs.yml), declare the design and estimate.
+# `r` entries are `name = expression` pairs that go inside one dplyr::mutate() call.
+# The helper among(x, m) keeps x where m == 1 and leaves it missing elsewhere (defined in each header).
+# pipeline/scripts/09_check_recipes.py runs every recipe on the microdata and compares with estimates.
+
+derived:
+  pet:
+    stata: ["gen pet = 1"]
+    r: ["pet = 1L"]
+    py: ['d["pet"] = 1']
+  pea:
+    stata: ["gen pea = inlist(ocu500, 1, 2)"]
+    r: ["pea = as.integer(ocu500 %in% 1:2)"]
+    py: ['d["pea"] = d.ocu500.isin([1, 2]).astype(int)']
+  ocupado:
+    stata: ["gen ocupado = ocu500 == 1"]
+    r: ["ocupado = as.integer(ocu500 %in% 1)"]
+    py: ['d["ocupado"] = d.ocu500.eq(1).astype(int)']
+  desocupado:
+    stata: ["gen desocupado = ocu500 == 2"]
+    r: ["desocupado = as.integer(ocu500 %in% 2)"]
+    py: ['d["desocupado"] = d.ocu500.eq(2).astype(int)']
+  desocupado_oculto:
+    stata: ["gen desocupado_oculto = ocu500 == 3"]
+    r: ["desocupado_oculto = as.integer(ocu500 %in% 3)"]
+    py: ['d["desocupado_oculto"] = d.ocu500.eq(3).astype(int)']
+  desocupado_ext:
+    stata: ["gen desocupado_ext = inlist(ocu500, 2, 3)"]
+    r: ["desocupado_ext = as.integer(ocu500 %in% 2:3)"]
+    py: ['d["desocupado_ext"] = d.ocu500.isin([2, 3]).astype(int)']
+  pea_ext:
+    stata: ["gen pea_ext = inlist(ocu500, 1, 2, 3)"]
+    r: ["pea_ext = as.integer(ocu500 %in% 1:3)"]
+    py: ['d["pea_ext"] = d.ocu500.isin([1, 2, 3]).astype(int)']
+  youth:
+    stata: ["gen youth = inrange(p208a, 15, 29)"]
+    r: ["youth = as.integer(p208a >= 15 & p208a <= 29)"]
+    py: ['d["youth"] = d.p208a.between(15, 29).astype(int)']
+  informal:
+    stata:
+      - "* Observatory rule, used from 2024 on. Up to 2023: gen informal = ocupinf == 1 if ocupado"
+      - "gen sin_ruc = p510a1 == 3"
+      - "gen seguro_trabajo = p4191 == 1 | p4192 == 1 | p4193 == 1 | p4194 == 1"
+      - "gen desprotegido = (!seguro_trabajo & p558a5 == 5) | inlist(p511a, 5, 7)"
+      - "gen informal = sin_ruc if ocupado & inlist(p507, 1, 2)"
+      - "replace informal = sin_ruc | desprotegido if ocupado & inlist(p507, 3, 4, 6, 7)"
+      - "replace informal = 1 if ocupado & p507 == 5"
+    r:
+      - "# Observatory rule, used from 2024 on. Up to 2023: informal = among(ocupinf %in% 1, ocupado)"
+      - "sin_ruc = p510a1 %in% 3"
+      - "seguro_trabajo = p4191 %in% 1 | p4192 %in% 1 | p4193 %in% 1 | p4194 %in% 1"
+      - "desprotegido = (!seguro_trabajo & p558a5 %in% 5) | p511a %in% c(5, 7)"
+      - "informal = case_when(ocupado != 1 ~ NA_integer_, p507 %in% 1:2 ~ as.integer(sin_ruc), p507 %in% c(3, 4, 6, 7) ~ as.integer(sin_ruc | desprotegido), p507 %in% 5 ~ 1L)"
+    py:
+      - "# Observatory rule, used from 2024 on. Up to 2023: informal = among(d.ocupinf.eq(1), d.ocupado)"
+      - "sin_ruc = d.p510a1.eq(3)"
+      - "seguro_trabajo = d.p4191.eq(1) | d.p4192.eq(1) | d.p4193.eq(1) | d.p4194.eq(1)"
+      - "desprotegido = (~seguro_trabajo & d.p558a5.eq(5)) | d.p511a.isin([5, 7])"
+      - "occ = d.ocupado.eq(1)"
+      - 'd["informal"] = np.nan'
+      - 'd.loc[occ & d.p507.isin([1, 2]), "informal"] = sin_ruc.astype(float)'
+      - 'd.loc[occ & d.p507.isin([3, 4, 6, 7]), "informal"] = (sin_ruc | desprotegido).astype(float)'
+      - 'd.loc[occ & d.p507.eq(5), "informal"] = 1.0'
+  formal:
+    stata: ["gen formal = 1 - informal"]
+    r: ["formal = 1L - informal"]
+    py: ['d["formal"] = 1 - d.informal']
+  informal_in_sector:
+    stata: ["* From 2024 on. Up to 2023: gen informal_in_sector = emplpsec == 1 if ocupado", "gen informal_in_sector = informal == 1 & p510a1 == 3 if ocupado"]
+    r: ["informal_in_sector = among(informal %in% 1 & p510a1 %in% 3, ocupado)"]
+    py: ['d["informal_in_sector"] = among(d.informal.eq(1) & d.p510a1.eq(3), d.ocupado)']
+  hours:
+    stata:
+      - "gen semana = cond(missing(p513t), 0, p513t) + cond(missing(p518), 0, p518)"
+      - "gen normales = cond(missing(i520), p520, i520)"
+      - "gen hours = cond(p519 == 2 & !missing(normales), normales, semana) if ocupado"
+    r:
+      - "semana = coalesce(p513t, 0) + coalesce(p518, 0)"
+      - "normales = coalesce(i520, p520)"
+      - "hours = ifelse(ocupado == 1, ifelse(p519 %in% 2 & !is.na(normales), normales, semana), NA)"
+    py:
+      - "semana = d.p513t.fillna(0) + d.p518.fillna(0)"
+      - "normales = d.i520.fillna(d.p520)"
+      - 'd["hours"] = semana.where(~(d.p519.eq(2) & normales.notna()), normales).where(d.ocupado.eq(1))'
+  hours_lt35:
+    stata: ["gen hours_lt35 = hours < 35 if ocupado"]
+    r: ["hours_lt35 = among(hours < 35, ocupado)"]
+    py: ['d["hours_lt35"] = among(d.hours < 35, d.ocupado)']
+  hours_le48:
+    stata: ["gen hours_le48 = hours <= 48 if ocupado"]
+    r: ["hours_le48 = among(hours <= 48, ocupado)"]
+    py: ['d["hours_le48"] = among(d.hours <= 48, d.ocupado)']
+  hours_ge60:
+    stata: ["gen hours_ge60 = hours >= 60 if ocupado"]
+    r: ["hours_ge60 = among(hours >= 60, ocupado)"]
+    py: ['d["hours_ge60"] = among(d.hours >= 60, d.ocupado)']
+  subemp_hours:
+    stata: ["gen subemp_hours = hours < 35 & p521 == 1 & p521a == 1 if ocupado"]
+    r: ["subemp_hours = among(hours < 35 & p521 %in% 1 & p521a %in% 1, ocupado)"]
+    py: ['d["subemp_hours"] = among((d.hours < 35) & d.p521.eq(1) & d.p521a.eq(1), d.ocupado)']
+  inc_real_pos:
+    stata:
+      - "* Annual labour income / 12. For years before __YEAR__, multiply by the deflator to __YEAR__ soles."
+      - "egen ingreso = rowtotal(i524a1 d529t i530a d536 i538a1 d540t i541a d543 d544t)"
+      - "replace ingreso = ingreso / 12 if ocupado"
+      - "replace ingreso = . if !ocupado"
+      - "gen inc_real_pos = ingreso if ingreso > 0 & !missing(ingreso)"
+    r:
+      - "# Annual labour income / 12. For years before __YEAR__, multiply by the deflator to __YEAR__ soles."
+      - "ingreso = ifelse(ocupado == 1, (coalesce(i524a1, 0) + coalesce(d529t, 0) + coalesce(i530a, 0) + coalesce(d536, 0) + coalesce(i538a1, 0) + coalesce(d540t, 0) + coalesce(i541a, 0) + coalesce(d543, 0) + coalesce(d544t, 0)) / 12, NA)"
+      - "inc_real_pos = ifelse(ingreso > 0, ingreso, NA)"
+    py:
+      - "# Annual labour income / 12. For years before __YEAR__, multiply by the deflator to __YEAR__ soles."
+      - 'cols = ["i524a1", "d529t", "i530a", "d536", "i538a1", "d540t", "i541a", "d543", "d544t"]'
+      - 'd["ingreso"] = (d[cols].fillna(0).sum(axis=1) / 12).where(d.ocupado.eq(1))'
+      - 'd["inc_real_pos"] = d.ingreso.where(d.ingreso > 0)'
+  has_income:
+    stata: ["gen has_income = ingreso > 0 if ocupado"]
+    r: ["has_income = among(ingreso > 0, ocupado)"]
+    py: ['d["has_income"] = among(d.ingreso > 0, d.ocupado)']
+  inc_hour_real:
+    stata: ["gen inc_hour_real = inc_real_pos / (hours * 52 / 12) if hours > 0 & !missing(hours)"]
+    r: ["inc_hour_real = ifelse(hours > 0, inc_real_pos / (hours * 52 / 12), NA)"]
+    py: ['d["inc_hour_real"] = (d.inc_real_pos / (d.hours * 52 / 12)).where(d.hours > 0)']
+  subemp_income:
+    stata: ["* __RMV__ = minimum wage in __YEAR__", "gen subemp_income = subemp_hours == 0 & ingreso < __RMV__ & p507 != 5 if ocupado"]
+    r: ["# __RMV__ = minimum wage in __YEAR__", "subemp_income = among(subemp_hours %in% 0 & ingreso < __RMV__ & !(p507 %in% 5), ocupado)"]
+    py: ["# __RMV__ = minimum wage in __YEAR__", 'd["subemp_income"] = among(d.subemp_hours.eq(0) & (d.ingreso < __RMV__) & d.p507.ne(5), d.ocupado)']
+  adecuado:
+    stata: ["gen adecuado = subemp_hours == 0 & subemp_income == 0 if ocupado"]
+    r: ["adecuado = among(subemp_hours %in% 0 & subemp_income %in% 0, ocupado)"]
+    py: ['d["adecuado"] = among(d.subemp_hours.eq(0) & d.subemp_income.eq(0), d.ocupado)']
+  wage_worker:
+    stata: ["gen wage_worker = inlist(p507, 3, 4, 6) if ocupado"]
+    r: ["wage_worker = among(p507 %in% c(3, 4, 6), ocupado)"]
+    py: ['d["wage_worker"] = among(d.p507.isin([3, 4, 6]), d.ocupado)']
+  self_emp:
+    stata: ["gen self_emp = p507 == 2 if ocupado"]
+    r: ["self_emp = among(p507 %in% 2, ocupado)"]
+    py: ['d["self_emp"] = among(d.p507.eq(2), d.ocupado)']
+  tfnr:
+    stata: ["gen tfnr = p507 == 5 if ocupado"]
+    r: ["tfnr = among(p507 %in% 5, ocupado)"]
+    py: ['d["tfnr"] = among(d.p507.eq(5), d.ocupado)']
+  contract_any:
+    stata: ["gen contract_any = p511a != 7 if wage_worker == 1"]
+    r: ["contract_any = among(!(p511a %in% 7), wage_worker)"]
+    py: ['d["contract_any"] = among(d.p511a.ne(7), d.wage_worker)']
+  contract_indef:
+    stata: ["gen contract_indef = p511a == 1 if wage_worker == 1"]
+    r: ["contract_indef = among(p511a %in% 1, wage_worker)"]
+    py: ['d["contract_indef"] = among(d.p511a.eq(1), d.wage_worker)']
+  pension:
+    stata: ["gen pension = p558a5 != 5 if ocupado"]
+    r: ["pension = among(!(p558a5 %in% 5), ocupado)"]
+    py: ['d["pension"] = among(d.p558a5.ne(5), d.ocupado)']
+  seguro:
+    stata: ["gen seguro = p4191 == 1 | p4192 == 1 | p4193 == 1 | p4194 == 1 | p4195 == 1 | p4196 == 1 | p4197 == 1 | p4198 == 1 if ocupado"]
+    r: ["seguro = among(p4191 %in% 1 | p4192 %in% 1 | p4193 %in% 1 | p4194 %in% 1 | p4195 %in% 1 | p4196 %in% 1 | p4197 %in% 1 | p4198 %in% 1, ocupado)"]
+    py: ['d["seguro"] = among(d[["p4191", "p4192", "p4193", "p4194", "p4195", "p4196", "p4197", "p4198"]].eq(1).any(axis=1), d.ocupado)']
+  essalud:
+    stata: ["gen essalud = p4191 == 1 if ocupado"]
+    r: ["essalud = among(p4191 %in% 1, ocupado)"]
+    py: ['d["essalud"] = among(d.p4191.eq(1), d.ocupado)']
+  seguro_contrib:
+    stata: ["gen seguro_contrib = p4191 == 1 | p4192 == 1 | p4193 == 1 | p4194 == 1 if ocupado"]
+    r: ["seguro_contrib = among(p4191 %in% 1 | p4192 %in% 1 | p4193 %in% 1 | p4194 %in% 1, ocupado)"]
+    py: ['d["seguro_contrib"] = among(d[["p4191", "p4192", "p4193", "p4194"]].eq(1).any(axis=1), d.ocupado)']
+  sis:
+    stata: ["gen sis = p4195 == 1 if ocupado"]
+    r: ["sis = among(p4195 %in% 1, ocupado)"]
+    py: ['d["sis"] = among(d.p4195.eq(1), d.ocupado)']
+  working_poor:
+    stata: ["gen working_poor = inlist(pobreza, 1, 2) if ocupado & !missing(pobreza)"]
+    r: ["working_poor = among(pobreza %in% 1:2, ocupado == 1 & !is.na(pobreza))"]
+    py: ['d["working_poor"] = among(d.pobreza.isin([1, 2]), d.ocupado.eq(1) & d.pobreza.notna())']
+  ocup10:
+    stata: ["gen ocup10 = floor(p505r4 / 1000) if ocupado"]
+    r: ["ocup10 = ifelse(ocupado == 1, floor(p505r4 / 1000), NA)"]
+    py: ['d["ocup10"] = np.floor(d.p505r4 / 1000).where(d.ocupado.eq(1))']
+  firm_small:
+    stata: ["gen firm_small = p512a == 1 if ocupado"]
+    r: ["firm_small = among(p512a %in% 1, ocupado)"]
+    py: ['d["firm_small"] = among(d.p512a.eq(1), d.ocupado)']
+  secondary_job:
+    stata: ["gen secondary_job = !missing(p517) if ocupado"]
+    r: ["secondary_job = among(!is.na(p517), ocupado)"]
+    py: ['d["secondary_job"] = among(d.p517.notna(), d.ocupado)']
+  sector9:
+    stata:
+      - "* CIIU rev. 4 division (numeric codes drop the leading zero: 111 is class 0111)"
+      - "gen division = floor(p506r4 / 100)"
+      - "recode division (1/3 = 1) (5/9 = 2) (10/33 = 3) (35/39 = 4) (41/43 = 5) (45/47 = 6) (49/53 58/63 = 7) (55/56 90/98 = 8) (64/66 68/75 77/82 84/88 99 = 9) (else = .), gen(sector9)"
+      - "replace sector9 = . if !ocupado"
+    r:
+      - "# CIIU rev. 4 division (numeric codes drop the leading zero: 111 is class 0111)"
+      - "division = floor(p506r4 / 100)"
+      - "sector9 = case_when(ocupado != 1 ~ NA_real_, division %in% 1:3 ~ 1, division %in% 5:9 ~ 2, division %in% 10:33 ~ 3, division %in% 35:39 ~ 4, division %in% 41:43 ~ 5, division %in% 45:47 ~ 6, division %in% c(49:53, 58:63) ~ 7, division %in% c(55:56, 90:98) ~ 8, division %in% c(64:66, 68:75, 77:82, 84:88, 99) ~ 9)"
+    py:
+      - "# CIIU rev. 4 division (numeric codes drop the leading zero: 111 is class 0111)"
+      - "division = np.floor(d.p506r4 / 100)"
+      - "grupos = {1: [(1, 3)], 2: [(5, 9)], 3: [(10, 33)], 4: [(35, 39)], 5: [(41, 43)], 6: [(45, 47)], 7: [(49, 53), (58, 63)], 8: [(55, 56), (90, 98)], 9: [(64, 66), (68, 75), (77, 82), (84, 88), (99, 99)]}"
+      - 'd["sector9"] = np.nan'
+      - "for g, rangos in grupos.items():"
+      - '    for lo, hi in rangos: d.loc[division.between(lo, hi), "sector9"] = g'
+      - 'd["sector9"] = d.sector9.where(d.ocupado.eq(1))'
+  status6:
+    stata: ["gen status6 = cond(p507 == 7, 6, p507) if ocupado"]
+    r: ["status6 = ifelse(ocupado == 1, ifelse(p507 %in% 7, 6, p507), NA)"]
+    py: ['d["status6"] = d.p507.replace({7: 6}).where(d.ocupado.eq(1))']
+  educ4:
+    stata: ["recode p301a (1/4 12 = 1) (5/6 = 2) (7/8 = 3) (9/11 = 4) (else = .), gen(educ4)", "replace educ4 = . if !ocupado"]
+    r: ["educ4 = case_when(ocupado != 1 ~ NA_real_, p301a %in% c(1:4, 12) ~ 1, p301a %in% 5:6 ~ 2, p301a %in% 7:8 ~ 3, p301a %in% 9:11 ~ 4)"]
+    py: ['d["educ4"] = d.p301a.map({1: 1, 2: 1, 3: 1, 4: 1, 12: 1, 5: 2, 6: 2, 7: 3, 8: 3, 9: 4, 10: 4, 11: 4}).where(d.ocupado.eq(1))']
+  neet:
+    stata: ["gen neet = !ocupado & p307 != 1 if youth"]
+    r: ["neet = among(ocupado != 1 & !(p307 %in% 1), youth)"]
+    py: ['d["neet"] = among(d.ocupado.ne(1) & d.p307.ne(1), d.youth)']
+  mig_life:
+    stata:
+      - "gen dpto_nac = substr(string(p401g2, \"%06.0f\"), 1, 2)"
+      - "gen mig_life = p401g1 == 2 & dpto_nac != substr(ubigeo, 1, 2) if inlist(p401g1, 1, 2)"
+    r:
+      - "dpto_nac = substr(sprintf(\"%06.0f\", p401g2), 1, 2)"
+      - "mig_life = among(p401g1 %in% 2 & dpto_nac != substr(ubigeo, 1, 2), p401g1 %in% 1:2)"
+    py:
+      - 'dpto_nac = d.p401g2.map(lambda x: f"{x:06.0f}"[:2] if x == x else "")'
+      - 'd["mig_life"] = among(d.p401g1.eq(2) & (dpto_nac != d.ubigeo.str[:2]), d.p401g1.isin([1, 2]))'

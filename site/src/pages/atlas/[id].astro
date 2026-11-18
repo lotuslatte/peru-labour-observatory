@@ -42,7 +42,7 @@ const iLabels: Record<string, string> = { inc_p10: 'p10', inc_p25: 'p25', median
       </tbody></table></div></div>
   </section>
   {!p.parent && <section class="grid grid-2" style="margin-top:24px">
-    <div class="card"><h2>Brechas por sexo</h2><p class="takeaway">Barras sombreadas = IC 95 %. Cuando los puntos están dentro del intervalo del otro, la diferencia no es concluyente.</p><Dumbbell client:visible rows={pctOnly(dumb('sex', '1', '2'))} title="Hombres vs mujeres" unit="%" aLabel="Hombres" bLabel="Mujeres" /><Dumbbell client:visible rows={incOnly(dumb('sex', '1', '2'))} title={`Ingreso mediano (S/ ${YEAR})`} unit="S/" aLabel="Hombres" bLabel="Mujeres" /></div>
+    <div class="card"><h2>Brechas por sexo</h2><p class="takeaway">Barras sombreadas = IC 95%. Cuando los puntos están dentro del intervalo del otro, la diferencia no es concluyente.</p><Dumbbell client:visible rows={pctOnly(dumb('sex', '1', '2'))} title="Hombres vs mujeres" unit="%" aLabel="Hombres" bLabel="Mujeres" /><Dumbbell client:visible rows={incOnly(dumb('sex', '1', '2'))} title={`Ingreso mediano (S/ ${YEAR})`} unit="S/" aLabel="Hombres" bLabel="Mujeres" /></div>
     <div class="card"><h2>Brechas por lengua materna y área</h2><Dumbbell client:visible rows={pctOnly(dumb('lengua3', '2', '1'))} title="Castellano vs lengua indígena u originaria" unit="%" aLabel="Castellano" bLabel="Lengua indígena" /><Dumbbell client:visible rows={pctOnly(dumb('area', '1', '2'))} title="Urbano vs rural" unit="%" aLabel="Urbano" bLabel="Rural" /></div>
   </section>}
   <section class="grid grid-2" style="margin-top:24px">

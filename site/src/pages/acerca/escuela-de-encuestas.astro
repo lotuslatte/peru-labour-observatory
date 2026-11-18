@@ -17,7 +17,7 @@ import Base from '../../layouts/Base.astro';
     <h2>3. Varianza con diseño complejo</h2>
     <p>El error estándar "ingenuo" (como si la muestra fuera aleatoria simple) subestima la incertidumbre. La linealización de Taylor agrega las contribuciones por conglomerado dentro de cada estrato:</p>
     <pre>Var(R̂) = Σ_h  n_h/(n_h−1)  Σ_c ( Z_hc − Z̄_h )²,   con  z_i = w_i (y_i − R̂ x_i) / X̂</pre>
-    <p>Para medianas, el intervalo de Woodruff invierte la función de distribución ponderada alrededor del cuantil. Un RSE (se/estimación) mayor a 15 % debe hacer dudar de la cifra; mayor a 30 %, no publicarla.</p>
+    <p>Para medianas, el intervalo de Woodruff invierte la función de distribución ponderada alrededor del cuantil. Un RSE (se/estimación) mayor a 15% debe hacer dudar de la cifra; mayor a 30%, no publicarla.</p>
 
     <h2>4. Escalera de conceptos</h2>
     <table class="data"><thead><tr><th style="text-align:left">Concepto</th><th style="text-align:left">Variable</th><th style="text-align:left">Cuidado con</th></tr></thead><tbody>
@@ -46,8 +46,8 @@ desempleo = pea.loc[pea.ocu500 == 2, "fac500a"].sum() / pea.fac500a.sum()</pre>
 d &lt;- read_dta("enaho01a-2023-500.dta") |&gt; rename_all(tolower) |&gt; filter(p208a &gt;= 14)
 options(survey.lonely.psu = "adjust")
 des &lt;- svydesign(ids = ~conglome, strata = ~interaction(substr(ubigeo,1,2), estrato), weights = ~fac500a, data = d, nest = TRUE)
-svymean(~I(ocu500 %in% 1:2), des)                       # tasa de actividad
-svyby(~I(ocu500 == 2), ~p207, subset(des, ocu500 %in% 1:2), svymean)   # desempleo por sexo</pre>
+svymean(~I(ocu500%in% 1:2), des)                       # tasa de actividad
+svyby(~I(ocu500 == 2), ~p207, subset(des, ocu500%in% 1:2), svymean)   # desempleo por sexo</pre>
     <h3>Stata</h3>
     <pre>use enaho01a-2023-500.dta, clear
 keep if p208a &gt;= 14
